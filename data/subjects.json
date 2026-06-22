@@ -1,0 +1,31 @@
+[
+  {
+    "id": "java",
+    "name": "Lập Trình Web (Java/Spring/JPA)",
+    "description": "Ôn tập Java Core, Servlet, Spring Boot, Spring MVC, JPA và Hibernate theo đề cương ôn thi.",
+    "icon": "☕",
+    "pdfs": [
+      "ontap.pdf"
+    ]
+  },
+  {
+    "id": "python",
+    "name": "Nhập môn lập trình Python",
+    "description": "Ôn tập lập trình Python cơ bản, cấu trúc điều kiện, vòng lặp, xử lý chuỗi, hàm, tập tin và các thư viện cơ bản như NumPy, Pandas.",
+    "icon": "🐍",
+    "pdfs": [
+      "22113_03-Regex.pdf",
+      "Numpy.pdf",
+      "[IPPA233277] w02.1-c02_cac-khai-niem-co-ban (done).pdf",
+      "[IPPA233277] w02.2-c02_kieu-du-lieu_cau-truc-re-nhanh (done).pdf",
+      "[IPPA233277] w02.2-c02_kieu-du-lieu_cau-truc-re-nhanh_HW (done).pdf",
+      "[IPPA233277] w02.3-c02_cau-truc-lap (done).pdf",
+      "[IPPA233277] w02.3-c02_cau-truc-lap_HW (done).pdf",
+      "[IPPA233277] w04.2-c03_xu-ly-tap-tin_HW (done) (1).pdf",
+      "[IPPA233277] w05-c04_ham_HW (done) (1).pdf",
+      "[IPPA233277] w06-c04_xu-ly-chuoi_HW (done) (1).pdf",
+      "[IPPA233277] w07-c05_su-dung-modules-library-trong-python_HW (done).pdf",
+      "deon.pdf"
+    ]
+  }
+]

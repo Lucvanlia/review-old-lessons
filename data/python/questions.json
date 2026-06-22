@@ -1,0 +1,1875 @@
+[
+  {
+    "id": 1,
+    "topicId": "python_basics",
+    "question": "Output của đoạn code sau là gì?: print('Hello, world!'); print(\"H\")",
+    "options": [
+      "A. Hello world! H",
+      "B. H",
+      "C. Hello world! H (H được in ở hàng mới)",
+      "D. Error"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Hàm print() trong Python tự động thêm ký tự xuống dòng '\\n' ở cuối kết quả in ra trừ khi được tùy chỉnh tham số end."
+  },
+  {
+    "id": 2,
+    "topicId": "python_basics",
+    "question": "Đâu là kiểu dữ liệu số trong Python?",
+    "options": [
+      "A. Integer",
+      "B. Complex",
+      "C. Boolean",
+      "D. Tất cả các phương án trên."
+    ],
+    "correctAnswer": "D",
+    "explanation": "Trong Python, Integer và Complex là các kiểu dữ liệu số. Kiểu Boolean cũng được coi là kiểu số vì True đại diện cho 1 và False đại diện cho 0."
+  },
+  {
+    "id": 3,
+    "topicId": "python_basics",
+    "question": "Trong số các phép gán sau đây, phép gán nào sẽ gây ra lỗi?",
+    "options": [
+      "A. a = b = c = 89",
+      "B. a = 6, b = 8",
+      "C. a, b, c = 1, 2, 3",
+      "D. Không có phép gán nào trên đúng."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Trong Python, cú pháp gán đồng thời cho hai biến riêng biệt phải dùng dấu phẩy như a, b = 6, 8. Biểu thức a = 6, b = 8 không hợp lệ và gây ra Syntax Error."
+  },
+  {
+    "id": 4,
+    "topicId": "data_types_conditionals",
+    "question": "Đâu là kiểu dữ liệu mutable (có thể sửa đổi phần tử)?",
+    "options": [
+      "A. String",
+      "B. Tuple",
+      "C. List",
+      "D. Tất cả các phương án trên."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Kiểu List là mutable. String và Tuple là các kiểu dữ liệu immutable (bất biến), không thể thay đổi giá trị của phần tử sau khi đã tạo."
+  },
+  {
+    "id": 5,
+    "topicId": "python_basics",
+    "question": "Giá trị của biểu thức này là gì? 22% 3.0",
+    "options": [
+      "A. 7",
+      "B. 1",
+      "C. 1.0",
+      "D. 7.0"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Phép chia dư 22 % 3 bằng 1. Vì số chia là số thực (3.0), kết quả của phép toán cũng được ép kiểu tự động thành số thực (1.0)."
+  },
+  {
+    "id": 6,
+    "topicId": "data_types_conditionals",
+    "question": "D = [1, 23, 'hello', 1] thuộc kiểu dữ liệu nào?",
+    "options": [
+      "A. List",
+      "B. Dictionary",
+      "C. Array",
+      "D. Tuple"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Dãy giá trị được khai báo trong cặp ngoặc vuông [] đại diện cho kiểu dữ liệu List trong Python."
+  },
+  {
+    "id": 7,
+    "topicId": "python_basics",
+    "question": "Đoạn mã sau in ra gì trên console? print(\"lion\" == \"cat\" or 99 != 88)",
+    "options": [
+      "A. False",
+      "B. True",
+      "C. ValueError xảy ra",
+      "D. TypeError xảy ra"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Vế 1 'lion' == 'cat' là False. Vế 2 99 != 88 là True. False or True trả về kết quả True."
+  },
+  {
+    "id": 8,
+    "topicId": "data_types_conditionals",
+    "question": "Kết quả của biểu thức này sẽ là gì: print('p' + 'q' if '12'.isdigit() else 'r' + 's')",
+    "options": [
+      "A. pq",
+      "B. rs",
+      "C. pqrs",
+      "D. pq12",
+      "E. lỗi"
+    ],
+    "correctAnswer": "A",
+    "explanation": "'12'.isdigit() trả về True, do đó biểu thức rẽ nhánh inline sẽ trả về 'p' + 'q' = 'pq'."
+  },
+  {
+    "id": 9,
+    "topicId": "data_types_conditionals",
+    "question": "Đọc đoạn code sau và cho biết kết quả in ra:\na = True\nb = False\nc = True\nif not a or b:\n    print (\"a\")\nelif not a or not b and c:\n    print (\"b\")\nelif not a or b or not b and a:\n    print (\"c\")\nelse:\n    print (\"d\")",
+    "options": [
+      "A. a",
+      "B. b",
+      "C. c",
+      "D. d"
+    ],
+    "correctAnswer": "B",
+    "explanation": "- not a or b = not True or False = False.\n- not a or not b and c = False or True and True = False or True = True. Nhánh elif thứ nhất thỏa mãn nên in ra 'b'."
+  },
+  {
+    "id": 10,
+    "topicId": "loops",
+    "question": "Câu nào sau đây là vòng lặp for hợp lệ trong Python?",
+    "options": [
+      "A. for(i=0; i<n; i++)",
+      "B. for i in range(0,5):",
+      "C. for i in range(0,5)",
+      "D. for i in range(5)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Vòng lặp for hợp lệ trong Python phải có từ khóa in, sử dụng range() hoặc tập hợp, và phải kết thúc bằng dấu hai chấm ':'. Phương án D thiếu dấu hai chấm ở cuối."
+  },
+  {
+    "id": 11,
+    "topicId": "loops",
+    "question": "Trong dãy mã dưới đây, dãy nào sẽ được tạo ra từ dòng mã đã cho? range(5, 0, -2)",
+    "options": [
+      "A. 5 4 3 2 1 0 -1",
+      "B. 5 4 3 2 1 0",
+      "C. 5 3 1",
+      "D. Không có trong các lựa chọn trên"
+    ],
+    "correctAnswer": "C",
+    "explanation": "range(5, 0, -2) sinh ra dãy bắt đầu từ 5, giảm đi 2 mỗi bước và dừng trước 0. Dãy gồm các phần tử: 5, 3, 1."
+  },
+  {
+    "id": 12,
+    "topicId": "loops",
+    "question": "Đọc đoạn code sau và cho biết kết quả:\noutput = \"\"\nx = -5\nwhile x < 0:\n    x = x + 1\n    output = output + str(x) + \" \"\nprint(output)",
+    "options": [
+      "A. 5 4 3 2 1",
+      "B. -4 -3 -2 -1 0",
+      "C. -5 -4 -3 -2 -1",
+      "D. Đây là vòng lặp vô hạn"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Mỗi bước lặp tăng x trước: x=-4, output='-4 '. Cứ thế đến khi x=0, output='-4 -3 -2 -1 0 '. Vòng lặp dừng vì 0 < 0 là False."
+  },
+  {
+    "id": 13,
+    "topicId": "loops",
+    "question": "Output của đoạn chương trình sau:\nsum = 0\nvalues = [1,3,5,7]\nfor number in values:\n    sum = sum + number\nprint(sum)",
+    "options": [
+      "A. 4",
+      "B. 0",
+      "C. 7",
+      "D. 16"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Vòng lặp tính tổng các số trong danh sách values. Sum = 1 + 3 + 5 + 7 = 16."
+  },
+  {
+    "id": 14,
+    "topicId": "loops",
+    "question": "Một câu lệnh ______________ bỏ qua phần còn lại của vòng lặp và nhảy tới câu lệnh ngay sau vòng lặp.",
+    "options": [
+      "A. break",
+      "B. continue",
+      "C. if else",
+      "D. pass"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Câu lệnh break dùng để thoát ngay lập tức khỏi vòng lặp đang chạy và chuyển quyền thực thi sang câu lệnh tiếp sau vòng lặp."
+  },
+  {
+    "id": 15,
+    "topicId": "pandas",
+    "question": "Chúng ta có thể thêm một hàng mới vào DataFrame bằng cách sử dụng phương thức _____________.",
+    "options": [
+      "A. rloc[ ]",
+      "B. loc[ ]",
+      "C. iloc[ ]",
+      "D. Không có trong số các phương thức trên."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Phương thức loc[] cho phép truy xuất và gán giá trị cho một dòng mới dựa trên nhãn chỉ mục: df.loc[new_label] = values."
+  },
+  {
+    "id": 16,
+    "topicId": "pandas",
+    "question": "Đoạn mã sau tạo một dataframe có tên là 'D1' với ___________ cột.\nimport pandas as pd\ndicts = [{'a':10, 'b':20}, {'a':5, 'b':10, 'c':20}]\nD1 = pd.DataFrame(dicts)",
+    "options": [
+      "A. 1",
+      "B. 2",
+      "C. 3",
+      "D. 4"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Pandas sẽ quét qua các keys của tất cả các dicts để tạo thành danh sách các cột. Các cột gồm 'a', 'b' và 'c'. Tổng cộng 3 cột."
+  },
+  {
+    "id": 17,
+    "topicId": "pandas",
+    "question": "Chúng ta có thể tạo DataFrame từ _____?",
+    "options": [
+      "A. Mảng Numpy (Numpy arrays)",
+      "B. Danh sách các từ điển (List of Dictionaries)",
+      "C. Từ điển của các danh sách (Dictionary of Lists)",
+      "D. Tất cả các phương án trên"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Pandas DataFrame cực kỳ linh hoạt, có thể được tạo từ Numpy array, List of Dicts, Dict of Lists hoặc Series."
+  },
+  {
+    "id": 18,
+    "topicId": "pandas",
+    "question": "Trong DataFrame, tham số axis=0 đại diện cho:",
+    "options": [
+      "A. Các hàng (Rows)",
+      "B. Các cột (Columns)",
+      "C. Cả hai hàng và cột",
+      "D. Không phải trong số các lựa chọn này"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Trong Pandas, axis=0 dùng để chỉ các hàng (rows), còn axis=1 dùng để chỉ các cột (columns)."
+  },
+  {
+    "id": 19,
+    "topicId": "pandas",
+    "question": "Hàm nào sau đây được sử dụng để tải dữ liệu từ tệp CSV vào DataFrame?",
+    "options": [
+      "A. read.csv( )",
+      "B. readcsv( )",
+      "C. read_csv( )",
+      "D. Read_csv( )"
+    ],
+    "correctAnswer": "C",
+    "explanation": "read_csv() là hàm tích hợp sẵn của thư viện Pandas để đọc file CSV và lưu vào cấu trúc DataFrame."
+  },
+  {
+    "id": 20,
+    "topicId": "pandas",
+    "question": "Để xóa một cột, tham số axis của hàm drop( ) được gán giá trị _____________?",
+    "options": [
+      "A. 0",
+      "B. 1",
+      "C. 2",
+      "D. 3"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Khi gọi hàm drop() để xóa cột, ta cần thiết lập axis=1 để báo cho Pandas biết rằng cần tìm nhãn đó ở trục cột."
+  },
+  {
+    "id": 21,
+    "topicId": "pandas",
+    "question": "Phương thức nào được sử dụng để xóa hàng hoặc cột trong DataFrame?",
+    "options": [
+      "A. delete( )",
+      "B. del( )",
+      "C. drop( )",
+      "D. Không có trong số các phương án trên"
+    ],
+    "correctAnswer": "C",
+    "explanation": "drop() là phương thức tiêu chuẩn dùng để xóa hàng hoặc cột của DataFrame mà không thay đổi trực tiếp (trừ khi dùng inplace=True)."
+  },
+  {
+    "id": 22,
+    "topicId": "pandas",
+    "question": "Viết cú pháp để chuyển vị (transpose) DataFrame.",
+    "options": [
+      "A. Df1=Df1.Tranpose()",
+      "B. Df2=Df1.Transpose()",
+      "C. Df1=Df1.T",
+      "D. Df1.T=Df1"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Thuộc tính .T viết tắt của Transpose, được dùng để chuyển vị dòng thành cột và ngược lại."
+  },
+  {
+    "id": 23,
+    "topicId": "pandas",
+    "question": "df = df.drop(['Name', 'Class', 'Rollno'], axis = 1) #df là một đối tượng DataFrame. Câu lệnh trên sẽ làm gì?",
+    "options": [
+      "A. xóa ba cột có nhãn ‘Name’, ‘Class’ và ‘Rollno’",
+      "B. xóa ba hàng có nhãn ‘Name’, ‘Class’ và ‘Rollno’",
+      "C. xóa bất kỳ ba cột nào",
+      "D. trả về lỗi"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Lệnh drop với một danh sách các nhãn và axis=1 sẽ tìm và xóa các cột có tên tương ứng."
+  },
+  {
+    "id": 24,
+    "topicId": "pandas",
+    "question": "Trong số các thuộc tính sau của DataFrame, thuộc tính nào hiển thị kích thước dạng tuple (số dòng, số cột)?",
+    "options": [
+      "A. shape",
+      "B. size",
+      "C. dimension",
+      "D. values"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Thuộc tính shape trả về một tuple chứa (số dòng, số cột) của DataFrame. size trả về tổng số phần tử."
+  },
+  {
+    "id": 25,
+    "topicId": "pandas",
+    "question": "Chúng ta có thể sử dụng phương thức ______ để hợp nhất hai DataFrame?",
+    "options": [
+      "A. merge( )",
+      "B. join( )",
+      "C. append( )",
+      "D. drop( )"
+    ],
+    "correctAnswer": "A",
+    "explanation": "merge() là phương thức chính được dùng để gộp dữ liệu từ hai DataFrame dựa trên các điều kiện khoá tương tự như SQL JOIN."
+  },
+  {
+    "id": 26,
+    "topicId": "pandas",
+    "question": "Viết mã Python để xóa cột 'fee' trực tiếp trên khung dữ liệu Df1.",
+    "options": [
+      "A. delete Df1[‘fee']",
+      "B. drop Df1Col[‘Fee']",
+      "C. del Df1[Col.‘fee']",
+      "D. del Df1[‘fee']"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Từ khóa del trong Python có thể dùng để xóa phần tử của dictionary hoặc xóa cột của DataFrame: del Df1['fee']."
+  },
+  {
+    "id": 27,
+    "topicId": "pandas",
+    "question": "Hàm/Thuộc tính nào được sử dụng để tìm các giá trị từ DataFrame D sử dụng số chỉ mục nguyên?",
+    "options": [
+      "A. D.loc",
+      "B. D.iloc",
+      "C. D.index",
+      "D. Không có trong số các lựa chọn này"
+    ],
+    "correctAnswer": "B",
+    "explanation": "iloc dùng cho việc truy cập dòng/cột thông qua chỉ mục số nguyên (integer location), còn loc dùng nhãn chuỗi."
+  },
+  {
+    "id": 28,
+    "topicId": "pandas",
+    "question": "Trong Pandas, hàm được sử dụng để xóa một cột hoặc hàng trong DataFrame là:",
+    "options": [
+      "A. Remove",
+      "B. del",
+      "C. Drop",
+      "D. cancel"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Hàm drop() (hoặc phương thức .drop()) là cách phổ thông nhất để xóa các hàng hoặc các cột trong DataFrame."
+  },
+  {
+    "id": 29,
+    "topicId": "pandas",
+    "question": "Viết một câu lệnh để xóa hai cột có nhãn là 2017 và 2016 trong DataFrame 'DF'.",
+    "options": [
+      "A. print(DF.drop([2017, 2016], axis=1))",
+      "B. print(DF.drop((2017, 2016), axis=1))",
+      "C. Cả hai câu trên đều đúng",
+      "D. print(DF.drop([2017,2016],axis=0))"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Câu lệnh đúng cần truyền list nhãn [2017, 2016] và gán axis=1 để xóa ở cột."
+  },
+  {
+    "id": 30,
+    "topicId": "pandas",
+    "question": "Để xem sự thay đổi trong dữ liệu qua một khoảng thời gian chúng ta có thể sử dụng biểu đồ _________?",
+    "options": [
+      "A. Line (Biểu đồ đường)",
+      "B. Bar (Biểu đồ cột)",
+      "C. Histogram (Biểu đồ tần suất)",
+      "D. Pie (Biểu đồ tròn)"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Biểu đồ đường (Line chart) là lựa chọn tốt nhất để trực quan hóa sự thay đổi liên tục của dữ liệu theo thời gian."
+  },
+  {
+    "id": 31,
+    "topicId": "python_basics",
+    "question": "Biến nào sau đây có tên đặt KHÔNG hợp lệ trong Python?",
+    "options": [
+      "A. _my_var",
+      "B. myVar2",
+      "C. 2my_var",
+      "D. my_var_name"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Tên biến trong Python không được bắt đầu bằng chữ số."
+  },
+  {
+    "id": 32,
+    "topicId": "python_basics",
+    "question": "Kết quả của phép chia lấy phần nguyên 22 // 3 là gì?",
+    "options": [
+      "A. 7",
+      "B. 7.33",
+      "C. 1",
+      "D. 7.0"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Toán tử // thực hiện phép chia lấy phần nguyên, kết quả là 7."
+  },
+  {
+    "id": 33,
+    "topicId": "python_basics",
+    "question": "Hàm input() trong Python mặc định trả về dữ liệu kiểu nào?",
+    "options": [
+      "A. int",
+      "B. float",
+      "C. str",
+      "D. list"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Hàm input() luôn trả về dữ liệu kiểu chuỗi (string/str). Muốn dùng kiểu khác phải ép kiểu."
+  },
+  {
+    "id": 34,
+    "topicId": "python_basics",
+    "question": "Để in ra màn hình mà không tự động xuống dòng, ta cần gán tham số nào của hàm print()?",
+    "options": [
+      "A. newline=''",
+      "B. end=''",
+      "C. sep=''",
+      "D. flush=True"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Tham số end quyết định ký tự in ra cuối chuỗi, gán end='' để không xuống dòng."
+  },
+  {
+    "id": 35,
+    "topicId": "python_basics",
+    "question": "Toán tử nào được dùng để tính lũy thừa trong Python?",
+    "options": [
+      "A. ^",
+      "B. **",
+      "C. pow",
+      "D. exp"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Trong Python, toán tử ** biểu thị phép lũy thừa (ví dụ 2 ** 3 = 8)."
+  },
+  {
+    "id": 36,
+    "topicId": "data_types_conditionals",
+    "question": "Phát biểu nào sau đây là ĐÚNG về kiểu dữ liệu Tuple trong Python?",
+    "options": [
+      "A. Tuple có thể thay đổi phần tử sau khi tạo.",
+      "B. Tuple sử dụng ngoặc vuông [] để khai báo.",
+      "C. Tuple là kiểu dữ liệu bất biến (immutable).",
+      "D. Tuple không cho phép chứa các kiểu dữ liệu khác nhau."
+    ],
+    "correctAnswer": "C",
+    "explanation": "Tuple là một dãy phần tử bất biến (immutable) và được định nghĩa bằng cặp ngoặc đơn ()."
+  },
+  {
+    "id": 37,
+    "topicId": "data_types_conditionals",
+    "question": "Phương thức nào dùng để thêm một phần tử vào cuối một List trong Python?",
+    "options": [
+      "A. add()",
+      "B. append()",
+      "C. insert()",
+      "D. push()"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Hàm append() thêm phần tử vào vị trí cuối cùng của List."
+  },
+  {
+    "id": 38,
+    "topicId": "data_types_conditionals",
+    "question": "Khóa (key) của một Dictionary trong Python bắt buộc phải thuộc kiểu dữ liệu nào?",
+    "options": [
+      "A. Chỉ được là số nguyên",
+      "B. Phải thuộc kiểu mutable",
+      "C. Phải thuộc kiểu bất biến (immutable)",
+      "D. Bất kỳ kiểu dữ liệu nào"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Key của Dictionary phải băm được (hashable), nghĩa là phải thuộc kiểu bất biến (immutable) như int, float, string, tuple."
+  },
+  {
+    "id": 39,
+    "topicId": "data_types_conditionals",
+    "question": "Để khai báo một tập hợp Set chứa các phần tử duy nhất, ta sử dụng cặp ngoặc nào?",
+    "options": [
+      "A. []",
+      "B. ()",
+      "C. {}",
+      "D. <>"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Set sử dụng ngoặc nhọn {} tương tự Dictionary nhưng không có các cặp key-value."
+  },
+  {
+    "id": 40,
+    "topicId": "data_types_conditionals",
+    "question": "Làm thế nào để lấy ra danh sách tất cả các key của dictionary `d`?",
+    "options": [
+      "A. d.keys()",
+      "B. d.values()",
+      "C. d.items()",
+      "D. d.get_keys()"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Phương thức d.keys() trả về một view object chứa danh sách các key của dictionary."
+  },
+  {
+    "id": 41,
+    "topicId": "data_types_conditionals",
+    "question": "Đoạn code sau xuất ra màn hình kết quả gì?\nx = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+    "options": [
+      "A. [1, 2, 3]",
+      "B. [1, 2, 3, 4]",
+      "C. Lỗi TypeError",
+      "D. [4]"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Vì List là kiểu mutable, phép gán y = x tạo ra một tham chiếu cùng trỏ tới một vùng nhớ. Thay đổi y sẽ trực tiếp thay đổi x."
+  },
+  {
+    "id": 42,
+    "topicId": "loops",
+    "question": "Lệnh continue trong vòng lặp có tác dụng gì?",
+    "options": [
+      "A. Dừng và thoát hoàn toàn khỏi vòng lặp.",
+      "B. Bỏ qua các câu lệnh còn lại của lượt lặp này và nhảy sang lượt lặp tiếp theo.",
+      "C. Bỏ qua toàn bộ vòng lặp.",
+      "D. Khởi động lại vòng lặp từ đầu."
+    ],
+    "correctAnswer": "B",
+    "explanation": "continue kết thúc lượt lặp hiện tại và nhảy tới biểu thức điều kiện (while) hoặc phần tử tiếp theo (for)."
+  },
+  {
+    "id": 43,
+    "topicId": "loops",
+    "question": "Câu lệnh pass trong Python được dùng để làm gì?",
+    "options": [
+      "A. Thoát khỏi chương trình.",
+      "B. Bỏ qua một lượt lặp.",
+      "C. Làm câu lệnh giữ chỗ trống (placeholder) không thực hiện hành động nào.",
+      "D. Trả về kết quả cho hàm."
+    ],
+    "correctAnswer": "C",
+    "explanation": "pass là một null statement, được dùng làm placeholder khi cú pháp yêu cầu phải có lệnh nhưng chưa cần viết logic."
+  },
+  {
+    "id": 44,
+    "topicId": "loops",
+    "question": "Dãy số nào được tạo ra bởi lệnh `range(1, 10, 3)`?",
+    "options": [
+      "A. 1 4 7 10",
+      "B. 1 4 7",
+      "C. 3 6 9",
+      "D. 1 3 5 7 9"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Dãy số bắt đầu từ 1, tăng 3 đơn vị mỗi bước và kết thúc trước 10, gồm các số 1, 4, 7."
+  },
+  {
+    "id": 45,
+    "topicId": "loops",
+    "question": "Đoạn code sau chạy bao nhiêu vòng lặp?\ni = 0\nwhile i < 5:\n    print(i)\n    i += 2",
+    "options": [
+      "A. 5",
+      "B. 3",
+      "C. 2",
+      "D. Vô hạn"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Các giá trị của i được in ra lần lượt là 0, 2, 4. Khi i = 6 thì điều kiện 6 < 5 là False, vòng lặp chạy đúng 3 lần."
+  },
+  {
+    "id": 46,
+    "topicId": "loops",
+    "question": "Đoạn code sau in ra kết quả gì?\nfor i in range(3):\n    if i == 1:\n        break\n    print(i, end=' ')",
+    "options": [
+      "A. 0 1 2",
+      "B. 0 2",
+      "C. 0",
+      "D. 0 1"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Vòng lặp chạy với i=0, in ra 0. Sau đó i=1, gặp lệnh break nên lập tức thoát khỏi vòng lặp, chỉ in ra số 0."
+  },
+  {
+    "id": 47,
+    "topicId": "functions",
+    "question": "Từ khóa nào được dùng để định nghĩa một hàm trong Python?",
+    "options": [
+      "A. function",
+      "B. func",
+      "C. def",
+      "D. define"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Python sử dụng từ khóa def để bắt đầu định nghĩa một hàm."
+  },
+  {
+    "id": 48,
+    "topicId": "functions",
+    "question": "Hàm không có câu lệnh return hoặc chỉ gọi return không có tham số thì trả về giá trị gì?",
+    "options": [
+      "A. 0",
+      "B. False",
+      "C. None",
+      "D. Rỗng"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Mặc định nếu không chỉ định giá trị trả về, hàm trong Python sẽ trả về đối tượng None."
+  },
+  {
+    "id": 49,
+    "topicId": "functions",
+    "question": "Làm thế nào để thay đổi giá trị của một biến toàn cục (global variable) ngay trong một hàm?",
+    "options": [
+      "A. Khai báo biến đó với từ khóa global ở đầu hàm.",
+      "B. Sử dụng toán tử gán toàn cục := .",
+      "C. Truyền biến đó làm đối số tham chiếu.",
+      "D. Không thể thay đổi được."
+    ],
+    "correctAnswer": "A",
+    "explanation": "Từ khóa global báo cho Python biết biến trong hàm là biến toàn cục ngoài phạm vi hàm, cho phép ghi đè."
+  },
+  {
+    "id": 50,
+    "topicId": "functions",
+    "question": "Khai báo `def func(a, b=10):` có ý nghĩa gì?",
+    "options": [
+      "A. Tham số b bắt buộc phải truyền giá trị 10.",
+      "B. Tham số b có giá trị mặc định là 10.",
+      "C. Hàm trả về giá trị b là 10.",
+      "D. Lỗi cú pháp."
+    ],
+    "correctAnswer": "B",
+    "explanation": "b=10 thiết lập giá trị mặc định cho b. Khi gọi func(5), a nhận 5 và b tự động nhận 10."
+  },
+  {
+    "id": 51,
+    "topicId": "functions",
+    "question": "Tham số hình thức *args trong khai báo hàm dùng để làm gì?",
+    "options": [
+      "A. Nhận các đối số dưới dạng một Dictionary.",
+      "B. Nhận một số lượng biến đổi các đối số truyền vào dưới dạng một Tuple.",
+      "C. Chỉ định các đối số bắt buộc phải truyền.",
+      "D. Thiết lập giá trị mặc định cho tham số."
+    ],
+    "correctAnswer": "B",
+    "explanation": "*args cho phép hàm nhận một danh sách đối số vị trí tùy chọn và lưu trữ chúng dưới dạng một Tuple."
+  },
+  {
+    "id": 52,
+    "topicId": "functions",
+    "question": "Đối số **kwargs trong khai báo hàm dùng để nhận các đối số dưới dạng cấu trúc dữ liệu nào?",
+    "options": [
+      "A. List",
+      "B. Tuple",
+      "C. Dictionary",
+      "D. Set"
+    ],
+    "correctAnswer": "C",
+    "explanation": "**kwargs nhận các đối số có đặt tên (keyword arguments) dưới dạng một Dictionary."
+  },
+  {
+    "id": 53,
+    "topicId": "functions",
+    "question": "Đoạn code sau in ra giá trị nào?\ndef add_item(val, li=[]):\n    li.append(val)\n    return li\n\nprint(add_item(1))\nprint(add_item(2))",
+    "options": [
+      "A. [1] sau đó [2]",
+      "B. [1] sau đó [1, 2]",
+      "C. [1, 2] sau đó [1, 2]",
+      "D. Lỗi biên dịch"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Giá trị mặc định của đối số chỉ được khởi tạo một lần duy nhất khi định nghĩa hàm. Lần gọi thứ hai tiếp tục sử dụng danh sách cũ."
+  },
+  {
+    "id": 54,
+    "topicId": "functions",
+    "question": "Hàm nặc danh (anonymous function) trong Python được định nghĩa bằng từ khóa nào?",
+    "options": [
+      "A. def",
+      "B. anonymous",
+      "C. lambda",
+      "D. inline"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Từ khóa lambda dùng để định nghĩa các hàm ẩn danh ngắn gọn trên một dòng."
+  },
+  {
+    "id": 55,
+    "topicId": "functions",
+    "question": "Đoạn code sau xuất ra màn hình kết quả gì?\nx = 5\ndef test():\n    x = 10\ntest()\nprint(x)",
+    "options": [
+      "A. 5",
+      "B. 10",
+      "C. Lỗi UnboundLocalError",
+      "D. None"
+    ],
+    "correctAnswer": "A",
+    "explanation": "x = 10 bên trong hàm chỉ là một biến cục bộ trùng tên, không ảnh hưởng đến biến toàn cục x bên ngoài vì không khai báo global x."
+  },
+  {
+    "id": 56,
+    "topicId": "functions",
+    "question": "Hàm lambda nào sau đây trả về bình phương của một số x?",
+    "options": [
+      "A. lambda x -> x*x",
+      "B. lambda x: x**2",
+      "C. lambda x return x*x",
+      "D. def lambda(x): return x**2"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cú pháp của lambda: lambda arguments: expression. Do đó lambda x: x**2 là chính xác."
+  },
+  {
+    "id": 57,
+    "topicId": "strings",
+    "question": "Với chuỗi s = 'Programming', biểu thức s[3:6] trả về kết quả nào?",
+    "options": [
+      "A. gra",
+      "B. rog",
+      "C. rogr",
+      "D. gram"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Cắt chuỗi từ chỉ mục 3 (chữ 'r') đến sát chỉ mục 6 (chữ 'r' thứ hai), kết quả thu được là 'rog'."
+  },
+  {
+    "id": 58,
+    "topicId": "strings",
+    "question": "Phương thức nào dùng để loại bỏ các khoảng trắng thừa ở cả hai đầu của chuỗi?",
+    "options": [
+      "A. clear()",
+      "B. strip()",
+      "C. clean()",
+      "D. replace()"
+    ],
+    "correctAnswer": "B",
+    "explanation": "s.strip() xóa bỏ khoảng trắng, dấu tab, dấu xuống dòng ở đầu và cuối chuỗi s."
+  },
+  {
+    "id": 59,
+    "topicId": "strings",
+    "question": "Làm thế nào để kiểm tra một chuỗi con 'sub' có tồn tại trong chuỗi 's' hay không?",
+    "options": [
+      "A. s.contains('sub')",
+      "B. 'sub' in s",
+      "C. s.has('sub')",
+      "D. in(s, 'sub')"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Toán tử in kiểm tra xem một chuỗi con có nằm trong chuỗi lớn hơn hay không, trả về True/False."
+  },
+  {
+    "id": 60,
+    "topicId": "strings",
+    "question": "Phương thức nào dùng để tách một chuỗi thành một danh sách các chuỗi con dựa trên một ký tự phân cách?",
+    "options": [
+      "A. split()",
+      "B. join()",
+      "C. divide()",
+      "D. break()"
+    ],
+    "correctAnswer": "A",
+    "explanation": "s.split() chia chuỗi thành các phần dựa vào ký tự phân tách và trả về một List."
+  },
+  {
+    "id": 61,
+    "topicId": "strings",
+    "question": "Để đảo ngược một chuỗi s trong Python, ta dùng cú pháp lát cắt (slicing) nào?",
+    "options": [
+      "A. s[0:-1]",
+      "B. s[::-1]",
+      "C. s[-1:0]",
+      "D. s[reverse]"
+    ],
+    "correctAnswer": "B",
+    "explanation": "s[::-1] nghĩa là cắt toàn bộ chuỗi với bước nhảy là -1, giúp đảo ngược chuỗi nhanh chóng."
+  },
+  {
+    "id": 62,
+    "topicId": "strings",
+    "question": "Phương thức nào dùng để thay thế tất cả các chuỗi con 'A' bằng 'B' trong chuỗi s?",
+    "options": [
+      "A. s.replace('A', 'B')",
+      "B. s.sub('A', 'B')",
+      "C. s.change('A', 'B')",
+      "D. s.swap('A', 'B')"
+    ],
+    "correctAnswer": "A",
+    "explanation": "replace('old', 'new') trả về một chuỗi mới với các phần cũ được thay thế."
+  },
+  {
+    "id": 63,
+    "topicId": "strings",
+    "question": "Điều gì xảy ra khi thực thi lệnh: s = 'Hello'; s[0] = 'h'?",
+    "options": [
+      "A. Chuỗi s trở thành 'hello'.",
+      "B. Xảy ra lỗi TypeError.",
+      "C. Ký tự 'H' được chuyển thành 'h' nhưng giá trị không đổi.",
+      "D. Lỗi IndexException."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Chuỗi trong Python là bất biến (immutable), không cho phép gán lại phần tử qua chỉ mục."
+  },
+  {
+    "id": 64,
+    "topicId": "strings",
+    "question": "Phương thức nào trả về True nếu chuỗi chỉ chứa toàn bộ các ký tự là chữ số?",
+    "options": [
+      "A. isalpha()",
+      "B. isdigit()",
+      "C. isnumeric()",
+      "D. Cả B và C đều đúng"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Cả isdigit() và isnumeric() đều kiểm tra tính chất chữ số của chuỗi, trả về True nếu chuỗi chỉ gồm chữ số."
+  },
+  {
+    "id": 65,
+    "topicId": "strings",
+    "question": "Kết quả của phép nối chuỗi `'a' * 3` là gì?",
+    "options": [
+      "A. 'a3'",
+      "B. 'aaa'",
+      "C. Lỗi TypeError",
+      "D. ['a', 'a', 'a']"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Toán tử * dùng giữa chuỗi và số nguyên thực hiện phép nhân bản chuỗi đó."
+  },
+  {
+    "id": 66,
+    "topicId": "strings",
+    "question": "Phương thức nào dùng để tìm kiếm vị trí xuất hiện đầu tiên của một chuỗi con và trả về -1 nếu không tìm thấy?",
+    "options": [
+      "A. index()",
+      "B. find()",
+      "C. search()",
+      "D. locate()"
+    ],
+    "correctAnswer": "B",
+    "explanation": "s.find() trả về chỉ mục xuất hiện đầu tiên hoặc -1 nếu không tìm thấy. index() tương tự nhưng ném ra lỗi ValueError."
+  },
+  {
+    "id": 67,
+    "topicId": "files",
+    "question": "Chế độ mở tệp nào sau đây ghi đè lên nội dung cũ nếu tệp đã tồn tại?",
+    "options": [
+      "A. 'r'",
+      "B. 'w'",
+      "C. 'a'",
+      "D. 'x'"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Chế độ 'w' (write) mở tệp để ghi, xóa sạch nội dung cũ của tệp hoặc tạo tệp mới."
+  },
+  {
+    "id": 68,
+    "topicId": "files",
+    "question": "Để mở một tệp tin văn bản và ghi thêm nội dung vào cuối tệp, ta dùng chế độ mở tệp nào?",
+    "options": [
+      "A. 'r'",
+      "B. 'w'",
+      "C. 'a'",
+      "D. 'w+'"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Chế độ 'a' (append) cho phép ghi dữ liệu nối tiếp vào cuối tệp tin hiện tại."
+  },
+  {
+    "id": 69,
+    "topicId": "files",
+    "question": "Tại sao việc sử dụng khối lệnh 'with' lại được khuyến khích khi thao tác với tệp tin?",
+    "options": [
+      "A. Nó giúp tệp ghi nhanh hơn.",
+      "B. Nó tự động đóng tệp để giải phóng tài nguyên hệ thống khi kết thúc khối lệnh, kể cả khi xảy ra ngoại lệ.",
+      "C. Nó tự động mã hóa tệp tin.",
+      "D. Nó ngăn không cho các chương trình khác đọc tệp."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Context manager 'with' tự động gọi phương thức close() giải phóng file khi luồng thực thi đi ra ngoài."
+  },
+  {
+    "id": 70,
+    "topicId": "files",
+    "question": "Phương thức nào dùng để đọc toàn bộ nội dung của tệp tin thành một chuỗi duy nhất?",
+    "options": [
+      "A. read()",
+      "B. readline()",
+      "C. readlines()",
+      "D. readall()"
+    ],
+    "correctAnswer": "A",
+    "explanation": "f.read() tải toàn bộ nội dung tệp vào một biến kiểu str."
+  },
+  {
+    "id": 71,
+    "topicId": "files",
+    "question": "Hàm open() mặc định mở tệp ở chế độ nào nếu không truyền tham số mode?",
+    "options": [
+      "A. 'w'",
+      "B. 'r'",
+      "C. 'a'",
+      "D. 'rb'"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Mặc định mode='r' (đọc văn bản) được áp dụng khi gọi hàm open()."
+  },
+  {
+    "id": 72,
+    "topicId": "files",
+    "question": "Phương thức readlines() của tệp tin trả về kiểu dữ liệu nào?",
+    "options": [
+      "A. Một chuỗi duy nhất",
+      "B. Một danh sách (List) các chuỗi, mỗi chuỗi là một dòng",
+      "C. Một Iterator",
+      "D. Lỗi"
+    ],
+    "correctAnswer": "B",
+    "explanation": "readlines() trả về danh sách các dòng văn bản của tệp tin."
+  },
+  {
+    "id": 73,
+    "topicId": "files",
+    "question": "Muốn ghi một danh sách các chuỗi vào tệp tin mà không cần dùng vòng lặp, ta dùng phương thức nào?",
+    "options": [
+      "A. write()",
+      "B. writelines()",
+      "C. writeall()",
+      "D. dump()"
+    ],
+    "correctAnswer": "B",
+    "explanation": "f.writelines(list_of_strings) nhận một list các chuỗi và ghi chúng tuần tự vào tệp tin."
+  },
+  {
+    "id": 74,
+    "topicId": "files",
+    "question": "Chế độ mở file 'rb' có ý nghĩa gì?",
+    "options": [
+      "A. Đọc tệp văn bản thông thường",
+      "B. Đọc tệp tin ở chế độ nhị phân (binary)",
+      "C. Đọc ghi tệp tin kết hợp",
+      "D. Đọc ngược tệp tin từ dưới lên"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Ký tự 'b' là binary, 'rb' là đọc tệp tin dưới dạng nhị phân (thường dùng cho ảnh, file nén)."
+  },
+  {
+    "id": 75,
+    "topicId": "files",
+    "question": "Để kiểm tra xem một tệp tin có tồn tại trên đĩa cứng trước khi mở hay không, ta nên dùng module nào?",
+    "options": [
+      "A. math",
+      "B. os.path",
+      "C. sys",
+      "D. file"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Hàm os.path.exists(path) hoặc os.path.isfile(path) kiểm tra sự tồn tại của tệp tin."
+  },
+  {
+    "id": 76,
+    "topicId": "files",
+    "question": "Phương thức flush() của đối tượng tệp tin dùng để làm gì?",
+    "options": [
+      "A. Đóng tệp ngay lập tức.",
+      "B. Ép dữ liệu từ bộ nhớ đệm (buffer) ghi ngay xuống đĩa cứng mà không cần đóng tệp.",
+      "C. Xóa sạch nội dung tệp tin.",
+      "D. Giải phóng bộ nhớ RAM của chương trình."
+    ],
+    "correctAnswer": "B",
+    "explanation": "flush() đẩy dữ liệu đang chờ trong buffer ghi trực tiếp xuống file vật lý."
+  },
+  {
+    "id": 77,
+    "topicId": "modules_libraries",
+    "question": "Lệnh import nào sau đây chỉ nhập hàm sqrt từ module math để gọi trực tiếp?",
+    "options": [
+      "A. import math.sqrt",
+      "B. from math import sqrt",
+      "C. import sqrt from math",
+      "D. math.import(sqrt)"
+    ],
+    "correctAnswer": "B",
+    "explanation": "from module import function cho phép import trực tiếp tên hàm vào global namespace."
+  },
+  {
+    "id": 78,
+    "topicId": "modules_libraries",
+    "question": "Hàm nào trong module random dùng để chọn ngẫu nhiên một phần tử từ một danh sách?",
+    "options": [
+      "A. random()",
+      "B. choice()",
+      "C. randint()",
+      "D. sample()"
+    ],
+    "correctAnswer": "B",
+    "explanation": "random.choice(sequence) chọn ngẫu nhiên một phần tử từ chuỗi/danh sách truyền vào."
+  },
+  {
+    "id": 79,
+    "topicId": "modules_libraries",
+    "question": "Hàm ceil(x) trong module math dùng để làm gì?",
+    "options": [
+      "A. Làm tròn số thực x xuống số nguyên gần nhất.",
+      "B. Làm tròn số thực x lên số nguyên gần nhất.",
+      "C. Tính căn bậc hai của x.",
+      "D. Lấy phần nguyên của số thực x."
+    ],
+    "correctAnswer": "B",
+    "explanation": "math.ceil(x) là hàm trần, làm tròn lên số nguyên lớn hơn hoặc bằng x."
+  },
+  {
+    "id": 80,
+    "topicId": "modules_libraries",
+    "question": "Hàm random.randint(1, 6) có thể sinh ra các số nguyên nào?",
+    "options": [
+      "A. Từ 1 đến 5",
+      "B. Từ 1 đến 6 (bao gồm cả 1 và 6)",
+      "C. Từ 2 đến 5",
+      "D. Các số thực ngẫu nhiên từ 1.0 đến 6.0"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Hàm randint(a, b) sinh số nguyên ngẫu nhiên trong đoạn [a, b] bao gồm cả hai điểm mút."
+  },
+  {
+    "id": 81,
+    "topicId": "modules_libraries",
+    "question": "Để cài đặt một gói thư viện bên thứ ba từ Internet, công cụ dòng lệnh nào được dùng mặc định?",
+    "options": [
+      "A. python-install",
+      "B. pip",
+      "C. npm",
+      "D. get-library"
+    ],
+    "correctAnswer": "B",
+    "explanation": "pip (Python Package Index installer) là trình quản lý gói thư viện chuẩn cho Python."
+  },
+  {
+    "id": 82,
+    "topicId": "modules_libraries",
+    "question": "Module nào có sẵn dùng để xử lý dữ liệu ngày tháng và thời gian?",
+    "options": [
+      "A. date",
+      "B. datetime",
+      "C. time",
+      "D. calendar"
+    ],
+    "correctAnswer": "B",
+    "explanation": "datetime là module tiêu chuẩn để làm việc với date, time, timezone."
+  },
+  {
+    "id": 83,
+    "topicId": "modules_libraries",
+    "question": "Lệnh `import math as m` có mục đích gì?",
+    "options": [
+      "A. Chỉ nhập một phần của module math.",
+      "B. Thiết lập tên đại diện (alias) ngắn gọn cho module math.",
+      "C. Đổi tên module trên đĩa cứng.",
+      "D. Giảm dung lượng RAM khi import."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Từ khóa as tạo bí danh để viết code ngắn gọn hơn (m.sqrt() thay vì math.sqrt())."
+  },
+  {
+    "id": 84,
+    "topicId": "modules_libraries",
+    "question": "Hàm nào trong module math trả về giá trị tuyệt đối của một số?",
+    "options": [
+      "A. abs()",
+      "B. fabs()",
+      "C. absolute()",
+      "D. Cả A và B đều đúng"
+    ],
+    "correctAnswer": "D",
+    "explanation": "abs() là hàm built-in của Python, còn math.fabs() trả về trị tuyệt đối kiểu số thực float. Cả hai đều dùng được."
+  },
+  {
+    "id": 85,
+    "topicId": "modules_libraries",
+    "question": "Làm thế nào để lấy ra danh sách các đối số dòng lệnh truyền vào script Python?",
+    "options": [
+      "A. os.argv",
+      "B. sys.argv",
+      "C. sys.args",
+      "D. env.args"
+    ],
+    "correctAnswer": "B",
+    "explanation": "sys.argv là một danh sách chứa các đối số dòng lệnh truyền vào chương trình Python."
+  },
+  {
+    "id": 86,
+    "topicId": "modules_libraries",
+    "question": "Module nào hỗ trợ nén và giải nén các tệp tin lưu trữ định dạng .zip?",
+    "options": [
+      "A. compress",
+      "B. zipfile",
+      "C. tarfile",
+      "D. unzip"
+    ],
+    "correctAnswer": "B",
+    "explanation": "zipfile là module tiêu chuẩn của Python để thao tác tạo và đọc tệp ZIP."
+  },
+  {
+    "id": 87,
+    "topicId": "numpy",
+    "question": "Đặc trưng quan trọng nhất của mảng NumPy ndarray so với List của Python là gì?",
+    "options": [
+      "A. ndarray có thể chứa các phần tử có kiểu dữ liệu khác nhau.",
+      "B. ndarray yêu cầu tất cả các phần tử phải cùng kiểu dữ liệu (homogeneous) để tối ưu hiệu năng tính toán.",
+      "C. ndarray không hỗ trợ cắt mảng (slicing).",
+      "D. ndarray chậm hơn List thông thường."
+    ],
+    "correctAnswer": "B",
+    "explanation": "Mảng ndarray lưu trữ dữ liệu đồng nhất trên các ô nhớ liên tục để tối ưu hóa tính toán song song."
+  },
+  {
+    "id": 88,
+    "topicId": "numpy",
+    "question": "Thuộc tính nào của mảng NumPy cho biết kích thước (số dòng, số cột) của nó?",
+    "options": [
+      "A. ndim",
+      "B. shape",
+      "C. size",
+      "D. length"
+    ],
+    "correctAnswer": "B",
+    "explanation": "shape trả về tuple kích thước mảng. size trả về tổng số phần tử. ndim trả về số chiều."
+  },
+  {
+    "id": 89,
+    "topicId": "numpy",
+    "question": "Hàm nào dùng để tạo một mảng NumPy chứa toàn bộ giá trị là số 0?",
+    "options": [
+      "A. np.array(0)",
+      "B. np.zeros()",
+      "C. np.empty()",
+      "D. np.nulls()"
+    ],
+    "correctAnswer": "B",
+    "explanation": "np.zeros(shape) tạo mảng chứa toàn số 0 với kích thước chỉ định."
+  },
+  {
+    "id": 90,
+    "topicId": "numpy",
+    "question": "Để nhân hai ma trận NumPy theo đúng quy tắc toán học (Matrix Multiplication), ta dùng toán tử nào?",
+    "options": [
+      "A. *",
+      "B. @",
+      "C. **",
+      "D. x"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Toán tử * nhân từng phần tử tương ứng (element-wise), còn toán tử @ thực hiện nhân ma trận đại số tuyến tính."
+  },
+  {
+    "id": 91,
+    "topicId": "numpy",
+    "question": "Hàm np.arange(1, 10, 2) trả về kết quả nào?",
+    "options": [
+      "A. [1, 3, 5, 7, 9]",
+      "B. array([1, 3, 5, 7, 9])",
+      "C. [1, 2, 3, 4, 5, 6, 7, 8, 9]",
+      "D. array([1, 2, 3, 4, 5, 6, 7, 8, 9])"
+    ],
+    "correctAnswer": "B",
+    "explanation": "np.arange() trả về một đối tượng ndarray chứa các số lẻ từ 1 đến 9."
+  },
+  {
+    "id": 92,
+    "topicId": "numpy",
+    "question": "Hàm np.linspace(0, 10, 5) tạo ra mảng gồm bao nhiêu phần tử phân bố đều?",
+    "options": [
+      "A. 10 phần tử",
+      "B. 5 phần tử",
+      "C. 50 phần tử",
+      "D. 2 phần tử"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Tham số thứ 3 của linspace quyết định số lượng phần tử phân bố đều từ điểm đầu đến điểm cuối."
+  },
+  {
+    "id": 93,
+    "topicId": "numpy",
+    "question": "Thuộc tính dtype của ndarray cho biết thông tin gì?",
+    "options": [
+      "A. Số chiều của mảng.",
+      "B. Kiểu dữ liệu của các phần tử trong mảng.",
+      "C. Tổng kích thước mảng.",
+      "D. Phương thức lưu trữ dữ liệu."
+    ],
+    "correctAnswer": "B",
+    "explanation": "dtype (data type) chỉ định kiểu dữ liệu của các phần tử trong mảng NumPy (ví dụ int64, float32)."
+  },
+  {
+    "id": 94,
+    "topicId": "numpy",
+    "question": "Với mảng 2 chiều a có kích thước (3, 4), lệnh `a.reshape(2, 6)` sẽ:",
+    "options": [
+      "A. Thay đổi kích thước mảng a thành 2 hàng, 6 cột mà không đổi dữ liệu.",
+      "B. Trả về lỗi vì không tương thích số phần tử.",
+      "C. Xóa bớt phần tử thừa.",
+      "D. Xoay ma trận 90 độ."
+    ],
+    "correctAnswer": "A",
+    "explanation": "reshape đổi hình dạng mảng miễn là tổng số phần tử không đổi (3*4 = 2*6 = 12)."
+  },
+  {
+    "id": 95,
+    "topicId": "numpy",
+    "question": "Làm thế nào để tính tổng tất cả các phần tử của mảng a trong NumPy?",
+    "options": [
+      "A. a.sum()",
+      "B. np.sum(a)",
+      "C. sum(a)",
+      "D. Cả A và B đều đúng"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Cả phương thức thành viên a.sum() và hàm np.sum(a) đều tính tổng tất cả phần tử của mảng ndarray."
+  },
+  {
+    "id": 96,
+    "topicId": "numpy",
+    "question": "Để lấy ra phần tử ở dòng thứ 2, cột thứ 3 của mảng 2 chiều a, ta dùng cú pháp nào?",
+    "options": [
+      "A. a[2, 3]",
+      "B. a[1, 2]",
+      "C. a[2][3]",
+      "D. a[1][2]"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Chỉ mục trong Python bắt đầu từ 0. Dòng thứ 2 ứng với index 1, cột thứ 3 ứng với index 2. Cú pháp a[1, 2] tối ưu hơn a[1][2]."
+  },
+  {
+    "id": 97,
+    "topicId": "regex",
+    "question": "Module nào trong thư viện tiêu chuẩn của Python được dùng để làm việc với biểu thức chính quy (Regex)?",
+    "options": [
+      "A. regex",
+      "B. re",
+      "C. expression",
+      "D. pattern"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Module re cung cấp các hàm tìm kiếm, so khớp mẫu chuỗi bằng Regex trong Python."
+  },
+  {
+    "id": 98,
+    "topicId": "regex",
+    "question": "Hàm nào trong module re dùng để tìm TẤT CẢ các chuỗi con khớp với mẫu và trả về dưới dạng danh sách?",
+    "options": [
+      "A. search()",
+      "B. match()",
+      "C. findall()",
+      "D. find()"
+    ],
+    "correctAnswer": "C",
+    "explanation": "re.findall() quét qua chuỗi và trả về list tất cả các đoạn khớp mẫu."
+  },
+  {
+    "id": 99,
+    "topicId": "regex",
+    "question": "Ký tự đại diện `\\d` trong Regex đại diện cho nhóm ký tự nào?",
+    "options": [
+      "A. Bất kỳ ký tự chữ cái nào.",
+      "B. Bất kỳ chữ số nào từ 0 đến 9.",
+      "C. Ký tự khoảng trắng.",
+      "D. Điểm bắt đầu của chuỗi."
+    ],
+    "correctAnswer": "B",
+    "explanation": "\\d tương đương với tập ký tự [0-9], đại diện cho chữ số."
+  },
+  {
+    "id": 100,
+    "topicId": "regex",
+    "question": "Trong Regex, ký tự neo `^` được dùng để làm gì?",
+    "options": [
+      "A. Khớp ở vị trí kết thúc chuỗi.",
+      "B. Khớp ở vị trí bắt đầu chuỗi.",
+      "C. Đại diện cho bất kỳ ký tự nào.",
+      "D. Lặp lại 1 hoặc nhiều lần."
+    ],
+    "correctAnswer": "B",
+    "explanation": "^ là ký tự neo đại diện cho điểm bắt đầu của dòng/chuỗi."
+  },
+  {
+    "id": 101,
+    "topicId": "regex",
+    "question": "Bộ định lượng `+` trong Regex chỉ định sự lặp lại của ký tự đứng trước bao nhiêu lần?",
+    "options": [
+      "A. Từ 0 hoặc nhiều lần.",
+      "B. Từ 1 hoặc nhiều lần.",
+      "C. Đúng 1 lần.",
+      "D. Từ 0 hoặc 1 lần."
+    ],
+    "correctAnswer": "B",
+    "explanation": "+ đại diện cho lặp lại ít nhất 1 lần (1 hoặc nhiều lần). * đại diện cho 0 hoặc nhiều lần."
+  },
+  {
+    "id": 102,
+    "topicId": "regex",
+    "question": "Hàm re.sub(pattern, replacement, string) thực hiện chức năng gì?",
+    "options": [
+      "A. Tách chuỗi thành danh sách.",
+      "B. Tìm kiếm và thay thế tất cả các chuỗi con khớp với mẫu bằng chuỗi thay thế.",
+      "C. Kiểm tra xem chuỗi có khớp mẫu không.",
+      "D. Đếm số lượng kết quả trùng khớp."
+    ],
+    "correctAnswer": "B",
+    "explanation": "sub (substitute) thay thế các chuỗi con khớp mẫu bằng replacement."
+  },
+  {
+    "id": 103,
+    "topicId": "regex",
+    "question": "Sự khác biệt chính giữa re.match() và re.search() là gì?",
+    "options": [
+      "A. re.match() tìm kiếm ở bất kỳ vị trí nào, re.search() chỉ khớp từ đầu chuỗi.",
+      "B. re.match() chỉ khớp mẫu ngay ở đầu chuỗi, còn re.search() tìm kiếm mẫu ở bất kỳ vị trí nào trong toàn bộ chuỗi.",
+      "C. re.match() trả về chuỗi, re.search() trả về số nguyên.",
+      "D. Không có sự khác biệt."
+    ],
+    "correctAnswer": "B",
+    "explanation": "match() bắt buộc phải khớp ngay ký tự đầu tiên của chuỗi, nếu không sẽ trả về None. search() quét toàn chuỗi."
+  },
+  {
+    "id": 104,
+    "topicId": "regex",
+    "question": "Ký tự đại diện `\\w` trong Regex tương đương với nhóm ký tự nào?",
+    "options": [
+      "A. [a-zA-Z0-9_] (chữ, số và dấu gạch dưới)",
+      "B. [0-9] (chữ số)",
+      "C. [a-z] (chữ thường)",
+      "D. Không phải chữ và số"
+    ],
+    "correctAnswer": "A",
+    "explanation": "\\w đại diện cho ký tự cấu thành từ (word character), gồm chữ cái, chữ số và dấu gạch dưới."
+  },
+  {
+    "id": 105,
+    "topicId": "regex",
+    "question": "Mẫu Regex nào sau đây khớp với định dạng một email đơn giản (dạng text@domain.com)?",
+    "options": [
+      "A. \\d+@\\d+\\.\\d+",
+      "B. [\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,4}",
+      "C. ^email$",
+      "D. .*@.*"
+    ],
+    "correctAnswer": "B",
+    "explanation": "[\\w.-]+ khớp với tên hộp thư, @ là bắt buộc, sau đó đến domain, và đuôi tên miền .com/.vn dài từ 2 đến 4 ký tự."
+  },
+  {
+    "id": 106,
+    "topicId": "regex",
+    "question": "Để tìm các từ bắt đầu bằng chữ 'P' trong chuỗi, mẫu Regex nào sau đây là phù hợp?",
+    "options": [
+      "A. \\bP\\w*",
+      "B. ^P",
+      "C. P$",
+      "D. [^P]"
+    ],
+    "correctAnswer": "A",
+    "explanation": "\\b chỉ định ranh giới từ (word boundary), P là chữ cái bắt đầu, \\w* khớp các ký tự tiếp theo của từ đó."
+  },
+  {
+    "id": 107,
+    "topicId": "python_basics",
+    "question": "Có bao nhiêu khai báo xâu kí tự hợp lệ trong số các khai báo sau?\n1) “123_@##”\n2) “hoa hau”\n3) “346h7g84jd”\n4) python\n5) “01028475”\n6) 123456",
+    "options": [
+      "A. 5",
+      "B. 6",
+      "C. 4",
+      "D. 3"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Các khai báo 1, 2, 3, 5 là các xâu kí tự hợp lệ vì chúng được bao quanh bởi cặp nháy kép. Khai báo 4 (python) được hiểu là một biến, còn 6 (123456) là một số nguyên."
+  },
+  {
+    "id": 108,
+    "topicId": "python_basics",
+    "question": "Chuỗi “1234%^^%TFRESDRG” trong Python có độ dài bằng bao nhiêu?",
+    "options": [
+      "A. 16",
+      "B. 17",
+      "C. 18",
+      "D. 15"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Chuỗi '1234%^^%TFRESDRG' có đúng 16 ký tự kể cả chữ, số và ký tự đặc biệt."
+  },
+  {
+    "id": 109,
+    "topicId": "data_types_conditionals",
+    "question": "Cho biết giá trị của x sau khi thực hiện đoạn lệnh sau:\nx, a, b = 0, 5, 5\nif a > 0:\n    if b < 0:\n        x = x + 5\n    elif a > 5:\n        x = x + 4\n    else:\n        x = x + 3\nelse:\n    x = x + 2",
+    "options": [
+      "A. 3",
+      "B. 5",
+      "C. 4",
+      "D. 2"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Vì a = 5 > 0 là True, chương trình đi vào khối if bên trong. Ở đây, b = 5 < 0 là False, và a > 5 cũng là False, do đó nhánh else cuối cùng của khối trong được thực thi: x = x + 3 = 3."
+  },
+  {
+    "id": 110,
+    "topicId": "data_types_conditionals",
+    "question": "Cho biết kết quả sau khi thực hiện đoạn lệnh sau:\na, b = 12, 5\nprint('True') if b // a else print('False')",
+    "options": [
+      "A. False",
+      "B. Lỗi",
+      "C. True",
+      "D. Tất cả đều sai"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Phép chia lấy nguyên b // a = 5 // 12 = 0. Trong cấu trúc điều kiện của Python, số 0 tương đương với False, nên câu lệnh rẽ nhánh inline sẽ chạy nhánh else và in ra 'False'."
+  },
+  {
+    "id": 111,
+    "topicId": "data_types_conditionals",
+    "question": "Cho biết kết quả sau khi thực hiện đoạn lệnh sau:\nprint('False') if -3 else print('True')",
+    "options": [
+      "A. False",
+      "B. Lỗi",
+      "C. True",
+      "D. Tất cả đều sai"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Bất kỳ số nguyên nào khác 0 (bao gồm cả số âm như -3) đều tương đương với giá trị chân trị True trong Python. Do đó biểu thức 'False' if -3 được chạy và in ra 'False'."
+  },
+  {
+    "id": 112,
+    "topicId": "data_types_conditionals",
+    "question": "Cho biết kết quả sau khi thực hiện đoạn lệnh sau:\nprint('False') if None else print('True')",
+    "options": [
+      "A. False",
+      "B. Lỗi",
+      "C. True",
+      "D. Tất cả đều sai"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Đối tượng None đại diện cho giá trị rỗng/không tồn tại và tương đương với False trong biểu thức điều kiện. Do đó câu lệnh rẽ nhánh in ra nhánh else là 'True'."
+  },
+  {
+    "id": 113,
+    "topicId": "data_types_conditionals",
+    "question": "Đoạn lệnh nào dùng để kiểm tra một số tự nhiên n là chẵn hay lẻ?",
+    "options": [
+      "A. print('Lẻ') if n % 2 != 0 else print('Chẵn')",
+      "B. print('Lẻ') if n // 2 != 0 else print('Chẵn')",
+      "C. print('Lẻ') if n % 2 == 0 else print('Chẵn')",
+      "D. print('Lẻ') if n // 2 == 0 else print('Chẵn')"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Số n lẻ khi n % 2 != 0 (số dư khác 0), ngược lại là số chẵn."
+  },
+  {
+    "id": 114,
+    "topicId": "data_types_conditionals",
+    "question": "Phát biểu nào sau đây là ĐÚNG với khối lệnh finally trong cấu trúc try/except/finally?",
+    "options": [
+      "A. Chỉ được thực hiện khi không phát sinh lỗi",
+      "B. Luôn được thực hiện bất kể có lỗi xảy ra hay không",
+      "C. Chỉ được thực hiện khi có lỗi xảy ra",
+      "D. Chỉ được thực hiện khi có lỗi ZeroDivisionError"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Khối lệnh đặt trong finally luôn được thực thi sau khi chạy xong các khối try và except, dùng để giải phóng tài nguyên."
+  },
+  {
+    "id": 115,
+    "topicId": "data_types_conditionals",
+    "question": "Trong Python, cấu trúc try … except … được dùng để làm gì?",
+    "options": [
+      "A. Xử lý các ngoại lệ (errors) tránh chương trình bị crash/dừng đột ngột",
+      "B. Kiểm tra cú pháp của chương trình xem có chạy đúng nghiệp vụ không",
+      "C. Để bắt lấy các giá trị đang xử lý trong khối lệnh",
+      "D. Để tối ưu tốc độ thực thi của vòng lặp"
+    ],
+    "correctAnswer": "A",
+    "explanation": "try ... except giúp bắt lấy các ngoại lệ phát sinh lúc runtime và định nghĩa cách xử lý, tránh dừng ứng dụng đột ngột."
+  },
+  {
+    "id": 116,
+    "topicId": "data_types_conditionals",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\ntry:\n    print(\"throw\")\nexcept:\n    print(\"except\")\nfinally:\n    print(\"finally\")",
+    "options": [
+      "A. finally – throw",
+      "B. finally – except",
+      "C. except – finally",
+      "D. throw – finally"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Khối try thực hiện thành công và in ra 'throw'. Không có lỗi nên khối except bị bỏ qua. Cuối cùng khối finally luôn chạy nên in tiếp 'finally'."
+  },
+  {
+    "id": 117,
+    "topicId": "data_types_conditionals",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\nnumber = 5.0\ntry:\n    r = 10/number\n    print(r)\nexcept:\n    print(\"Oops! Error occurred.\")",
+    "options": [
+      "A. Oops! Error occurred.",
+      "B. 2.0",
+      "C. 2.0 Oops! Error occurred.",
+      "D. 5.0"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Phép chia 10 / 5.0 bằng số thực 2.0 và diễn ra thành công không gây lỗi, do đó in ra 2.0."
+  },
+  {
+    "id": 118,
+    "topicId": "loops",
+    "question": "Đoạn chương trình sau dùng để giải quyết bài toán gì?\nt = 0\nfor i in range(1, 101):\n    if(i % 3 == 0 and i % 5 == 0):\n        t = t + i\nprint(t)",
+    "options": [
+      "A. Tính tổng các số chia hết cho 3 hoặc 5 trong khoảng từ 1 đến 100",
+      "B. Tính tổng các số chia hết cho 3 hoặc 5 trong khoảng từ 1 đến 101",
+      "C. Tính tổng các số chia hết cho 3 và 5 trong khoảng từ 1 đến 101",
+      "D. Tính tổng các số chia hết cho 3 và 5 trong khoảng từ 1 đến 100"
+    ],
+    "correctAnswer": "D",
+    "explanation": "range(1, 101) sinh dãy số từ 1 đến 100. Điều kiện i % 3 == 0 and i % 5 == 0 lọc các số đồng thời chia hết cho 3 và 5."
+  },
+  {
+    "id": 119,
+    "topicId": "loops",
+    "question": "Trong các phát biểu sau về cấu trúc lặp, phát biểu nào chưa chính xác?",
+    "options": [
+      "A. while là lệnh lặp với số lần lặp chưa biết trước",
+      "B. for là lệnh lặp với số lần xác định trước",
+      "C. Khối lệnh lặp while được thực hiện cho đến khi điều kiện có giá trị >= False",
+      "D. Số lần lặp của lệnh lặp for thường được xác định bởi vùng giá trị hoặc tập hợp được duyệt"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Trong Python, điều kiện của while được kiểm tra tính chân trị (True/False). Vòng lặp chạy chừng nào điều kiện còn là True (hoặc tương đương True), và dừng khi điều kiện bằng False (hoặc tương đương False), không dùng phép toán so sánh `>= False`."
+  },
+  {
+    "id": 120,
+    "topicId": "loops",
+    "question": "Cho biết ý nghĩa của biến k sau khi chạy đoạn chương trình sau:\nn = int(input('Nhập n <= 1000: '))\nk = 0; n = abs(n)\nwhile n != 0:\n    n //= 10\n    k += 1",
+    "options": [
+      "A. k là số chữ số của n",
+      "B. k là chữ số hàng đơn vị của n",
+      "C. k là chữ số lớn nhất của n",
+      "D. k là số chữ số khác 0 của n"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Vòng lặp thực hiện chia lấy nguyên n cho 10 ở mỗi bước lặp cho đến khi n bằng 0. Mỗi lượt chia tương ứng với việc bớt đi 1 chữ số của n, do đó k ghi nhận số chữ số của n."
+  },
+  {
+    "id": 121,
+    "topicId": "loops",
+    "question": "Cho biết kết quả của biến x sau khi thực hiện đoạn chương trình sau:\ni = 0; x = 0\nwhile i < 10:\n    if i % 2 == 0:\n        x += 1\n    i += 1",
+    "options": [
+      "A. 2",
+      "B. 3",
+      "C. 4",
+      "D. 5"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Vòng lặp duyệt i từ 0 đến 9. Biến x được tăng lên khi i là số chẵn (0, 2, 4, 6, 8). Có đúng 5 số chẵn nên x = 5."
+  },
+  {
+    "id": 122,
+    "topicId": "loops",
+    "question": "Câu lệnh dưới đây dùng để giải bài toán nào?\nwhile m != n:\n    if m > n:\n        m = m - n\n    else:\n        n = n - m",
+    "options": [
+      "A. Tìm ước chung lớn nhất UCLN của m và n",
+      "B. Tìm bội chung nhỏ nhất BCNN của m và n",
+      "C. Tìm hiệu nhỏ nhất của m và n",
+      "D. Tìm số dư lớn nhất"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Đây là thuật toán trừ liên tiếp (thuật toán Euclid) để tìm ước chung lớn nhất của hai số nguyên dương m và n."
+  },
+  {
+    "id": 123,
+    "topicId": "loops",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\nfor i in range(20): \n    if i == 10: \n        break\n    else: \n        print(i, end = \"\") \nelse: \n    print(\"*\")",
+    "options": [
+      "A. 0123456789*",
+      "B. 123456789",
+      "C. 0123456789",
+      "D. 123456789*"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Vòng lặp in các số từ 0 đến 9. Khi i = 10, lệnh break thực thi và kết thúc vòng lặp ngay lập tức. Khối else của cấu trúc for chỉ chạy khi vòng lặp hoàn thành bình thường (không bị break chặn), nên ký tự '*' không được in ra."
+  },
+  {
+    "id": 124,
+    "topicId": "loops",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\nfor i in range(5, 7):\n    print(str(i) * 3)",
+    "options": [
+      "A. 555 và 666 (in trên hai dòng riêng biệt)",
+      "B. 15 và 18 (in trên hai dòng riêng biệt)",
+      "C. 555 666 777",
+      "D. Lỗi"
+    ],
+    "correctAnswer": "A",
+    "explanation": "range(5, 7) sinh ra 5 và 6. Lệnh `str(i) * 3` thực hiện lặp lại chuỗi ký tự đó 3 lần, lần lượt in ra '555' và '666' trên các dòng."
+  },
+  {
+    "id": 125,
+    "topicId": "loops",
+    "question": "Điền vào dấu … để được kết quả in ra là 66 và 44 trên các dòng:\nfor i in range(6, 0, … ):\n    print(str(i) * 2)",
+    "options": [
+      "A. 0",
+      "B. None",
+      "C. -2",
+      "D. -1"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Để tạo ra dãy số bắt đầu từ 6, giảm dần về phía 0 và chỉ chứa các số chẵn (6, 4, dừng trước 0), bước nhảy (step) của range phải là -2."
+  },
+  {
+    "id": 126,
+    "topicId": "functions",
+    "question": "Chương trình sau ra kết quả bao nhiêu?\ndef get_sum(num):\n    tmp = 0\n    for i in num:\n        tmp += i\n    return tmp\nresult = get_sum((1, 2, 3, 4, 5))\nprint(result)",
+    "options": [
+      "A. 12",
+      "B. 13",
+      "C. 14",
+      "D. 15"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Đối số truyền vào hàm get_sum là tuple (1, 2, 3, 4, 5). Hàm thực hiện tính tổng và trả về kết quả 1 + 2 + 3 + 4 + 5 = 15."
+  },
+  {
+    "id": 127,
+    "topicId": "functions",
+    "question": "Chương trình sau bị lỗi ở dòng lệnh thứ bao nhiêu?\n(1) a = \"Hello World!\"\n(2) def say(i):\n(3)     return a + i\n(4) say(13)\n(5) print(a)",
+    "options": [
+      "A. Dòng (2)",
+      "B. Dòng (3)",
+      "C. Dòng (4)",
+      "D. Dòng (5)"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Lỗi xảy ra ở dòng (4) khi thực hiện lời gọi hàm say(13). Bên trong hàm thực hiện phép cộng `a + i` (trong đó a là 'Hello World!' kiểu chuỗi, i là 13 kiểu số nguyên), phép cộng chuỗi với số nguyên này gây ra TypeError."
+  },
+  {
+    "id": 128,
+    "topicId": "functions",
+    "question": "Chương trình sau bị lỗi ở dòng lệnh thứ bao nhiêu?\n(1) def add(a, b):\n(2)     x = a + b\n(3)     return(x)\n(4) add(1, 2)\n(5) add(5, 6)",
+    "options": [
+      "A. Dòng (2)",
+      "B. Dòng (3)",
+      "C. Dòng (4)",
+      "D. Không lỗi"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Chương trình được định nghĩa và gọi hàm hoàn toàn hợp lệ, không phát sinh lỗi."
+  },
+  {
+    "id": 129,
+    "topicId": "functions",
+    "question": "Chương trình sau bị lỗi cú pháp ở dòng lệnh thứ bao nhiêu?\n(1) def add(a, b)\n(2)     sum = a + b\n(3)     return sum",
+    "options": [
+      "A. Dòng (1)",
+      "B. Dòng (2)",
+      "C. Dòng (3)",
+      "D. Không lỗi"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Khai báo hàm ở dòng (1) thiếu dấu hai chấm `:` ở cuối định nghĩa để bắt đầu khối lệnh của hàm."
+  },
+  {
+    "id": 130,
+    "topicId": "functions",
+    "question": "Chương trình sau hiển thị kết quả như thế nào?\ndef ham():\n    print(\"Hello\")\nham(\"Sweden\")\nham(\"India\")",
+    "options": [
+      "A. Sweden, India",
+      "B. Sweden",
+      "C. Hello, Hello",
+      "D. Chương trình bị lỗi"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Hàm ham() được định nghĩa không nhận tham số nào, nhưng khi gọi lại truyền vào đối số dạng chuỗi ('Sweden', 'India') nên phát sinh lỗi TypeError."
+  },
+  {
+    "id": 131,
+    "topicId": "functions",
+    "question": "Chọn phát biểu ĐÚNG trong các phát biểu sau về hàm:",
+    "options": [
+      "A. Lời gọi hàm không có lỗi nếu tham số được truyền chưa có giá trị",
+      "B. Số lượng đối số được truyền vào hàm phải khớp với số tham số trong khai báo của hàm (nếu không có tham số mặc định)",
+      "C. Tham số là giá trị cụ thể được truyền vào khi gọi hàm",
+      "D. Tất cả các phát biểu trên đều đúng"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Đại lượng khi định nghĩa hàm gọi là tham số (parameter), đại lượng thực tế truyền vào khi gọi hàm gọi là đối số (argument). Số lượng đối số truyền vào phải khớp với tham số khai báo."
+  },
+  {
+    "id": 132,
+    "topicId": "functions",
+    "question": "Phát biểu nào sau đây là SAI về hàm và đối số?",
+    "options": [
+      "A. Một hàm khi khai báo chỉ có một tham số nhưng khi gọi hàm có thể truyền vào 2 đối số bất kỳ",
+      "B. Tham số được định nghĩa khi khai báo hàm",
+      "C. Tham số và đối số có một số điểm khác biệt về khái niệm",
+      "D. Khi gọi hàm, các tham số sẽ được truyền giá trị thông qua đối số"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Nếu định nghĩa hàm chỉ có 1 tham số (không dùng *args), việc gọi hàm với 2 đối số sẽ trực tiếp ném ra lỗi TypeError."
+  },
+  {
+    "id": 133,
+    "topicId": "functions",
+    "question": "Hoàn thành chương trình kiểm tra số nguyên tố (True - là SNT, False - Không là SNT):\ndef prime(n):\n    c = 0; k = 1\n    while(k<n):\n        if n%k == 0:\n            c = c + 1\n        k = k+ 1\n    if c == 1:\n        return (…)\n    else:\n        return (…)",
+    "options": [
+      "A. True, False",
+      "B. True, True",
+      "C. False, False",
+      "D. False, True"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Vì vòng lặp chạy k từ 1 đến sát n. Số nguyên tố n chỉ có đúng 1 ước số trong đoạn này là số 1, nên biến đếm c = 1. Khi c == 1, ta trả về True, ngược lại trả về False."
+  },
+  {
+    "id": 134,
+    "topicId": "strings",
+    "question": "Câu lệnh nào dùng để tính độ dài (số ký tự) của chuỗi s?",
+    "options": [
+      "A. len(s)",
+      "B. length(s)",
+      "C. s.len()",
+      "D. s.length()"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Hàm built-in len() trong Python nhận đối tượng chuỗi và trả về số lượng ký tự của chuỗi đó."
+  },
+  {
+    "id": 135,
+    "topicId": "strings",
+    "question": "Phát biểu nào sau đây là SAI khi nói về chuỗi ký tự trong Python?",
+    "options": [
+      "A. Có thể truy cập từng kí tự của chuỗi thông qua chỉ số chỉ mục",
+      "B. Chỉ số chỉ mục bắt đầu từ số 0",
+      "C. Có thể gán để thay đổi trực tiếp từng kí tự của một chuỗi đang có",
+      "D. Python không có kiểu dữ liệu ký tự riêng biệt (chỉ có kiểu chuỗi)"
+    ],
+    "correctAnswer": "C",
+    "explanation": "Chuỗi ký tự trong Python là bất biến (immutable), không cho phép gán trực tiếp để thay đổi ký tự qua chỉ mục (ví dụ s[0] = 'a' sẽ gây lỗi)."
+  },
+  {
+    "id": 136,
+    "topicId": "strings",
+    "question": "Sau khi thực hiện lệnh sau, biến s2 sẽ có kết quả là gì?\ns1 =\"3986443\"\ns2 = \"\"\nfor ch in s1:\n    if int(ch) % 2 == 0:\n        s2 = s2 + ch\nprint(s2)",
+    "options": [
+      "A. 3986443",
+      "B. 8644",
+      "C. 39864",
+      "D. 443"
+    ],
+    "correctAnswer": "B",
+    "explanation": "Vòng lặp duyệt qua các ký tự của s1, ép kiểu sang số nguyên và chỉ nối các ký tự số chẵn (8, 6, 4, 4) vào s2."
+  },
+  {
+    "id": 137,
+    "topicId": "strings",
+    "question": "Chương trình sau cho kết quả là bao nhiêu?\nname = \"Codelearn\"; print(name[0])",
+    "options": [
+      "A. C",
+      "B. o",
+      "C. c",
+      "D. Lỗi"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Ký tự đầu tiên của chuỗi 'Codelearn' ở chỉ số index = 0 là ký tự viết hoa 'C'."
+  },
+  {
+    "id": 138,
+    "topicId": "strings",
+    "question": "Kết quả của chương trình sau là bao nhiêu?\ns = \"0123145\"; s[0] = '8'; print(s[0])",
+    "options": [
+      "A. 8",
+      "B. 0",
+      "C. 1",
+      "D. Lỗi"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Dòng lệnh `s[0] = '8'` báo lỗi TypeError vì chuỗi là immutable, không hỗ trợ phép gán sửa đổi phần tử."
+  },
+  {
+    "id": 139,
+    "topicId": "strings",
+    "question": "Kết quả của các câu lệnh sau là gì?\ns = \"12 34 56 ab cd de \"\nprint(s.find(\" \"))\nprint(s.find(\"12\"))\nprint(s.find(\"34\"))",
+    "options": [
+      "A. 2, 0, 3",
+      "B. 2, 1, 3",
+      "C. 3, 5, 2",
+      "D. 1, 4, 5"
+    ],
+    "correctAnswer": "A",
+    "explanation": "find() trả về vị trí xuất hiện đầu tiên của chuỗi con. Khoảng trắng đầu tiên ở vị trí chỉ mục 2. Chuỗi '12' bắt đầu ở vị trí 0. Chuỗi '34' bắt đầu ở vị trí 3."
+  },
+  {
+    "id": 140,
+    "topicId": "strings",
+    "question": "Lệnh sau trả lại giá trị gì?\nprint(\"abcdabcd\".find(\"cd\"))\nprint(\"abcdabcd\".find(\"cd\", 4))",
+    "options": [
+      "A. 2, 6",
+      "B. 3, 3",
+      "C. 2, 2",
+      "D. 2, 7"
+    ],
+    "correctAnswer": "A",
+    "explanation": "- find('cd') tìm kiếm từ đầu, thấy 'cd' tại index 2.\n- find('cd', 4) bắt đầu tìm từ vị trí index 4 trở đi, tìm thấy 'cd' tiếp theo ở index 6."
+  },
+  {
+    "id": 141,
+    "topicId": "strings",
+    "question": "Lệnh nào sau đây dùng để tách xâu ký tự thành một danh sách?",
+    "options": [
+      "A. split()",
+      "B. join()",
+      "C. remove()",
+      "D. copy()"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Phương thức split() tách chuỗi thành danh sách các chuỗi con dựa trên ký tự phân cách (mặc định là khoảng trắng)."
+  },
+  {
+    "id": 142,
+    "topicId": "modules_libraries",
+    "question": "Trong một module của Python có thể chứa đựng những thành phần nào?",
+    "options": [
+      "A. Các hàm định nghĩa",
+      "B. Các lớp (classes) định nghĩa",
+      "C. Các biến và câu lệnh thực thi",
+      "D. Tất cả các phương án trên"
+    ],
+    "correctAnswer": "D",
+    "explanation": "Một module đơn giản là tệp tin chứa mã nguồn Python, có thể định nghĩa biến, hàm, class và chạy lệnh."
+  },
+  {
+    "id": 143,
+    "topicId": "modules_libraries",
+    "question": "Muốn nạp tất cả thành phần trong module math để sử dụng trực tiếp mà không cần viết tiền tố math., ta dùng cú pháp nào?",
+    "options": [
+      "A. from math import *",
+      "B. import math.*",
+      "C. import * from math",
+      "D. from math import all"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Cú pháp `from math import *` đưa toàn bộ các hàm và biến của module math vào namespace hiện tại để gọi trực tiếp."
+  },
+  {
+    "id": 144,
+    "topicId": "modules_libraries",
+    "question": "Thuộc tính tích hợp nào của một module lưu trữ tên của chính module đó?",
+    "options": [
+      "A. __name__",
+      "B. __module__",
+      "C. __title__",
+      "D. __class__"
+    ],
+    "correctAnswer": "A",
+    "explanation": "Thuộc tính __name__ lưu trữ tên của module (ví dụ là '__main__' nếu chạy trực tiếp, hoặc tên module nếu được import)."
+  }
+]

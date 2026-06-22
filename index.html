@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPrep AI - Ôn Tập & Trắc Nghiệm Trực Tuyến</title>
+    <meta name="description" content="Website ôn tập kiến thức và thi thử trắc nghiệm trực tuyến dành cho các môn học công nghệ. Hỗ trợ ghi chú cá nhân, phân tích hiệu quả học tập.">
+    <!-- Google Fonts: Roboto & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- Link to main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- App Container -->
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="app-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="material-icons-round logo-icon">auto_stories</span>
+                    <span class="logo-text">EduPrep<span class="highlight">.vn</span></span>
+                </div>
+                <button class="close-sidebar-btn" id="close-sidebar-trigger" aria-label="Đóng sidebar">
+                    <span class="material-icons-round">close</span>
+                </button>
+            </div>
+
+            <!-- Subject Quick Selector in Sidebar -->
+            <div class="sidebar-selector-wrapper">
+                <label for="sidebar-subject-select" class="selector-label">Đang chọn môn học:</label>
+                <div class="custom-select">
+                    <select id="sidebar-subject-select" class="subject-dropdown">
+                        <!-- Loaded dynamically via JS -->
+                        <option value="">Đang tải môn học...</option>
+                    </select>
+                    <span class="material-icons-round select-arrow">expand_more</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#home" class="nav-item active" id="nav-home">
+                    <span class="material-icons-round nav-icon">dashboard</span>
+                    <span class="nav-label">Trang chủ</span>
+                </a>
+                <a href="#knowledge" class="nav-item" id="nav-knowledge">
+                    <span class="material-icons-round nav-icon">import_contacts</span>
+                    <span class="nav-label">Tổng hợp kiến thức</span>
+                </a>
+                <a href="#practice" class="nav-item" id="nav-practice">
+                    <span class="material-icons-round nav-icon">psychology</span>
+                    <span class="nav-label">Ôn tập chủ đề</span>
+                </a>
+                <a href="#mock-test" class="nav-item" id="nav-mock">
+                    <span class="material-icons-round nav-icon">quiz</span>
+                    <span class="nav-label">Thi thử tổng hợp</span>
+                </a>
+                <a href="#analytics" class="nav-item" id="nav-analytics">
+                    <span class="material-icons-round nav-icon">analytics</span>
+                    <span class="nav-label">Phân tích học tập</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-card">
+                    <div class="user-avatar">SV</div>
+                    <div class="user-info">
+                        <span class="user-name">Người học</span>
+                        <span class="user-role">Thành viên</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-layout">
+            
+            <!-- Top Navbar Header (Mobile menu trigger + Title) -->
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="menu-toggle-btn" id="menu-toggle-trigger" aria-label="Mở sidebar">
+                        <span class="material-icons-round">menu</span>
+                    </button>
+                    <h1 class="page-title" id="current-page-title">Bảng điều khiển</h1>
+                </div>
+                <div class="navbar-right">
+                    <!-- Progress Bar wrapper at the top -->
+                    <div class="top-progress-wrapper" id="global-progress-bar-container" title="Tiến độ học tập môn hiện tại">
+                        <span class="progress-label">Tiến trình môn học: <span id="global-progress-percent">0%</span></span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="global-progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Panels -->
+            <div class="panel-container" id="pages-viewports">
+                
+                <!-- 1. HOME PANEL -->
+                <section class="panel active" id="panel-home">
+                    <!-- Welcome Hero Banner -->
+                    <div class="hero-banner">
+                        <div class="hero-content">
+                            <h2>Chào mừng bạn đến với EduPrep!</h2>
+                            <p>Hệ thống tự học, ôn thi đề cương và luyện trắc nghiệm thông minh. Hãy lựa chọn môn học bên dưới để bắt đầu lộ trình học tập.</p>
+                            <div class="hero-features">
+                                <span class="badge"><span class="material-icons-round">check_circle</span> Học trước thi sau</span>
+                                <span class="badge"><span class="material-icons-round">edit</span> Lưu ghi chú cá nhân</span>
+                                <span class="badge"><span class="material-icons-round">insights</span> Phân tích điểm yếu</span>
+                            </div>
+                        </div>
+                        <div class="hero-illustration">
+                            <span class="material-icons-round illustration-icon">school</span>
+                        </div>
+                    </div>
+
+                    <!-- Subject Card Grid Section -->
+                    <div class="section-container">
+                        <h3 class="section-title">Danh sách môn học ôn tập</h3>
+                        <div class="card-grid" id="subject-cards-container">
+                            <!-- Subject cards will be injected dynamically by JS -->
+                            <div class="placeholder-loading">
+                                <span class="spinner"></span>
+                                <p>Đang tải danh sách môn học...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. KNOWLEDGE PANEL -->
+                <section class="panel" id="panel-knowledge">
+                    <div class="knowledge-layout">
+                        <!-- Knowledge Left Navigation Sidebar -->
+                        <aside class="knowledge-sidebar">
+                            <div class="ksb-header">
+                                <h3>Chủ đề học tập</h3>
+                            </div>
+                            <div class="ksb-list" id="knowledge-topic-list">
+                                <!-- List of topics dynamically injected -->
+                            </div>
+                        </aside>
+
+                        <!-- Knowledge Detail Viewer -->
+                        <article class="knowledge-content-card">
+                            <div id="knowledge-detail-view">
+                                <div class="empty-state">
+                                    <span class="material-icons-round large-icon">menu_book</span>
+                                    <h3>Vui lòng chọn một chủ đề</h3>
+                                    <p>Chọn chủ đề ở thanh danh sách bên trái để xem tóm tắt kiến thức và ví dụ.</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- 3. PRACTICE PANEL (Topic Quiz Selection & Practice) -->
+                <section class="panel" id="panel-practice">
+                    <!-- Practice Settings -->
+                    <div class="panel-card" id="practice-setup-card">
+                        <div class="card-header">
+                            <span class="material-icons-round card-icon">psychology</span>
+                            <h3>Cấu hình ôn tập theo chủ đề</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="subtitle">Chọn các chủ đề bạn muốn kiểm tra. Hệ thống sẽ lọc câu hỏi liên quan để tạo bài luyện tập riêng cho bạn.</p>
+                            
+                            <div class="selection-options-wrapper">
+                                <div class="selection-actions">
+                                    <button class="btn btn-secondary btn-sm" id="btn-select-all-topics">Chọn tất cả</button>
+                                    <button class="btn btn-outline btn-sm" id="btn-deselect-all-topics">Bỏ chọn hết</button>
+                                </div>
+
+                                <div class="topic-checkbox-grid" id="practice-topics-checkbox-container">
+                                    <!-- Checkboxes dynamically generated -->
+                                </div>
+                            </div>
+
+                            <div class="form-action">
+                                <button class="btn btn-primary btn-lg btn-icon" id="btn-start-practice">
+                                    <span class="material-icons-round">play_arrow</span> Bắt đầu ôn tập
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Quiz Panel (Hidden by default) -->
+                    <div class="panel-card quiz-active-card hidden" id="quiz-active-container">
+                        <div class="quiz-header">
+                            <div class="quiz-progress-info">
+                                <span class="quiz-counter">Câu hỏi <strong id="quiz-current-index">1</strong> / <span id="quiz-total-count">0</span></span>
+                                <span class="quiz-topic-tag" id="quiz-current-topic-tag">Topic</span>
+                            </div>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="quiz-progress-bar-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-body">
+                            <div class="question-text" id="quiz-question-text">Đang tải câu hỏi...</div>
+                            <div class="options-container" id="quiz-options-container">
+                                <!-- Option cards inserted here -->
+                            </div>
+
+                            <!-- Explanation card (Visible after answering) -->
+                            <div class="explanation-box hidden" id="quiz-explanation-box">
+                                <div class="explanation-title">
+                                    <span class="material-icons-round">info</span>
+                                    <h4>Giải thích đáp án:</h4>
+                                </div>
+                                <p class="explanation-text-content" id="quiz-explanation-text">Nội dung giải thích...</p>
+                            </div>
+                        </div>
+
+                        <div class="quiz-footer">
+                            <button class="btn btn-outline" id="btn-quit-quiz">Thoát</button>
+                            <button class="btn btn-primary" id="btn-next-question" disabled>Tiếp tục <span class="material-icons-round">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. MOCK TEST PANEL -->
+                <section class="panel" id="panel-mock">
+                    <!-- Mock Test Setup Card -->
+                    <div class="panel-card" id="mock-setup-card">
+                        <div class="card-header">
+                            <span class="material-icons-round card-icon">quiz</span>
+                            <h3>Thi thử tổng hợp</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="subtitle">Đề thi thử giúp đánh giá toàn diện năng lực. Bạn có thể chọn sinh đề ngẫu nhiên từ ngân hàng câu hỏi hoặc chọn một trong các đề thi mẫu cố định.</p>
+                            
+                            <!-- Selection of Exam Type -->
+                            <div class="mock-settings-group">
+                                <h4>Chọn loại đề thi thử:</h4>
+                                <div class="custom-select" style="margin-bottom: 20px; max-width: 400px; background: var(--bg-app); border-radius: var(--radius-md); border: 1.5px solid var(--border-color);">
+                                    <select id="mock-exam-type-select" class="subject-dropdown" style="color: var(--text-main); font-weight: 600; padding: 12px 30px 12px 16px;">
+                                        <option value="random">Sinh đề ngẫu nhiên từ ngân hàng</option>
+                                        <option value="preset_de_1">Đề thi mẫu số 1 (50 câu - Java Core)</option>
+                                        <option value="preset_de_2">Đề thi mẫu số 2 (50 câu - Java Core)</option>
+                                        <option value="preset_de_3">Đề thi mẫu số 3 (50 câu - Java Core)</option>
+                                        <option value="preset_de_4">Đề thi mẫu số 4 (50 câu - Java Core)</option>
+                                    </select>
+                                    <span class="material-icons-round select-arrow" style="color: var(--text-muted); right: 12px">expand_more</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mock-settings-group" id="mock-qty-selection-group">
+                                <h4>Chọn số lượng câu hỏi trong đề:</h4>
+                                <div class="quantity-selector-grid">
+                                    <label class="quantity-option">
+                                        <input type="radio" name="mock-qty" value="20" checked>
+                                        <div class="quantity-card">
+                                            <span class="qty-num">20</span>
+                                            <span class="qty-label">Câu hỏi</span>
+                                            <span class="qty-time">Thời gian: 25 phút</span>
+                                        </div>
+                                    </label>
+                                    <label class="quantity-option">
+                                        <input type="radio" name="mock-qty" value="30">
+                                        <div class="quantity-card">
+                                            <span class="qty-num">30</span>
+                                            <span class="qty-label">Câu hỏi</span>
+                                            <span class="qty-time">Thời gian: 40 phút</span>
+                                        </div>
+                                    </label>
+                                    <label class="quantity-option">
+                                        <input type="radio" name="mock-qty" value="50">
+                                        <div class="quantity-card">
+                                            <span class="qty-num">50</span>
+                                            <span class="qty-label">Câu hỏi</span>
+                                            <span class="qty-time">Thời gian: 60 phút</span>
+                                        </div>
+                                    </label>
+                                    <label class="quantity-option">
+                                        <input type="radio" name="mock-qty" value="100">
+                                        <div class="quantity-card">
+                                            <span class="qty-num">100</span>
+                                            <span class="qty-label">Câu hỏi</span>
+                                            <span class="qty-time">Thời gian: 120 phút</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="exam-rules-box">
+                                <div class="rule-title">
+                                    <span class="material-icons-round">gavel</span>
+                                    <h4>Quy chế thi thử:</h4>
+                                </div>
+                                <ul>
+                                    <li>Câu hỏi được chọn hoàn toàn ngẫu nhiên và trộn đáp án ngẫu nhiên.</li>
+                                    <li>Không hiển thị giải thích đáp án và kết quả đúng/sai trong quá trình làm bài.</li>
+                                    <li>Bạn có thể di chuyển qua lại tự do giữa các câu hỏi để làm trước hoặc sửa lại đáp án.</li>
+                                    <li>Hệ thống tự động nộp bài khi hết giờ đếm ngược.</li>
+                                </ul>
+                            </div>
+
+                            <div class="form-action">
+                                <button class="btn btn-primary btn-lg btn-icon" id="btn-start-mock">
+                                    <span class="material-icons-round">launch</span> Bắt đầu làm bài thi
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Mock Exam Panel (Hidden by default) -->
+                    <div class="mock-exam-workspace hidden" id="mock-exam-workspace-container">
+                        <!-- Left pane: Question area -->
+                        <div class="mock-question-pane">
+                            <div class="panel-card">
+                                <div class="mock-pane-header">
+                                    <span class="mock-question-idx">Câu hỏi <span id="mock-current-idx">1</span></span>
+                                    <div class="timer-display" id="mock-timer">
+                                        <span class="material-icons-round">timer</span>
+                                        <span id="mock-timer-text">00:00</span>
+                                    </div>
+                                </div>
+                                <div class="quiz-body">
+                                    <div class="question-text" id="mock-question-text">Nội dung câu hỏi thi thử...</div>
+                                    <div class="options-container" id="mock-options-container">
+                                        <!-- Option cards loaded dynamically -->
+                                    </div>
+                                </div>
+                                <div class="mock-pane-footer">
+                                    <button class="btn btn-outline" id="btn-mock-prev"><span class="material-icons-round">chevron_left</span> Trước đó</button>
+                                    <button class="btn btn-outline" id="btn-mock-next">Kế tiếp <span class="material-icons-round">chevron_right</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right pane: Navigation panel & Action buttons -->
+                        <div class="mock-nav-pane">
+                            <div class="panel-card">
+                                <div class="card-header">
+                                    <h3>Bản đồ câu hỏi</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="question-map-grid" id="mock-question-map">
+                                        <!-- Buttons for jumping to questions -->
+                                    </div>
+                                    
+                                    <div class="map-legend">
+                                        <span class="legend-item"><span class="legend-dot current"></span> Đang xem</span>
+                                        <span class="legend-item"><span class="legend-dot answered"></span> Đã chọn</span>
+                                        <span class="legend-item"><span class="legend-dot unanswered"></span> Chưa chọn</span>
+                                    </div>
+
+                                    <hr class="divider">
+
+                                    <button class="btn btn-danger btn-block btn-lg btn-icon" id="btn-submit-mock">
+                                        <span class="material-icons-round">check_circle</span> Nộp bài thi
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. RESULTS PANEL -->
+                <section class="panel" id="panel-results">
+                    <div class="panel-card">
+                        <div class="card-header border-none text-center">
+                            <span class="material-icons-round result-status-icon success" id="result-status-icon">emoji_events</span>
+                            <h2 class="result-title-main" id="result-title-text">Hoàn thành bài thi!</h2>
+                        </div>
+                        <div class="card-body">
+                            <!-- Metrics summary -->
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <span class="metric-label">Số câu đúng</span>
+                                    <span class="metric-value" id="result-correct-count">0/0</span>
+                                </div>
+                                <div class="metric-card">
+                                    <span class="metric-label">Tỷ lệ chính xác</span>
+                                    <span class="metric-value highlight" id="result-accuracy-percent">0%</span>
+                                </div>
+                                <div class="metric-card">
+                                    <span class="metric-label">Thời gian làm bài</span>
+                                    <span class="metric-value" id="result-time-taken">00:00</span>
+                                </div>
+                            </div>
+
+                            <div class="results-actions">
+                                <button class="btn btn-primary" id="btn-result-to-analytics">Xem phân tích chi tiết</button>
+                                <button class="btn btn-outline" id="btn-result-to-home">Về trang chủ</button>
+                            </div>
+
+                            <!-- Review wrong questions list -->
+                            <div class="wrong-questions-section hidden" id="wrong-questions-section">
+                                <h3 class="review-title">Xem lại các câu trả lời sai / cần lưu ý:</h3>
+                                <div class="review-questions-list" id="wrong-questions-list-container">
+                                    <!-- Incorrect questions items injected here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. ANALYTICS PANEL -->
+                <section class="panel" id="panel-analytics">
+                    <div class="analytics-grid-layout">
+                        <!-- Left Section: Statistics Summary Cards -->
+                        <div class="analytics-sidebar">
+                            <div class="panel-card summary-stat-card">
+                                <h3>Tổng quan tiến độ</h3>
+                                <div class="stat-list">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Số chủ đề đã đọc:</span>
+                                        <strong class="stat-val" id="analytics-topics-read">0/0</strong>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Tổng số bài luyện tập:</span>
+                                        <strong class="stat-val" id="analytics-quizzes-taken">0</strong>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Bài thi thử đã làm:</span>
+                                        <strong class="stat-val" id="analytics-mock-taken">0</strong>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Điểm thi thử trung bình:</span>
+                                        <strong class="stat-val highlight" id="analytics-avg-score">0%</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chart container -->
+                            <div class="panel-card chart-card">
+                                <h3>Biểu đồ độ chính xác theo chủ đề</h3>
+                                <div class="chart-container-wrapper">
+                                    <!-- Dynamically generated SVG Chart -->
+                                    <svg class="analytics-svg-chart" id="analytics-chart-svg" viewBox="0 0 400 240">
+                                        <!-- Injected by JS -->
+                                    </svg>
+                                    <div class="chart-empty-state" id="chart-empty-message">
+                                        <p>Làm tối thiểu 1 bài trắc nghiệm để xem biểu đồ thống kê.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Section: Strength & Weaknesses Breakdown -->
+                        <div class="analytics-main-pane">
+                            <div class="panel-card strength-weakness-card">
+                                <div class="card-header">
+                                    <span class="material-icons-round card-icon">insights</span>
+                                    <h3>Phân tích hiệu năng theo chủ đề</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="analytics-column-layout">
+                                        
+                                        <!-- Good Performance Section -->
+                                        <div class="analytics-col">
+                                            <div class="col-header success">
+                                                <span class="material-icons-round icon">check_circle</span>
+                                                <h4>Bạn làm tốt (Tỷ lệ đúng ≥ 70%)</h4>
+                                            </div>
+                                            <div class="topic-performance-list" id="analytics-strengths-list">
+                                                <div class="empty-list-info">Chưa có đủ dữ liệu thống kê.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Need Improvement Section -->
+                                        <div class="analytics-col">
+                                            <div class="col-header danger">
+                                                <span class="material-icons-round icon">cancel</span>
+                                                <h4>Cần ôn tập lại (Tỷ lệ đúng &lt; 70%)</h4>
+                                            </div>
+                                            <div class="topic-performance-list" id="analytics-weaknesses-list">
+                                                <div class="empty-list-info">Chưa có đủ dữ liệu thống kê.</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification System -->
+    <div class="toast-container" id="toast-notifications"></div>
+
+    <!-- Script loading: Main script -->
+    <script src="app.js"></script>
+</body>
+</html>

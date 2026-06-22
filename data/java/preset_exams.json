@@ -1,0 +1,2256 @@
+[
+  {
+    "id": "de_1",
+    "name": "Đề thi thử số 1 (Servlet & JDBC)",
+    "description": "Đề kiểm tra chuyên sâu phần Java Core, Servlet, Session, Cookie, Filter, RequestDispatcher và JDBC API (42 câu hỏi).",
+    "questions": [
+      {
+        "id": 1,
+        "topicId": "servlet_lifecycle",
+        "type": "concept",
+        "question": "Giai đoạn nào trong vòng đời Servlet chịu trách nhiệm giải phóng tài nguyên hệ thống trước khi hủy instance?",
+        "options": [
+          "A. Giai đoạn init()",
+          "B. Giai đoạn service()",
+          "C. Giai đoạn destroy()",
+          "D. Giai đoạn doFilter()"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Phương thức destroy() được gọi duy nhất một lần bởi container khi tắt ứng dụng hoặc gỡ bỏ servlet để dọn dẹp tài nguyên."
+      },
+      {
+        "id": 2,
+        "topicId": "servlet_lifecycle",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa phương thức init() và init(ServletConfig config) trong HttpServlet là gì?",
+        "options": [
+          "A. init() không thể nạp tham số cấu hình, còn init(config) thì có.",
+          "B. init() chỉ chạy trên Tomcat cũ, còn init(config) chạy trên Tomcat mới.",
+          "C. init(config) bắt buộc phải gọi super.init(config) nếu không sẽ bị lỗi null cấu hình sau đó.",
+          "D. Không có sự khác biệt nào về chức năng."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Khi override init(ServletConfig config), nếu quên gọi super.init(config) thì đối tượng ServletConfig sẽ không được gán vào GenericServlet, dẫn đến các lệnh gọi getServletConfig() hay getServletContext() sau đó ném NullPointerException."
+      },
+      {
+        "id": 3,
+        "topicId": "servlet_lifecycle",
+        "type": "situation",
+        "question": "Một lập trình viên muốn thiết lập một kết nối Database dùng chung cho toàn bộ thời gian sống của Servlet. Lập trình viên đó nên viết code kết nối này ở phương thức nào để tối ưu hiệu năng?",
+        "options": [
+          "A. service()",
+          "B. init()",
+          "C. destroy()",
+          "D. doGet()"
+        ],
+        "correctAnswer": "B",
+        "explanation": "init() được gọi đúng một lần duy nhất khi servlet khởi tạo, việc thiết lập database connection ở đây giúp tránh việc kết nối lặp đi lặp lại ở mỗi request trong service()."
+      },
+      {
+        "id": 4,
+        "topicId": "servlet_lifecycle",
+        "type": "blank",
+        "question": "Mặc định trong môi trường Servlet, đối với mỗi lớp Servlet được định nghĩa, Web Container sẽ khởi tạo đúng ______ đối tượng duy nhất để xử lý tất cả các request gửi đến.",
+        "options": [
+          "A. một (1)",
+          "B. hai (2)",
+          "C. mười (10)",
+          "D. n (bằng số luồng xử lý)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Web Container áp dụng mẫu Singleton, chỉ tạo duy nhất 1 đối tượng cho mỗi class Servlet để tiết kiệm bộ nhớ và tài nguyên."
+      },
+      {
+        "id": 5,
+        "topicId": "servlet_lifecycle",
+        "type": "process",
+        "question": "Quy trình xử lý một HTTP Request gửi tới Servlet diễn ra theo trình tự nào sau đây?",
+        "options": [
+          "A. Client -> service() -> init() -> Response",
+          "B. Client -> init() -> service() -> doGet()/doPost() -> Response",
+          "C. Client -> doGet() -> service() -> destroy() -> Response",
+          "D. Client -> service() -> doGet()/doPost() -> destroy() -> Response"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Container nạp servlet và gọi init() trước, sau đó với mỗi request sẽ gọi service() để điều hướng qua doGet()/doPost(), cuối cùng render phản hồi về client."
+      },
+      {
+        "id": 6,
+        "topicId": "servlet_lifecycle",
+        "type": "bug",
+        "question": "Hiện tượng gì xảy ra nếu bạn khai báo một biến instance (biến thành viên của class) trong Servlet và thay đổi giá trị của nó trong phương thức doGet()?",
+        "options": [
+          "A. Trình duyệt của người dùng sẽ bị treo.",
+          "B. Lỗi biên dịch xảy ra ngay lập tức.",
+          "C. Xảy ra tranh chấp dữ liệu (Race Condition) vì Servlet là đơn luồng.",
+          "D. Xảy ra tranh chấp dữ liệu vì nhiều luồng (thread) request cùng truy cập và chỉnh sửa biến dùng chung này (Thread-safety issue)."
+        ],
+        "correctAnswer": "D",
+        "explanation": "Vì servlet chỉ có 1 đối tượng duy nhất xử lý đồng thời nhiều luồng request, việc ghi đè biến thành viên lớp sẽ gây lỗi đồng bộ dữ liệu giữa các người dùng."
+      },
+      {
+        "id": 7,
+        "topicId": "servlet_lifecycle",
+        "type": "code",
+        "question": "Cho đoạn mã Servlet sau:\n\npublic class TestServlet extends HttpServlet {\n    int count = 0;\n    protected void doGet(HttpServletRequest req, HttpServletResponse res) {\n        count++;\n    }\n}\n\nNếu có 3 request đồng thời gửi tới Servlet này, giá trị của biến count cuối cùng có thể là gì?",
+        "options": [
+          "A. Chắc chắn bằng 3",
+          "B. Chắc chắn bằng 1",
+          "C. Có thể nhỏ hơn 3 do xung đột ghi dữ liệu giữa các thread",
+          "D. Trình duyệt báo lỗi 500"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Do biến count là biến instance không được đồng bộ hóa (non-thread-safe), các thao tác tăng giá trị đồng thời có thể đè lên nhau khiến kết quả nhỏ hơn 3."
+      },
+      {
+        "id": 8,
+        "topicId": "session_cookie",
+        "type": "concept",
+        "question": "Cookie nào sẽ tự động bị xóa sau khi người dùng đóng trình duyệt web?",
+        "options": [
+          "A. Persistent Cookie",
+          "B. Secure Cookie",
+          "C. Session Cookie (Cookie phiên)",
+          "D. HttpOnly Cookie"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Session Cookie không có thời hạn hết hạn cụ thể (Max-Age hoặc Expires), nó chỉ được lưu tạm thời trong RAM của trình duyệt và biến mất khi đóng tab/trình duyệt."
+      },
+      {
+        "id": 9,
+        "topicId": "session_cookie",
+        "type": "comparison",
+        "question": "Khi so sánh Session và Cookie, phát biểu nào sau đây là SAI?",
+        "options": [
+          "A. Session lưu dữ liệu ở Server-side, còn Cookie lưu dữ liệu ở Client-side.",
+          "B. Dữ liệu trong Cookie dễ bị giả mạo hơn dữ liệu trong Session.",
+          "C. Session có thể lưu trữ dung lượng lớn hơn nhiều so với Cookie (thường giới hạn 4KB).",
+          "D. Session có tốc độ truy xuất nhanh hơn Cookie vì dữ liệu truyền tải qua mạng ít hơn."
+        ],
+        "correctAnswer": "D",
+        "explanation": "Dữ liệu session nằm trên server nên server không cần truyền cả cục dữ liệu lớn qua mạng cho client, chỉ cần truyền ID. Tuy nhiên, phát biểu nói Session có tốc độ truy xuất nhanh hơn là sai vì server phải tốn chi phí đọc Session từ RAM hoặc Database, việc này không nhất thiết nhanh hơn việc client tự gửi cookie đính kèm."
+      },
+      {
+        "id": 10,
+        "topicId": "session_cookie",
+        "type": "situation",
+        "question": "Hệ thống của bạn cần lưu trữ giỏ hàng của người dùng chưa đăng nhập. Để thông tin giỏ hàng không bị mất kể cả khi người dùng tắt máy khởi động lại sau 2 ngày, giải pháp nào thích hợp nhất?",
+        "options": [
+          "A. Lưu thông tin vào HttpSession trên server.",
+          "B. Lưu thông tin vào Cookie có Max-Age = 2 ngày.",
+          "C. Lưu vào ServletContext.",
+          "D. Sử dụng RequestDispatcher."
+        ],
+        "correctAnswer": "B",
+        "explanation": "HttpSession thường hết hạn sau 30 phút rảnh rỗi. Để lưu trữ bền vững qua nhiều ngày không cần đăng nhập, sử dụng Cookie lưu ở trình duyệt với thời gian sống xác định (Max-Age) là tối ưu."
+      },
+      {
+        "id": 11,
+        "topicId": "session_cookie",
+        "type": "blank",
+        "question": "Để bảo vệ Cookie khỏi các cuộc tấn công Cross-Site Scripting (XSS) nhằm ngăn chặn mã độc Javascript đọc được giá trị Cookie, ta nên cấu hình thuộc tính ______ cho Cookie đó.",
+        "options": [
+          "A. Secure",
+          "B. SameSite",
+          "C. Domain",
+          "D. HttpOnly"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Cấu hình HttpOnly ngăn chặn mã JavaScript phía client truy cập vào cookie (ví dụ qua lệnh document.cookie), giảm thiểu nguy cơ bị đánh cắp session token qua tấn công XSS."
+      },
+      {
+        "id": 12,
+        "topicId": "session_cookie",
+        "type": "process",
+        "question": "Quy trình kiểm tra phiên làm việc của người dùng thông qua Session ID diễn ra như thế nào?",
+        "options": [
+          "A. Trình duyệt gửi request -> Server tạo Session ID -> Server lưu DB -> Trả về Client",
+          "B. Request chứa Cookie JSESSIONID -> Server tìm Session khớp ID trong bộ nhớ -> Xác nhận trạng thái đăng nhập",
+          "C. Request chứa Cookie -> Server giải mã toàn bộ thông tin tài khoản lưu trong cookie -> Phản hồi",
+          "D. Server gửi Session ID -> Trình duyệt mã hóa -> Lưu trữ vào RAM"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Khi nhận được request, Container đọc cookie JSESSIONID từ client, tra cứu trong danh sách Session đang quản lý trên Server, nếu thấy khớp thì tái sử dụng đối tượng HttpSession đó."
+      },
+      {
+        "id": 13,
+        "topicId": "session_cookie",
+        "type": "bug",
+        "question": "Tại sao khi tắt chế độ lưu Cookie trên trình duyệt, chức năng đăng nhập sử dụng HttpSession thông thường lại bị lỗi (người dùng bị logout liên tục)?",
+        "options": [
+          "A. Vì server không thể lưu trữ đối tượng Session được nữa.",
+          "B. Vì trình duyệt không thể gửi mã JSESSIONID về server, khiến server tưởng mỗi request là một phiên làm việc mới.",
+          "C. Vì giao thức HTTP tự động bị ngắt kết nối liên tục.",
+          "D. Vì Servlet bị crash."
+        ],
+        "correctAnswer": "B",
+        "explanation": "HttpSession phụ thuộc vào việc trình duyệt lưu trữ cookie chứa JSESSIONID để định danh. Nếu cookie bị tắt, trình duyệt không gửi được ID này, Server sẽ coi mỗi request là của khách mới và tạo Session mới tinh."
+      },
+      {
+        "id": 14,
+        "topicId": "session_cookie",
+        "type": "code",
+        "question": "Đoạn mã Servlet nào dưới đây tạo ra một Cookie an toàn chỉ truyền qua HTTPS và không cho phép truy cập qua JavaScript?",
+        "options": [
+          "A. Cookie c = new Cookie(\"user\", \"val\"); c.setSecure(true);",
+          "B. Cookie c = new Cookie(\"user\", \"val\"); c.setHttpOnly(true); c.setSecure(true);",
+          "C. Cookie c = new Cookie(\"user\", \"val\"); c.setComment(\"secure\");",
+          "D. Cookie c = new Cookie(\"user\", \"val\"); c.setMaxAge(0);"
+        ],
+        "correctAnswer": "B",
+        "explanation": "setHttpOnly(true) giúp ngăn chặn JavaScript truy cập (chống XSS), c.setSecure(true) đảm bảo cookie chỉ được gửi qua kết nối HTTPS bảo mật."
+      },
+      {
+        "id": 15,
+        "topicId": "genericservlet_httpservlet",
+        "type": "concept",
+        "question": "Class nào đóng vai trò triển khai độc lập giao thức (Protocol-independent) trong các Servlet API?",
+        "options": [
+          "A. HttpServlet",
+          "B. GenericServlet",
+          "C. Filter",
+          "D. WebServlet"
+        ],
+        "correctAnswer": "B",
+        "explanation": "GenericServlet là một abstract class triển khai interface Servlet nhưng không ràng buộc với bất kỳ giao thức mạng cụ thể nào."
+      },
+      {
+        "id": 16,
+        "topicId": "genericservlet_httpservlet",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa phương thức service() trong GenericServlet và HttpServlet là gì?",
+        "options": [
+          "A. HttpServlet.service() tự động chuyển đổi ServletRequest/Response sang HttpServletRequest/Response và điều hướng HTTP methods.",
+          "B. GenericServlet.service() tự động chạy đa luồng còn HttpServlet.service() thì không.",
+          "C. HttpServlet không có phương thức service().",
+          "D. GenericServlet.service() không cho phép ném ra Exception."
+        ],
+        "correctAnswer": "A",
+        "explanation": "HttpServlet ghi đè service() để ép kiểu đối tượng Request/Response sang định dạng HTTP và phân tích các phương thức GET/POST/PUT... để chuyển tiếp xử lý sang doGet/doPost."
+      },
+      {
+        "id": 17,
+        "topicId": "genericservlet_httpservlet",
+        "type": "situation",
+        "question": "Bạn cần xây dựng một ứng dụng Java Servlet xử lý các bản tin qua giao thức FTP (không dùng HTTP). Bạn nên kế thừa lớp nào?",
+        "options": [
+          "A. HttpServlet",
+          "B. GenericServlet",
+          "C. ServletConfig",
+          "D. FilterChain"
+        ],
+        "correctAnswer": "B",
+        "explanation": "GenericServlet độc lập với giao thức, rất phù hợp để xây dựng các servlet xử lý giao thức phi HTTP như FTP, SMTP, v.v."
+      },
+      {
+        "id": 18,
+        "topicId": "genericservlet_httpservlet",
+        "type": "blank",
+        "question": "Lớp HttpServlet kế thừa trực tiếp từ lớp abstract có tên là ______.",
+        "options": [
+          "A. ServletContext",
+          "B. Object",
+          "C. GenericServlet",
+          "D. AbstractServlet"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Cấu trúc kế thừa: Object -> GenericServlet (độc lập giao thức) -> HttpServlet (chuyên biệt cho HTTP)."
+      },
+      {
+        "id": 19,
+        "topicId": "genericservlet_httpservlet",
+        "type": "process",
+        "question": "Khi một HttpServlet nhận một request HTTP POST, chuỗi gọi phương thức nào diễn ra trong Servlet?",
+        "options": [
+          "A. init() -> doPost()",
+          "B. service(ServletRequest, ServletResponse) -> service(HttpServletRequest, HttpServletResponse) -> doPost()",
+          "C. service() -> doGet() -> doPost()",
+          "D. init() -> doGet() -> service()"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Container gọi service() gốc với tham số chung trước, sau đó ép kiểu gọi service() HTTP, tiếp theo kiểm tra method là POST và gọi doPost()."
+      },
+      {
+        "id": 20,
+        "topicId": "genericservlet_httpservlet",
+        "type": "bug",
+        "question": "Hiện tượng gì xảy ra nếu bạn ghi đè (override) phương thức service() trong lớp kế thừa HttpServlet và quên gọi super.service(request, response)?",
+        "options": [
+          "A. Server bị sập.",
+          "B. Các phương thức doGet() hoặc doPost() bạn viết thêm sẽ không bao giờ được tự động gọi nữa.",
+          "C. Trình duyệt hiển thị mã lỗi 404.",
+          "D. Các filter không thể hoạt động."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Logic phân tích request method và gọi doGet()/doPost() nằm trong super.service(). Nếu ghi đè mà không gọi super, các phương thức doGet/doPost của bạn sẽ bị bỏ qua hoàn toàn."
+      },
+      {
+        "id": 21,
+        "topicId": "genericservlet_httpservlet",
+        "type": "code",
+        "question": "Xem đoạn code sau:\n\npublic class CustomServlet extends HttpServlet {\n    public void service(HttpServletRequest req, HttpServletResponse res) {\n        // Không có code\n    }\n}\n\nNếu gửi request GET đến Servlet này, kết quả nhận được trên trình duyệt là gì?",
+        "options": [
+          "A. Trang trắng (Không có nội dung phản hồi)",
+          "B. Mã lỗi 405 Method Not Allowed",
+          "C. Mã lỗi 500 Server Error",
+          "D. Lỗi biên dịch"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Vì phương thức service() bị ghi đè rỗng và không gọi super.service(), servlet sẽ không thực hiện gì và trả về phản hồi rỗng (status 200 mặc định)."
+      },
+      {
+        "id": 22,
+        "topicId": "requestdispatcher",
+        "type": "concept",
+        "question": "Cơ chế chuyển hướng nào thực hiện chuyển tiếp hoàn toàn ở phía Server-side và che giấu URL đích đối với người dùng?",
+        "options": [
+          "A. sendRedirect()",
+          "B. forward()",
+          "C. HTTP 302 Redirect",
+          "D. JavaScript window.location"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Phương thức forward() của RequestDispatcher chuyển giao xử lý hoàn toàn trong máy chủ, trình duyệt client giữ nguyên URL ban đầu."
+      },
+      {
+        "id": 23,
+        "topicId": "requestdispatcher",
+        "type": "comparison",
+        "question": "So sánh giữa forward() và sendRedirect(), nhận định nào sau đây là ĐÚNG?",
+        "options": [
+          "A. forward() chậm hơn sendRedirect() do phải tạo kết nối mới.",
+          "B. sendRedirect() giữ nguyên được các attribute đã set trong HttpServletRequest.",
+          "C. forward() chỉ chuyển hướng trong cùng một ứng dụng Web, còn sendRedirect() có thể dẫn tới URL ngoài trang web.",
+          "D. Cả hai đều thay đổi địa chỉ URL hiển thị trên trình duyệt."
+        ],
+        "correctAnswer": "C",
+        "explanation": "forward() xử lý nội bộ trong container nên không thể forward tới website khác. Ngược lại, sendRedirect() gửi mã 302 về trình duyệt client bắt client gọi URL mới, nên có thể dẫn tới bất cứ website nào."
+      },
+      {
+        "id": 24,
+        "topicId": "requestdispatcher",
+        "type": "situation",
+        "question": "Sau khi xử lý thành công một form thanh toán (POST request), lập trình viên nên sử dụng cơ chế nào để chuyển hướng người dùng đến trang 'Hoàn tất đơn hàng' nhằm tránh lỗi submit lặp dữ liệu khi người dùng ấn F5 (Reload)?",
+        "options": [
+          "A. RequestDispatcher.forward()",
+          "B. HttpServletResponse.sendRedirect() (Post-Redirect-Get pattern)",
+          "C. Gọi trực tiếp doGet() từ doPost()",
+          "D. Không chuyển hướng, render trực tiếp HTML"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Sử dụng sendRedirect() chuyển hướng trình duyệt sang phương thức GET (mẫu PRG - Post-Redirect-Get). Khi người dùng nhấn F5, trình duyệt chỉ gửi lại request GET trang hoàn thành, tránh gửi lại dữ liệu thanh toán POST."
+      },
+      {
+        "id": 25,
+        "topicId": "requestdispatcher",
+        "type": "blank",
+        "question": "Để lấy đối tượng RequestDispatcher trong Servlet, ta sử dụng phương thức `request.______(\"/path\")`.",
+        "options": [
+          "A. getRequestDispatcher",
+          "B. sendRedirect",
+          "C. getServletContext",
+          "D. forward"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Cú pháp: RequestDispatcher rd = request.getRequestDispatcher(\"/path\");"
+      },
+      {
+        "id": 26,
+        "topicId": "requestdispatcher",
+        "type": "process",
+        "question": "Quy trình hoạt động mạng khi gọi phương thức response.sendRedirect(\"/success\") là gì?",
+        "options": [
+          "A. Server gọi trực tiếp trang success -> gửi kết quả về client",
+          "B. Server gửi HTTP response 302 kèm header Location: /success -> Client nhận được và tự động gửi request GET mới tới /success -> Server phản hồi",
+          "C. Client tự động tải lại cache -> không gửi dữ liệu",
+          "D. Server ném ngoại lệ -> Client hiển thị lỗi"
+        ],
+        "correctAnswer": "B",
+        "explanation": "sendRedirect là quy trình 2 request riêng biệt: Server phản hồi mã 302 trỏ đường dẫn mới, trình duyệt đọc được sẽ tự động gửi request thứ 2 lên server."
+      },
+      {
+        "id": 27,
+        "topicId": "requestdispatcher",
+        "type": "bug",
+        "question": "Nguyên nhân gì dẫn đến ngoại lệ `IllegalStateException` khi gọi phương thức forward() hoặc sendRedirect()?",
+        "options": [
+          "A. Do gọi phương thức sau khi response đã được ghi dữ liệu (commit) về client.",
+          "B. Do không cài đặt thư viện JDBC.",
+          "C. Do URL chuyển hướng bị sai chính tả.",
+          "D. Do session bị timeout."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Nếu response đã được ghi (ví dụ đã gọi writer.write() hoặc flushBuffer() gửi header về client), việc gọi forward/redirect sẽ ném ra IllegalStateException vì không thể chuyển hướng phản hồi đã cam kết."
+      },
+      {
+        "id": 28,
+        "topicId": "requestdispatcher",
+        "type": "code",
+        "question": "Cho đoạn mã Servlet sau:\n\nrequest.setAttribute(\"val\", \"123\");\nresponse.sendRedirect(\"next.jsp\");\n\nTrong file next.jsp, lệnh `request.getAttribute(\"val\")` sẽ trả về giá trị gì?",
+        "options": [
+          "A. \"123\"",
+          "B. null",
+          "C. Lỗi biên dịch",
+          "D. Trình duyệt báo lỗi 500"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Vì sendRedirect tạo ra một request hoàn toàn mới từ client, đối tượng request cũ chứa thuộc tính \"val\" đã bị hủy bỏ, do đó next.jsp nhận giá trị null."
+      },
+      {
+        "id": 29,
+        "topicId": "filter_api",
+        "type": "concept",
+        "question": "Đâu không phải là một phương thức vòng đời của interface jakarta.servlet.Filter?",
+        "options": [
+          "A. init()",
+          "B. doFilter()",
+          "C. destroy()",
+          "D. service()"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Interface Filter chỉ gồm init(), doFilter(), và destroy(). Phương thức service() thuộc về Servlet."
+      },
+      {
+        "id": 30,
+        "topicId": "filter_api",
+        "type": "comparison",
+        "question": "Trong web.xml, thứ tự thực thi của các Filter được quyết định bởi yếu tố nào?",
+        "options": [
+          "A. Thứ tự bảng chữ cái tên của Filter.",
+          "B. Thứ tự khai báo của các thẻ <filter-mapping> trong file web.xml.",
+          "C. Thứ tự khai báo của các thẻ <filter> trong file web.xml.",
+          "D. Do Web Container tự sắp xếp ngẫu nhiên."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Web Container duyệt chuỗi filter dựa trên thứ tự xuất hiện của các thẻ `<filter-mapping>` từ trên xuống dưới trong file cấu hình web.xml."
+      },
+      {
+        "id": 31,
+        "topicId": "filter_api",
+        "type": "situation",
+        "question": "Hệ thống của bạn có 50 servlet khác nhau, tất cả đều yêu cầu phải thiết lập bộ mã hóa tiếng Việt UTF-8 cho Request và Response. Giải pháp tốt nhất để tránh lặp code là gì?",
+        "options": [
+          "A. Viết một phương thức tĩnh tiện ích rồi gọi ở đầu doGet của từng servlet.",
+          "B. Tạo một Custom Filter thực hiện set CharacterEncoding rồi cấu hình mapping cho tất cả URL (/*).",
+          "C. Cấu hình trực tiếp trong file server.xml của Tomcat.",
+          "D. Sử dụng RequestDispatcher."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Sử dụng Filter chặn mọi request (urlPatterns = \"/*\") để đặt mã hóa ký tự là giải pháp tối ưu, tập trung hóa logic xử lý chung."
+      },
+      {
+        "id": 32,
+        "topicId": "filter_api",
+        "type": "blank",
+        "question": "Trong phương thức doFilter của Filter, đối tượng giúp chuyển tiếp request sang Filter kế tiếp hoặc Servlet đích có tên lớp là ______.",
+        "options": [
+          "A. RequestDispatcher",
+          "B. FilterChain",
+          "C. FilterConfig",
+          "D. ServletContext"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đối tượng FilterChain quản lý danh sách các filter và được dùng để kích hoạt bộ lọc tiếp theo bằng lệnh chain.doFilter(req, res)."
+      },
+      {
+        "id": 33,
+        "topicId": "filter_api",
+        "type": "process",
+        "question": "Quy trình hoạt động của một Filter khi xử lý một Request diễn ra như thế nào?",
+        "options": [
+          "A. Filter doFilter -> Gọi Servlet service -> Trả kết quả trực tiếp cho Client",
+          "B. Filter doFilter (trước) -> chain.doFilter() -> Servlet service() -> Filter doFilter (sau) -> Gửi response về Client",
+          "C. Servlet service -> Filter doFilter -> Response",
+          "D. Filter init -> Filter destroy -> Servlet service"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Filter chặn request trước khi vào servlet (code trước chain.doFilter), sau đó chuyển tiếp cho servlet chạy, khi servlet chạy xong và trả response ra ngoài, filter tiếp tục xử lý response (code sau chain.doFilter) trước khi gửi về client."
+      },
+      {
+        "id": 34,
+        "topicId": "filter_api",
+        "type": "bug",
+        "question": "Điều gì xảy ra nếu trong phương thức doFilter() của Filter, bạn không gọi câu lệnh chain.doFilter(request, response)?",
+        "options": [
+          "A. Server báo lỗi biên dịch.",
+          "B. Request bị chặn lại vĩnh viễn và không bao giờ đến được Servlet mục tiêu.",
+          "C. Web Container tự động nhảy đến Servlet tiếp theo sau 5 giây.",
+          "D. Servlet vẫn chạy bình thường nhưng response bị rỗng."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Nếu thiếu chain.doFilter(), chuỗi lọc bị ngắt quãng, request không được chuyển đi tiếp và client sẽ nhận trang trắng hoặc treo kết nối."
+      },
+      {
+        "id": 35,
+        "topicId": "filter_api",
+        "type": "code",
+        "question": "Quan sát đoạn cấu hình web.xml sau:\n\n<filter-mapping>\n    <filter-name>LogFilter</filter-name>\n    <url-pattern>/admin/*</url-pattern>\n</filter-mapping>\n\nFilter này sẽ chạy khi người dùng truy cập URL nào?",
+        "options": [
+          "A. /index.jsp",
+          "B. /admin/dashboard",
+          "C. /user/admin",
+          "D. Tất cả mọi trang trong website"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đường dẫn `/admin/*` khớp với tất cả các request có tiền tố `/admin/` (ví dụ: `/admin/dashboard`, `/admin/login`,...)."
+      },
+      {
+        "id": 36,
+        "topicId": "jdbc_api",
+        "type": "concept",
+        "question": "Interface nào trong JDBC API được thiết kế để thực thi các câu lệnh SQL có tham số đầu vào động một cách an toàn?",
+        "options": [
+          "A. Statement",
+          "B. PreparedStatement",
+          "C. CallableStatement",
+          "D. Connection"
+        ],
+        "correctAnswer": "B",
+        "explanation": "PreparedStatement biên dịch trước câu lệnh SQL và hỗ trợ truyền tham số qua các ký tự hỏi chấm (?), giúp ngăn chặn SQL Injection."
+      },
+      {
+        "id": 37,
+        "topicId": "jdbc_api",
+        "type": "comparison",
+        "question": "So sánh giữa executeQuery() và executeUpdate() trong JDBC, phát biểu nào sau đây là ĐÚNG?",
+        "options": [
+          "A. Cả hai đều trả về ResultSet chứa danh sách dòng dữ liệu.",
+          "B. executeQuery() dùng cho lệnh SELECT, executeUpdate() dùng cho INSERT/UPDATE/DELETE và trả về số dòng bị ảnh hưởng.",
+          "C. executeUpdate() nhanh hơn executeQuery() vì không cần kết nối Database.",
+          "D. executeQuery() trả về kiểu boolean."
+        ],
+        "correctAnswer": "B",
+        "explanation": "executeQuery() chuyên để đọc dữ liệu (SELECT) và trả về ResultSet. executeUpdate() chuyên ghi dữ liệu (INSERT, UPDATE, DELETE, DDL) và trả về số lượng bản ghi đã được xử lý (int)."
+      },
+      {
+        "id": 38,
+        "topicId": "jdbc_api",
+        "type": "situation",
+        "question": "Bạn cần gọi một Store Procedure đã được định nghĩa sẵn trong cơ sở dữ liệu MySQL. Bạn nên sử dụng interface nào?",
+        "options": [
+          "A. Statement",
+          "B. PreparedStatement",
+          "C. CallableStatement",
+          "D. ResultSet"
+        ],
+        "correctAnswer": "C",
+        "explanation": "CallableStatement kế thừa PreparedStatement, chuyên dụng cho việc thực thi các thủ tục lưu trữ (Stored Procedure) trong CSDL."
+      },
+      {
+        "id": 39,
+        "topicId": "jdbc_api",
+        "type": "blank",
+        "question": "Để duyệt qua các bản ghi dữ liệu trả về từ câu lệnh SELECT trong ResultSet, ta sử dụng vòng lặp kết hợp phương thức `rs.______()`.",
+        "options": [
+          "A. next",
+          "B. hasNext",
+          "C. getRecord",
+          "D. close"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Phương thức rs.next() di chuyển con trỏ xuống dòng tiếp theo và trả về true nếu dòng đó tồn tại dữ liệu."
+      },
+      {
+        "id": 40,
+        "topicId": "jdbc_api",
+        "type": "process",
+        "question": "Quy trình giải phóng tài nguyên JDBC nào sau đây tuân thủ đúng thứ tự chuẩn tránh rò rỉ bộ nhớ (memory leak)?",
+        "options": [
+          "A. Đóng Connection -> Statement -> ResultSet",
+          "B. Đóng ResultSet -> Statement -> Connection",
+          "C. Đóng Statement -> ResultSet -> Connection",
+          "D. Chỉ cần đóng Connection, các thành phần khác tự động đóng"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Quy tắc đóng tài nguyên ngược lại với thứ tự mở: đóng ResultSet trước, sau đó đóng Statement, cuối cùng đóng Connection."
+      },
+      {
+        "id": 41,
+        "topicId": "jdbc_api",
+        "type": "bug",
+        "question": "Nếu chương trình JDBC liên tục mở kết nối `DriverManager.getConnection()` trong vòng lặp mà không gọi phương thức close(), hệ thống sẽ gặp sự cố gì?",
+        "options": [
+          "A. CPU quá tải 100%.",
+          "B. Hết bộ nhớ Heap của JVM.",
+          "C. Cạn kiệt kết nối của Database Pool (Out of Connections), khiến ứng dụng không thể truy cập CSDL được nữa.",
+          "D. File dữ liệu của Database bị hỏng."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Cơ sở dữ liệu giới hạn số lượng kết nối đồng thời. Việc mở kết nối mà không đóng sẽ làm cạn kiệt tài nguyên kết nối khả dụng, gây ra lỗi nghẽn hệ thống."
+      },
+      {
+        "id": 42,
+        "topicId": "jdbc_api",
+        "type": "code",
+        "question": "Đoạn mã sau có lỗ hổng bảo mật gì?\n\nString sql = \"SELECT * FROM users WHERE user = '\" + username + \"'\";\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(sql);\n",
+        "options": [
+          "A. Rò rỉ tài nguyên Connection.",
+          "B. SQL Injection do cộng chuỗi trực tiếp giá trị đầu vào của người dùng vào câu lệnh SQL.",
+          "C. NullPointerException.",
+          "D. Không có lỗ hổng nào."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Cộng chuỗi trực tiếp tạo điều kiện cho kẻ tấn công chèn các mã độc SQL (ví dụ: ' OR '1'='1) để vượt qua bước đăng nhập hoặc phá hủy database."
+      }
+    ]
+  },
+  {
+    "id": "de_2",
+    "name": "Đề thi thử số 2 (Spring Framework)",
+    "description": "Đề kiểm tra chuyên sâu phần Spring Boot Auto-configuration, Spring MVC Flow, Stereotypes, Dependency Injection và Spring Filters (42 câu hỏi).",
+    "questions": [
+      {
+        "id": 43,
+        "topicId": "springboot_autoconfig",
+        "type": "concept",
+        "question": "Đâu là annotation chịu trách nhiệm trực tiếp kích hoạt cơ chế quét classpath để tự động cấu hình các bean tương ứng trong Spring Boot?",
+        "options": [
+          "A. @Configuration",
+          "B. @EnableAutoConfiguration",
+          "C. @ComponentScan",
+          "D. @SpringBootConfiguration"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@EnableAutoConfiguration ra lệnh cho Spring Boot quét các thư viện starter trong classpath và tự động tạo các cấu hình bean mặc định phù hợp."
+      },
+      {
+        "id": 44,
+        "topicId": "springboot_autoconfig",
+        "type": "comparison",
+        "question": "Phát biểu nào sau đây là ĐÚNG khi nói về sự khác biệt giữa @SpringBootConfiguration và @Configuration?",
+        "options": [
+          "A. @SpringBootConfiguration cho phép khai báo đa luồng còn @Configuration thì không.",
+          "B. @SpringBootConfiguration là một cấu hình chuyên biệt thay thế cho @Configuration dành riêng cho ứng dụng Spring Boot, hỗ trợ tự động tìm kiếm cấu hình trong các test.",
+          "C. Hai annotation này hoàn toàn khác biệt nhau về bản chất.",
+          "D. @Configuration chỉ dùng trong XML."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@SpringBootConfiguration là một phiên bản đặc biệt của @Configuration, được thiết kế để Spring Boot tự động nhận diện cấu hình chính của ứng dụng (đặc biệt trong các test tích hợp)."
+      },
+      {
+        "id": 45,
+        "topicId": "springboot_autoconfig",
+        "type": "situation",
+        "question": "Dự án Spring Boot của bạn có thư viện DataSourceAutoConfiguration tự động tạo kết nối DB, nhưng hiện tại bạn chỉ viết API tính toán chưa cần kết nối DB và không muốn ứng dụng bị crash khi khởi động do thiếu URL cấu hình cơ sở dữ liệu. Bạn xử lý như thế nào?",
+        "options": [
+          "A. Xóa thư viện spring-boot-starter ra khỏi pom.xml.",
+          "B. Loại trừ lớp cấu hình đó bằng cách khai báo: @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}).",
+          "C. Cấu hình database ảo.",
+          "D. Tắt Spring Boot đi."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Thuộc tính `exclude` trong `@SpringBootApplication` cho phép lập trình viên vô hiệu hóa các class auto-configuration cụ thể khi không có nhu cầu sử dụng."
+      },
+      {
+        "id": 46,
+        "topicId": "springboot_autoconfig",
+        "type": "blank",
+        "question": "File POM cha mặc định trong các dự án Maven Spring Boot quản lý phiên bản thư viện tập trung có tên thẻ artifactId là `______`.",
+        "options": [
+          "A. spring-boot-starter-web",
+          "B. spring-boot-starter-parent",
+          "C. spring-boot-autoconfigure",
+          "D. spring-boot-dependencies"
+        ],
+        "correctAnswer": "B",
+        "explanation": "spring-boot-starter-parent cung cấp các cấu hình build mặc định và quản lý version của các dependencies (dependency management) để tránh xung đột phiên bản."
+      },
+      {
+        "id": 47,
+        "topicId": "springboot_autoconfig",
+        "type": "process",
+        "question": "Khi chạy lệnh SpringApplication.run(), Spring Boot thực hiện quá trình khởi tạo theo thứ tự nào?",
+        "options": [
+          "A. Quét Component -> Chạy Auto-configuration -> Tạo ApplicationContext -> Khởi động server nhúng Tomcat",
+          "B. Khởi động Tomcat -> Quét Component -> Chạy Auto-configuration",
+          "C. Tạo ApplicationContext -> Quét Component -> Chạy Auto-configuration -> Khởi động server Tomcat nhúng -> Sẵn sàng nhận request",
+          "D. Tạo Bean -> Quét Component -> Chạy Auto-configuration"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ứng dụng sẽ tạo context chứa môi trường trước, quét các bean tự viết, bổ sung các bean tự động cấu hình từ classpath, khởi động Tomcat nhúng và lắng nghe cổng mạng."
+      },
+      {
+        "id": 48,
+        "topicId": "springboot_autoconfig",
+        "type": "bug",
+        "question": "Nếu bạn đặt class chứa annotation @SpringBootApplication ở trong package `com.example.app.main`, nhưng lại viết các class Controller ở package `com.example.controller`, tại sao khi chạy ứng dụng, trình duyệt báo lỗi 404 cho tất cả các API?",
+        "options": [
+          "A. Do controller viết sai code.",
+          "B. Do Spring ComponentScan mặc định chỉ quét trong package của class main (`com.example.app.main`) và các package con của nó, nên không phát hiện ra Controller.",
+          "C. Do cổng Tomcat bị chặn.",
+          "D. Do thiếu file application.properties."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Mặc định @ComponentScan bắt đầu quét từ package chứa class cấu hình chính. Để quét các package nằm ngoài cây thư mục này, ta phải cấu hình quét rõ ràng: @ComponentScan(\"com.example\") hoặc dời class main ra ngoài."
+      },
+      {
+        "id": 49,
+        "topicId": "springboot_autoconfig",
+        "type": "code",
+        "question": "Xem đoạn mã sau:\n\n@SpringBootApplication\npublic class DemoApplication {\n    public static void main(String[] args) {\n        SpringApplication.run(DemoApplication.class, args);\n    }\n}\n\nAnnotation @SpringBootApplication là sự kết hợp của 3 annotation nào sau đây?",
+        "options": [
+          "A. @Configuration, @EnableAutoConfiguration, @ComponentScan",
+          "B. @SpringBootConfiguration, @EnableAutoConfiguration, @ComponentScan",
+          "C. @Component, @Service, @Repository",
+          "D. @Controller, @ResponseBody, @Configuration"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@SpringBootApplication tích hợp sẵn 3 annotation gồm: @SpringBootConfiguration, @EnableAutoConfiguration, và @ComponentScan."
+      },
+      {
+        "id": 50,
+        "topicId": "spring_mvc_flow",
+        "type": "concept",
+        "question": "Thành phần nào trong kiến trúc Spring MVC chịu trách nhiệm ánh xạ giữa đường dẫn yêu cầu (URL) và Controller xử lý?",
+        "options": [
+          "A. DispatcherServlet",
+          "B. HandlerMapping",
+          "C. HandlerAdapter",
+          "D. ViewResolver"
+        ],
+        "correctAnswer": "B",
+        "explanation": "HandlerMapping phân tích URL request để tìm ra Handler (Controller) và trả về một HandlerExecutionChain cho DispatcherServlet."
+      },
+      {
+        "id": 51,
+        "topicId": "spring_mvc_flow",
+        "type": "comparison",
+        "question": "Sự khác biệt giữa Controller truyền thống và RestController trong Spring MVC là gì?",
+        "options": [
+          "A. Controller chỉ dùng cho ứng dụng console.",
+          "B. RestController tự động đính kèm annotation @ResponseBody lên mọi phương thức để trả về dữ liệu thô (JSON/XML) thay vì trả về View Name.",
+          "C. Controller nhanh hơn RestController.",
+          "D. RestController bắt buộc phải sử dụng JSP để render."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@RestController là một annotation kết hợp giữa @Controller và @ResponseBody, tự động chuyển đổi giá trị trả về của phương thức thành dữ liệu API (JSON/XML) trực tiếp trong Response Body."
+      },
+      {
+        "id": 52,
+        "topicId": "spring_mvc_flow",
+        "type": "situation",
+        "question": "Bạn đang xây dựng ứng dụng Web trả về giao diện HTML sử dụng công nghệ Thymeleaf làm View Engine. Controller của bạn nên trả về kiểu dữ liệu gì để ViewResolver tìm được file HTML?",
+        "options": [
+          "A. Chuỗi String chứa tên của file giao diện (View Name).",
+          "B. Đối tượng JSON thô.",
+          "C. Đối tượng Connection.",
+          "D. Trả về void."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Trong Controller truyền thống, việc trả về một String (ví dụ: \"index\") đại diện cho View Name sẽ được ViewResolver tiếp nhận để tìm file mẫu tương ứng (ví dụ: /templates/index.html)."
+      },
+      {
+        "id": 53,
+        "topicId": "spring_mvc_flow",
+        "type": "blank",
+        "question": "Trong Spring MVC, đối tượng đóng vai trò là Front Controller tiếp nhận tất cả mọi HTTP request gửi đến hệ thống có tên là `______`.",
+        "options": [
+          "A. ServletContext",
+          "B. DispatcherServlet",
+          "C. WebMvcConfigurer",
+          "D. HandlerInterceptor"
+        ],
+        "correctAnswer": "B",
+        "explanation": "DispatcherServlet là trái tim của Spring MVC, tiếp nhận mọi request đầu vào và điều phối quá trình xử lý qua các thành phần khác."
+      },
+      {
+        "id": 54,
+        "topicId": "spring_mvc_flow",
+        "type": "process",
+        "question": "Thứ tự đúng của luồng xử lý Request trong Spring MVC là gì?",
+        "options": [
+          "A. Request -> Controller -> DispatcherServlet -> View",
+          "B. Request -> DispatcherServlet -> HandlerMapping -> HandlerAdapter -> Controller -> ViewResolver -> View -> Response",
+          "C. Request -> ViewResolver -> Controller -> DispatcherServlet -> Response",
+          "D. Request -> HandlerAdapter -> ViewResolver -> DispatcherServlet"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Luồng đi: DispatcherServlet tiếp nhận -> hỏi HandlerMapping tìm Controller -> gọi HandlerAdapter để thực thi Controller -> Controller trả về ModelAndView -> ViewResolver biên dịch View -> Trình bày kết quả."
+      },
+      {
+        "id": 55,
+        "topicId": "spring_mvc_flow",
+        "type": "bug",
+        "question": "Tại sao khi truy cập API bạn nhận được chuỗi text tên view \"users\" hiển thị trực tiếp trên trình duyệt thay vì trang giao diện HTML của trang quản lý người dùng?",
+        "options": [
+          "A. Do chưa cấu hình Database.",
+          "B. Do bạn đánh dấu Controller bằng annotation @RestController hoặc @ResponseBody, khiến Spring bỏ qua ViewResolver và viết thẳng chuỗi String đó vào Response Body.",
+          "C. Do file HTML bị lỗi cú pháp.",
+          "D. Do lỗi kết nối mạng."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@ResponseBody chỉ định giá trị trả về của phương thức được ghi trực tiếp vào body của HTTP Response dưới dạng dữ liệu thô, vô hiệu hóa quy trình tìm View của ViewResolver."
+      },
+      {
+        "id": 56,
+        "topicId": "spring_mvc_flow",
+        "type": "code",
+        "question": "Cho đoạn mã Spring MVC Controller sau:\n\n@Controller\npublic class MainController {\n    @GetMapping(\"/home\")\n    public String homepage() {\n        return \"home\";\n    }\n}\n\nKhi người dùng truy cập /home, hệ thống sẽ thực hiện hành động nào?",
+        "options": [
+          "A. Trả về dòng chữ \"home\" thô cho trình duyệt.",
+          "B. Nhờ ViewResolver tìm file giao diện có tên tương ứng là \"home\" để kết xuất giao diện.",
+          "C. Gây lỗi sập server.",
+          "D. Chuyển hướng sang trang google.com."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Vì class sử dụng @Controller (không phải @RestController) và phương thức trả về kiểu String, Spring MVC sẽ gửi chuỗi \"home\" tới ViewResolver để tìm trang template."
+      },
+      {
+        "id": 57,
+        "topicId": "spring_mvc_annotations",
+        "type": "concept",
+        "question": "Annotation nào dùng để trích xuất trực tiếp giá trị nằm trên phân đoạn của đường dẫn URL (URI Path)?",
+        "options": [
+          "A. @RequestParam",
+          "B. @PathVariable",
+          "C. @RequestBody",
+          "D. @RequestHeader"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@PathVariable cho phép ánh xạ các biến mẫu đường dẫn URI (ví dụ: /users/{id}) thành các tham số trong phương thức Java."
+      },
+      {
+        "id": 58,
+        "topicId": "spring_mvc_annotations",
+        "type": "comparison",
+        "question": "Sự khác biệt chính giữa @PathVariable và @RequestParam là gì?",
+        "options": [
+          "A. @PathVariable lấy tham số từ body, @RequestParam lấy từ header.",
+          "B. @PathVariable lấy dữ liệu từ URI path segment (ví dụ /users/5), còn @RequestParam lấy từ query parameter (ví dụ /users?id=5) hoặc form data.",
+          "C. @RequestParam chỉ dùng được với POST request.",
+          "D. Không có sự khác biệt."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@PathVariable ánh xạ biến trên đường dẫn URL. @RequestParam ánh xạ biến từ chuỗi truy vấn (query string sau dấu ?) hoặc dữ liệu gửi lên từ form."
+      },
+      {
+        "id": 59,
+        "topicId": "spring_mvc_annotations",
+        "type": "situation",
+        "question": "Bạn cần xây dựng API tìm kiếm sản phẩm hỗ trợ lọc theo tên và sắp xếp theo thuộc tính (ví dụ: `/products?name=iphone&sort=price`). Bạn nên khai báo các tham số này sử dụng annotation nào?",
+        "options": [
+          "A. @PathVariable",
+          "B. @RequestParam",
+          "C. @RequestBody",
+          "D. @ModelAttribute"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Các tham số lọc và sắp xếp động truyền theo query string cực kỳ phù hợp để xử lý bằng @RequestParam (ví dụ: @RequestParam(\"name\") String name)."
+      },
+      {
+        "id": 60,
+        "topicId": "spring_mvc_annotations",
+        "type": "blank",
+        "question": "Để thiết lập một tham số @RequestParam là không bắt buộc và có giá trị mặc định bằng 1 nếu người dùng không truyền lên, ta dùng thuộc tính `______`.",
+        "options": [
+          "A. required = false, defaultValue = \"1\"",
+          "B. optional = true, val = \"1\"",
+          "C. required = true, defaultVal = 1",
+          "D. exclude = true"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Cú pháp: @RequestParam(value = \"page\", required = false, defaultValue = \"1\")."
+      },
+      {
+        "id": 61,
+        "topicId": "spring_mvc_annotations",
+        "type": "process",
+        "question": "Khi người dùng gửi request tới `/users/12?type=admin`, Spring MVC phân tích và gán giá trị cho controller như thế nào?",
+        "options": [
+          "A. Gán 12 cho RequestParam và type cho PathVariable",
+          "B. Không gán được vì trùng lặp tham số",
+          "C. Ánh xạ 12 thành PathVariable và 'admin' thành RequestParam",
+          "D. Đọc từ Request Body"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Số 12 là một phần của đường dẫn được bắt bằng @PathVariable. Chuỗi truy vấn `type=admin` được bắt bằng @RequestParam."
+      },
+      {
+        "id": 62,
+        "topicId": "spring_mvc_annotations",
+        "type": "bug",
+        "question": "Lỗi `400 Bad Request` xảy ra khi gọi API sử dụng @RequestParam trong Controller. Nguyên nhân phổ biến nhất là gì?",
+        "options": [
+          "A. Do database bị đầy.",
+          "B. Do tham số được cấu hình mặc định là bắt buộc (`required=true`), nhưng client gửi request không đính kèm tham số này trong URL hoặc form.",
+          "C. Do không dùng HTTPS.",
+          "D. Do sai kiểu trả về của Controller."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Mặc định, @RequestParam có `required=true`. Nếu client không gửi tham số đó lên, Spring Boot sẽ tự động từ chối và trả về lỗi 400 Bad Request."
+      },
+      {
+        "id": 63,
+        "topicId": "spring_mvc_annotations",
+        "type": "code",
+        "question": "Xem đoạn mã sau:\n\n@GetMapping(\"/api/v1/orders/{orderId}\")\npublic Order getOrder(@PathVariable Long orderId) { ... }\n\nNếu client gửi request tới `/api/v1/orders/999`, biến orderId sẽ nhận giá trị bao nhiêu?",
+        "options": [
+          "A. null",
+          "B. 999",
+          "C. Lỗi 400",
+          "D. Lỗi biên dịch vì thiếu tên biến rõ ràng"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Nếu tên biến phương thức trùng khớp với tên biến trong dấu ngoặc nhọn `{orderId}`, Spring Boot có thể tự động ánh xạ giá trị (ở đây là 999) mà không cần khai báo tường minh tên trong @PathVariable."
+      },
+      {
+        "id": 64,
+        "topicId": "spring_filters",
+        "type": "concept",
+        "question": "Class nào của Spring Framework được thiết kế chuyên biệt để đảm bảo một bộ lọc chỉ chạy duy nhất một lần cho mỗi Request?",
+        "options": [
+          "A. GenericFilterBean",
+          "B. OncePerRequestFilter",
+          "C. FilterChainProxy",
+          "D. DelegatingFilterProxy"
+        ],
+        "correctAnswer": "B",
+        "explanation": "OncePerRequestFilter là một abstract class của Spring đảm bảo phương thức doFilterInternal chỉ được kích hoạt đúng 1 lần cho mỗi yêu cầu HTTP."
+      },
+      {
+        "id": 65,
+        "topicId": "spring_filters",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa GenericFilterBean và Filter chuẩn (jakarta.servlet.Filter) là gì?",
+        "options": [
+          "A. GenericFilterBean không thể đọc được web.xml.",
+          "B. GenericFilterBean là class của Spring, tích hợp sâu với Spring Context cho phép truy cập tham số cấu hình dễ dàng hơn và tránh boilerplate code.",
+          "C. GenericFilterBean chạy nhanh hơn gấp 10 lần.",
+          "D. Interface Filter không thể dùng trong Spring."
+        ],
+        "correctAnswer": "B",
+        "explanation": "GenericFilterBean là lớp trung gian giúp tích hợp Servlet Filter tiêu chuẩn vào hệ sinh thái của Spring, tự động lấy cấu hình từ ServletConfig/ServletContext thành các thuộc tính bean."
+      },
+      {
+        "id": 66,
+        "topicId": "spring_filters",
+        "type": "situation",
+        "question": "Bạn cần xây dựng một Filter xác thực token JWT cho mọi request. Bộ lọc này không được phép chạy lại nếu request đó bị forward nội bộ sang một servlet khác. Bạn nên kế thừa class nào?",
+        "options": [
+          "A. GenericFilterBean",
+          "B. OncePerRequestFilter",
+          "C. javax.servlet.Filter",
+          "D. WebMvcConfigurer"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Kế thừa OncePerRequestFilter giúp ngăn chặn việc bộ lọc JWT chạy lại nhiều lần không cần thiết khi có hoạt động chuyển hướng nội bộ (forward/include)."
+      },
+      {
+        "id": 67,
+        "topicId": "spring_filters",
+        "type": "blank",
+        "question": "Để đăng ký một Filter viết thủ công vào chuỗi lọc của Spring Boot mà không cần dùng web.xml, ta sử dụng lớp cấu hình có tên là `______`.",
+        "options": [
+          "A. FilterRegistrationBean",
+          "B. ServiceComponent",
+          "C. DelegatingFilterProxy",
+          "D. WebSecurityConfigurer"
+        ],
+        "correctAnswer": "A",
+        "explanation": "FilterRegistrationBean giúp đăng ký một custom Filter làm Spring Bean và cấu hình thứ tự chạy (Order), URL mapping cụ thể."
+      },
+      {
+        "id": 68,
+        "topicId": "spring_filters",
+        "type": "process",
+        "question": "Khi có request đi vào ứng dụng Spring Boot sử dụng Spring Security, thứ tự lọc diễn ra thế nào?",
+        "options": [
+          "A. Controller -> Filter -> Interceptor",
+          "B. Servlet Filter tiêu chuẩn -> Spring Security Filter Chain (OncePerRequestFilter) -> HandlerInterceptor -> Controller",
+          "C. Interceptor -> Filter -> Controller",
+          "D. Quét Component -> Filter -> Response"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Request đi qua các Filter ngoài container trước, sau đó đi vào bộ lọc bảo mật của Spring Security, qua Interceptor của Spring MVC và cuối cùng mới tới Controller."
+      },
+      {
+        "id": 69,
+        "topicId": "spring_filters",
+        "type": "bug",
+        "question": "Tại sao một Filter kế thừa GenericFilterBean khi được khai báo làm `@Component` trong Spring Boot lại tự động áp dụng cho tất cả URL (/*) mặc dù bạn không hề cấu hình mapping cho nó?",
+        "options": [
+          "A. Do Tomcat tự cấu hình.",
+          "B. Vì Spring Boot tự động phát hiện mọi Bean kiểu Filter và đăng ký nó vào Servlet container mặc định với đường dẫn '/*'.",
+          "C. Do lỗi thư viện Maven.",
+          "D. Do Spring Security ép buộc."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Spring Boot tự động đăng ký mọi Bean kế thừa Filter vào ứng dụng. Để kiểm soát chính xác URL mapping hoặc tránh tự động đăng ký, ta nên sử dụng FilterRegistrationBean."
+      },
+      {
+        "id": 70,
+        "topicId": "spring_filters",
+        "type": "code",
+        "question": "Xem đoạn mã định nghĩa Custom Filter sau:\n\npublic class LogFilter extends OncePerRequestFilter {\n    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) {\n        // Ghi log\n        chain.doFilter(req, res);\n    }\n}\n\nPhương thức cần override để viết logic lọc chính trong OncePerRequestFilter là gì?",
+        "options": [
+          "A. doFilter(ServletRequest, ServletResponse, FilterChain)",
+          "B. doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain)",
+          "C. init(FilterConfig)",
+          "D. destroy()"
+        ],
+        "correctAnswer": "B",
+        "explanation": "OncePerRequestFilter định nghĩa phương thức abstract doFilterInternal() làm nơi viết logic lọc chính sau khi đã xử lý xong các kiểm tra lặp request."
+      },
+      {
+        "id": 71,
+        "topicId": "spring_di_ioc",
+        "type": "concept",
+        "question": "IoC (Inversion of Control) là gì?",
+        "options": [
+          "A. Là một thư viện giúp kết nối Database.",
+          "B. Là một nguyên lý thiết kế đảo ngược quyền kiểm soát quản lý vòng đời đối tượng từ lập trình viên sang cho Framework.",
+          "C. Là cơ chế biên dịch mã nguồn Java thành mã máy.",
+          "D. Là một mẫu thiết kế để tạo Singleton Class."
+        ],
+        "correctAnswer": "B",
+        "explanation": "IoC đảo ngược sự kiểm soát việc khởi tạo và quản lý liên kết đối tượng, giao nhiệm vụ này cho container quản lý."
+      },
+      {
+        "id": 72,
+        "topicId": "spring_di_ioc",
+        "type": "comparison",
+        "question": "So sánh giữa Constructor Injection và Field Injection (@Autowired trực tiếp lên biến), tại sao Constructor Injection lại được khuyến nghị sử dụng hơn?",
+        "options": [
+          "A. Constructor Injection giúp ứng dụng khởi động nhanh hơn.",
+          "B. Constructor Injection cho phép khai báo các dependency là 'final' (bất biến), đảm bảo đối tượng không bị null khi chạy, và dễ dàng viết Unit Test mà không cần mock framework.",
+          "C. Field Injection bị cấm trong các phiên bản Java mới.",
+          "D. Constructor Injection chiếm ít bộ nhớ hơn."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Constructor Injection bắt buộc phải truyền đủ các đối tượng phụ thuộc khi khởi tạo đối tượng, cho phép dùng thuộc tính 'final' bảo vệ dữ liệu và giúp code dễ test hơn do không phụ thuộc vào Spring Container."
+      },
+      {
+        "id": 73,
+        "topicId": "spring_di_ioc",
+        "type": "situation",
+        "question": "Lớp `PaymentService` của bạn cần sử dụng đối tượng `EmailService` để gửi thông báo. Thiết kế lớp `PaymentService` như thế nào để tuân thủ nguyên lý Dependency Injection chuẩn chỉnh nhất?",
+        "options": [
+          "A. Khởi tạo trực tiếp: private EmailService service = new EmailService();",
+          "B. Tiêm qua hàm tạo: khai báo EmailService là final và truyền vào Constructor của PaymentService.",
+          "C. Tạo EmailService bằng Reflection.",
+          "D. Viết EmailService làm lớp con của PaymentService."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Khai báo biến thành viên là `final` và tiêm qua Constructor là mẫu thiết kế Dependency Injection được khuyến nghị chính thức bởi Spring."
+      },
+      {
+        "id": 74,
+        "topicId": "spring_di_ioc",
+        "type": "blank",
+        "question": "Nơi lưu trữ, quản lý vòng đời và cấu hình các Bean trong Spring Framework được gọi là ______.",
+        "options": [
+          "A. Database Connection Pool",
+          "B. JVM Memory",
+          "C. Spring IoC Container (ApplicationContext)",
+          "D. Web Container Tomcat"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Spring IoC Container (được đại diện bởi interface ApplicationContext) chịu trách nhiệm khởi tạo, cấu hình và quản lý vòng đời của tất cả các Spring Beans."
+      },
+      {
+        "id": 75,
+        "topicId": "spring_di_ioc",
+        "type": "process",
+        "question": "Quy trình khởi tạo một Bean trong Spring IoC Container diễn ra như thế nào?",
+        "options": [
+          "A. Đọc định nghĩa Bean -> Khởi tạo Instance -> Tiêm Dependency -> Gọi init-method -> Sẵn sàng sử dụng -> Gọi destroy-method khi đóng container",
+          "B. Chạy code -> Tạo Connection -> Hủy Bean",
+          "C. Gọi destroy -> Khởi tạo Bean -> Quét Component",
+          "D. Khởi động Tomcat -> Tạo DB -> Tạo Bean"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Container quét định nghĩa cấu hình, tạo đối tượng (new), tiêm các phụ thuộc (DI), chạy hàm khởi tạo bổ sung (init), đưa vào sử dụng và hủy (destroy) khi dừng ứng dụng."
+      },
+      {
+        "id": 76,
+        "topicId": "spring_di_ioc",
+        "type": "bug",
+        "question": "Lỗi `CircularDependencyException` (Phụ thuộc vòng quanh) xảy ra khi nào trong ứng dụng Spring Boot?",
+        "options": [
+          "A. Khi kết nối Database bị gián đoạn.",
+          "B. Khi hai Bean phụ thuộc chéo lẫn nhau (ví dụ: Bean A cần Bean B trong Constructor, và Bean B cũng cần Bean A trong Constructor).",
+          "C. Khi đặt tên trùng hai Bean.",
+          "D. Khi thiếu annotation @Service."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Phụ thuộc vòng quanh làm container rơi vào vòng lặp vô hạn khi khởi tạo đối tượng (A đợi B khởi tạo xong, B lại đợi A khởi tạo xong), dẫn đến lỗi khởi động."
+      },
+      {
+        "id": 77,
+        "topicId": "spring_di_ioc",
+        "type": "code",
+        "question": "Xem đoạn mã sau:\n\n@Configuration\npublic class AppConfig {\n    @Bean\n    public OrderService orderService() {\n        return new OrderServiceImpl();\n    }\n}\n\nBean tạo ra từ phương thức trên sẽ có tên mặc định là gì trong IoC Container?",
+        "options": [
+          "A. orderServiceImpl",
+          "B. orderService",
+          "C. AppConfig",
+          "D. bean1"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Mặc định, tên của Bean được tạo ra từ phương thức đánh dấu `@Bean` chính là tên của phương thức đó (ở đây là `orderService`)."
+      },
+      {
+        "id": 78,
+        "topicId": "spring_stereotype_annotations",
+        "type": "concept",
+        "question": "Annotation nào là annotation cơ sở (meta-annotation) cho tất cả các stereotype annotation khác của Spring?",
+        "options": [
+          "A. @Service",
+          "B. @Repository",
+          "C. @Component",
+          "D. @Controller"
+        ],
+        "correctAnswer": "C",
+        "explanation": "@Component là annotation gốc. Các annotation Service, Repository, Controller đều được chú thích bởi @Component và mang các ngữ nghĩa bổ sung."
+      },
+      {
+        "id": 79,
+        "topicId": "spring_stereotype_annotations",
+        "type": "comparison",
+        "question": "Mục đích chính của việc chia nhỏ các annotation thành @Service, @Repository, @Controller thay vì chỉ dùng duy nhất @Component là gì?",
+        "options": [
+          "A. Giúp mã nguồn chạy nhanh hơn.",
+          "B. Phân cấp rõ ràng kiến trúc ứng dụng (Controller cho web, Service cho nghiệp vụ, Repository cho DB) và cho phép áp dụng các xử lý tự động chuyên biệt (như dịch lỗi DB trong Repository).",
+          "C. Ràng buộc bảo mật dữ liệu.",
+          "D. Yêu cầu bắt buộc của ngôn ngữ Java."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Tạo tính ngữ nghĩa cho mã nguồn giúp dễ quản lý và cho phép Spring kích hoạt các xử lý đặc thù (như dịch ngoại lệ CSDL cho @Repository, xử lý view cho @Controller)."
+      },
+      {
+        "id": 80,
+        "topicId": "spring_stereotype_annotations",
+        "type": "situation",
+        "question": "Bạn cần xây dựng một class chịu trách nhiệm thực hiện các câu lệnh SQL tự viết bằng JDBCTemplate để tương tác với DB. Bạn nên đánh dấu class này bằng annotation nào?",
+        "options": [
+          "A. @Component",
+          "B. @Service",
+          "C. @Repository",
+          "D. @Controller"
+        ],
+        "correctAnswer": "C",
+        "explanation": "@Repository được thiết kế dành riêng cho các lớp Data Access Object (DAO) thực hiện các thao tác truy vấn trực tiếp với DB."
+      },
+      {
+        "id": 81,
+        "topicId": "spring_stereotype_annotations",
+        "type": "blank",
+        "question": "Để đăng ký một class làm Controller cung cấp các API RESTful trả về dữ liệu thô JSON, ta sử dụng annotation kết hợp là `______`.",
+        "options": [
+          "A. @Controller",
+          "B. @RestController",
+          "C. @Component",
+          "D. @WebController"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@RestController = @Controller + @ResponseBody, chuyên dùng cho việc xây dựng các API RESTful."
+      },
+      {
+        "id": 82,
+        "topicId": "spring_stereotype_annotations",
+        "type": "process",
+        "question": "Quá trình quét và đăng ký các Stereotype Annotation diễn ra như thế nào khi khởi chạy ứng dụng?",
+        "options": [
+          "A. Spring quét các class -> Tìm các class có annotation stereotype -> Khởi tạo Bean và đưa vào IoC Container",
+          "B. Lập trình viên phải tự đăng ký từng class vào XML",
+          "C. Quét database -> tạo entity -> gán Controller",
+          "D. Chạy Tomcat -> Đăng ký filter -> Tạo Component"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Cơ chế Component Scanning quét classpath tìm các annotation được kế thừa từ @Component, tự động sinh mã khởi tạo instance cho chúng trong ứng dụng."
+      },
+      {
+        "id": 83,
+        "topicId": "spring_stereotype_annotations",
+        "type": "bug",
+        "question": "Tại sao khi bạn tạo một lớp mới chứa các xử lý nghiệp vụ nhưng quên thêm annotation `@Service`, khi khởi chạy ứng dụng, Spring báo lỗi `NoSuchBeanDefinitionException` tại nơi tiêm đối tượng đó?",
+        "options": [
+          "A. Do thiếu kết nối DB.",
+          "B. Do Spring ComponentScan không nhận diện class đó là một component để khởi tạo Bean vào Container, dẫn đến thiếu đối tượng để tiêm.",
+          "C. Do Java không hỗ trợ class đó.",
+          "D. Do lỗi cổng mạng."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Nếu không có stereotype annotation, Spring Container sẽ bỏ qua class đó và không tạo Bean. Khi class khác yêu cầu tiêm Bean này, Spring sẽ không tìm thấy và ném lỗi."
+      },
+      {
+        "id": 84,
+        "topicId": "spring_stereotype_annotations",
+        "type": "code",
+        "question": "Quan sát đoạn mã sau:\n\n@Repository\npublic class CustomUserDao { ... }\n\nLợi ích đặc biệt nhất của việc đánh dấu @Repository lên class CustomUserDao này là gì?",
+        "options": [
+          "A. Tự động mở kết nối database.",
+          "B. Spring tự động áp dụng proxy để chuyển đổi các Exception cấp thấp của Database (như SQLException) thành Exception cấp cao của Spring (DataAccessException).",
+          "C. Cho phép class chạy đa luồng.",
+          "D. Không có lợi ích nào ngoài việc đặt tên."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@Repository kích hoạt cơ chế PersistenceExceptionTranslationPostProcessor giúp chuẩn hóa các lỗi DB thành hệ thống lỗi chung của Spring."
+      }
+    ]
+  },
+  {
+    "id": "de_3",
+    "name": "Đề thi thử số 3 (JPA & Hibernate)",
+    "description": "Đề kiểm tra chuyên sâu phần JPA Fetch Type (EAGER/LAZY), Entity Lifecycle, Transactions (@Transactional) và khắc phục lỗi N+1 Query (35 câu hỏi).",
+    "questions": [
+      {
+        "id": 85,
+        "topicId": "jpa_fetch_type",
+        "type": "concept",
+        "question": "Fetch Type nào thực hiện việc trì hoãn tải dữ liệu quan hệ cho đến khi đối tượng liên kết thực sự được truy cập (gọi hàm getter)?",
+        "options": [
+          "A. FetchType.EAGER",
+          "B. FetchType.LAZY",
+          "C. FetchType.DYNAMIC",
+          "D. FetchType.DEFAULT"
+        ],
+        "correctAnswer": "B",
+        "explanation": "FetchType.LAZY trì hoãn việc tải dữ liệu từ DB lên bộ nhớ cho tới khi phương thức getter của tập quan hệ đó được gọi."
+      },
+      {
+        "id": 86,
+        "topicId": "jpa_fetch_type",
+        "type": "comparison",
+        "question": "Sự khác biệt mặc định về FetchType giữa các mối quan hệ sở hữu đơn (@ManyToOne) và quan hệ bộ sưu tập (@OneToMany) là gì?",
+        "options": [
+          "A. Cả hai đều mặc định là LAZY.",
+          "B. @ManyToOne mặc định là EAGER, còn @OneToMany mặc định là LAZY.",
+          "C. @ManyToOne mặc định là LAZY, còn @OneToMany mặc định là EAGER.",
+          "D. Cả hai đều mặc định là EAGER."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Các quan hệ trỏ tới 1 thực thể đơn lẻ (@ManyToOne, @OneToOne) mặc định tải ngay (EAGER). Các quan hệ trỏ tới 1 danh sách (@OneToMany, @ManyToMany) mặc định tải trì hoãn (LAZY) để tránh nghẽn bộ nhớ."
+      },
+      {
+        "id": 87,
+        "topicId": "jpa_fetch_type",
+        "type": "situation",
+        "question": "Một thực thể `Order` chứa danh sách 10,000 thực thể `OrderDetail`. Để tránh việc mỗi lần lấy thông tin đơn hàng hệ thống phải load toàn bộ chi tiết hóa đơn khổng lồ lên RAM, bạn chọn FetchType như thế nào cho thuộc tính danh sách chi tiết?",
+        "options": [
+          "A. FetchType.EAGER",
+          "B. FetchType.LAZY",
+          "C. Không dùng ORM, truy vấn SQL thủ công",
+          "D. Đặt thuộc tính transient"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Sử dụng FetchType.LAZY là bắt buộc cho các danh sách lớn để tránh truy vấn thừa thãi khi chỉ cần thông tin tóm tắt của Order."
+      },
+      {
+        "id": 88,
+        "topicId": "jpa_fetch_type",
+        "type": "blank",
+        "question": "Khi truy cập một thuộc tính quan hệ cấu hình FetchType.LAZY ngoài phạm vi giao dịch (sau khi EntityManager/Session đã đóng), Hibernate sẽ ném ra ngoại lệ `______`.",
+        "options": [
+          "A. NullPointerException",
+          "B. LazyInitializationException",
+          "C. SQLException",
+          "D. TransactionRequiredException"
+        ],
+        "correctAnswer": "B",
+        "explanation": "LazyInitializationException xảy ra vì Session quản lý kết nối CSDL của thực thể đã bị đóng, khiến Hibernate không thể thực hiện câu lệnh SQL bổ sung để nạp dữ liệu trì hoãn."
+      },
+      {
+        "id": 89,
+        "topicId": "jpa_fetch_type",
+        "type": "process",
+        "question": "Quy trình thực thi SQL của Hibernate khi truy vấn thực thể cha có chứa quan hệ con EAGER vs LAZY như thế nào?",
+        "options": [
+          "A. EAGER: 1 câu SQL JOIN (hoặc SELECT liên tục); LAZY: chỉ chạy 1 câu SELECT cha, câu SELECT con chỉ chạy khi gọi getter",
+          "B. LAZY chạy trước, EAGER chạy sau",
+          "C. Cả hai đều chạy 2 câu lệnh SQL cùng lúc",
+          "D. Không chạy câu lệnh SQL nào"
+        ],
+        "correctAnswer": "A",
+        "explanation": "EAGER tải toàn bộ dữ liệu con ngay lập tức trong lần truy vấn đầu tiên. LAZY trì hoãn câu truy vấn lấy danh sách con cho tới khi code gọi hàm lấy dữ liệu con (ví dụ: parent.getChildren())."
+      },
+      {
+        "id": 90,
+        "topicId": "jpa_fetch_type",
+        "type": "bug",
+        "question": "Mã nguồn của bạn liên tục ném ra lỗi `LazyInitializationException` khi render giao diện ở tầng View (HTML). Cách khắc phục an toàn và tối ưu nhất là gì?",
+        "options": [
+          "A. Chuyển tất cả quan hệ thành FetchType.EAGER.",
+          "B. Đảm bảo dữ liệu quan hệ được nạp đầy đủ trong phạm vi Transaction bằng cách sử dụng JOIN FETCH trong truy vấn JPQL hoặc sử dụng EntityGraph.",
+          "C. Tăng thời gian sống của session lên vô hạn.",
+          "D. Bỏ qua không hiển thị dữ liệu đó nữa."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Sử dụng JOIN FETCH trong câu truy vấn JPQL cho phép nạp chủ động dữ liệu quan hệ LAZY ngay trong khi Session còn mở, tránh chuyển toàn bộ sang EAGER gây chậm hệ thống."
+      },
+      {
+        "id": 91,
+        "topicId": "jpa_fetch_type",
+        "type": "code",
+        "question": "Cho định nghĩa thuộc tính sau:\n\n@ManyToOne(fetch = FetchType.LAZY)\n@JoinColumn(name = \"dept_id\")\nprivate Department department;\n\nKhi chạy lệnh `Employee emp = em.find(Employee.class, 1L)`, Hibernate sẽ tạo ra đối tượng department kiểu gì để gán cho Employee?",
+        "options": [
+          "A. Một đối tượng Department thật đầy đủ dữ liệu.",
+          "B. Đối tượng Proxy (Department$HibernateProxy) rỗng chỉ chứa khóa chính id.",
+          "C. Gán giá trị null.",
+          "D. Lỗi ClassCastException"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Hibernate tạo ra một đối tượng Proxy kế thừa từ Department chứa id để gán vào Employee. Dữ liệu thật chỉ được tải từ DB khi gọi các getter phi-id (ví dụ: department.getName())."
+      },
+      {
+        "id": 92,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "concept",
+        "question": "Trạng thái nào của Entity đại diện cho đối tượng đã liên kết với một dòng trong DB và đang được quản lý bởi Persistence Context?",
+        "options": [
+          "A. Transient",
+          "B. Managed",
+          "C. Detached",
+          "D. Removed"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Trạng thái Managed chỉ định thực thể đang chịu sự quản lý trực tiếp của Persistence Context (EntityManager)."
+      },
+      {
+        "id": 93,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "comparison",
+        "question": "Sự khác biệt lớn nhất về hành vi giữa thực thể ở trạng thái Managed và Detached khi ta gọi các phương thức setter thay đổi giá trị thuộc tính của chúng là gì?",
+        "options": [
+          "A. Managed sẽ ném lỗi, Detached thì không.",
+          "B. Thay đổi trên Managed được tự động đồng bộ xuống DB khi commit (Dirty Checking), còn thay đổi trên Detached sẽ bị bỏ qua và không tự động lưu.",
+          "C. Detached tự động xóa khỏi database.",
+          "D. Không có sự khác biệt."
+        ],
+        "correctAnswer": "B",
+        "explanation": "EntityManager theo dõi mọi thay đổi trên đối tượng Managed và đồng bộ tự động xuống DB. Đối với đối tượng Detached, EntityManager đã ngắt quản lý nên mọi thay đổi thuộc tính chỉ có hiệu lực trên bộ nhớ JVM."
+      },
+      {
+        "id": 94,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "situation",
+        "question": "Bạn đọc một đối tượng `User` từ database ra, sau đó đóng phiên làm việc. Bạn thay đổi email của User này và muốn lưu cập nhật đó vào DB ở một phiên làm việc mới. Bạn nên sử dụng phương thức nào của EntityManager?",
+        "options": [
+          "A. em.persist(user)",
+          "B. em.merge(user)",
+          "C. em.remove(user)",
+          "D. em.refresh(user)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Lệnh em.merge() được thiết kế để đưa một thực thể bị tách rời (Detached) trở lại trạng thái được quản lý (Managed) bằng cách sao chép các thay đổi vào một thực thể Managed mới tra cứu từ DB."
+      },
+      {
+        "id": 95,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "blank",
+        "question": "Một thực thể mới được tạo bằng từ khóa `new` và chưa có giá trị định danh ID trong database được gọi là thực thể ở trạng thái ______.",
+        "options": [
+          "A. Managed",
+          "B. Transient",
+          "C. Detached",
+          "D. Removed"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Transient là trạng thái sơ khởi của thực thể: mới được tạo trên RAM, chưa có khóa chính và chưa liên kết với EntityManager."
+      },
+      {
+        "id": 96,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "process",
+        "question": "Quy trình chuyển đổi trạng thái của Entity từ khi tạo mới đến khi xóa khỏi DB diễn ra như thế nào?",
+        "options": [
+          "A. Transient -> Managed -> Removed -> Bị xóa khỏi DB (khi commit)",
+          "B. Detached -> Transient -> Managed",
+          "C. Managed -> Transient -> Detached",
+          "D. Transient -> Detached -> Removed"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Quy trình chuẩn: Tạo mới (Transient) -> persistent/find (Managed) -> remove (Removed) -> xóa thực tế khỏi DB khi commit transaction."
+      },
+      {
+        "id": 97,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "bug",
+        "question": "Lỗi `PersistentObjectException` xảy ra khi gọi phương thức em.persist(entity). Nguyên nhân do đâu?",
+        "options": [
+          "A. Do thực thể không có annotation @Entity.",
+          "B. Do thực thể ở trạng thái Transient nhưng đã được gán sẵn giá trị khóa chính ID thủ công (trong khi cấu hình ID là tự tăng IDENTITY).",
+          "C. Do database bị khóa.",
+          "D. Do session bị timeout."
+        ],
+        "correctAnswer": "B",
+        "explanation": "persist() yêu cầu đối tượng phải là Transient hoàn toàn (chưa có ID). Nếu đối tượng đã có sẵn ID, Hibernate nghĩ rằng đối tượng này đã tồn tại và báo lỗi."
+      },
+      {
+        "id": 98,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "code",
+        "question": "Xem đoạn mã xử lý sau:\n\nUser user = em.find(User.class, 1L);\nuser.setName(\"Nam\");\nem.clear();\nuser.setName(\"An\");\n// commit transaction\n\nTên của User trong database sau khi commit là gì?",
+        "options": [
+          "A. Nam",
+          "B. An",
+          "C. Không thay đổi",
+          "D. Gây lỗi Exception sập ứng dụng"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Sau khi set \"Nam\", lệnh em.clear() đưa mọi thực thể Managed (bao gồm user) về trạng thái Detached. Do đó lệnh set \"An\" tiếp theo không được đồng bộ xuống DB. Kết quả DB lưu tên \"Nam\"."
+      },
+      {
+        "id": 99,
+        "topicId": "jpa_transaction",
+        "type": "concept",
+        "question": "Annotation nào của Spring cung cấp cơ chế quản lý giao dịch khai báo (Declarative Transaction Management)?",
+        "options": [
+          "A. @Transaction",
+          "B. @Transactional",
+          "C. @PersistenceContext",
+          "D. @Rollback"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@Transactional được sử dụng để Spring tự động tạo các transaction nghiệp vụ bao quanh phương thức hoặc class."
+      },
+      {
+        "id": 100,
+        "topicId": "jpa_transaction",
+        "type": "comparison",
+        "question": "Sự khác biệt về hành vi Rollback mặc định của @Transactional giữa Unchecked Exception và Checked Exception là gì?",
+        "options": [
+          "A. Cả hai đều tự động rollback.",
+          "B. @Transactional tự động rollback với Unchecked Exception, nhưng mặc định không rollback với Checked Exception (vẫn commit bình thường).",
+          "C. @Transactional chỉ rollback với Checked Exception.",
+          "D. Cả hai đều không tự động rollback."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Mặc định, Spring chỉ tự động rollback khi có RuntimeException hoặc Error ném ra. Với các ngoại lệ kế thừa trực tiếp từ Exception (Checked Exception), Spring vẫn tiến hành commit trừ khi cấu hình rollbackFor rõ ràng."
+      },
+      {
+        "id": 101,
+        "topicId": "jpa_transaction",
+        "type": "situation",
+        "question": "Phương thức chuyển tiền của bạn cần rollback nếu xảy ra ngoại lệ `IOException` (là một Checked Exception). Bạn phải cấu hình annotation `@Transactional` như thế nào?",
+        "options": [
+          "A. @Transactional",
+          "B. @Transactional(rollbackFor = IOException.class)",
+          "C. @Transactional(noRollbackFor = IOException.class)",
+          "D. @Transactional(readOnly = true)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Cấu hình rollbackFor định nghĩa rõ ràng các Checked Exception nào sẽ kích hoạt cơ chế rollback tự động."
+      },
+      {
+        "id": 102,
+        "topicId": "jpa_transaction",
+        "type": "blank",
+        "question": "Thuộc tính thiết lập mức độ cô lập dữ liệu của giao dịch trong @Transactional có tên tiếng Anh là `______`.",
+        "options": [
+          "A. Propagation",
+          "B. Isolation",
+          "C. ReadOnly",
+          "D. Timeout"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Isolation cấu hình mức độ cô lập để tránh các hiện tượng đọc dữ liệu rác (Dirty Read, Non-repeatable Read, Phantom Read)."
+      },
+      {
+        "id": 103,
+        "topicId": "jpa_transaction",
+        "type": "process",
+        "question": "Quy trình xử lý giao dịch bằng cơ chế AOP Proxy của Spring đối với phương thức @Transactional diễn ra như thế nào?",
+        "options": [
+          "A. Bắt đầu Transaction -> Chạy phương thức -> Commit (nếu thành công) hoặc Rollback (nếu ném Exception phù hợp) -> Đóng kết nối",
+          "B. Chạy phương thức -> Bắt đầu Transaction -> Commit",
+          "C. Commit -> Bắt đầu Transaction -> Chạy phương thức",
+          "D. Bắt đầu -> Đóng kết nối -> Chạy phương thức"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Spring tạo một lớp proxy bọc ngoài: mở connection, khởi tạo transaction, chạy code của bạn. Nếu code ném RuntimeException -> rollback, ngược lại -> commit, cuối cùng đóng connection."
+      },
+      {
+        "id": 104,
+        "topicId": "jpa_transaction",
+        "type": "bug",
+        "question": "Tại sao khi gọi phương thức `@Transactional` nội bộ từ một phương thức khác trong cùng một class (Self-invocation), transaction lại không thể kích hoạt và không thực hiện rollback khi có lỗi?",
+        "options": [
+          "A. Do CSDL không hỗ trợ transaction nội bộ.",
+          "B. Vì cơ chế AOP của Spring hoạt động dựa trên Proxy. Khi gọi nội bộ (lệnh `this.method()`), request không đi qua lớp Proxy bọc ngoài của Spring nên các thiết lập giao dịch bị bỏ qua hoàn toàn.",
+          "C. Do Java cấm gọi hàm nội bộ.",
+          "D. Do thiếu file cấu hình."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Spring tiêm proxy để quản lý giao dịch. Gọi hàm nội bộ trực tiếp bỏ qua lớp proxy này, khiến các annotation cấu hình trên phương thức được gọi không có tác dụng."
+      },
+      {
+        "id": 105,
+        "topicId": "jpa_transaction",
+        "type": "code",
+        "question": "Xem đoạn mã sau:\n\n@Transactional(propagation = Propagation.REQUIRES_NEW)\npublic void updateStatus() { ... }\n\nÝ nghĩa của cấu hình `Propagation.REQUIRES_NEW` là gì?",
+        "options": [
+          "A. Luôn luôn tái sử dụng transaction hiện có.",
+          "B. Luôn luôn treo transaction hiện tại (nếu có) để tạo một transaction hoàn toàn mới độc lập.",
+          "C. Không chạy trong transaction.",
+          "D. Ném Exception nếu có transaction đang chạy."
+        ],
+        "correctAnswer": "B",
+        "explanation": "REQUIRES_NEW tạo giao dịch độc lập mới. Giao dịch cha phía ngoài (nếu có) bị tạm dừng và không bị ảnh hưởng bởi kết quả commit/rollback của giao dịch mới này."
+      },
+      {
+        "id": 106,
+        "topicId": "jpa_nplus1_problem",
+        "type": "concept",
+        "question": "Hiện tượng N+1 Query trong Hibernate được định nghĩa là gì?",
+        "options": [
+          "A. Lỗi xảy ra khi chèn thêm N+1 bản ghi mới vào bảng.",
+          "B. Tình huống lấy danh sách N bản ghi cha, và ứng dụng chạy thêm N câu truy vấn SELECT phụ để lấy dữ liệu con liên quan của từng cha.",
+          "C. Lỗi tràn bộ nhớ cache cấp 2.",
+          "D. Truy vấn vượt quá giới hạn số lượng kết nối của database pool."
+        ],
+        "correctAnswer": "B",
+        "explanation": "N+1 query mô tả sự suy giảm hiệu năng khi thay vì dùng 1 câu SQL JOIN, Hibernate chạy 1 câu SELECT cha và chạy thêm N câu SELECT con riêng biệt trong vòng lặp."
+      },
+      {
+        "id": 107,
+        "topicId": "jpa_nplus1_problem",
+        "type": "comparison",
+        "question": "Khắc phục N+1 query bằng JOIN FETCH khác biệt gì so với JOIN thường trong JPQL?",
+        "options": [
+          "A. JOIN FETCH chỉ chạy trên MySQL, JOIN thường chạy trên mọi DB.",
+          "B. JOIN FETCH yêu cầu Hibernate nạp và ánh xạ dữ liệu bảng liên quan vào đối tượng Java ngay lập tức, còn JOIN thường chỉ lọc dữ liệu ở câu lệnh SQL nhưng không tự nạp dữ liệu con.",
+          "C. JOIN thường nhanh hơn JOIN FETCH.",
+          "D. Không có sự khác biệt."
+        ],
+        "correctAnswer": "B",
+        "explanation": "JOIN FETCH chỉ định rõ cho Hibernate vừa thực hiện phép join ở DB vừa khởi tạo nạp đầy đủ dữ liệu cho thực thể con liên quan, tránh LazyInitializationException và N+1."
+      },
+      {
+        "id": 108,
+        "topicId": "jpa_nplus1_problem",
+        "type": "situation",
+        "question": "Ứng dụng của bạn bị chậm nghiêm trọng khi hiển thị danh sách 50 lớp học kèm theo danh sách học sinh của mỗi lớp. Log SQL hiển thị 51 câu lệnh SELECT. Giải pháp tối ưu nhất để xử lý vấn đề này là gì?",
+        "options": [
+          "A. Chuyển quan hệ học sinh thành EAGER.",
+          "B. Thay đổi câu truy vấn JPQL từ \"FROM Class\" thành \"SELECT c FROM Class c JOIN FETCH c.students\".",
+          "C. Sử dụng Thread.sleep để giảm tải cho DB.",
+          "D. Tăng cấu hình RAM cho server."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Sử dụng câu truy vấn JOIN FETCH gom tất cả dữ liệu lớp và học sinh vào duy nhất 1 câu SELECT JOIN duy nhất, giảm số lượng câu truy vấn từ 51 xuống 1."
+      },
+      {
+        "id": 109,
+        "topicId": "jpa_nplus1_problem",
+        "type": "blank",
+        "question": "Để giải quyết lỗi N+1 bằng cách cấu hình số lượng đối tượng con được nạp trước theo từng lô (batching), ta dùng annotation `@______` của Hibernate.",
+        "options": [
+          "A. BatchSize",
+          "B. FetchSize",
+          "C. LazyCollection",
+          "D. OrderColumn"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Annotation @BatchSize cấu hình nạp dữ liệu con theo lô (ví dụ kích thước 20), giúp giảm số lượng câu truy vấn phụ xuống còn N/BatchSize."
+      },
+      {
+        "id": 110,
+        "topicId": "jpa_nplus1_problem",
+        "type": "process",
+        "question": "Quy trình xuất hiện lỗi N+1 Query diễn ra như thế nào trong vòng lặp?",
+        "options": [
+          "A. Ứng dụng SELECT cha -> Duyệt vòng lặp cha -> Gọi cha.getCon() -> Hibernate tự động chạy thêm 1 câu SELECT con cho mỗi dòng cha -> Tạo ra N câu lệnh SELECT con",
+          "B. Ứng dụng chèn dữ liệu -> DB báo lỗi -> Rollback",
+          "C. SELECT con -> SELECT cha -> Trả kết quả",
+          "D. Chạy Tomcat -> Quét Component -> Lỗi CSDL"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Khi duyệt danh sách N thực thể cha và gọi thuộc tính con đang ở chế độ LAZY, với mỗi vòng lặp, Hibernate phải thực thi thêm 1 câu truy vấn để lấy dữ liệu con tương ứng."
+      },
+      {
+        "id": 111,
+        "topicId": "jpa_nplus1_problem",
+        "type": "bug",
+        "question": "Tại sao chuyển FetchType thành EAGER không giúp khắc phục triệt để lỗi N+1 Query khi sử dụng truy vấn JPQL/HQL thông thường?",
+        "options": [
+          "A. Vì EAGER bị cấm sử dụng trong JPQL.",
+          "B. Vì khi thực thi JPQL dạng \"FROM Parent\", Hibernate phân tích câu lệnh dạng text này trước và chạy SELECT lấy danh sách Parent. Sau đó, nó thấy quan hệ là EAGER nên tiếp tục chạy thêm N câu SELECT con để nạp dữ liệu lập tức.",
+          "C. Do Driver JDBC không hỗ trợ.",
+          "D. Do database không có khóa ngoại."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Truy vấn JPQL/HQL thuần túy bỏ qua cấu hình EAGER trong bước phân tích câu lệnh đầu tiên, dẫn đến việc vẫn chạy SELECT cha trước, sau đó mới chạy tiếp các SELECT con để thỏa mãn thuộc tính EAGER."
+      },
+      {
+        "id": 112,
+        "topicId": "jpa_nplus1_problem",
+        "type": "code",
+        "question": "Quan sát định nghĩa sau:\n\n@EntityGraph(attributePaths = {\"employees\"})\n@Query(\"SELECT d FROM Department d\")\nList<Department> findAllWithEmployees();\n\nSử dụng `@EntityGraph` ở đây có tác dụng gì?",
+        "options": [
+          "A. Vẽ biểu đồ quan hệ thực thể.",
+          "B. Chỉ đạo cho JPA/Hibernate thực hiện JOIN FETCH để lấy danh sách Department cùng Employee trong 1 query duy nhất, tương tự JOIN FETCH nhưng khai báo dạng declarative.",
+          "C. Khóa bảng dữ liệu lại.",
+          "D. Xóa dữ liệu thừa."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@EntityGraph cung cấp giải pháp khai báo các thuộc tính cần tải sớm (fetch plan) trực tiếp trên phương thức Repository để JPA tự động JOIN bảng chống lỗi N+1."
+      },
+      {
+        "id": 113,
+        "topicId": "jpa_orm_languages",
+        "type": "concept",
+        "question": "Đâu là đặc tả tiêu chuẩn (Specification) định nghĩa các quy tắc ánh xạ đối tượng sang CSDL quan hệ trong hệ sinh thái Java?",
+        "options": [
+          "A. Hibernate",
+          "B. JPA (Java Persistence API)",
+          "C. JDBC",
+          "D. Spring Data JPA"
+        ],
+        "correctAnswer": "B",
+        "explanation": "JPA là tập hợp các giao diện và quy chuẩn đặc tả tiêu chuẩn chung. Hibernate là framework triển khai cụ thể (provider) của JPA."
+      },
+      {
+        "id": 114,
+        "topicId": "jpa_orm_languages",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa ngôn ngữ truy vấn JPQL/HQL và ngôn ngữ SQL truyền thống là gì?",
+        "options": [
+          "A. SQL truy vấn nhanh hơn JPQL.",
+          "B. SQL truy vấn trên bảng và cột của CSDL, còn JPQL/HQL truy vấn hướng đối tượng dựa trên các Entity và thuộc tính của Entity Java.",
+          "C. JPQL chỉ chạy được trên Oracle Database.",
+          "D. SQL không hỗ trợ mệnh đề WHERE."
+        ],
+        "correctAnswer": "B",
+        "explanation": "JPQL/HQL hoạt động trên mô hình đối tượng (class và thuộc tính Java), giúp câu truy vấn độc lập với hệ quản trị CSDL vật lý phía dưới."
+      },
+      {
+        "id": 115,
+        "topicId": "jpa_orm_languages",
+        "type": "situation",
+        "question": "Bạn cần viết câu lệnh truy vấn tìm danh sách các thực thể `Book` có thuộc tính `price` lớn hơn 100. Viết câu truy vấn JPQL như thế nào là đúng chuẩn?",
+        "options": [
+          "A. SELECT * FROM books WHERE price > 100",
+          "B. SELECT b FROM Book b WHERE b.price > 100",
+          "C. FROM Book WHERE book_price > 100",
+          "D. Book.findAll(price > 100)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Cú pháp JPQL chuẩn: truy vấn thực thể Book (chữ hoa đầu) bí danh b và thuộc tính b.price: `SELECT b FROM Book b WHERE b.price > 100`."
+      },
+      {
+        "id": 116,
+        "topicId": "jpa_orm_languages",
+        "type": "blank",
+        "question": "Thư viện của Spring Boot giúp bọc các EntityManager của JPA và tự động sinh mã SQL cho các interface Repository có tên là `Spring Data ______`.",
+        "options": [
+          "A. JDBC",
+          "B. Rest",
+          "C. JPA",
+          "D. Hibernate"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Spring Data JPA cung cấp các lớp trừu tượng hóa mạnh mẽ giúp tự sinh câu truy vấn CSDL từ tên phương thức định nghĩa trong interface Repository."
+      },
+      {
+        "id": 117,
+        "topicId": "jpa_orm_languages",
+        "type": "process",
+        "question": "Quy trình thực thi một câu truy vấn JPQL diễn ra như thế nào trong Hibernate?",
+        "options": [
+          "A. Trình duyệt gửi SQL -> DB chạy trực tiếp",
+          "B. JPQL -> Hibernate dịch sang SQL tương ứng của DB đang dùng -> Gửi SQL qua JDBC -> DB thực thi -> ResultSet -> Ánh xạ thành Entity Java -> Trả kết quả",
+          "C. Dịch JPQL sang mã máy -> Chạy trực tiếp",
+          "D. Không có quy trình dịch chuyển nào"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Hibernate đóng vai trò biên dịch câu truy vấn hướng đối tượng JPQL sang tiếng SQL chuẩn của CSDL hiện tại (thông qua cấu hình Dialect) trước khi gửi thực thi."
+      },
+      {
+        "id": 118,
+        "topicId": "jpa_orm_languages",
+        "type": "bug",
+        "question": "Lỗi `QuerySyntaxException: XXX is not mapped` khi thực hiện câu truy vấn JPQL/HQL là do nguyên nhân gì?",
+        "options": [
+          "A. Do bảng XXX chưa được tạo trong CSDL.",
+          "B. Do bạn sử dụng tên bảng vật lý trong DB thay vì sử dụng tên lớp Entity Java được cấu hình trong code.",
+          "C. Do thiếu kết nối mạng.",
+          "D. Do lỗi thư viện Java."
+        ],
+        "correctAnswer": "B",
+        "explanation": "JPQL chỉ hiểu tên của các Entity Class được ánh xạ. Việc viết nhầm tên bảng vật lý (ví dụ: SELECT u FROM users u thay vì SELECT u FROM User u) sẽ ném lỗi Class chưa được mapped."
+      },
+      {
+        "id": 119,
+        "topicId": "jpa_orm_languages",
+        "type": "code",
+        "question": "Xem đoạn mã truy vấn sau:\n\nQuery query = em.createQuery(\"SELECT count(u) FROM User u\");\nLong total = (Long) query.getSingleResult();\n\nPhương thức `getSingleResult()` sẽ ném ra ngoại lệ gì nếu không tìm thấy bản ghi nào khớp trong Database?",
+        "options": [
+          "A. Trả về null bình thường.",
+          "B. Ném ngoại lệ NoResultException.",
+          "C. Trả về giá trị 0.",
+          "D. Ném NullPointerException."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đối với các truy vấn trả về 1 kết quả duy nhất, `getSingleResult()` bắt buộc phải tìm thấy đúng 1 bản ghi. Nếu không có bản ghi nào khớp, nó sẽ ném ra `NoResultException`."
+      }
+    ]
+  },
+  {
+    "id": "de_4",
+    "name": "Đề thi thử số 4 (Tổng hợp Đề cương Java Web)",
+    "description": "Đề thi thử tổng hợp cấu trúc trộn ngẫu nhiên bám sát toàn bộ đề cương Java Web: Servlet, Spring Boot, Spring MVC, JPA & Hibernate (40 câu hỏi).",
+    "questions": [
+      {
+        "id": 1,
+        "topicId": "servlet_lifecycle",
+        "type": "concept",
+        "question": "Giai đoạn nào trong vòng đời Servlet chịu trách nhiệm giải phóng tài nguyên hệ thống trước khi hủy instance?",
+        "options": [
+          "A. Giai đoạn init()",
+          "B. Giai đoạn service()",
+          "C. Giai đoạn destroy()",
+          "D. Giai đoạn doFilter()"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Phương thức destroy() được gọi duy nhất một lần bởi container khi tắt ứng dụng hoặc gỡ bỏ servlet để dọn dẹp tài nguyên."
+      },
+      {
+        "id": 2,
+        "topicId": "servlet_lifecycle",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa phương thức init() và init(ServletConfig config) trong HttpServlet là gì?",
+        "options": [
+          "A. init() không thể nạp tham số cấu hình, còn init(config) thì có.",
+          "B. init() chỉ chạy trên Tomcat cũ, còn init(config) chạy trên Tomcat mới.",
+          "C. init(config) bắt buộc phải gọi super.init(config) nếu không sẽ bị lỗi null cấu hình sau đó.",
+          "D. Không có sự khác biệt nào về chức năng."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Khi override init(ServletConfig config), nếu quên gọi super.init(config) thì đối tượng ServletConfig sẽ không được gán vào GenericServlet, dẫn đến các lệnh gọi getServletConfig() hay getServletContext() sau đó ném NullPointerException."
+      },
+      {
+        "id": 8,
+        "topicId": "session_cookie",
+        "type": "concept",
+        "question": "Cookie nào sẽ tự động bị xóa sau khi người dùng đóng trình duyệt web?",
+        "options": [
+          "A. Persistent Cookie",
+          "B. Secure Cookie",
+          "C. Session Cookie (Cookie phiên)",
+          "D. HttpOnly Cookie"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Session Cookie không có thời hạn hết hạn cụ thể (Max-Age hoặc Expires), nó chỉ được lưu tạm thời trong RAM của trình duyệt và biến mất khi đóng tab/trình duyệt."
+      },
+      {
+        "id": 9,
+        "topicId": "session_cookie",
+        "type": "comparison",
+        "question": "Khi so sánh Session và Cookie, phát biểu nào sau đây là SAI?",
+        "options": [
+          "A. Session lưu dữ liệu ở Server-side, còn Cookie lưu dữ liệu ở Client-side.",
+          "B. Dữ liệu trong Cookie dễ bị giả mạo hơn dữ liệu trong Session.",
+          "C. Session có thể lưu trữ dung lượng lớn hơn nhiều so với Cookie (thường giới hạn 4KB).",
+          "D. Session có tốc độ truy xuất nhanh hơn Cookie vì dữ liệu truyền tải qua mạng ít hơn."
+        ],
+        "correctAnswer": "D",
+        "explanation": "Dữ liệu session nằm trên server nên server không cần truyền cả cục dữ liệu lớn qua mạng cho client, chỉ cần truyền ID. Tuy nhiên, phát biểu nói Session có tốc độ truy xuất nhanh hơn là sai vì server phải tốn chi phí đọc Session từ RAM hoặc Database, việc này không nhất thiết nhanh hơn việc client tự gửi cookie đính kèm."
+      },
+      {
+        "id": 15,
+        "topicId": "genericservlet_httpservlet",
+        "type": "concept",
+        "question": "Class nào đóng vai trò triển khai độc lập giao thức (Protocol-independent) trong các Servlet API?",
+        "options": [
+          "A. HttpServlet",
+          "B. GenericServlet",
+          "C. Filter",
+          "D. WebServlet"
+        ],
+        "correctAnswer": "B",
+        "explanation": "GenericServlet là một abstract class triển khai interface Servlet nhưng không ràng buộc với bất kỳ giao thức mạng cụ thể nào."
+      },
+      {
+        "id": 16,
+        "topicId": "genericservlet_httpservlet",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa phương thức service() trong GenericServlet và HttpServlet là gì?",
+        "options": [
+          "A. HttpServlet.service() tự động chuyển đổi ServletRequest/Response sang HttpServletRequest/Response và điều hướng HTTP methods.",
+          "B. GenericServlet.service() tự động chạy đa luồng còn HttpServlet.service() thì không.",
+          "C. HttpServlet không có phương thức service().",
+          "D. GenericServlet.service() không cho phép ném ra Exception."
+        ],
+        "correctAnswer": "A",
+        "explanation": "HttpServlet ghi đè service() để ép kiểu đối tượng Request/Response sang định dạng HTTP và phân tích các phương thức GET/POST/PUT... để chuyển tiếp xử lý sang doGet/doPost."
+      },
+      {
+        "id": 22,
+        "topicId": "requestdispatcher",
+        "type": "concept",
+        "question": "Cơ chế chuyển hướng nào thực hiện chuyển tiếp hoàn toàn ở phía Server-side và che giấu URL đích đối với người dùng?",
+        "options": [
+          "A. sendRedirect()",
+          "B. forward()",
+          "C. HTTP 302 Redirect",
+          "D. JavaScript window.location"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Phương thức forward() của RequestDispatcher chuyển giao xử lý hoàn toàn trong máy chủ, trình duyệt client giữ nguyên URL ban đầu."
+      },
+      {
+        "id": 23,
+        "topicId": "requestdispatcher",
+        "type": "comparison",
+        "question": "So sánh giữa forward() và sendRedirect(), nhận định nào sau đây là ĐÚNG?",
+        "options": [
+          "A. forward() chậm hơn sendRedirect() do phải tạo kết nối mới.",
+          "B. sendRedirect() giữ nguyên được các attribute đã set trong HttpServletRequest.",
+          "C. forward() chỉ chuyển hướng trong cùng một ứng dụng Web, còn sendRedirect() có thể dẫn tới URL ngoài trang web.",
+          "D. Cả hai đều thay đổi địa chỉ URL hiển thị trên trình duyệt."
+        ],
+        "correctAnswer": "C",
+        "explanation": "forward() xử lý nội bộ trong container nên không thể forward tới website khác. Ngược lại, sendRedirect() gửi mã 302 về trình duyệt client bắt client gọi URL mới, nên có thể dẫn tới bất cứ website nào."
+      },
+      {
+        "id": 29,
+        "topicId": "filter_api",
+        "type": "concept",
+        "question": "Đâu không phải là một phương thức vòng đời của interface jakarta.servlet.Filter?",
+        "options": [
+          "A. init()",
+          "B. doFilter()",
+          "C. destroy()",
+          "D. service()"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Interface Filter chỉ gồm init(), doFilter(), và destroy(). Phương thức service() thuộc về Servlet."
+      },
+      {
+        "id": 30,
+        "topicId": "filter_api",
+        "type": "comparison",
+        "question": "Trong web.xml, thứ tự thực thi của các Filter được quyết định bởi yếu tố nào?",
+        "options": [
+          "A. Thứ tự bảng chữ cái tên của Filter.",
+          "B. Thứ tự khai báo của các thẻ <filter-mapping> trong file web.xml.",
+          "C. Thứ tự khai báo của các thẻ <filter> trong file web.xml.",
+          "D. Do Web Container tự sắp xếp ngẫu nhiên."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Web Container duyệt chuỗi filter dựa trên thứ tự xuất hiện của các thẻ `<filter-mapping>` từ trên xuống dưới trong file cấu hình web.xml."
+      },
+      {
+        "id": 36,
+        "topicId": "jdbc_api",
+        "type": "concept",
+        "question": "Interface nào trong JDBC API được thiết kế để thực thi các câu lệnh SQL có tham số đầu vào động một cách an toàn?",
+        "options": [
+          "A. Statement",
+          "B. PreparedStatement",
+          "C. CallableStatement",
+          "D. Connection"
+        ],
+        "correctAnswer": "B",
+        "explanation": "PreparedStatement biên dịch trước câu lệnh SQL và hỗ trợ truyền tham số qua các ký tự hỏi chấm (?), giúp ngăn chặn SQL Injection."
+      },
+      {
+        "id": 37,
+        "topicId": "jdbc_api",
+        "type": "comparison",
+        "question": "So sánh giữa executeQuery() và executeUpdate() trong JDBC, phát biểu nào sau đây là ĐÚNG?",
+        "options": [
+          "A. Cả hai đều trả về ResultSet chứa danh sách dòng dữ liệu.",
+          "B. executeQuery() dùng cho lệnh SELECT, executeUpdate() dùng cho INSERT/UPDATE/DELETE và trả về số dòng bị ảnh hưởng.",
+          "C. executeUpdate() nhanh hơn executeQuery() vì không cần kết nối Database.",
+          "D. executeQuery() trả về kiểu boolean."
+        ],
+        "correctAnswer": "B",
+        "explanation": "executeQuery() chuyên để đọc dữ liệu (SELECT) và trả về ResultSet. executeUpdate() chuyên ghi dữ liệu (INSERT, UPDATE, DELETE, DDL) và trả về số lượng bản ghi đã được xử lý (int)."
+      },
+      {
+        "id": 3,
+        "topicId": "servlet_lifecycle",
+        "type": "situation",
+        "question": "Một lập trình viên muốn thiết lập một kết nối Database dùng chung cho toàn bộ thời gian sống của Servlet. Lập trình viên đó nên viết code kết nối này ở phương thức nào để tối ưu hiệu năng?",
+        "options": [
+          "A. service()",
+          "B. init()",
+          "C. destroy()",
+          "D. doGet()"
+        ],
+        "correctAnswer": "B",
+        "explanation": "init() được gọi đúng một lần duy nhất khi servlet khởi tạo, việc thiết lập database connection ở đây giúp tránh việc kết nối lặp đi lặp lại ở mỗi request trong service()."
+      },
+      {
+        "id": 4,
+        "topicId": "servlet_lifecycle",
+        "type": "blank",
+        "question": "Mặc định trong môi trường Servlet, đối với mỗi lớp Servlet được định nghĩa, Web Container sẽ khởi tạo đúng ______ đối tượng duy nhất để xử lý tất cả các request gửi đến.",
+        "options": [
+          "A. một (1)",
+          "B. hai (2)",
+          "C. mười (10)",
+          "D. n (bằng số luồng xử lý)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Web Container áp dụng mẫu Singleton, chỉ tạo duy nhất 1 đối tượng cho mỗi class Servlet để tiết kiệm bộ nhớ và tài nguyên."
+      },
+      {
+        "id": 5,
+        "topicId": "servlet_lifecycle",
+        "type": "process",
+        "question": "Quy trình xử lý một HTTP Request gửi tới Servlet diễn ra theo trình tự nào sau đây?",
+        "options": [
+          "A. Client -> service() -> init() -> Response",
+          "B. Client -> init() -> service() -> doGet()/doPost() -> Response",
+          "C. Client -> doGet() -> service() -> destroy() -> Response",
+          "D. Client -> service() -> doGet()/doPost() -> destroy() -> Response"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Container nạp servlet và gọi init() trước, sau đó với mỗi request sẽ gọi service() để điều hướng qua doGet()/doPost(), cuối cùng render phản hồi về client."
+      },
+      {
+        "id": 43,
+        "topicId": "springboot_autoconfig",
+        "type": "concept",
+        "question": "Đâu là annotation chịu trách nhiệm trực tiếp kích hoạt cơ chế quét classpath để tự động cấu hình các bean tương ứng trong Spring Boot?",
+        "options": [
+          "A. @Configuration",
+          "B. @EnableAutoConfiguration",
+          "C. @ComponentScan",
+          "D. @SpringBootConfiguration"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@EnableAutoConfiguration ra lệnh cho Spring Boot quét các thư viện starter trong classpath và tự động tạo các cấu hình bean mặc định phù hợp."
+      },
+      {
+        "id": 44,
+        "topicId": "springboot_autoconfig",
+        "type": "comparison",
+        "question": "Phát biểu nào sau đây là ĐÚNG khi nói về sự khác biệt giữa @SpringBootConfiguration và @Configuration?",
+        "options": [
+          "A. @SpringBootConfiguration cho phép khai báo đa luồng còn @Configuration thì không.",
+          "B. @SpringBootConfiguration là một cấu hình chuyên biệt thay thế cho @Configuration dành riêng cho ứng dụng Spring Boot, hỗ trợ tự động tìm kiếm cấu hình trong các test.",
+          "C. Hai annotation này hoàn toàn khác biệt nhau về bản chất.",
+          "D. @Configuration chỉ dùng trong XML."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@SpringBootConfiguration là một phiên bản đặc biệt của @Configuration, được thiết kế để Spring Boot tự động nhận diện cấu hình chính của ứng dụng (đặc biệt trong các test tích hợp)."
+      },
+      {
+        "id": 50,
+        "topicId": "spring_mvc_flow",
+        "type": "concept",
+        "question": "Thành phần nào trong kiến trúc Spring MVC chịu trách nhiệm ánh xạ giữa đường dẫn yêu cầu (URL) và Controller xử lý?",
+        "options": [
+          "A. DispatcherServlet",
+          "B. HandlerMapping",
+          "C. HandlerAdapter",
+          "D. ViewResolver"
+        ],
+        "correctAnswer": "B",
+        "explanation": "HandlerMapping phân tích URL request để tìm ra Handler (Controller) và trả về một HandlerExecutionChain cho DispatcherServlet."
+      },
+      {
+        "id": 51,
+        "topicId": "spring_mvc_flow",
+        "type": "comparison",
+        "question": "Sự khác biệt giữa Controller truyền thống và RestController trong Spring MVC là gì?",
+        "options": [
+          "A. Controller chỉ dùng cho ứng dụng console.",
+          "B. RestController tự động đính kèm annotation @ResponseBody lên mọi phương thức để trả về dữ liệu thô (JSON/XML) thay vì trả về View Name.",
+          "C. Controller nhanh hơn RestController.",
+          "D. RestController bắt buộc phải sử dụng JSP để render."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@RestController là một annotation kết hợp giữa @Controller và @ResponseBody, tự động chuyển đổi giá trị trả về của phương thức thành dữ liệu API (JSON/XML) trực tiếp trong Response Body."
+      },
+      {
+        "id": 57,
+        "topicId": "spring_mvc_annotations",
+        "type": "concept",
+        "question": "Annotation nào dùng để trích xuất trực tiếp giá trị nằm trên phân đoạn của đường dẫn URL (URI Path)?",
+        "options": [
+          "A. @RequestParam",
+          "B. @PathVariable",
+          "C. @RequestBody",
+          "D. @RequestHeader"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@PathVariable cho phép ánh xạ các biến mẫu đường dẫn URI (ví dụ: /users/{id}) thành các tham số trong phương thức Java."
+      },
+      {
+        "id": 58,
+        "topicId": "spring_mvc_annotations",
+        "type": "comparison",
+        "question": "Sự khác biệt chính giữa @PathVariable và @RequestParam là gì?",
+        "options": [
+          "A. @PathVariable lấy tham số từ body, @RequestParam lấy từ header.",
+          "B. @PathVariable lấy dữ liệu từ URI path segment (ví dụ /users/5), còn @RequestParam lấy từ query parameter (ví dụ /users?id=5) hoặc form data.",
+          "C. @RequestParam chỉ dùng được với POST request.",
+          "D. Không có sự khác biệt."
+        ],
+        "correctAnswer": "B",
+        "explanation": "@PathVariable ánh xạ biến trên đường dẫn URL. @RequestParam ánh xạ biến từ chuỗi truy vấn (query string sau dấu ?) hoặc dữ liệu gửi lên từ form."
+      },
+      {
+        "id": 64,
+        "topicId": "spring_filters",
+        "type": "concept",
+        "question": "Class nào của Spring Framework được thiết kế chuyên biệt để đảm bảo một bộ lọc chỉ chạy duy nhất một lần cho mỗi Request?",
+        "options": [
+          "A. GenericFilterBean",
+          "B. OncePerRequestFilter",
+          "C. FilterChainProxy",
+          "D. DelegatingFilterProxy"
+        ],
+        "correctAnswer": "B",
+        "explanation": "OncePerRequestFilter là một abstract class của Spring đảm bảo phương thức doFilterInternal chỉ được kích hoạt đúng 1 lần cho mỗi yêu cầu HTTP."
+      },
+      {
+        "id": 65,
+        "topicId": "spring_filters",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa GenericFilterBean và Filter chuẩn (jakarta.servlet.Filter) là gì?",
+        "options": [
+          "A. GenericFilterBean không thể đọc được web.xml.",
+          "B. GenericFilterBean là class của Spring, tích hợp sâu với Spring Context cho phép truy cập tham số cấu hình dễ dàng hơn và tránh boilerplate code.",
+          "C. GenericFilterBean chạy nhanh hơn gấp 10 lần.",
+          "D. Interface Filter không thể dùng trong Spring."
+        ],
+        "correctAnswer": "B",
+        "explanation": "GenericFilterBean là lớp trung gian giúp tích hợp Servlet Filter tiêu chuẩn vào hệ sinh thái của Spring, tự động lấy cấu hình từ ServletConfig/ServletContext thành các thuộc tính bean."
+      },
+      {
+        "id": 71,
+        "topicId": "spring_di_ioc",
+        "type": "concept",
+        "question": "IoC (Inversion of Control) là gì?",
+        "options": [
+          "A. Là một thư viện giúp kết nối Database.",
+          "B. Là một nguyên lý thiết kế đảo ngược quyền kiểm soát quản lý vòng đời đối tượng từ lập trình viên sang cho Framework.",
+          "C. Là cơ chế biên dịch mã nguồn Java thành mã máy.",
+          "D. Là một mẫu thiết kế để tạo Singleton Class."
+        ],
+        "correctAnswer": "B",
+        "explanation": "IoC đảo ngược sự kiểm soát việc khởi tạo và quản lý liên kết đối tượng, giao nhiệm vụ này cho container quản lý."
+      },
+      {
+        "id": 72,
+        "topicId": "spring_di_ioc",
+        "type": "comparison",
+        "question": "So sánh giữa Constructor Injection và Field Injection (@Autowired trực tiếp lên biến), tại sao Constructor Injection lại được khuyến nghị sử dụng hơn?",
+        "options": [
+          "A. Constructor Injection giúp ứng dụng khởi động nhanh hơn.",
+          "B. Constructor Injection cho phép khai báo các dependency là 'final' (bất biến), đảm bảo đối tượng không bị null khi chạy, và dễ dàng viết Unit Test mà không cần mock framework.",
+          "C. Field Injection bị cấm trong các phiên bản Java mới.",
+          "D. Constructor Injection chiếm ít bộ nhớ hơn."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Constructor Injection bắt buộc phải truyền đủ các đối tượng phụ thuộc khi khởi tạo đối tượng, cho phép dùng thuộc tính 'final' bảo vệ dữ liệu và giúp code dễ test hơn do không phụ thuộc vào Spring Container."
+      },
+      {
+        "id": 78,
+        "topicId": "spring_stereotype_annotations",
+        "type": "concept",
+        "question": "Annotation nào là annotation cơ sở (meta-annotation) cho tất cả các stereotype annotation khác của Spring?",
+        "options": [
+          "A. @Service",
+          "B. @Repository",
+          "C. @Component",
+          "D. @Controller"
+        ],
+        "correctAnswer": "C",
+        "explanation": "@Component là annotation gốc. Các annotation Service, Repository, Controller đều được chú thích bởi @Component và mang các ngữ nghĩa bổ sung."
+      },
+      {
+        "id": 79,
+        "topicId": "spring_stereotype_annotations",
+        "type": "comparison",
+        "question": "Mục đích chính của việc chia nhỏ các annotation thành @Service, @Repository, @Controller thay vì chỉ dùng duy nhất @Component là gì?",
+        "options": [
+          "A. Giúp mã nguồn chạy nhanh hơn.",
+          "B. Phân cấp rõ ràng kiến trúc ứng dụng (Controller cho web, Service cho nghiệp vụ, Repository cho DB) và cho phép áp dụng các xử lý tự động chuyên biệt (như dịch lỗi DB trong Repository).",
+          "C. Ràng buộc bảo mật dữ liệu.",
+          "D. Yêu cầu bắt buộc của ngôn ngữ Java."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Tạo tính ngữ nghĩa cho mã nguồn giúp dễ quản lý và cho phép Spring kích hoạt các xử lý đặc thù (như dịch ngoại lệ CSDL cho @Repository, xử lý view cho @Controller)."
+      },
+      {
+        "id": 45,
+        "topicId": "springboot_autoconfig",
+        "type": "situation",
+        "question": "Dự án Spring Boot của bạn có thư viện DataSourceAutoConfiguration tự động tạo kết nối DB, nhưng hiện tại bạn chỉ viết API tính toán chưa cần kết nối DB và không muốn ứng dụng bị crash khi khởi động do thiếu URL cấu hình cơ sở dữ liệu. Bạn xử lý như thế nào?",
+        "options": [
+          "A. Xóa thư viện spring-boot-starter ra khỏi pom.xml.",
+          "B. Loại trừ lớp cấu hình đó bằng cách khai báo: @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}).",
+          "C. Cấu hình database ảo.",
+          "D. Tắt Spring Boot đi."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Thuộc tính `exclude` trong `@SpringBootApplication` cho phép lập trình viên vô hiệu hóa các class auto-configuration cụ thể khi không có nhu cầu sử dụng."
+      },
+      {
+        "id": 46,
+        "topicId": "springboot_autoconfig",
+        "type": "blank",
+        "question": "File POM cha mặc định trong các dự án Maven Spring Boot quản lý phiên bản thư viện tập trung có tên thẻ artifactId là `______`.",
+        "options": [
+          "A. spring-boot-starter-web",
+          "B. spring-boot-starter-parent",
+          "C. spring-boot-autoconfigure",
+          "D. spring-boot-dependencies"
+        ],
+        "correctAnswer": "B",
+        "explanation": "spring-boot-starter-parent cung cấp các cấu hình build mặc định và quản lý version của các dependencies (dependency management) để tránh xung đột phiên bản."
+      },
+      {
+        "id": 47,
+        "topicId": "springboot_autoconfig",
+        "type": "process",
+        "question": "Khi chạy lệnh SpringApplication.run(), Spring Boot thực hiện quá trình khởi tạo theo thứ tự nào?",
+        "options": [
+          "A. Quét Component -> Chạy Auto-configuration -> Tạo ApplicationContext -> Khởi động server nhúng Tomcat",
+          "B. Khởi động Tomcat -> Quét Component -> Chạy Auto-configuration",
+          "C. Tạo ApplicationContext -> Quét Component -> Chạy Auto-configuration -> Khởi động server Tomcat nhúng -> Sẵn sàng nhận request",
+          "D. Tạo Bean -> Quét Component -> Chạy Auto-configuration"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ứng dụng sẽ tạo context chứa môi trường trước, quét các bean tự viết, bổ sung các bean tự động cấu hình từ classpath, khởi động Tomcat nhúng và lắng nghe cổng mạng."
+      },
+      {
+        "id": 85,
+        "topicId": "jpa_fetch_type",
+        "type": "concept",
+        "question": "Fetch Type nào thực hiện việc trì hoãn tải dữ liệu quan hệ cho đến khi đối tượng liên kết thực sự được truy cập (gọi hàm getter)?",
+        "options": [
+          "A. FetchType.EAGER",
+          "B. FetchType.LAZY",
+          "C. FetchType.DYNAMIC",
+          "D. FetchType.DEFAULT"
+        ],
+        "correctAnswer": "B",
+        "explanation": "FetchType.LAZY trì hoãn việc tải dữ liệu từ DB lên bộ nhớ cho tới khi phương thức getter của tập quan hệ đó được gọi."
+      },
+      {
+        "id": 86,
+        "topicId": "jpa_fetch_type",
+        "type": "comparison",
+        "question": "Sự khác biệt mặc định về FetchType giữa các mối quan hệ sở hữu đơn (@ManyToOne) và quan hệ bộ sưu tập (@OneToMany) là gì?",
+        "options": [
+          "A. Cả hai đều mặc định là LAZY.",
+          "B. @ManyToOne mặc định là EAGER, còn @OneToMany mặc định là LAZY.",
+          "C. @ManyToOne mặc định là LAZY, còn @OneToMany mặc định là EAGER.",
+          "D. Cả hai đều mặc định là EAGER."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Các quan hệ trỏ tới 1 thực thể đơn lẻ (@ManyToOne, @OneToOne) mặc định tải ngay (EAGER). Các quan hệ trỏ tới 1 danh sách (@OneToMany, @ManyToMany) mặc định tải trì hoãn (LAZY) để tránh nghẽn bộ nhớ."
+      },
+      {
+        "id": 92,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "concept",
+        "question": "Trạng thái nào của Entity đại diện cho đối tượng đã liên kết với một dòng trong DB và đang được quản lý bởi Persistence Context?",
+        "options": [
+          "A. Transient",
+          "B. Managed",
+          "C. Detached",
+          "D. Removed"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Trạng thái Managed chỉ định thực thể đang chịu sự quản lý trực tiếp của Persistence Context (EntityManager)."
+      },
+      {
+        "id": 93,
+        "topicId": "jpa_entity_lifecycle",
+        "type": "comparison",
+        "question": "Sự khác biệt lớn nhất về hành vi giữa thực thể ở trạng thái Managed và Detached khi ta gọi các phương thức setter thay đổi giá trị thuộc tính của chúng là gì?",
+        "options": [
+          "A. Managed sẽ ném lỗi, Detached thì không.",
+          "B. Thay đổi trên Managed được tự động đồng bộ xuống DB khi commit (Dirty Checking), còn thay đổi trên Detached sẽ bị bỏ qua và không tự động lưu.",
+          "C. Detached tự động xóa khỏi database.",
+          "D. Không có sự khác biệt."
+        ],
+        "correctAnswer": "B",
+        "explanation": "EntityManager theo dõi mọi thay đổi trên đối tượng Managed và đồng bộ tự động xuống DB. Đối với đối tượng Detached, EntityManager đã ngắt quản lý nên mọi thay đổi thuộc tính chỉ có hiệu lực trên bộ nhớ JVM."
+      },
+      {
+        "id": 99,
+        "topicId": "jpa_transaction",
+        "type": "concept",
+        "question": "Annotation nào của Spring cung cấp cơ chế quản lý giao dịch khai báo (Declarative Transaction Management)?",
+        "options": [
+          "A. @Transaction",
+          "B. @Transactional",
+          "C. @PersistenceContext",
+          "D. @Rollback"
+        ],
+        "correctAnswer": "B",
+        "explanation": "@Transactional được sử dụng để Spring tự động tạo các transaction nghiệp vụ bao quanh phương thức hoặc class."
+      },
+      {
+        "id": 100,
+        "topicId": "jpa_transaction",
+        "type": "comparison",
+        "question": "Sự khác biệt về hành vi Rollback mặc định của @Transactional giữa Unchecked Exception và Checked Exception là gì?",
+        "options": [
+          "A. Cả hai đều tự động rollback.",
+          "B. @Transactional tự động rollback với Unchecked Exception, nhưng mặc định không rollback với Checked Exception (vẫn commit bình thường).",
+          "C. @Transactional chỉ rollback với Checked Exception.",
+          "D. Cả hai đều không tự động rollback."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Mặc định, Spring chỉ tự động rollback khi có RuntimeException hoặc Error ném ra. Với các ngoại lệ kế thừa trực tiếp từ Exception (Checked Exception), Spring vẫn tiến hành commit trừ khi cấu hình rollbackFor rõ ràng."
+      },
+      {
+        "id": 106,
+        "topicId": "jpa_nplus1_problem",
+        "type": "concept",
+        "question": "Hiện tượng N+1 Query trong Hibernate được định nghĩa là gì?",
+        "options": [
+          "A. Lỗi xảy ra khi chèn thêm N+1 bản ghi mới vào bảng.",
+          "B. Tình huống lấy danh sách N bản ghi cha, và ứng dụng chạy thêm N câu truy vấn SELECT phụ để lấy dữ liệu con liên quan của từng cha.",
+          "C. Lỗi tràn bộ nhớ cache cấp 2.",
+          "D. Truy vấn vượt quá giới hạn số lượng kết nối của database pool."
+        ],
+        "correctAnswer": "B",
+        "explanation": "N+1 query mô tả sự suy giảm hiệu năng khi thay vì dùng 1 câu SQL JOIN, Hibernate chạy 1 câu SELECT cha và chạy thêm N câu SELECT con riêng biệt trong vòng lặp."
+      },
+      {
+        "id": 107,
+        "topicId": "jpa_nplus1_problem",
+        "type": "comparison",
+        "question": "Khắc phục N+1 query bằng JOIN FETCH khác biệt gì so với JOIN thường trong JPQL?",
+        "options": [
+          "A. JOIN FETCH chỉ chạy trên MySQL, JOIN thường chạy trên mọi DB.",
+          "B. JOIN FETCH yêu cầu Hibernate nạp và ánh xạ dữ liệu bảng liên quan vào đối tượng Java ngay lập tức, còn JOIN thường chỉ lọc dữ liệu ở câu lệnh SQL nhưng không tự nạp dữ liệu con.",
+          "C. JOIN thường nhanh hơn JOIN FETCH.",
+          "D. Không có sự khác biệt."
+        ],
+        "correctAnswer": "B",
+        "explanation": "JOIN FETCH chỉ định rõ cho Hibernate vừa thực hiện phép join ở DB vừa khởi tạo nạp đầy đủ dữ liệu cho thực thể con liên quan, tránh LazyInitializationException và N+1."
+      },
+      {
+        "id": 113,
+        "topicId": "jpa_orm_languages",
+        "type": "concept",
+        "question": "Đâu là đặc tả tiêu chuẩn (Specification) định nghĩa các quy tắc ánh xạ đối tượng sang CSDL quan hệ trong hệ sinh thái Java?",
+        "options": [
+          "A. Hibernate",
+          "B. JPA (Java Persistence API)",
+          "C. JDBC",
+          "D. Spring Data JPA"
+        ],
+        "correctAnswer": "B",
+        "explanation": "JPA là tập hợp các giao diện và quy chuẩn đặc tả tiêu chuẩn chung. Hibernate là framework triển khai cụ thể (provider) của JPA."
+      },
+      {
+        "id": 114,
+        "topicId": "jpa_orm_languages",
+        "type": "comparison",
+        "question": "Điểm khác biệt chính giữa ngôn ngữ truy vấn JPQL/HQL và ngôn ngữ SQL truyền thống là gì?",
+        "options": [
+          "A. SQL truy vấn nhanh hơn JPQL.",
+          "B. SQL truy vấn trên bảng và cột của CSDL, còn JPQL/HQL truy vấn hướng đối tượng dựa trên các Entity và thuộc tính của Entity Java.",
+          "C. JPQL chỉ chạy được trên Oracle Database.",
+          "D. SQL không hỗ trợ mệnh đề WHERE."
+        ],
+        "correctAnswer": "B",
+        "explanation": "JPQL/HQL hoạt động trên mô hình đối tượng (class và thuộc tính Java), giúp câu truy vấn độc lập với hệ quản trị CSDL vật lý phía dưới."
+      }
+    ]
+  }
+]

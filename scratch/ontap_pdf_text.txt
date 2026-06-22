@@ -1,0 +1,70 @@
+
+--- PAGE 1 ---
+1. Java Core & Servlet 
+• 
+Cơ chế Servlet: Trình bày vòng đời của một Servlet (init, service, destroy). Sự 
+khác biệt giữa HttpServletRequest và HttpServletResponse? 
+• 
+Session vs Cookie: Phân biệt cơ chế lưu trữ, phạm vi và bảo mật giữa Session 
+(server-side) và Cookie (client-side). 
+• 
+Vòng đời của một servlet là gì? 
+• 
+Có bao nhiêu đối tượng của một servlet được tạo ra 
+• 
+Các phương thức vòng đời của một servlet là gì? 
+• 
+GenericServlet và HttpServlet 
+• 
+RequestDispatcher  
+• 
+forward() và sendRedirect() 
+• 
+Filter 
+• 
+annotation được sử dụng trong Servlet  
+• 
+web.xmj 
+• 
+JDBC API  
+2. Spring Boot & Spring MVC 
+• 
+Auto-configuration: Cơ chế hoạt động của @SpringBootApplication và spring-
+boot-starter-parent? Làm thế nào để vô hiệu hóa một auto-configuration cụ thể? 
+• 
+Luồng Request: Trình bày luồng xử lý HTTP Request trong Spring 
+MVC: DispatcherServlet -> HandlerMapping -> Controller -> HandlerAdapter -
+> Response.  
+• 
+Annotation: Phân biệt @PathVariable (từ URL path) và @RequestParam (từ 
+query string).  
+• 
+Các loại Filter: Phân biệt 3 loại chính: Filter (interface 
+gốc), GenericFilterBean (giảm boilerplate), và OncePerRequestFilter (đảm bảo 
+chạy 1 lần/request).  
+• 
+Dependency Injection (DI) và Inversion of Control (IoC) 
+• 
+Bean trong Spring là gì? Trình bày các cách để định nghĩa một Bean 
+• 
+Sự khác biệt giữa @Component, @Service, @Repository và @Controller là gì? 
+ 
+3. JPA & Hibernate 
+• 
+Fetch Type: So sánh EAGER và LAZY loading. Tại sao LAZY được khuyến nghị 
+cho @OneToMany và @ManyToMany? (Tránh N+1 query và tải thừa dữ liệu).  
+
+--- PAGE 2 ---
+• 
+Entity Lifecycle: Các trạng thái của Entity trong JPA: Transient, Managed, 
+Detached, Removed. 
+• 
+Transaction: Ý nghĩa của @Transactional. Khi nào transaction được commit hoặc 
+rollback? 
+• 
+N+1 Problem: Nguyên nhân gây ra vấn đề N+1 trong Hibernate và các cách khắc 
+phục (Join Fetch, EntityGraph). 
+• 
+JPA, ORM, JPQL, HQL 
+ 
+Tài liệu mang vào: 01 tờ A4 viết tay 
