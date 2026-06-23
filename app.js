@@ -84,7 +84,7 @@ async function initApp() {
     
     // Load subjects registry
     try {
-        const response = await fetch('data/subjects.json');
+        const response = await fetch(`data/subjects.json?t=${Date.now()}`);
         if (!response.ok) throw new Error('Không thể tải tệp subjects.json');
         state.subjects = await response.json();
         
@@ -349,8 +349,8 @@ async function selectSubject(subjectId) {
     
     // Load data files for this subject
     try {
-        const knowledgeRes = await fetch(`data/${subjectId}/knowledge.json`);
-        const questionsRes = await fetch(`data/${subjectId}/questions.json`);
+        const knowledgeRes = await fetch(`data/${subjectId}/knowledge.json?t=${Date.now()}`);
+        const questionsRes = await fetch(`data/${subjectId}/questions.json?t=${Date.now()}`);
         
         if (!knowledgeRes.ok || !questionsRes.ok) {
             throw new Error('Không thể tải các tệp tin dữ liệu môn học');
@@ -361,7 +361,7 @@ async function selectSubject(subjectId) {
         
         // Load preset exams if available
         try {
-            const presetRes = await fetch(`data/${subjectId}/preset_exams.json`);
+            const presetRes = await fetch(`data/${subjectId}/preset_exams.json?t=${Date.now()}`);
             if (presetRes.ok) {
                 state.presetExams = await presetRes.json();
             } else {
