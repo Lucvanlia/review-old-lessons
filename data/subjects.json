@@ -27,5 +27,23 @@
       "[IPPA233277] w07-c05_su-dung-modules-library-trong-python_HW (done).pdf",
       "deon.pdf"
     ]
+  },
+  {
+    "id": "quocphong_hp1",
+    "name": "Môn học Quốc phòng - Học phần 1",
+    "description": "Đường lối quốc phòng và an ninh của Đảng, Lịch sử nghệ thuật quân sự.",
+    "icon": "🛡️",
+    "pdfs": [
+      "quocphong/QUOCPHONG_HOCPHAN1.pdf"
+    ]
+  },
+  {
+    "id": "quocphong_hp2",
+    "name": "Môn học Quốc phòng - Học phần 2",
+    "description": "Phòng chống diễn biến hòa bình, bảo vệ an ninh, phòng chống vi phạm pháp luật môi trường.",
+    "icon": "🚓",
+    "pdfs": [
+      "quocphong/QUOCPHONG_HOCPHAN2.pdf"
+    ]
   }
 ]
