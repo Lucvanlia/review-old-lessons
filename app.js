@@ -112,6 +112,9 @@ async function initApp() {
 // EVENT LISTENERS & SIDEBAR HANDLERS
 // ==========================================================================
 function setupEventListeners() {
+    // Initialize Custom Premium Selects
+    initCustomSelects();
+
     // Mobile Sidebar Toggles
     const menuToggle = document.getElementById('menu-toggle-trigger');
     const closeSidebar = document.getElementById('close-sidebar-trigger');
@@ -336,6 +339,9 @@ function populateSubjectDropdown() {
         option.textContent = subject.name;
         dropdown.appendChild(option);
     });
+    
+    // Sync Custom Select UI
+    syncCustomSelect('sidebar-subject-select');
 }
 
 async function selectSubject(subjectId) {
@@ -345,7 +351,10 @@ async function selectSubject(subjectId) {
     
     // Update Sidebar dropdown selection value
     const dropdown = document.getElementById('sidebar-subject-select');
-    if (dropdown) dropdown.value = subjectId;
+    if (dropdown) {
+        dropdown.value = subjectId;
+        syncCustomSelect('sidebar-subject-select');
+    }
     
     // Load data files for this subject
     try {
@@ -413,6 +422,9 @@ function populateMockExamDropdown() {
     if (qtyGroup) {
         qtyGroup.classList.remove('hidden');
     }
+    
+    // Sync Custom Select UI
+    syncCustomSelect('mock-exam-type-select');
 }
 
 // Global Progress Bar Calculator
@@ -1601,3 +1613,116 @@ function shuffleArray(array) {
     }
     return array;
 }
+
+// ==========================================================================
+// CUSTOM PREMIUM SELECT DROPDOWNS
+// ==========================================================================
+function initCustomSelects() {
+    // Add global click listener to close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        const activeTriggers = document.querySelectorAll('.custom-select-trigger.open');
+        activeTriggers.forEach(trigger => {
+            const selectId = trigger.dataset.selectId;
+            const customSelect = trigger.closest('.custom-select');
+            if (customSelect && !customSelect.contains(e.target)) {
+                trigger.classList.remove('open');
+                const optionsPanel = customSelect.querySelector('.custom-select-options');
+                if (optionsPanel) optionsPanel.classList.remove('show');
+            }
+        });
+    });
+}
+
+function syncCustomSelect(selectId) {
+    const nativeSelect = document.getElementById(selectId);
+    if (!nativeSelect) return;
+
+    const container = nativeSelect.closest('.custom-select');
+    if (!container) return;
+
+    // Remove old arrow if present
+    const nativeArrow = container.querySelector('.select-arrow');
+    if (nativeArrow) nativeArrow.style.display = 'none';
+
+    // Get or create trigger
+    let trigger = container.querySelector('.custom-select-trigger');
+    if (!trigger) {
+        trigger = document.createElement('div');
+        trigger.className = 'custom-select-trigger';
+        trigger.dataset.selectId = selectId;
+        
+        const valueSpan = document.createElement('span');
+        valueSpan.className = 'custom-select-value';
+        
+        const arrowSpan = document.createElement('span');
+        arrowSpan.className = 'material-icons-round custom-select-arrow';
+        arrowSpan.textContent = 'expand_more';
+        
+        trigger.appendChild(valueSpan);
+        trigger.appendChild(arrowSpan);
+        container.appendChild(trigger);
+
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close other open custom selects
+            document.querySelectorAll('.custom-select-trigger').forEach(otherTrigger => {
+                if (otherTrigger !== trigger && otherTrigger.classList.contains('open')) {
+                    otherTrigger.classList.remove('open');
+                    const otherOptions = otherTrigger.closest('.custom-select').querySelector('.custom-select-options');
+                    if (otherOptions) otherOptions.classList.remove('show');
+                }
+            });
+            
+            trigger.classList.toggle('open');
+            const optionsPanel = container.querySelector('.custom-select-options');
+            if (optionsPanel) optionsPanel.classList.toggle('show');
+        });
+    }
+
+    // Get or create options panel
+    let optionsPanel = container.querySelector('.custom-select-options');
+    if (!optionsPanel) {
+        optionsPanel = document.createElement('div');
+        optionsPanel.className = 'custom-select-options';
+        optionsPanel.dataset.selectId = selectId;
+        container.appendChild(optionsPanel);
+    }
+
+    // Update selection value display
+    const selectedOption = nativeSelect.options[nativeSelect.selectedIndex];
+    const valueSpan = trigger.querySelector('.custom-select-value');
+    if (valueSpan) {
+        valueSpan.textContent = selectedOption ? selectedOption.textContent : 'Chọn...';
+    }
+
+    // Rebuild options
+    optionsPanel.innerHTML = '';
+    Array.from(nativeSelect.options).forEach(option => {
+        const optDiv = document.createElement('div');
+        optDiv.className = 'custom-select-option';
+        if (option.value === nativeSelect.value) {
+            optDiv.classList.add('active');
+        }
+        optDiv.textContent = option.textContent;
+        optDiv.dataset.value = option.value;
+
+        optDiv.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nativeSelect.value = option.value;
+            // Dispatch change event to trigger native event handlers
+            nativeSelect.dispatchEvent(new Event('change'));
+            
+            // Sync selection visual
+            valueSpan.textContent = option.textContent;
+            optionsPanel.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('active'));
+            optDiv.classList.add('active');
+            
+            // Close dropdown
+            trigger.classList.remove('open');
+            optionsPanel.classList.remove('show');
+        });
+
+        optionsPanel.appendChild(optDiv);
+    });
+}
+

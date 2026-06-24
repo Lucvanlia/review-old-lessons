@@ -41,9 +41,18 @@
     "id": "quocphong_hp2",
     "name": "Môn học Quốc phòng - Học phần 2",
     "description": "Phòng chống diễn biến hòa bình, bảo vệ an ninh, phòng chống vi phạm pháp luật môi trường.",
-    "icon": "🚓",
+    "icon": "🚨",
     "pdfs": [
       "quocphong/QUOCPHONG_HOCPHAN2.pdf"
+    ]
+  },
+  {
+    "id": "antoanthongtin-ontap",
+    "name": "An Toàn Thông Tin",
+    "description": "Kiến thức bảo mật: CIA Triad, Buffer Overflow, mật mã RSA/AES, phân quyền Linux, SQL Injection, Firewall & IDS/IPS.",
+    "icon": "🔐",
+    "pdfs": [
+      "antoanthongtin-ontap/cauhoiontap.pdf"
     ]
   }
 ]

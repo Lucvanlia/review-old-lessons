@@ -1,0 +1,968 @@
+[
+  {
+    "id": "de_tonghop",
+    "name": "De Tong Hop (Toan Bo Chuong 1-9)",
+    "description": "Bo cau hoi on tap day du trai rong 9 chuong.",
+    "questions": [
+      {
+        "id": 1,
+        "topicId": "ch1_tongquan",
+        "type": "Lý thuyết",
+        "question": "Theo mô hình CIA Triad, cuộc tấn công DDoS (làm sập web) vi phạm thuộc tính nào?",
+        "options": [
+          "A. Confidentiality (Bí mật)",
+          "B. Integrity (Toàn vẹn)",
+          "C. Availability (Khả dụng)",
+          "D. Authenticity (Xác thực)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "DDoS (Distributed Denial of Service) làm cho dịch vụ không thể truy cập được, vi phạm tính Availability (Tính sẵn sàng/khả dụng) trong CIA Triad."
+      },
+      {
+        "id": 2,
+        "topicId": "ch1_tongquan",
+        "type": "Lý thuyết",
+        "question": "Non-repudiation (Tính không thể chối cãi) có nghĩa là gì trong an toàn thông tin?",
+        "options": [
+          "A. Đảm bảo dữ liệu không bị sửa đổi",
+          "B. Người thực hiện hành động không thể phủ nhận đã thực hiện hành động đó",
+          "C. Chỉ người có quyền mới truy cập được dữ liệu",
+          "D. Hệ thống luôn sẵn sàng phục vụ"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Non-repudiation đảm bảo rằng người thực hiện hành động (như gửi email, ký văn bản) không thể phủ nhận đã làm điều đó. Thường được đảm bảo bởi chữ ký số."
+      },
+      {
+        "id": 3,
+        "topicId": "ch1_tongquan",
+        "type": "Tình huống",
+        "question": "Dữ liệu tài chính của công ty bị rò rỉ ra ngoài do nhân viên vô tình gửi email sai địa chỉ. Thuộc tính nào của CIA bị vi phạm?",
+        "options": [
+          "A. Availability",
+          "B. Integrity",
+          "C. Confidentiality",
+          "D. Accountability"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Rò rỉ dữ liệu ra ngoài (tiết lộ cho người không được phép) vi phạm tính Confidentiality (Bí mật)."
+      },
+      {
+        "id": 4,
+        "topicId": "ch1_tongquan",
+        "type": "Lý thuyết",
+        "question": "Tiêu chuẩn ISO/IEC nào quy định 'Hệ thống quản lý An toàn thông tin – Các yêu cầu'?",
+        "options": [
+          "A. ISO/IEC 27002",
+          "B. ISO/IEC 27001",
+          "C. ISO/IEC 15408",
+          "D. ISO/IEC 27035"
+        ],
+        "correctAnswer": "B",
+        "explanation": "ISO/IEC 27001:2009 là tiêu chuẩn quy định các yêu cầu để thiết lập, triển khai và duy trì Hệ thống Quản lý An toàn Thông tin (ISMS)."
+      },
+      {
+        "id": 5,
+        "topicId": "ch1_tongquan",
+        "type": "Lý thuyết",
+        "question": "CISO (Chief Information Security Officer) có nhiệm vụ chính là gì?",
+        "options": [
+          "A. Quản lý ngân sách và chiến lược CNTT",
+          "B. Đánh giá, quản lý và thực hiện an toàn thông tin trong tổ chức",
+          "C. Phát triển phần mềm bảo mật",
+          "D. Quản lý hệ thống mạng"
+        ],
+        "correctAnswer": "B",
+        "explanation": "CISO chịu trách nhiệm chính về đánh giá, quản lý và thực hiện an toàn thông tin. Thường báo cáo trực tiếp cho CEO."
+      },
+      {
+        "id": 6,
+        "topicId": "ch2_software_security",
+        "type": "Phân tích",
+        "question": "Xem đoạn code C sau:\n```c\nvoid func(char *str) {\n    char buffer[32];\n    strcpy(buffer, str);\n}\n```\nHàm nào gây ra lỗi Buffer Overflow?",
+        "options": [
+          "A. char buffer[32]",
+          "B. strcpy(buffer, str)",
+          "C. void func(char *str)",
+          "D. Không có lỗi nào"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Hàm strcpy() không kiểm tra độ dài chuỗi nguồn (str). Nếu str dài hơn 32 bytes, dữ liệu sẽ tràn ra ngoài buffer và ghi đè lên các vùng nhớ lân cận trên Stack."
+      },
+      {
+        "id": 7,
+        "topicId": "ch2_software_security",
+        "type": "Tính toán",
+        "question": "Chương trình C có char buffer[48]; và chạy trên hệ thống x86 32-bit. Để ghi đè lên thanh ghi EIP (Return Address), kẻ tấn công cần gửi bao nhiêu byte padding?",
+        "options": [
+          "A. 48 bytes",
+          "B. 52 bytes",
+          "C. 56 bytes",
+          "D. 64 bytes"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Offset = kích thước buffer + kích thước Saved EBP = 48 + 4 = 52 bytes. Sau 52 bytes padding, 4 bytes tiếp theo sẽ ghi đè Return Address (EIP)."
+      },
+      {
+        "id": 8,
+        "topicId": "ch2_software_security",
+        "type": "Lý thuyết",
+        "question": "ASLR (Address Space Layout Randomization) bảo vệ chống lại Buffer Overflow như thế nào?",
+        "options": [
+          "A. Kiểm tra độ dài chuỗi khi copy",
+          "B. Đặt giá trị Canary trước Return Address",
+          "C. Ngẫu nhiên hóa địa chỉ của Stack/Heap/Libraries mỗi lần chạy",
+          "D. Ngăn thực thi mã trên vùng nhớ Stack"
+        ],
+        "correctAnswer": "C",
+        "explanation": "ASLR ngẫu nhiên hóa địa chỉ bộ nhớ của Stack, Heap và thư viện mỗi lần chạy chương trình, khiến kẻ tấn công không biết địa chỉ chính xác để nhảy đến Shellcode."
+      },
+      {
+        "id": 9,
+        "topicId": "ch2_software_security",
+        "type": "Phân tích",
+        "question": "Kẻ tấn công gửi input qua URL: /process.php?cmd=ls;cat%20/etc/passwd. Đây là dạng tấn công gì?",
+        "options": [
+          "A. SQL Injection",
+          "B. Buffer Overflow",
+          "C. Command Injection",
+          "D. Cross-site Scripting"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Dấu chấm phẩy (;) trong Linux dùng để nối lệnh hệ điều hành. Kẻ tấn công chèn lệnh cat /etc/passwd vào sau lệnh hợp lệ, đây là Command Injection."
+      },
+      {
+        "id": 10,
+        "topicId": "ch2_software_security",
+        "type": "Lý thuyết",
+        "question": "Trong bố cục bộ nhớ chương trình, vùng nào lưu trữ mã thực thi của chương trình (chỉ đọc)?",
+        "options": [
+          "A. Stack",
+          "B. Heap",
+          "C. BSS segment",
+          "D. Text segment"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Text segment (Code segment) lưu mã thực thi của chương trình và thường là vùng chỉ đọc (read-only) để ngăn chương trình tự sửa đổi mã của mình."
+      },
+      {
+        "id": 11,
+        "topicId": "ch3_access_control",
+        "type": "Phân tích",
+        "question": "Lệnh ls -l hiển thị: -rwxr-x--- 1 alice devteam 4096 config.sh. Nhóm 'devteam' có những quyền gì?",
+        "options": [
+          "A. Đọc và ghi",
+          "B. Đọc và thực thi",
+          "C. Chỉ đọc",
+          "D. Không có quyền nào"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Quyền theo thứ tự: User=rwx, Group=r-x, Others=---. Group 'devteam' có r-x = Read (đọc) và Execute (thực thi), không có Write (ghi)."
+      },
+      {
+        "id": 12,
+        "topicId": "ch3_access_control",
+        "type": "Tính toán",
+        "question": "Quyền -rwxrwxrwx tương ứng với mã Octal nào?",
+        "options": [
+          "A. 755",
+          "B. 644",
+          "C. 777",
+          "D. 700"
+        ],
+        "correctAnswer": "C",
+        "explanation": "rwx = 4+2+1 = 7. User(rwx)=7, Group(rwx)=7, Others(rwx)=7. Mã Octal = 777. Đây là quyền cực kỳ nguy hiểm vì ai cũng có toàn quyền."
+      },
+      {
+        "id": 13,
+        "topicId": "ch3_access_control",
+        "type": "Tình huống",
+        "question": "File config.php đang có quyền 666 (-rw-rw-rw-). Lệnh nào đặt quyền an toàn nhất (chỉ chủ sở hữu đọc/ghi)?",
+        "options": [
+          "A. chmod 777 config.php",
+          "B. chmod 600 config.php",
+          "C. chmod 644 config.php",
+          "D. chmod 755 config.php"
+        ],
+        "correctAnswer": "B",
+        "explanation": "chmod 600 = User(rw-=6), Group(---=0), Others(---=0). Chỉ chủ sở hữu mới có thể đọc và ghi. Group và Others không có quyền gì."
+      },
+      {
+        "id": 14,
+        "topicId": "ch3_access_control",
+        "type": "Lý thuyết",
+        "question": "Mô hình MAC (Mandatory Access Control) phù hợp nhất với môi trường nào?",
+        "options": [
+          "A. Doanh nghiệp vừa và nhỏ",
+          "B. Hệ thống quân sự và chính phủ có dữ liệu phân loại mật",
+          "C. Mạng gia đình",
+          "D. Mạng xã hội công khai"
+        ],
+        "correctAnswer": "B",
+        "explanation": "MAC dựa trên nhãn phân loại (Classification levels: Unclassified, Confidential, Secret, Top Secret) - đặc điểm của hệ thống quân sự và chính phủ. Người dùng KHÔNG thể thay đổi quyền truy cập."
+      },
+      {
+        "id": 15,
+        "topicId": "ch3_access_control",
+        "type": "Lý thuyết",
+        "question": "DAC (Discretionary Access Control) có hạn chế lớn nhất là gì?",
+        "options": [
+          "A. Rất khó cấu hình",
+          "B. Không kiểm soát được 'luồng thông tin' khi chủ sở hữu chia sẻ dữ liệu cho người khác",
+          "C. Không hỗ trợ quyền theo vai trò",
+          "D. Chỉ hoạt động trên Linux"
+        ],
+        "correctAnswer": "B",
+        "explanation": "DAC không kiểm soát được nếu người được chia sẻ file lại tiếp tục chia sẻ dữ liệu đó cho người khác. Không thể kiểm soát 'information flow' - đây là nhược điểm cốt lõi."
+      },
+      {
+        "id": 16,
+        "topicId": "ch3_authentication",
+        "type": "Lý thuyết",
+        "question": "Trong framework AAA, 'Accounting' có nghĩa là gì?",
+        "options": [
+          "A. Xác minh danh tính người dùng",
+          "B. Cấp quyền truy cập tài nguyên",
+          "C. Theo dõi và ghi lại hoạt động của người dùng",
+          "D. Mã hóa thông tin đăng nhập"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Accounting (Kiểm toán) là thành phần thứ 3 trong AAA, có nhiệm vụ theo dõi và ghi lại mọi hoạt động của người dùng để phục vụ kiểm tra, truy vết và tuân thủ."
+      },
+      {
+        "id": 17,
+        "topicId": "ch3_authentication",
+        "type": "Lý thuyết",
+        "question": "Hệ thống dùng Token RSA SecurID là ví dụ của phương tiện xác thực nào?",
+        "options": [
+          "A. Something you know",
+          "B. Something you possess",
+          "C. Something you are",
+          "D. Something you do"
+        ],
+        "correctAnswer": "B",
+        "explanation": "RSA SecurID Token là thiết bị vật lý tạo mã OTP mỗi 30-60 giây. Đây là 'Something you possess' (vật bạn sở hữu) - phân loại theo vật thể/phần cứng."
+      },
+      {
+        "id": 18,
+        "topicId": "ch3_authentication",
+        "type": "Tình huống",
+        "question": "Kẻ tấn công đoán đúng mật khẩu của Alice và đăng nhập thành công với tư cách là Alice. Đây là trường hợp gì từ góc độ hệ thống xác thực?",
+        "options": [
+          "A. True negative - từ chối đúng",
+          "B. True positive - chấp nhận đúng",
+          "C. False positive - chấp nhận sai (False Accept)",
+          "D. False negative - từ chối sai"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Kẻ tấn công KHÔNG phải Alice (không hợp lệ) nhưng hệ thống lại chấp nhận → đây là False Positive (False Accept). Đây là lỗi bảo mật nghiêm trọng nhất."
+      },
+      {
+        "id": 19,
+        "topicId": "ch3_authentication",
+        "type": "Lý thuyết",
+        "question": "Tại sao phải dùng Salt khi hash mật khẩu?",
+        "options": [
+          "A. Giúp mật khẩu dài hơn",
+          "B. Chống tấn công Rainbow Table bằng cách làm hash của mật khẩu giống nhau trở nên khác nhau",
+          "C. Mã hóa mật khẩu thêm một lần nữa",
+          "D. Giúp giải mã mật khẩu nhanh hơn"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Salt là chuỗi ngẫu nhiên thêm vào trước khi hash. Hai người dùng có cùng mật khẩu nhưng salt khác nhau sẽ có hash khác nhau → vô hiệu hóa Rainbow Table (bảng tra cứu hash sẵn có)."
+      },
+      {
+        "id": 20,
+        "topicId": "ch4_database",
+        "type": "Phân tích",
+        "question": "Xem câu truy vấn SQL sau:\nSELECT * FROM users WHERE name='' OR '1'='1' --' AND pass='abc'\nĐây là dạng tấn công gì và có tác động gì?",
+        "options": [
+          "A. Command Injection - xóa bảng users",
+          "B. SQL Injection kiểu bypass authentication - đăng nhập mà không cần mật khẩu đúng",
+          "C. XSS - chèn script vào trang web",
+          "D. CSRF - giả mạo yêu cầu"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đây là SQL Injection bypass. 'OR 1=1' làm mệnh đề WHERE luôn đúng. Dấu '--' comment hóa phần kiểm tra password. Kẻ tấn công đăng nhập được mà không cần mật khẩu đúng."
+      },
+      {
+        "id": 21,
+        "topicId": "ch4_database",
+        "type": "Lý thuyết",
+        "question": "Biện pháp hiệu quả NHẤT để phòng chống SQL Injection là gì?",
+        "options": [
+          "A. Mã hóa toàn bộ database",
+          "B. Dùng Parameterized Queries (Prepared Statements)",
+          "C. Đổi tên bảng database",
+          "D. Giới hạn độ dài input ở phía client"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Parameterized Queries tách biệt code SQL và dữ liệu đầu vào. Dữ liệu người dùng không bao giờ được ghép trực tiếp vào câu lệnh SQL → SQL Injection không thể xảy ra."
+      },
+      {
+        "id": 22,
+        "topicId": "ch4_database",
+        "type": "Tình huống",
+        "question": "Web app hiển thị thông báo lỗi: 'MySQL Error: Table users doesn't exist in SQL: SELECT * FROM users WHERE id=5'. Lỗ hổng bảo mật nào đang xảy ra?",
+        "options": [
+          "A. Buffer Overflow",
+          "B. SQL Injection thành công",
+          "C. Error Handling không an toàn - lộ cấu trúc database",
+          "D. Lỗi CSRF"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Hiển thị thông báo lỗi hệ thống (raw error) ra giao diện người dùng là lỗi Error Handling không an toàn. Kẻ tấn công học được tên bảng, loại database, và cấu trúc truy vấn để lên kế hoạch tấn công."
+      },
+      {
+        "id": 23,
+        "topicId": "ch5_malware",
+        "type": "Lý thuyết",
+        "question": "Điểm khác biệt cốt lõi giữa Virus và Worm là gì?",
+        "options": [
+          "A. Virus phá hủy dữ liệu, Worm chỉ theo dõi",
+          "B. Worm tự lây lan qua mạng mà không cần người dùng, Virus cần người dùng chạy file nhiễm",
+          "C. Virus mã hóa file, Worm không",
+          "D. Không có sự khác biệt"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Worm tự sao chép và lây lan qua mạng tự động (khai thác lỗ hổng mạng). Virus cần ký sinh vào file và chờ người dùng thực thi file đó mới lây lan được."
+      },
+      {
+        "id": 24,
+        "topicId": "ch5_malware",
+        "type": "Tình huống",
+        "question": "Người dùng mở file email đính kèm, sau đó thấy tất cả file bị đổi đuôi thành .locked và có file README: 'Trả 1 BTC để lấy lại file'. Đây là loại malware nào?",
+        "options": [
+          "A. Spyware",
+          "B. Adware",
+          "C. Ransomware",
+          "D. Rootkit"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ransomware mã hóa dữ liệu nạn nhân và đòi tiền chuộc (thường bằng tiền điện tử như Bitcoin) để cung cấp khóa giải mã. Ví dụ nổi tiếng: WannaCry, CryptoLocker."
+      },
+      {
+        "id": 25,
+        "topicId": "ch5_malware",
+        "type": "Tình huống",
+        "question": "Admin phát hiện file /etc/passwd có user mới 'backdoor' với UID=0. Đây là dấu hiệu của malware loại gì?",
+        "options": [
+          "A. Adware",
+          "B. Backdoor (Cửa hậu) - kẻ tấn công tạo tài khoản root ẩn để duy trì truy cập",
+          "C. Ransomware",
+          "D. Worm"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Tạo user ẩn với UID=0 (quyền root) trong /etc/passwd là kỹ thuật tạo Backdoor điển hình trên Linux. Kẻ tấn công dùng tài khoản này để duy trì truy cập sau khi xâm nhập."
+      },
+      {
+        "id": 26,
+        "topicId": "ch6_firewall_ids",
+        "type": "Lý thuyết",
+        "question": "Firewall loại nào ghi nhớ trạng thái của các kết nối (state table) và chỉ cho phép gói tin thuộc phiên đã được thiết lập hợp lệ?",
+        "options": [
+          "A. Packet Filtering Firewall",
+          "B. Stateful Inspection Firewall",
+          "C. Application-Level Gateway",
+          "D. Circuit-Level Gateway"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Stateful Inspection Firewall lưu bảng state (state table) ghi nhận các kết nối đang hoạt động. Chỉ cho phép gói inbound nếu nó thuộc một kết nối hợp lệ đã được tạo từ bên trong."
+      },
+      {
+        "id": 27,
+        "topicId": "ch6_firewall_ids",
+        "type": "Tình huống",
+        "question": "Hệ thống phát hiện có 200 lần đăng nhập SSH thất bại từ cùng IP trong 1 phút rồi tự động block IP đó. Đây là chức năng của hệ thống nào?",
+        "options": [
+          "A. Firewall (Packet Filtering)",
+          "B. IDS (Intrusion Detection System)",
+          "C. IPS (Intrusion Prevention System)",
+          "D. Proxy Server"
+        ],
+        "correctAnswer": "C",
+        "explanation": "IPS (Intrusion Prevention System) không chỉ phát hiện (IDS) mà còn TỰ ĐỘNG NGĂN CHẶN tấn công. Việc phát hiện brute force và tự block IP là chức năng điển hình của IPS."
+      },
+      {
+        "id": 28,
+        "topicId": "ch6_firewall_ids",
+        "type": "Lý thuyết",
+        "question": "Chính sách 'Default Deny' (Allowlist) của Firewall hoạt động như thế nào?",
+        "options": [
+          "A. Chặn tất cả trừ những gì bị cấm rõ ràng",
+          "B. Cho phép tất cả trừ những gì bị cấm rõ ràng",
+          "C. Chỉ cho phép những gì được phép rõ ràng, từ chối tất cả còn lại",
+          "D. Không lọc gì cả"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Default Deny (allowlist) = Deny All by Default. Chỉ những lưu lượng có rule PERMIT mới được qua. Đây là chính sách AN TOÀN HƠN so với Default Allow."
+      },
+      {
+        "id": 29,
+        "topicId": "ch7_crypto_overview",
+        "type": "Tính toán",
+        "question": "Dùng Caesar Cipher với k=4, mã hóa chữ cái 'D'. Kết quả là?",
+        "options": [
+          "A. G",
+          "B. H",
+          "C. F",
+          "D. E"
+        ],
+        "correctAnswer": "B",
+        "explanation": "D = vị trí 3 (A=0,B=1,C=2,D=3). C = (3 + 4) mod 26 = 7 = H. Đáp án là H."
+      },
+      {
+        "id": 30,
+        "topicId": "ch7_crypto_overview",
+        "type": "Lý thuyết",
+        "question": "Điểm yếu cốt lõi của mật mã Monoalphabetic là gì?",
+        "options": [
+          "A. Khóa quá ngắn",
+          "B. Dễ bị phá bằng phân tích tần số xuất hiện của các ký tự",
+          "C. Không thể giải mã",
+          "D. Chỉ hỗ trợ tiếng Anh"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Monoalphabetic dùng 1 bảng chữ cái cố định. Vì tần số xuất hiện của chữ cái trong ngôn ngữ tự nhiên có quy luật (E xuất hiện nhiều nhất tiếng Anh), kẻ tấn công có thể thống kê tần số để tìm ra key."
+      },
+      {
+        "id": 31,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "Tại sao chế độ ECB (Electronic Codebook) không an toàn để mã hóa dữ liệu lớn?",
+        "options": [
+          "A. ECB quá chậm",
+          "B. Các khối plaintext giống nhau tạo ra ciphertext giống nhau, làm lộ mẫu dữ liệu",
+          "C. ECB không hỗ trợ AES",
+          "D. ECB cần IV (Initialization Vector)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Trong ECB, mỗi khối plaintext được mã hóa độc lập với cùng một khóa. Nếu hai khối plaintext giống nhau, chúng tạo ra ciphertext giống nhau → Kẻ tấn công có thể phát hiện mẫu dữ liệu."
+      },
+      {
+        "id": 32,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "AES (Advanced Encryption Standard) sử dụng kích thước block và khóa là bao nhiêu?",
+        "options": [
+          "A. Block: 64-bit, Key: 56-bit",
+          "B. Block: 128-bit, Key: 128/192/256-bit",
+          "C. Block: 256-bit, Key: 256-bit",
+          "D. Block: 64-bit, Key: 128-bit"
+        ],
+        "correctAnswer": "B",
+        "explanation": "AES sử dụng block size cố định 128-bit và key size có thể là 128, 192, hoặc 256 bits. Số vòng tương ứng là 10, 12, 14 vòng."
+      },
+      {
+        "id": 33,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "Chế độ CBC (Cipher Block Chaining) khác ECB ở điểm gì?",
+        "options": [
+          "A. CBC không cần khóa",
+          "B. CBC XOR mỗi khối plaintext với ciphertext của khối trước khi mã hóa, cần IV",
+          "C. CBC mã hóa từng bit",
+          "D. CBC sử dụng khóa khác nhau cho mỗi khối"
+        ],
+        "correctAnswer": "B",
+        "explanation": "CBC XOR mỗi khối plaintext với ciphertext của khối trước đó trước khi mã hóa. Khối đầu tiên XOR với IV (Initialization Vector) ngẫu nhiên → Các khối giống nhau tạo ciphertext khác nhau."
+      },
+      {
+        "id": 34,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "Cho p=3, q=11, e=7. Tính n và φ(n).",
+        "options": [
+          "A. n=33, φ(n)=20",
+          "B. n=33, φ(n)=22",
+          "C. n=14, φ(n)=20",
+          "D. n=33, φ(n)=30"
+        ],
+        "correctAnswer": "A",
+        "explanation": "n = p × q = 3 × 11 = 33. φ(n) = (p-1)(q-1) = 2 × 10 = 20. Kiểm tra e=7: gcd(7,20)=1 ✓ (7 nguyên tố cùng nhau với 20)."
+      },
+      {
+        "id": 35,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "Với p=3, q=11, e=7, φ(n)=20. Tìm khóa bí mật d sao cho (7×d) mod 20 = 1.",
+        "options": [
+          "A. d=3",
+          "B. d=7",
+          "C. d=11",
+          "D. d=17"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Cần tìm d sao cho (7×d) mod 20 = 1. Thử: d=3 → 7×3=21, 21 mod 20 = 1 ✓. Vậy d=3 là khóa bí mật (Private Key)."
+      },
+      {
+        "id": 36,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "RSA: Public Key (e=7, n=33). Mã hóa bản rõ M=2. Tính Ciphertext C.",
+        "options": [
+          "A. C=14",
+          "B. C=128",
+          "C. C=29",
+          "D. C=2"
+        ],
+        "correctAnswer": "C",
+        "explanation": "C = M^e mod n = 2^7 mod 33 = 128 mod 33. 128 = 3×33 + 29 → 128 mod 33 = 29. Vậy C=29."
+      },
+      {
+        "id": 37,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Lý thuyết",
+        "question": "Chữ ký số (Digital Signature) được tạo ra bằng khóa nào?",
+        "options": [
+          "A. Public Key của người nhận",
+          "B. Public Key của người gửi",
+          "C. Private Key của người gửi",
+          "D. Khóa đối xứng chia sẻ"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Chữ ký số được tạo bằng Private Key của người GỬI và được xác minh bằng Public Key của người gửi. Điều này đảm bảo chỉ người sở hữu Private Key mới có thể tạo chữ ký hợp lệ."
+      },
+      {
+        "id": 38,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Lý thuyết",
+        "question": "Giao thức Diffie-Hellman được dùng để làm gì?",
+        "options": [
+          "A. Mã hóa dữ liệu lớn",
+          "B. Thỏa thuận khóa bí mật chung qua kênh truyền công khai không an toàn",
+          "C. Tạo chữ ký số",
+          "D. Hash mật khẩu"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Diffie-Hellman Key Exchange cho phép Alice và Bob thỏa thuận được một khóa bí mật chung qua kênh không an toàn mà không cần trao đổi bí mật trước. Dựa trên bài toán logarit rời rạc."
+      },
+      {
+        "id": 39,
+        "topicId": "ch6_firewall_ids",
+        "type": "Lý thuyết",
+        "question": "IDS dựa trên Signature (chữ ký) có hạn chế gì so với IDS dựa trên Anomaly?",
+        "options": [
+          "A. Chậm hơn nhiều",
+          "B. Không phát hiện được các cuộc tấn công Zero-day (chưa có chữ ký)",
+          "C. Gây nhiều False Positive hơn",
+          "D. Không hoạt động trên Linux"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Signature-based IDS chỉ phát hiện được các tấn công đã biết (có chữ ký trong database). Với Zero-day attacks (chưa từng thấy), không có chữ ký → IDS không phát hiện được."
+      },
+      {
+        "id": 40,
+        "topicId": "ch1_tongquan",
+        "type": "Lý thuyết",
+        "question": "Theo mô hình ATTT, 'Attack Surface' là gì?",
+        "options": [
+          "A. Phần mềm dùng để tấn công",
+          "B. Tổng hợp tất cả các điểm kẻ tấn công có thể khai thác để xâm nhập hệ thống",
+          "C. Bề mặt vật lý của thiết bị",
+          "D. Danh sách các tài khoản người dùng"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Attack Surface là tổng hợp tất cả các điểm kẻ tấn công có thể khai thác: cổng mạng mở, dịch vụ chạy, ứng dụng web, API, tài khoản người dùng... Giảm Attack Surface là nguyên tắc bảo mật cơ bản (Host Hardening)."
+      }
+    ]
+  },
+  {
+    "id": "de_macho_rsa",
+    "name": "Chuyen De: Ma Hoa & RSA",
+    "description": "Tap trung vao Chuong 7, 8, 9: Ma hoa doi xung, bat doi xung, RSA.",
+    "questions": [
+      {
+        "id": 29,
+        "topicId": "ch7_crypto_overview",
+        "type": "Tính toán",
+        "question": "Dùng Caesar Cipher với k=4, mã hóa chữ cái 'D'. Kết quả là?",
+        "options": [
+          "A. G",
+          "B. H",
+          "C. F",
+          "D. E"
+        ],
+        "correctAnswer": "B",
+        "explanation": "D = vị trí 3 (A=0,B=1,C=2,D=3). C = (3 + 4) mod 26 = 7 = H. Đáp án là H."
+      },
+      {
+        "id": 30,
+        "topicId": "ch7_crypto_overview",
+        "type": "Lý thuyết",
+        "question": "Điểm yếu cốt lõi của mật mã Monoalphabetic là gì?",
+        "options": [
+          "A. Khóa quá ngắn",
+          "B. Dễ bị phá bằng phân tích tần số xuất hiện của các ký tự",
+          "C. Không thể giải mã",
+          "D. Chỉ hỗ trợ tiếng Anh"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Monoalphabetic dùng 1 bảng chữ cái cố định. Vì tần số xuất hiện của chữ cái trong ngôn ngữ tự nhiên có quy luật (E xuất hiện nhiều nhất tiếng Anh), kẻ tấn công có thể thống kê tần số để tìm ra key."
+      },
+      {
+        "id": 31,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "Tại sao chế độ ECB (Electronic Codebook) không an toàn để mã hóa dữ liệu lớn?",
+        "options": [
+          "A. ECB quá chậm",
+          "B. Các khối plaintext giống nhau tạo ra ciphertext giống nhau, làm lộ mẫu dữ liệu",
+          "C. ECB không hỗ trợ AES",
+          "D. ECB cần IV (Initialization Vector)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Trong ECB, mỗi khối plaintext được mã hóa độc lập với cùng một khóa. Nếu hai khối plaintext giống nhau, chúng tạo ra ciphertext giống nhau → Kẻ tấn công có thể phát hiện mẫu dữ liệu."
+      },
+      {
+        "id": 32,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "AES (Advanced Encryption Standard) sử dụng kích thước block và khóa là bao nhiêu?",
+        "options": [
+          "A. Block: 64-bit, Key: 56-bit",
+          "B. Block: 128-bit, Key: 128/192/256-bit",
+          "C. Block: 256-bit, Key: 256-bit",
+          "D. Block: 64-bit, Key: 128-bit"
+        ],
+        "correctAnswer": "B",
+        "explanation": "AES sử dụng block size cố định 128-bit và key size có thể là 128, 192, hoặc 256 bits. Số vòng tương ứng là 10, 12, 14 vòng."
+      },
+      {
+        "id": 33,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "Chế độ CBC (Cipher Block Chaining) khác ECB ở điểm gì?",
+        "options": [
+          "A. CBC không cần khóa",
+          "B. CBC XOR mỗi khối plaintext với ciphertext của khối trước khi mã hóa, cần IV",
+          "C. CBC mã hóa từng bit",
+          "D. CBC sử dụng khóa khác nhau cho mỗi khối"
+        ],
+        "correctAnswer": "B",
+        "explanation": "CBC XOR mỗi khối plaintext với ciphertext của khối trước đó trước khi mã hóa. Khối đầu tiên XOR với IV (Initialization Vector) ngẫu nhiên → Các khối giống nhau tạo ciphertext khác nhau."
+      },
+      {
+        "id": 34,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "Cho p=3, q=11, e=7. Tính n và φ(n).",
+        "options": [
+          "A. n=33, φ(n)=20",
+          "B. n=33, φ(n)=22",
+          "C. n=14, φ(n)=20",
+          "D. n=33, φ(n)=30"
+        ],
+        "correctAnswer": "A",
+        "explanation": "n = p × q = 3 × 11 = 33. φ(n) = (p-1)(q-1) = 2 × 10 = 20. Kiểm tra e=7: gcd(7,20)=1 ✓ (7 nguyên tố cùng nhau với 20)."
+      },
+      {
+        "id": 35,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "Với p=3, q=11, e=7, φ(n)=20. Tìm khóa bí mật d sao cho (7×d) mod 20 = 1.",
+        "options": [
+          "A. d=3",
+          "B. d=7",
+          "C. d=11",
+          "D. d=17"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Cần tìm d sao cho (7×d) mod 20 = 1. Thử: d=3 → 7×3=21, 21 mod 20 = 1 ✓. Vậy d=3 là khóa bí mật (Private Key)."
+      },
+      {
+        "id": 36,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "RSA: Public Key (e=7, n=33). Mã hóa bản rõ M=2. Tính Ciphertext C.",
+        "options": [
+          "A. C=14",
+          "B. C=128",
+          "C. C=29",
+          "D. C=2"
+        ],
+        "correctAnswer": "C",
+        "explanation": "C = M^e mod n = 2^7 mod 33 = 128 mod 33. 128 = 3×33 + 29 → 128 mod 33 = 29. Vậy C=29."
+      },
+      {
+        "id": 37,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Lý thuyết",
+        "question": "Chữ ký số (Digital Signature) được tạo ra bằng khóa nào?",
+        "options": [
+          "A. Public Key của người nhận",
+          "B. Public Key của người gửi",
+          "C. Private Key của người gửi",
+          "D. Khóa đối xứng chia sẻ"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Chữ ký số được tạo bằng Private Key của người GỬI và được xác minh bằng Public Key của người gửi. Điều này đảm bảo chỉ người sở hữu Private Key mới có thể tạo chữ ký hợp lệ."
+      },
+      {
+        "id": 38,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Lý thuyết",
+        "question": "Giao thức Diffie-Hellman được dùng để làm gì?",
+        "options": [
+          "A. Mã hóa dữ liệu lớn",
+          "B. Thỏa thuận khóa bí mật chung qua kênh truyền công khai không an toàn",
+          "C. Tạo chữ ký số",
+          "D. Hash mật khẩu"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Diffie-Hellman Key Exchange cho phép Alice và Bob thỏa thuận được một khóa bí mật chung qua kênh không an toàn mà không cần trao đổi bí mật trước. Dựa trên bài toán logarit rời rạc."
+      }
+    ]
+  },
+  {
+    "id": "de_buffer_sqli",
+    "name": "Chuyen De: Buffer Overflow & SQL Injection (Lab)",
+    "description": "Lab thuc hanh: Phan tich code C, tinh toan offset EIP, va SQL Injection.",
+    "questions": [
+      {
+        "id": 6,
+        "topicId": "ch2_software_security",
+        "type": "Phân tích",
+        "question": "Xem đoạn code C sau:\n```c\nvoid func(char *str) {\n    char buffer[32];\n    strcpy(buffer, str);\n}\n```\nHàm nào gây ra lỗi Buffer Overflow?",
+        "options": [
+          "A. char buffer[32]",
+          "B. strcpy(buffer, str)",
+          "C. void func(char *str)",
+          "D. Không có lỗi nào"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Hàm strcpy() không kiểm tra độ dài chuỗi nguồn (str). Nếu str dài hơn 32 bytes, dữ liệu sẽ tràn ra ngoài buffer và ghi đè lên các vùng nhớ lân cận trên Stack."
+      },
+      {
+        "id": 7,
+        "topicId": "ch2_software_security",
+        "type": "Tính toán",
+        "question": "Chương trình C có char buffer[48]; và chạy trên hệ thống x86 32-bit. Để ghi đè lên thanh ghi EIP (Return Address), kẻ tấn công cần gửi bao nhiêu byte padding?",
+        "options": [
+          "A. 48 bytes",
+          "B. 52 bytes",
+          "C. 56 bytes",
+          "D. 64 bytes"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Offset = kích thước buffer + kích thước Saved EBP = 48 + 4 = 52 bytes. Sau 52 bytes padding, 4 bytes tiếp theo sẽ ghi đè Return Address (EIP)."
+      },
+      {
+        "id": 8,
+        "topicId": "ch2_software_security",
+        "type": "Lý thuyết",
+        "question": "ASLR (Address Space Layout Randomization) bảo vệ chống lại Buffer Overflow như thế nào?",
+        "options": [
+          "A. Kiểm tra độ dài chuỗi khi copy",
+          "B. Đặt giá trị Canary trước Return Address",
+          "C. Ngẫu nhiên hóa địa chỉ của Stack/Heap/Libraries mỗi lần chạy",
+          "D. Ngăn thực thi mã trên vùng nhớ Stack"
+        ],
+        "correctAnswer": "C",
+        "explanation": "ASLR ngẫu nhiên hóa địa chỉ bộ nhớ của Stack, Heap và thư viện mỗi lần chạy chương trình, khiến kẻ tấn công không biết địa chỉ chính xác để nhảy đến Shellcode."
+      },
+      {
+        "id": 9,
+        "topicId": "ch2_software_security",
+        "type": "Phân tích",
+        "question": "Kẻ tấn công gửi input qua URL: /process.php?cmd=ls;cat%20/etc/passwd. Đây là dạng tấn công gì?",
+        "options": [
+          "A. SQL Injection",
+          "B. Buffer Overflow",
+          "C. Command Injection",
+          "D. Cross-site Scripting"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Dấu chấm phẩy (;) trong Linux dùng để nối lệnh hệ điều hành. Kẻ tấn công chèn lệnh cat /etc/passwd vào sau lệnh hợp lệ, đây là Command Injection."
+      },
+      {
+        "id": 10,
+        "topicId": "ch2_software_security",
+        "type": "Lý thuyết",
+        "question": "Trong bố cục bộ nhớ chương trình, vùng nào lưu trữ mã thực thi của chương trình (chỉ đọc)?",
+        "options": [
+          "A. Stack",
+          "B. Heap",
+          "C. BSS segment",
+          "D. Text segment"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Text segment (Code segment) lưu mã thực thi của chương trình và thường là vùng chỉ đọc (read-only) để ngăn chương trình tự sửa đổi mã của mình."
+      },
+      {
+        "id": 20,
+        "topicId": "ch4_database",
+        "type": "Phân tích",
+        "question": "Xem câu truy vấn SQL sau:\nSELECT * FROM users WHERE name='' OR '1'='1' --' AND pass='abc'\nĐây là dạng tấn công gì và có tác động gì?",
+        "options": [
+          "A. Command Injection - xóa bảng users",
+          "B. SQL Injection kiểu bypass authentication - đăng nhập mà không cần mật khẩu đúng",
+          "C. XSS - chèn script vào trang web",
+          "D. CSRF - giả mạo yêu cầu"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đây là SQL Injection bypass. 'OR 1=1' làm mệnh đề WHERE luôn đúng. Dấu '--' comment hóa phần kiểm tra password. Kẻ tấn công đăng nhập được mà không cần mật khẩu đúng."
+      },
+      {
+        "id": 21,
+        "topicId": "ch4_database",
+        "type": "Lý thuyết",
+        "question": "Biện pháp hiệu quả NHẤT để phòng chống SQL Injection là gì?",
+        "options": [
+          "A. Mã hóa toàn bộ database",
+          "B. Dùng Parameterized Queries (Prepared Statements)",
+          "C. Đổi tên bảng database",
+          "D. Giới hạn độ dài input ở phía client"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Parameterized Queries tách biệt code SQL và dữ liệu đầu vào. Dữ liệu người dùng không bao giờ được ghép trực tiếp vào câu lệnh SQL → SQL Injection không thể xảy ra."
+      },
+      {
+        "id": 22,
+        "topicId": "ch4_database",
+        "type": "Tình huống",
+        "question": "Web app hiển thị thông báo lỗi: 'MySQL Error: Table users doesn't exist in SQL: SELECT * FROM users WHERE id=5'. Lỗ hổng bảo mật nào đang xảy ra?",
+        "options": [
+          "A. Buffer Overflow",
+          "B. SQL Injection thành công",
+          "C. Error Handling không an toàn - lộ cấu trúc database",
+          "D. Lỗi CSRF"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Hiển thị thông báo lỗi hệ thống (raw error) ra giao diện người dùng là lỗi Error Handling không an toàn. Kẻ tấn công học được tên bảng, loại database, và cấu trúc truy vấn để lên kế hoạch tấn công."
+      }
+    ]
+  },
+  {
+    "id": "de_access_auth",
+    "name": "Chuyen De: Phan Quyen & Xac Thuc",
+    "description": "Chuong 3: ACL Linux, MAC/DAC/RBAC, AAA, Password Security, MFA.",
+    "questions": [
+      {
+        "id": 11,
+        "topicId": "ch3_access_control",
+        "type": "Phân tích",
+        "question": "Lệnh ls -l hiển thị: -rwxr-x--- 1 alice devteam 4096 config.sh. Nhóm 'devteam' có những quyền gì?",
+        "options": [
+          "A. Đọc và ghi",
+          "B. Đọc và thực thi",
+          "C. Chỉ đọc",
+          "D. Không có quyền nào"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Quyền theo thứ tự: User=rwx, Group=r-x, Others=---. Group 'devteam' có r-x = Read (đọc) và Execute (thực thi), không có Write (ghi)."
+      },
+      {
+        "id": 12,
+        "topicId": "ch3_access_control",
+        "type": "Tính toán",
+        "question": "Quyền -rwxrwxrwx tương ứng với mã Octal nào?",
+        "options": [
+          "A. 755",
+          "B. 644",
+          "C. 777",
+          "D. 700"
+        ],
+        "correctAnswer": "C",
+        "explanation": "rwx = 4+2+1 = 7. User(rwx)=7, Group(rwx)=7, Others(rwx)=7. Mã Octal = 777. Đây là quyền cực kỳ nguy hiểm vì ai cũng có toàn quyền."
+      },
+      {
+        "id": 13,
+        "topicId": "ch3_access_control",
+        "type": "Tình huống",
+        "question": "File config.php đang có quyền 666 (-rw-rw-rw-). Lệnh nào đặt quyền an toàn nhất (chỉ chủ sở hữu đọc/ghi)?",
+        "options": [
+          "A. chmod 777 config.php",
+          "B. chmod 600 config.php",
+          "C. chmod 644 config.php",
+          "D. chmod 755 config.php"
+        ],
+        "correctAnswer": "B",
+        "explanation": "chmod 600 = User(rw-=6), Group(---=0), Others(---=0). Chỉ chủ sở hữu mới có thể đọc và ghi. Group và Others không có quyền gì."
+      },
+      {
+        "id": 14,
+        "topicId": "ch3_access_control",
+        "type": "Lý thuyết",
+        "question": "Mô hình MAC (Mandatory Access Control) phù hợp nhất với môi trường nào?",
+        "options": [
+          "A. Doanh nghiệp vừa và nhỏ",
+          "B. Hệ thống quân sự và chính phủ có dữ liệu phân loại mật",
+          "C. Mạng gia đình",
+          "D. Mạng xã hội công khai"
+        ],
+        "correctAnswer": "B",
+        "explanation": "MAC dựa trên nhãn phân loại (Classification levels: Unclassified, Confidential, Secret, Top Secret) - đặc điểm của hệ thống quân sự và chính phủ. Người dùng KHÔNG thể thay đổi quyền truy cập."
+      },
+      {
+        "id": 15,
+        "topicId": "ch3_access_control",
+        "type": "Lý thuyết",
+        "question": "DAC (Discretionary Access Control) có hạn chế lớn nhất là gì?",
+        "options": [
+          "A. Rất khó cấu hình",
+          "B. Không kiểm soát được 'luồng thông tin' khi chủ sở hữu chia sẻ dữ liệu cho người khác",
+          "C. Không hỗ trợ quyền theo vai trò",
+          "D. Chỉ hoạt động trên Linux"
+        ],
+        "correctAnswer": "B",
+        "explanation": "DAC không kiểm soát được nếu người được chia sẻ file lại tiếp tục chia sẻ dữ liệu đó cho người khác. Không thể kiểm soát 'information flow' - đây là nhược điểm cốt lõi."
+      },
+      {
+        "id": 16,
+        "topicId": "ch3_authentication",
+        "type": "Lý thuyết",
+        "question": "Trong framework AAA, 'Accounting' có nghĩa là gì?",
+        "options": [
+          "A. Xác minh danh tính người dùng",
+          "B. Cấp quyền truy cập tài nguyên",
+          "C. Theo dõi và ghi lại hoạt động của người dùng",
+          "D. Mã hóa thông tin đăng nhập"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Accounting (Kiểm toán) là thành phần thứ 3 trong AAA, có nhiệm vụ theo dõi và ghi lại mọi hoạt động của người dùng để phục vụ kiểm tra, truy vết và tuân thủ."
+      },
+      {
+        "id": 17,
+        "topicId": "ch3_authentication",
+        "type": "Lý thuyết",
+        "question": "Hệ thống dùng Token RSA SecurID là ví dụ của phương tiện xác thực nào?",
+        "options": [
+          "A. Something you know",
+          "B. Something you possess",
+          "C. Something you are",
+          "D. Something you do"
+        ],
+        "correctAnswer": "B",
+        "explanation": "RSA SecurID Token là thiết bị vật lý tạo mã OTP mỗi 30-60 giây. Đây là 'Something you possess' (vật bạn sở hữu) - phân loại theo vật thể/phần cứng."
+      },
+      {
+        "id": 18,
+        "topicId": "ch3_authentication",
+        "type": "Tình huống",
+        "question": "Kẻ tấn công đoán đúng mật khẩu của Alice và đăng nhập thành công với tư cách là Alice. Đây là trường hợp gì từ góc độ hệ thống xác thực?",
+        "options": [
+          "A. True negative - từ chối đúng",
+          "B. True positive - chấp nhận đúng",
+          "C. False positive - chấp nhận sai (False Accept)",
+          "D. False negative - từ chối sai"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Kẻ tấn công KHÔNG phải Alice (không hợp lệ) nhưng hệ thống lại chấp nhận → đây là False Positive (False Accept). Đây là lỗi bảo mật nghiêm trọng nhất."
+      },
+      {
+        "id": 19,
+        "topicId": "ch3_authentication",
+        "type": "Lý thuyết",
+        "question": "Tại sao phải dùng Salt khi hash mật khẩu?",
+        "options": [
+          "A. Giúp mật khẩu dài hơn",
+          "B. Chống tấn công Rainbow Table bằng cách làm hash của mật khẩu giống nhau trở nên khác nhau",
+          "C. Mã hóa mật khẩu thêm một lần nữa",
+          "D. Giúp giải mã mật khẩu nhanh hơn"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Salt là chuỗi ngẫu nhiên thêm vào trước khi hash. Hai người dùng có cùng mật khẩu nhưng salt khác nhau sẽ có hash khác nhau → vô hiệu hóa Rainbow Table (bảng tra cứu hash sẵn có)."
+      }
+    ]
+  }
+]
