@@ -673,8 +673,8 @@ function formatMarkdown(str) {
     if (!str) return '';
     let html = escapeHTML(str);
     
-    // Convert code blocks: ```python ... ```
-    html = html.replace(/```(?:python|javascript|java|)\n([\s\S]*?)```/g, function(match, p1) {
+    // Convert code blocks: ```python ... ``` (supports CRLF)
+    html = html.replace(/```(?:python|javascript|java|)\r?\n([\s\S]*?)```/g, function(match, p1) {
         return `<div class="code-box-wrapper"><pre><code>${p1}</code></pre></div>`;
     });
     
@@ -688,8 +688,8 @@ function formatMarkdown(str) {
         return `__CODE_BLOCK_${blocks.length - 1}__`;
     });
     
-    // Replace newlines with <br> in normal text
-    html = html.replace(/\n/g, '<br>');
+    // Replace newlines with <br> in normal text (supports CRLF)
+    html = html.replace(/\r?\n/g, '<br>');
     
     // Restore blocks
     html = html.replace(/__CODE_BLOCK_(\d+)__/g, function(match, p1) {
