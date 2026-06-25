@@ -1,6 +1,9 @@
-.agent/
-.vscode/
-.DS_Store
-Thumbs.db
-node_modules/
-*.log
+# PDF files - too large for git HTTP push
+pdf/
+
+# Scratch scripts
+scratch/
+
+# Python cache
+__pycache__/
+*.pyc
