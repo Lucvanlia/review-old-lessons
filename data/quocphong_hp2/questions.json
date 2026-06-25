@@ -4,54 +4,54 @@
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Mối quan hệ giữa phát triển kinh tế và bảo vệ môi trường trong đường lối của Đảng ta là:",
     "options": [
-      "A. Phát triển kinh tế bằng mọi giá, sau đó mới dọn dẹp môi trường.",
+      "A. Phát triển kinh tế gắn liền với bảo vệ môi trường, phát triển bền vững, không đánh đổi môi trường lấy tăng trưởng kinh tế.",
       "B. Bảo vệ môi trường tuyệt đối, cấm mọi hoạt động công nghiệp khai thác.",
-      "C. Phát triển kinh tế gắn liền với bảo vệ môi trường, phát triển bền vững, không đánh đổi môi trường lấy tăng trưởng kinh tế.",
-      "D. Đẩy ô nhiễm sang các nước nghèo hơn."
+      "C. Đẩy ô nhiễm sang các nước nghèo hơn.",
+      "D. Phát triển kinh tế bằng mọi giá, sau đó mới dọn dẹp môi trường."
     ],
-    "correctAnswer": "C",
+    "correctAnswer": "D",
     "explanation": "Phát triển bền vững là nguyên tắc xuyên suốt. Không đánh đổi môi trường lấy tăng trưởng kinh tế là khẳng định mạnh mẽ của Chính phủ.",
-    "type": "So sánh"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_74",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Sinh viên có thể tham gia bảo vệ môi trường bằng hành động thiết thực nào?",
     "options": [
-      "A. Mua sắm thật nhiều đồ nhựa dùng một lần để thúc đẩy kinh tế.",
-      "B. Tham gia các chiến dịch dọn rác, tắt điện giờ trái đất, sử dụng phương tiện công cộng, phân loại rác thải tại nguồn.",
-      "C. Báo cáo giả về các vụ ô nhiễm để thử tài cảnh sát.",
-      "D. Trồng cây trên lòng đường giao thông."
+      "A. Trồng cây trên lòng đường giao thông.",
+      "B. Báo cáo giả về các vụ ô nhiễm để thử tài cảnh sát.",
+      "C. Mua sắm thật nhiều đồ nhựa dùng một lần để thúc đẩy kinh tế.",
+      "D. Tham gia các chiến dịch dọn rác, tắt điện giờ trái đất, sử dụng phương tiện công cộng, phân loại rác thải tại nguồn."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "Bắt đầu từ những hành động nhỏ, sinh viên có thể lan tỏa lối sống xanh và trực tiếp góp phần giảm thiểu tác động xấu lên môi trường.",
-    "type": "Tổng hợp"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_73",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Để kết tội một pháp nhân thương mại phạm tội môi trường, pháp nhân đó phải thỏa mãn điều kiện nào?",
     "options": [
-      "A. Hành vi phạm tội được thực hiện nhân danh pháp nhân và vì lợi ích của pháp nhân.",
-      "B. Giám đốc pháp nhân vô tình đi chơi và xả rác.",
+      "A. Giám đốc pháp nhân vô tình đi chơi và xả rác.",
+      "B. Pháp nhân đó đang bị phá sản.",
       "C. Pháp nhân đó phải là công ty nhà nước.",
-      "D. Pháp nhân đó đang bị phá sản."
+      "D. Hành vi phạm tội được thực hiện nhân danh pháp nhân và vì lợi ích của pháp nhân."
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "D",
     "explanation": "Pháp nhân thương mại chỉ phải chịu trách nhiệm hình sự khi hành vi được thực hiện nhân danh pháp nhân, vì lợi ích của pháp nhân và có sự chỉ đạo, điều hành của pháp nhân.",
-    "type": "Phân tích"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_72",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Thế nào là hiện tượng 'Ô nhiễm môi trường'?",
     "options": [
-      "A. Là việc môi trường có nhiều cây xanh phát triển quá mức.",
-      "B. Là sự biến đổi tính chất vật lý, hóa học, sinh học của môi trường không phù hợp với quy chuẩn kỹ thuật, gây ảnh hưởng xấu đến sức khỏe con người và sinh vật.",
-      "C. Là sự thay đổi thời tiết theo mùa.",
+      "A. Là sự biến đổi tính chất vật lý, hóa học, sinh học của môi trường không phù hợp với quy chuẩn kỹ thuật, gây ảnh hưởng xấu đến sức khỏe con người và sinh vật.",
+      "B. Là sự thay đổi thời tiết theo mùa.",
+      "C. Là việc môi trường có nhiều cây xanh phát triển quá mức.",
       "D. Là hiện tượng trái đất nóng lên tự nhiên."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "Ô nhiễm là sự đưa vào môi trường các chất thải, năng lượng vượt quá ngưỡng cho phép, làm biến đổi tiêu cực chất lượng môi trường.",
     "type": "Lý thuyết"
   },
@@ -60,12 +60,12 @@
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Cơ quan nào giữ vai trò chủ công, trực tiếp đấu tranh phòng chống tội phạm về môi trường?",
     "options": [
-      "A. Bộ Tài nguyên và Môi trường.",
-      "B. Cảnh sát phòng, chống tội phạm về môi trường (C05) thuộc Công an nhân dân.",
-      "C. Lực lượng Bộ đội Biên phòng.",
-      "D. Cục Kiểm lâm."
+      "A. Cảnh sát phòng, chống tội phạm về môi trường (C05) thuộc Công an nhân dân.",
+      "B. Lực lượng Bộ đội Biên phòng.",
+      "C. Cục Kiểm lâm.",
+      "D. Bộ Tài nguyên và Môi trường."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "D",
     "explanation": "Cảnh sát phòng, chống tội phạm về môi trường (C05) là lực lượng vũ trang chuyên trách nòng cốt trong việc điều tra, trinh sát và bắt giữ tội phạm môi trường.",
     "type": "Lý thuyết"
   },
@@ -74,42 +74,42 @@
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Tình huống: Một nhóm người vào Vườn quốc gia để bẫy bắt Hổ (loài nguy cấp, quý hiếm). Khi bị kiểm lâm phát hiện, họ cho rằng họ chỉ bắt con vật hoang dã vô chủ nên không phạm tội. Lời bào chữa này đúng hay sai?",
     "options": [
-      "A. Đúng, vì động vật trong rừng là của trời cho, ai bắt cũng được.",
-      "B. Sai, vì Hổ là loài động vật hoang dã nguy cấp, quý hiếm được pháp luật bảo vệ nghiêm ngặt. Hành vi săn bắt này phạm tội hình sự.",
+      "A. Sai, vì Hổ là loài động vật hoang dã nguy cấp, quý hiếm được pháp luật bảo vệ nghiêm ngặt. Hành vi săn bắt này phạm tội hình sự.",
+      "B. Sai, vì họ chưa nộp thuế vào rừng.",
       "C. Đúng, họ chỉ bị phạt hành chính nếu không có giấy phép săn bắn.",
-      "D. Sai, vì họ chưa nộp thuế vào rừng."
+      "D. Đúng, vì động vật trong rừng là của trời cho, ai bắt cũng được."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "D",
     "explanation": "Việc săn bắt các loài nguy cấp, quý hiếm được bảo vệ là vi phạm nghiêm trọng Bộ luật Hình sự (Tội vi phạm quy định về bảo vệ động vật nguy cấp, quý hiếm), đối diện với án tù nặng.",
-    "type": "Tình huống"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_69",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Biện pháp mang tính phòng ngừa từ xa để chống vi phạm pháp luật bảo vệ môi trường là:",
     "options": [
-      "A. Bắt giam tất cả các giám đốc nhà máy.",
+      "A. Đóng cửa toàn bộ các khu công nghiệp hóa chất.",
       "B. Tuyên truyền, giáo dục nâng cao ý thức bảo vệ môi trường cho cộng đồng và học sinh, sinh viên.",
-      "C. Đóng cửa toàn bộ các khu công nghiệp hóa chất.",
+      "C. Bắt giam tất cả các giám đốc nhà máy.",
       "D. Chỉ dựa vào lực lượng Cảnh sát phòng chống tội phạm môi trường đi rình bắt."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "Giáo dục và tuyên truyền là biện pháp phòng ngừa từ xa cơ bản, bền vững và hiệu quả nhất để xây dựng văn hóa ứng xử thân thiện với môi trường.",
-    "type": "Tổng hợp"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_68",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Đâu là một trong những nguyên nhân khách quan dẫn đến vi phạm pháp luật bảo vệ môi trường ở Việt Nam?",
     "options": [
-      "A. Sự hám lợi, chạy theo lợi nhuận tối đa của các chủ doanh nghiệp.",
-      "B. Sự thiếu hiểu biết của người dân.",
-      "C. Hệ thống pháp luật về môi trường, các chế tài xử phạt đôi khi chưa đủ sức răn đe, lực lượng quản lý mỏng.",
-      "D. Sự suy thoái đạo đức của cá nhân vi phạm."
+      "A. Sự thiếu hiểu biết của người dân.",
+      "B. Sự suy thoái đạo đức của cá nhân vi phạm.",
+      "C. Sự hám lợi, chạy theo lợi nhuận tối đa của các chủ doanh nghiệp.",
+      "D. Hệ thống pháp luật về môi trường, các chế tài xử phạt đôi khi chưa đủ sức răn đe, lực lượng quản lý mỏng."
     ],
     "correctAnswer": "C",
     "explanation": "Các phương án A, B, D là nguyên nhân CHỦ QUAN (từ phía người vi phạm). Phương án C là nguyên nhân KHÁCH QUAN (từ cơ chế, pháp luật, quản lý).",
-    "type": "So sánh"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_67",
@@ -117,25 +117,25 @@
     "question": "Lỗi trong cấu thành tội phạm môi trường (Mặt chủ quan) có thể là:",
     "options": [
       "A. Chỉ có lỗi cố ý trực tiếp.",
-      "B. Chỉ có lỗi vô ý do cẩu thả.",
-      "C. Thường là lỗi cố ý (cố tình xả thải vì lợi nhuận) hoặc đôi khi là lỗi vô ý (do quá tự tin hoặc cẩu thả trong vận hành máy móc).",
+      "B. Thường là lỗi cố ý (cố tình xả thải vì lợi nhuận) hoặc đôi khi là lỗi vô ý (do quá tự tin hoặc cẩu thả trong vận hành máy móc).",
+      "C. Chỉ có lỗi vô ý do cẩu thả.",
       "D. Tội phạm môi trường không cần xét yếu tố lỗi."
     ],
-    "correctAnswer": "C",
+    "correctAnswer": "A",
     "explanation": "Mặt chủ quan của tội phạm môi trường bao gồm cả lỗi cố ý (ví dụ: biết xả độc nhưng vẫn làm để tiết kiệm chi phí) và vô ý (vận hành sai quy trình làm rò rỉ hóa chất).",
-    "type": "Phân tích"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_66",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Tội vi phạm quy định về bảo vệ động vật hoang dã (ĐVHD) chủ yếu nhằm bảo vệ đối tượng nào?",
     "options": [
-      "A. Gia súc, gia cầm nuôi tại trang trại.",
-      "B. Các loài động vật hoang dã có nguy cơ tuyệt chủng, quý hiếm được ưu tiên bảo vệ theo quy định.",
-      "C. Vật nuôi trong nhà như chó, mèo.",
-      "D. Các loài vi sinh vật."
+      "A. Vật nuôi trong nhà như chó, mèo.",
+      "B. Các loài vi sinh vật.",
+      "C. Gia súc, gia cầm nuôi tại trang trại.",
+      "D. Các loài động vật hoang dã có nguy cơ tuyệt chủng, quý hiếm được ưu tiên bảo vệ theo quy định."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "Khách thể tác động của tội này là các loài ĐVHD nguy cấp, quý hiếm có tên trong Sách đỏ hoặc danh mục bảo vệ của Nhà nước và quốc tế.",
     "type": "Lý thuyết"
   },
@@ -144,54 +144,54 @@
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Tình huống: Công ty X lắp đặt một hệ thống xả thải ngầm để xả trực tiếp nước thải hóa chất độc hại chưa qua xử lý ra dòng sông, làm cá chết hàng loạt. Công ty X sẽ bị xử lý như thế nào?",
     "options": [
-      "A. Chỉ bị xử phạt hành chính và yêu cầu nộp thuế bảo vệ môi trường.",
+      "A. Công ty X có thể bị truy cứu trách nhiệm hình sự đối với pháp nhân thương mại, chịu phạt tiền nặng, đình chỉ hoạt động hoặc cấm kinh doanh vĩnh viễn.",
       "B. Giám đốc công ty phải đi tù nhưng công ty không bị sao.",
-      "C. Công ty X có thể bị truy cứu trách nhiệm hình sự đối với pháp nhân thương mại, chịu phạt tiền nặng, đình chỉ hoạt động hoặc cấm kinh doanh vĩnh viễn.",
-      "D. Công ty X chỉ bị người dân biểu tình."
+      "C. Công ty X chỉ bị người dân biểu tình.",
+      "D. Chỉ bị xử phạt hành chính và yêu cầu nộp thuế bảo vệ môi trường."
     ],
-    "correctAnswer": "C",
+    "correctAnswer": "D",
     "explanation": "Hành vi xả thải độc hại có tổ chức (lắp ống ngầm) gây hậu quả nghiêm trọng đã cấu thành tội phạm môi trường đối với pháp nhân thương mại theo BLHS.",
-    "type": "Tình huống"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_64",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Mặt khách quan của tội phạm môi trường thể hiện bằng hành vi nào?",
     "options": [
-      "A. Suy nghĩ và lên kế hoạch chặt phá rừng.",
-      "B. Hành vi nguy hiểm cho xã hội như: xả chất thải chưa qua xử lý, hủy hoại rừng, buôn bán động vật quý hiếm vi phạm pháp luật.",
-      "C. Sự vô ý làm đổ một chai nước suối ra đường.",
-      "D. Việc trồng cây công nghiệp trái phép."
+      "A. Việc trồng cây công nghiệp trái phép.",
+      "B. Sự vô ý làm đổ một chai nước suối ra đường.",
+      "C. Hành vi nguy hiểm cho xã hội như: xả chất thải chưa qua xử lý, hủy hoại rừng, buôn bán động vật quý hiếm vi phạm pháp luật.",
+      "D. Suy nghĩ và lên kế hoạch chặt phá rừng."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "D",
     "explanation": "Mặt khách quan là những biểu hiện ra bên ngoài thế giới khách quan, cụ thể là các hành vi vi phạm trực tiếp gây nguy hại cho môi trường được quy định trong luật.",
-    "type": "Phân tích"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_63",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Chủ thể của tội phạm môi trường có điểm gì đặc biệt so với nhiều loại tội phạm khác theo Bộ luật Hình sự 2015 (sửa đổi 2017)?",
     "options": [
-      "A. Chỉ bao gồm cá nhân từ 18 tuổi trở lên.",
+      "A. Trẻ em dưới 14 tuổi cũng là chủ thể.",
       "B. Chỉ bao gồm pháp nhân thương mại.",
-      "C. Bao gồm cả cá nhân có năng lực trách nhiệm hình sự và pháp nhân thương mại.",
-      "D. Trẻ em dưới 14 tuổi cũng là chủ thể."
+      "C. Chỉ bao gồm cá nhân từ 18 tuổi trở lên.",
+      "D. Bao gồm cả cá nhân có năng lực trách nhiệm hình sự và pháp nhân thương mại."
     ],
     "correctAnswer": "C",
     "explanation": "Một điểm mới và nổi bật của Bộ luật Hình sự là quy định trách nhiệm hình sự đối với PHÁP NHÂN THƯƠNG MẠI (các doanh nghiệp, công ty) xả thải gây ô nhiễm nghiêm trọng, bên cạnh trách nhiệm của cá nhân.",
-    "type": "So sánh"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_62",
     "topicId": "hp2_bai3_bao_ve_moi_truong",
     "question": "Khách thể của tội phạm môi trường là gì?",
     "options": [
-      "A. Là sức khỏe của con người bị ảnh hưởng do ô nhiễm.",
-      "B. Là các quy định của Nhà nước về bảo vệ môi trường, bảo vệ sự ổn định và phát triển của môi trường sinh thái.",
-      "C. Là các nhà máy, xí nghiệp xả thải.",
-      "D. Là động vật hoang dã."
+      "A. Là các nhà máy, xí nghiệp xả thải.",
+      "B. Là động vật hoang dã.",
+      "C. Là các quy định của Nhà nước về bảo vệ môi trường, bảo vệ sự ổn định và phát triển của môi trường sinh thái.",
+      "D. Là sức khỏe của con người bị ảnh hưởng do ô nhiễm."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "D",
     "explanation": "Trong luật hình sự, 'Khách thể' là các QUAN HỆ XÃ HỘI được luật hình sự bảo vệ. Ở đây chính là trật tự quản lý nhà nước và các quy định về bảo vệ môi trường sinh thái.",
     "type": "Lý thuyết"
   },
@@ -202,10 +202,10 @@
     "options": [
       "A. Môi trường chỉ bao gồm cây xanh và động vật hoang dã.",
       "B. Môi trường bao gồm các yếu tố vật chất tự nhiên và nhân tạo quan hệ mật thiết với nhau, bao quanh con người, có ảnh hưởng đến sự sống, sản xuất và sự tồn tại của con người và thiên nhiên.",
-      "C. Môi trường là các nguồn nước và khoáng sản dưới lòng đất.",
-      "D. Môi trường là bầu khí quyển bao quanh Trái đất."
+      "C. Môi trường là bầu khí quyển bao quanh Trái đất.",
+      "D. Môi trường là các nguồn nước và khoáng sản dưới lòng đất."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "A",
     "explanation": "Khái niệm môi trường bao gồm cả yếu tố tự nhiên (không khí, nước, đất, sinh vật) và nhân tạo (kiến trúc, đô thị) có ảnh hưởng mật thiết đến con người.",
     "type": "Lý thuyết"
   },
@@ -214,26 +214,26 @@
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Là sinh viên, bạn cần làm gì để góp phần phòng chống chiến lược Diễn biến hòa bình?",
     "options": [
-      "A. Không quan tâm vì đây là việc của Công an và Quân đội.",
-      "B. Tích cực chia sẻ mọi thông tin giật gân chưa kiểm chứng trên mạng để mọi người cảnh giác.",
+      "A. Tham gia các diễn đàn ẩn danh để tranh cãi với phản động.",
+      "B. Không quan tâm vì đây là việc của Công an và Quân đội.",
       "C. Nâng cao cảnh giác chính trị, trang bị kiến thức, chọn lọc thông tin trên mạng xã hội, tích cực học tập và bảo vệ đường lối của Đảng.",
-      "D. Tham gia các diễn đàn ẩn danh để tranh cãi với phản động."
+      "D. Tích cực chia sẻ mọi thông tin giật gân chưa kiểm chứng trên mạng để mọi người cảnh giác."
     ],
-    "correctAnswer": "C",
+    "correctAnswer": "B",
     "explanation": "Thanh niên, sinh viên là đối tượng chính kẻ thù nhắm tới. Việc trau dồi bản lĩnh chính trị và kỹ năng lọc thông tin là trách nhiệm và hành động thiết thực nhất.",
-    "type": "Tình huống"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_59",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Thủ đoạn chống phá trên lĩnh vực KINH TẾ của chiến lược Diễn biến hòa bình là gì?",
     "options": [
-      "A. Đẩy mạnh đầu tư không hoàn lại cho Việt Nam.",
-      "B. Bao vây, cấm vận, ép ta thay đổi thể chế kinh tế, hướng nền kinh tế ta đi theo quỹ đạo của chủ nghĩa tư bản.",
+      "A. Bao vây, cấm vận, ép ta thay đổi thể chế kinh tế, hướng nền kinh tế ta đi theo quỹ đạo của chủ nghĩa tư bản.",
+      "B. Mua lại toàn bộ nông sản của Việt Nam.",
       "C. Tăng cường xuất khẩu hàng hóa giá rẻ sang Việt Nam.",
-      "D. Mua lại toàn bộ nông sản của Việt Nam."
+      "D. Đẩy mạnh đầu tư không hoàn lại cho Việt Nam."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "D",
     "explanation": "Sử dụng viện trợ, ODA và các đòn bẩy kinh tế làm điều kiện ép buộc Việt Nam phải nhượng bộ về chính trị, làm chệch hướng XHCN.",
     "type": "Lý thuyết"
   },
@@ -242,28 +242,28 @@
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Giải pháp nào để phòng ngừa tình trạng 'tự diễn biến', 'tự chuyển hóa' hiệu quả nhất?",
     "options": [
-      "A. Cắt đứt mọi quan hệ với phương Tây.",
-      "B. Xây dựng tổ chức Đảng trong sạch vững mạnh, đề cao tính tiền phong gương mẫu, chống tham nhũng, lãng phí.",
-      "C. Bắt buộc mọi người dân đóng cửa mạng xã hội.",
-      "D. Cấm cán bộ ra nước ngoài học tập."
+      "A. Xây dựng tổ chức Đảng trong sạch vững mạnh, đề cao tính tiền phong gương mẫu, chống tham nhũng, lãng phí.",
+      "B. Cấm cán bộ ra nước ngoài học tập.",
+      "C. Cắt đứt mọi quan hệ với phương Tây.",
+      "D. Bắt buộc mọi người dân đóng cửa mạng xã hội."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "Gốc rễ của 'tự diễn biến' là sự thoái hóa biến chất. Do đó, làm trong sạch bộ máy, chống tham nhũng và tăng cường giáo dục chính trị là giải pháp cốt lõi.",
-    "type": "Tổng hợp"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_57",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Đâu KHÔNG phải là đặc điểm của Bạo loạn lật đổ?",
     "options": [
-      "A. Sử dụng bạo lực có tổ chức.",
-      "B. Nhằm mục đích lật đổ chính quyền cách mạng.",
-      "C. Chỉ sử dụng lực lượng quân đội tinh nhuệ từ nước ngoài xâm nhập vào.",
-      "D. Thường diễn ra nhanh, bất ngờ và có sự hậu thuẫn của thế lực thù địch bên ngoài."
+      "A. Thường diễn ra nhanh, bất ngờ và có sự hậu thuẫn của thế lực thù địch bên ngoài.",
+      "B. Chỉ sử dụng lực lượng quân đội tinh nhuệ từ nước ngoài xâm nhập vào.",
+      "C. Nhằm mục đích lật đổ chính quyền cách mạng.",
+      "D. Sử dụng bạo lực có tổ chức."
     ],
-    "correctAnswer": "C",
+    "correctAnswer": "D",
     "explanation": "Bạo loạn lật đổ chủ yếu dựa vào các phần tử phản động, bất mãn ở TỪNG BÊN TRONG đất nước bị kích động, chứ không phải là lực lượng quân đội từ bên ngoài đánh vào (đó là chiến tranh xâm lược).",
-    "type": "So sánh"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_56",
@@ -275,9 +275,9 @@
       "C. Mở rộng tự do tín ngưỡng cho nhân dân.",
       "D. Kêu gọi viện trợ quốc tế cho vùng sâu vùng xa."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "A",
     "explanation": "Lợi dụng tôn giáo, dân tộc (như vấn đề Tây Nguyên, Tây Bắc, Tây Nam Bộ) để kích động ly khai, bạo loạn, phá hoại khối đại đoàn kết toàn dân tộc là một mũi nhọn của địch.",
-    "type": "Tổng hợp"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_55",
@@ -285,13 +285,13 @@
     "question": "Tình huống: Khi thấy một đám đông tụ tập gây rối, đập phá trụ sở Ủy ban nhân dân và hô hào lật đổ chính quyền. Là một công dân, bạn nhận định đây là hiện tượng gì và cần làm gì?",
     "options": [
       "A. Đây là quyền tự do dân chủ, nên tham gia đứng xem cho biết.",
-      "B. Đây là hành động bạo loạn lật đổ. Cần tránh xa, báo ngay cho cơ quan chức năng và không hùa theo đám đông.",
-      "C. Đây là biểu tình hòa bình, có thể quay video livestream để câu view.",
-      "D. Đây là hoạt động văn hóa của địa phương."
+      "B. Đây là biểu tình hòa bình, có thể quay video livestream để câu view.",
+      "C. Đây là hoạt động văn hóa của địa phương.",
+      "D. Đây là hành động bạo loạn lật đổ. Cần tránh xa, báo ngay cho cơ quan chức năng và không hùa theo đám đông."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "A",
     "explanation": "Hành động đập phá trụ sở và hô hào lật đổ là dấu hiệu rõ ràng của bạo loạn lật đổ. Công dân cần có thái độ lên án, tránh xa và hỗ trợ lực lượng chức năng.",
-    "type": "Tình huống"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_54",
@@ -299,25 +299,25 @@
     "question": "Khái niệm 'Tự diễn biến', 'Tự chuyển hóa' trong nội bộ mang ý nghĩa gì?",
     "options": [
       "A. Là quá trình cán bộ, đảng viên tự rèn luyện để tốt hơn.",
-      "B. Là sự suy thoái về tư tưởng chính trị, đạo đức, lối sống, phai nhạt lý tưởng cách mạng của một bộ phận cán bộ, đảng viên.",
+      "B. Là sự luân chuyển cán bộ giữa các địa phương.",
       "C. Là quá trình cổ phần hóa doanh nghiệp nhà nước.",
-      "D. Là sự luân chuyển cán bộ giữa các địa phương."
+      "D. Là sự suy thoái về tư tưởng chính trị, đạo đức, lối sống, phai nhạt lý tưởng cách mạng của một bộ phận cán bộ, đảng viên."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "A",
     "explanation": "Đây là quá trình thay đổi theo chiều hướng tiêu cực từ bên trong. Kẻ thù luôn lợi dụng sự 'tự diễn biến' này để thúc đẩy sự sụp đổ của chế độ từ bên trong.",
-    "type": "Phân tích"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_53",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Thủ đoạn chống phá trên lĩnh vực CHÍNH TRỊ của chiến lược Diễn biến hòa bình tập trung vào mục tiêu gì?",
     "options": [
-      "A. Xóa bỏ nền tảng tư tưởng Mác Lênin.",
-      "B. Kích động chia rẽ tôn giáo.",
+      "A. Kích động chia rẽ tôn giáo.",
+      "B. Chuyển hóa nền kinh tế thị trường định hướng XHCN thành tư bản chủ nghĩa.",
       "C. Kích động đòi thực hiện chế độ 'đa nguyên chính trị, đa đảng đối lập'.",
-      "D. Chuyển hóa nền kinh tế thị trường định hướng XHCN thành tư bản chủ nghĩa."
+      "D. Xóa bỏ nền tảng tư tưởng Mác Lênin."
     ],
-    "correctAnswer": "C",
+    "correctAnswer": "D",
     "explanation": "Mục tiêu trực diện trên lĩnh vực chính trị là đòi xóa bỏ Điều 4 Hiến pháp, từ bỏ vai trò lãnh đạo độc tôn của Đảng Cộng sản Việt Nam, tiến tới đa nguyên đa đảng.",
     "type": "Lý thuyết"
   },
@@ -326,82 +326,82 @@
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Mối quan hệ giữa Diễn biến hòa bình (DBHB) và Bạo loạn lật đổ (BLLĐ) là gì?",
     "options": [
-      "A. Là hai chiến lược độc lập, không liên quan đến nhau.",
-      "B. DBHB tạo tiền đề, điều kiện cho BLLĐ; BLLĐ là hệ quả, là nấc thang phát triển cao của DBHB.",
-      "C. BLLĐ luôn xảy ra trước rồi mới đến DBHB.",
-      "D. DBHB chỉ áp dụng ở nông thôn, BLLĐ chỉ áp dụng ở thành thị."
+      "A. BLLĐ luôn xảy ra trước rồi mới đến DBHB.",
+      "B. DBHB chỉ áp dụng ở nông thôn, BLLĐ chỉ áp dụng ở thành thị.",
+      "C. Là hai chiến lược độc lập, không liên quan đến nhau.",
+      "D. DBHB tạo tiền đề, điều kiện cho BLLĐ; BLLĐ là hệ quả, là nấc thang phát triển cao của DBHB."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "DBHB làm suy yếu chính trị, chia rẽ nội bộ, tạo ra mầm mống bất mãn. Khi thời cơ chín muồi, các thế lực thù địch sẽ kích động BLLĐ để cướp chính quyền.",
-    "type": "So sánh"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_51",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Trong các giải pháp phòng chống DBHB, bạo loạn lật đổ, giải pháp nào được xem là quan trọng hàng đầu?",
     "options": [
-      "A. Tăng cường mua sắm vũ khí, trang bị chống bạo động.",
-      "B. Nâng cao nhận thức về âm mưu, thủ đoạn của địch; xây dựng ý thức bảo vệ Tổ quốc cho toàn dân.",
-      "C. Đóng cửa hoàn toàn mạng internet.",
+      "A. Đóng cửa hoàn toàn mạng internet.",
+      "B. Tăng cường mua sắm vũ khí, trang bị chống bạo động.",
+      "C. Nâng cao nhận thức về âm mưu, thủ đoạn của địch; xây dựng ý thức bảo vệ Tổ quốc cho toàn dân.",
       "D. Trục xuất tất cả người nước ngoài khỏi Việt Nam."
     ],
     "correctAnswer": "B",
     "explanation": "Đấu tranh chống DBHB là đấu tranh trên mặt trận tư tưởng, nhận thức. Do đó, giáo dục, nâng cao nhận thức, sức đề kháng chính trị cho nhân dân là quan trọng nhất.",
-    "type": "Tổng hợp"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_50",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Thủ đoạn 'Phi chính trị hóa' quân đội và công an của các thế lực thù địch nhằm mục đích gì?",
     "options": [
-      "A. Để quân đội và công an tập trung làm kinh tế.",
-      "B. Tách quân đội và công an khỏi sự lãnh đạo của Đảng Cộng sản, làm cho LLVT mất phương hướng chiến đấu.",
-      "C. Để giảm bớt kinh phí quốc phòng.",
-      "D. Để quân đội tự do tham gia các đảng phái khác."
+      "A. Tách quân đội và công an khỏi sự lãnh đạo của Đảng Cộng sản, làm cho LLVT mất phương hướng chiến đấu.",
+      "B. Để quân đội tự do tham gia các đảng phái khác.",
+      "C. Để quân đội và công an tập trung làm kinh tế.",
+      "D. Để giảm bớt kinh phí quốc phòng."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "Phi chính trị hóa LLVT là nhằm làm mất bản chất giai cấp công nhân của Quân đội và Công an, biến LLVT thành lực lượng trung lập, không bảo vệ chế độ.",
-    "type": "Phân tích"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_49",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Tình huống: Một tổ chức NGO nước ngoài tài trợ cho sinh viên Việt Nam nhưng yêu cầu sinh viên phải viết bài trên mạng xã hội nói xấu lịch sử dân tộc và bôi nhọ lãnh tụ. Đây là biểu hiện của thủ đoạn nào trong Diễn biến hòa bình?",
     "options": [
-      "A. Thủ đoạn chống phá về kinh tế.",
-      "B. Thủ đoạn chống phá về ngoại giao.",
-      "C. Thủ đoạn chống phá về tư tưởng - văn hóa.",
-      "D. Thủ đoạn chống phá về quân sự."
+      "A. Thủ đoạn chống phá về quân sự.",
+      "B. Thủ đoạn chống phá về tư tưởng - văn hóa.",
+      "C. Thủ đoạn chống phá về ngoại giao.",
+      "D. Thủ đoạn chống phá về kinh tế."
     ],
-    "correctAnswer": "C",
+    "correctAnswer": "D",
     "explanation": "Sử dụng vật chất để mua chuộc, dụ dỗ thanh niên phủ nhận lịch sử, bôi nhọ lãnh tụ là thủ đoạn thâm độc trên lĩnh vực tư tưởng văn hóa.",
-    "type": "Tình huống"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_48",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Thủ đoạn chống phá của chiến lược Diễn biến hòa bình trên lĩnh vực TƯ TƯỞNG - VĂN HÓA tập trung vào vấn đề gì?",
     "options": [
-      "A. Bao vây, cấm vận kinh tế.",
-      "B. Đòi đa nguyên đa đảng.",
-      "C. Phá vỡ nền tảng tư tưởng của Đảng (Chủ nghĩa Mác-Lênin, Tư tưởng Hồ Chí Minh), truyền bá lối sống thực dụng.",
-      "D. Kích động biểu tình vũ trang."
+      "A. Đòi đa nguyên đa đảng.",
+      "B. Kích động biểu tình vũ trang.",
+      "C. Bao vây, cấm vận kinh tế.",
+      "D. Phá vỡ nền tảng tư tưởng của Đảng (Chủ nghĩa Mác-Lênin, Tư tưởng Hồ Chí Minh), truyền bá lối sống thực dụng."
     ],
     "correctAnswer": "C",
     "explanation": "Mặt trận tư tưởng văn hóa là mặt trận trọng yếu nhất. Kẻ thù nhằm xóa bỏ nền tảng tư tưởng, làm phai nhạt niềm tin của thanh niên, sinh viên vào chế độ.",
-    "type": "Phân tích"
+    "type": "Lý thuyết"
   },
   {
     "id": "hq_47",
     "topicId": "hp2_bai1_dien_bien_hoa_binh",
     "question": "Khái niệm 'Bạo loạn lật đổ' là gì?",
     "options": [
-      "A. Là cuộc biểu tình ôn hòa đòi tăng lương.",
+      "A. Là cuộc tranh luận gay gắt trong quốc hội.",
       "B. Là hành động bạo lực có tổ chức do lực lượng phản động tiến hành nhằm lật đổ chính quyền cách mạng để thiết lập chính quyền phản động.",
-      "C. Là sự xung đột cá nhân ngoài đường phố.",
-      "D. Là cuộc tranh luận gay gắt trong quốc hội."
+      "C. Là cuộc biểu tình ôn hòa đòi tăng lương.",
+      "D. Là sự xung đột cá nhân ngoài đường phố."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "C",
     "explanation": "Bạo loạn lật đổ sử dụng bạo lực có tổ chức (có thể dùng vũ khí hoặc không) nhằm mục tiêu chính trị tối hậu là cướp chính quyền.",
     "type": "Lý thuyết"
   },
@@ -415,7 +415,7 @@
       "C. Là sự phát triển kinh tế trong điều kiện hòa bình.",
       "D. Là quá trình đàm phán hòa bình giữa hai quốc gia có tranh chấp."
     ],
-    "correctAnswer": "B",
+    "correctAnswer": "A",
     "explanation": "Diễn biến hòa bình là chiến lược nguy hiểm của chủ nghĩa đế quốc, sử dụng sức mạnh 'mềm' (văn hóa, tư tưởng, kinh tế, chính trị) để làm suy yếu và lật đổ đối phương mà không cần nổ súng.",
     "type": "Lý thuyết"
   },
@@ -424,13 +424,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Khái ni ệm \"Diễn biến hoà bình\"",
     "options": [
-      "A. Là chiến lược cơ b ản nhằm lật đổ chế độ chính quyền của các nước từ bên trong bằng biện pháp phi vũ trang do  chủ nghĩa đế quốc và các thế lực  phản động tiến hành .",
-      "B. Là chiến lược cơ b ản nhằm lật đổ chế độ của các nước tiến bộ, từ bên trong bằng biện pháp quân sự do  chủ nghĩa đế quốc và các thế lực  phản động tiến hành .",
-      "C. Là chiến lược cơ b ản nhằm lật đổ chế độ chính trị của các nước tiến bộ, từ bên trong bằng biện pháp phi quân sự do  chủ nghĩa đế quốc và các thế lực  phản động tiến hành .",
-      "D. Cả 3 đều sai ."
+      "A. Là chiến lược cơ b ản nhằm lật đổ chế độ chính trị của các nước tiến bộ, từ bên trong bằng biện pháp phi quân sự do  chủ nghĩa đế quốc và các thế lực  phản động tiến hành .",
+      "B. Là chiến lược cơ b ản nhằm lật đổ chế độ chính quyền của các nước từ bên trong bằng biện pháp phi vũ trang do  chủ nghĩa đế quốc và các thế lực  phản động tiến hành .",
+      "C. Cả 3 đều sai .",
+      "D. Là chiến lược cơ b ản nhằm lật đổ chế độ của các nước tiến bộ, từ bên trong bằng biện pháp quân sự do  chủ nghĩa đế quốc và các thế lực  phản động tiến hành ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -439,12 +439,12 @@
     "question": ": Thực hiện thủ đoạn “Di ễn biến hoà bình” v ề văn hoá, k ẻ thù t ập trung t ấn công :",
     "options": [
       "A. Vào truyền thống kinh nghiệm của văn hoá Việt Nam.",
-      "B. Vào những sản phẩm văn hoá quý báu của chúng ta.",
+      "B. Vào bản sắc văn hoá và giá trị văn hoá của dân tộc Việt Nam.",
       "C. Vào nền văn hoá mang bản sắc dân tộc Việt Nam.",
-      "D. Vào bản sắc văn hoá và giá trị văn hoá của dân tộc Việt Nam."
+      "D. Vào những sản phẩm văn hoá quý báu của chúng ta."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -457,8 +457,8 @@
       "C. Xoá bỏ vai  trò lãnh đạo của Đảng, xoá bỏ chế độ XHCN.",
       "D. Xoá bỏ nhà nước XHCN và buộc ta chấp nhận các điều kiện của chúng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -466,13 +466,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững m ục tiêu phòng ch ống chi ến lược “Di ễn biến hoà bình”:",
     "options": [
-      "A. Bảo vệ vững chắc nhà nước XHCN.",
-      "B. Giữ vững ổn định chính trị trên cơ sở độc lập dân tộc.",
-      "C. Bảo vệ vững chắc độc lập, chủ quyền của quốc gia, dân tộc .",
-      "D. Bảo vệ vững chắc độc lập, chủ quyền, thống nhất, toàn vẹn lãnh thổ của Tổ quốc ."
+      "A. Giữ vững ổn định chính trị trên cơ sở độc lập dân tộc.",
+      "B. Bảo vệ vững chắc độc lập, chủ quyền, thống nhất, toàn vẹn lãnh thổ của Tổ quốc .",
+      "C. Bảo vệ vững chắc nhà nước XHCN.",
+      "D. Bảo vệ vững chắc độc lập, chủ quyền của quốc gia, dân tộc ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -480,17 +480,16 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Các th ế lực thù đ ịch lợi dụng gây r ối:",
     "options": [
-      "A. Để tập duyệt phá hoại.",
-      "B. Để làm mất trật tự xã hội.",
+      "A. Để tập duyệt hoặc mở màn cho bạo loạn lật đổ . Câu 6 : Một trong nh ững n ội dung ch ống phá v ề chính tr ị trong chi ến lược “Di ễn biến hoà bình”",
+      "B. Phá vỡ hệ thống nguyên tắc tổ chức trong bộ máy Nhà nước ta.",
       "C. Để phá hoại kinh tế.",
-      "D. Để tập duyệt hoặc mở màn cho bạo loạn lật đổ . Câu 6 : Một trong nh ững n ội dung ch ống phá v ề chính tr ị trong chi ến lược “Di ễn biến hoà bình”",
-      "A. Phá vỡ hệ thống nguyên tắc tổ chức trong bộ máy Nhà nước ta.",
-      "B. Phá vỡ sự thống nhất của các tổ chức, nhất là tổ chức chính trị.",
-      "C. Phá vỡ sự thống nhất của khối đại đoàn kết toàn dân tộc dưới sự lãnh đạo của Đảng.",
-      "D.  Xóa bỏ vai trò lãnh đạo của Đảng Cộng sản Việt Nam."
+      "D. Để làm mất trật tự xã hội.",
+      "E. Phá vỡ sự thống nhất của các tổ chức, nhất là tổ chức chính trị.",
+      "F. Phá vỡ sự thống nhất của khối đại đoàn kết toàn dân tộc dưới sự lãnh đạo của Đảng.",
+      "G. Để tập duyệt phá hoại."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -498,13 +497,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững nội dung k ẻ thù l ợi dụng để chống phá cách m ạng Vi ệt Nam v ề vấn đề dân t ộc là:",
     "options": [
-      "A. Lợi dụng  các mâu thuẫn của đồng bào dân tộc để kích động.",
-      "B. Lợi dụng những khó khăn ở vùng đồng bào dân tộc ít người và những tồn tại do lịch sử để lại .",
+      "A. Lợi dụng những khó khăn ở vùng đồng bào dân tộc ít người và những tồn tại do lịch sử để lại .",
+      "B. Lợi dụng  các mâu thuẫn của đồng bào dân tộc để kích động.",
       "C. Lợi dụng  các mâu thuẫn giữa các dân tộc do nhiều nguyên nhân gây ra.",
       "D. Lợi dụng  các hủ tục lạc hậu của đồng bào dân tộc để kích động."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -513,12 +512,12 @@
     "question": ": Để góp ph ần làm th ất bại chiến lược “Di ễn biến hoà bình”, b ạo loạn lật đổ cần nắm vững m ột trong nh ững m ục tiêu?",
     "options": [
       "A. Bảo vệ sự  nghiệp công nghiệp hoá đất nước.",
-      "B. Bảo vệ sản xuất và tính mạng nhân dân.",
-      "C. Bảo vệ sự nghiệp đổi mới và lợi ích quốc gia, dân tộc .",
+      "B. Bảo vệ sự nghiệp đổi mới và lợi ích quốc gia, dân tộc .",
+      "C. Bảo vệ sản xuất và tính mạng nhân dân.",
       "D. Bảo vệ An ninh Chính trị của đất nước."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -526,13 +525,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Thủ đoạn “Di ễn biến hoà bình”, k ẻ thù tri ệt để lợi dụng chính sách t ự do tôn giáo c ủa Đảng ta để:",
     "options": [
-      "A. Truyền bá mê tín dị đoan và tư tưởng phản động chống chủ nghĩa xã hội.",
-      "B. Truyền đạo trái phép nhằm thực hiện âm mưu tôn giáo hoá dân tộc .",
-      "C. Truyền bá mê tín dị đoan, tập hợp lực lượng để chống phá cách mạng.",
-      "D. Truyền bá mê tín và tổ chức lực lượng khủng bố."
+      "A. Truyền đạo trái phép nhằm thực hiện âm mưu tôn giáo hoá dân tộc .",
+      "B. Truyền bá mê tín dị đoan và tư tưởng phản động chống chủ nghĩa xã hội.",
+      "C. Truyền bá mê tín và tổ chức lực lượng khủng bố.",
+      "D. Truyền bá mê tín dị đoan, tập hợp lực lượng để chống phá cách mạng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -540,13 +539,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững nội dung k ẻ thù ch ống phá v ề chính tr ị trong “Di ễn biến hoà bình” là:",
     "options": [
-      "A. Phá vỡ hệ thống nguyên tắc tổ chức trong bộ máy Nhà nước ta.",
+      "A. Phá vỡ sự thống nhất của các tổ chức chính trị .",
       "B. Phá v ỡ sự thống nhất của các tổ chức nhất là tổ chức chính trị.",
       "C. Phá vỡ hệ thống nguyên tắc tổ chức của Đảng, nhất là nguyên tắc tập trung dân chủ.",
-      "D. Phá vỡ sự thống nhất của các tổ chức chính trị ."
+      "D. Phá vỡ hệ thống nguyên tắc tổ chức trong bộ máy Nhà nước ta."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -558,8 +557,8 @@
       "B. Phủ định chủ nghĩa M ác Lênin.",
       "C. Xóa bỏ vai trò lãnh đạo của Đảng và ch ế độ XHCN . D. Đối lập nhiệm vụ kinh tế và quốc phòng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -567,13 +566,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững nội dung ch ống phá v ề kinh t ế của chi ến lược “Di ễn biến hoà bình” :",
     "options": [
-      "A. Khích lệ kinh tế tư nhân phát triển, làm mất vai trò chủ đạo của kinh tế Nhà nước .",
-      "B. Khích lệ kinh tế 100% vốn nước ngoài phát  triển, làm mất vai trò chủ đạo của kinh tế Nhà nước.",
-      "C. Khích lệ kinh tế cá thể, tiểu chủ phát triển, làm mất vai trò chủ đạo của kinh tế Nhà nước.",
-      "D. Khích lệ kinh tế tư bản Nhà nước phát triển, làm mất vai trò chủ đạo của kinh tế Nhà nước."
+      "A. Khích lệ kinh tế tư bản Nhà nước phát triển, làm mất vai trò chủ đạo của kinh tế Nhà nước.",
+      "B. Khích lệ kinh tế cá thể, tiểu chủ phát triển, làm mất vai trò chủ đạo của kinh tế Nhà nước.",
+      "C. Khích lệ kinh tế 100% vốn nước ngoài phát  triển, làm mất vai trò chủ đạo của kinh tế Nhà nước.",
+      "D. Khích lệ kinh tế tư nhân phát triển, làm mất vai trò chủ đạo của kinh tế Nhà nước ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -581,13 +580,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ":  Một trong nh ững th ủ đoạn chống phá trên lĩnh v ực đối ngoại trong chi ến lược “Di ễn biến hoà bình” :",
     "options": [
-      "A. Chia rẽ Việt Nam với các nước xã hội chủ nghĩa và các nước tiến bộ.",
-      "B. Chia rẽ Việt Nam với Lào và các nước xã hội chủ nghĩa.",
-      "C. Chia rẽ Việt Nam với Campuchia và  các nước tiến bộ.",
-      "D. Chia rẽ Việt Nam với Lào, Campuchia và các nước xã hội chủ nghĩa ."
+      "A. Chia rẽ Việt Nam với Campuchia và  các nước tiến bộ.",
+      "B. Chia rẽ Việt Nam với các nước xã hội chủ nghĩa và các nước tiến bộ.",
+      "C. Chia rẽ Việt Nam với Lào, Campuchia và các nước xã hội chủ nghĩa .",
+      "D. Chia rẽ Việt Nam với Lào và các nước xã hội chủ nghĩa."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -595,13 +594,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "4: Trong quá trình b ạo loạn, bọn ph ản động tìm m ọi cách đ ể:",
     "options": [
-      "A. Mở rộng quy mô, lực lượng, kêu gọi nước ngoài can thiệp.",
-      "B. Mở rộng phạm vi, quy mô, lực lượng, kêu gọi tài trợ của nước ngoài .",
-      "C. Mở rộng phạm vi, quy mô, lực lượng, đập phá trụ sở, uy hiếp chính quyền địa phương.",
-      "D. Mở rộng phạm vi, quy mô, lực lượng, đập phá trụ sở, lật đổ chính quyền địa phương."
+      "A. Mở rộng phạm vi, quy mô, lực lượng, kêu gọi tài trợ của nước ngoài .",
+      "B. Mở rộng quy mô, lực lượng, kêu gọi nước ngoài can thiệp.",
+      "C. Mở rộng phạm vi, quy mô, lực lượng, đập phá trụ sở, lật đổ chính quyền địa phương.",
+      "D. Mở rộng phạm vi, quy mô, lực lượng, đập phá trụ sở, uy hiếp chính quyền địa phương."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -609,13 +608,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Bạo loạn lật đổ gồm có nh ững hình th ức nào ?",
     "options": [
-      "A. Bạo loạn vũ trang, bạo loạn chính trị.",
+      "A. Bạo loạn chính trị kết hợp với gây rối .",
       "B. Bạo loạn vũ trang kết hợp với gây rối .",
       "C. Bạo loạn chính trị, bạo loạn vũ trang, kết hợp bạo loạn chính trị với vũ trang .",
-      "D. Bạo loạn chính trị kết hợp với gây rối ."
+      "D. Bạo loạn vũ trang, bạo loạn chính trị."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -623,13 +622,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "6: Một trong nh ững gi ải pháp phòng ch ống chi ến lược “Di ễn biến hoà bình”, b ạo loạn lật đổ",
     "options": [
-      "A. Nâng cao nhận thức về âm mưu phá hoại của kẻ thù.",
-      "B. Xây dựng ý thức bảo vệ Tổ quốc  cho toàn dân.",
-      "C. Xây dựng các tổ chức chính trị vững mạnh.",
-      "D. Xây dựng các lực lượng vũ trang  đặc biệt là công an vững mạnh."
+      "A. Xây dựng các tổ chức chính trị vững mạnh.",
+      "B. Xây dựng các lực lượng vũ trang  đặc biệt là công an vững mạnh.",
+      "C. Nâng cao nhận thức về âm mưu phá hoại của kẻ thù.",
+      "D. Xây dựng ý thức bảo vệ Tổ quốc  cho toàn dân."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -637,12 +636,12 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững quan đi ểm trong đ ấu tranh phòng ch ống chi ến lược “Di ễn biến hoà bình” :",
     "options": [
-      "A. Là một cuộc đấu tranh dân tộc rất gay go, quyết liệt trên mọi lĩnh vực.",
-      "B. Là một cuộc đấu tranh giai cấp gay go, quyết liệt, lâu dài và phức tạp trên mọi lĩnh vực.",
-      "C. Là một cuộc đấu tranh giai cấp, dân tộc gay go, quyết liệt, lâu dài và phức tạp trên mọi lĩnh vực. D. Là một cuộc đấu tranh chính trị giữa chủ nghĩa tư bản và chủ nghĩa xã hội."
+      "A. Là một cuộc đấu tranh giai cấp gay go, quyết liệt, lâu dài và phức tạp trên mọi lĩnh vực.",
+      "B. Là một cuộc đấu tranh giai cấp, dân tộc gay go, quyết liệt, lâu dài và phức tạp trên mọi lĩnh vực. D. Là một cuộc đấu tranh chính trị giữa chủ nghĩa tư bản và chủ nghĩa xã hội.",
+      "C. Là một cuộc đấu tranh dân tộc rất gay go, quyết liệt trên mọi lĩnh vực."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -650,13 +649,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Phát huy s ức mạnh tổng h ợp trong phòng ch ống chi ến lược “Di ễn biến hoà bình”, bạo loạn lật đổ là:",
     "options": [
-      "A. Toàn dân dưới sự lãnh đạo của Đảng.",
-      "B. Toàn dân, toàn quân dưới sự lãnh đạo của Đảng.",
-      "C. Toàn dân, lực lượng vũ trang dưới sự lãnh đạo của Đảng.",
-      "D. Toàn dân, của hệ thống chính trị dưới sự lãnh đạo của Đảng."
+      "A. Toàn dân, của hệ thống chính trị dưới sự lãnh đạo của Đảng.",
+      "B. Toàn dân dưới sự lãnh đạo của Đảng.",
+      "C. Toàn dân, toàn quân dưới sự lãnh đạo của Đảng.",
+      "D. Toàn dân, lực lượng vũ trang dưới sự lãnh đạo của Đảng."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -664,13 +663,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Nhiệm vụ phòng ch ống chi ến lược “Di ễn biến hoà bình”, b ạo loạn lật đổ được xác định là :",
     "options": [
-      "A. Nhiệm vụ cấp bách hàng đầu, thường xuyên và lâu dài .",
-      "B. Nhiệm vụ chủ yếu trước mắt.",
-      "C. Nhiệm vụ cơ bản lâu dài.",
-      "D. Nhiệm vụ trọng tâm của cách mạng nước ta."
+      "A. Nhiệm vụ trọng tâm của cách mạng nước ta.",
+      "B. Nhiệm vụ cơ bản lâu dài.",
+      "C. Nhiệm vụ chủ yếu trước mắt.",
+      "D. Nhiệm vụ cấp bách hàng đầu, thường xuyên và lâu dài ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -678,13 +677,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững phương châm ch ỉ đạo phòng ch ống chi ến lược “Di ễn biến hoà bình”, b ạo loạn lật đổ là:",
     "options": [
-      "A. Phát huy sức mạnh độc lập của các lực lượng trên địa bàn, đấu tranh toàn diện.",
-      "B. Phát huy sức mạnh tổng hợp, đấu tra nh toàn diện gắn với xây dựng thực lực cách mạng .",
-      "C. Củng cố và phát huy sức mạnh của lực lượng vũ trang và an ninh nhân dân.",
-      "D. Xây dựng sức mạnh tổng hợp của các lực lượng đóng trên địa bàn."
+      "A. Xây dựng sức mạnh tổng hợp của các lực lượng đóng trên địa bàn.",
+      "B. Củng cố và phát huy sức mạnh của lực lượng vũ trang và an ninh nhân dân.",
+      "C. Phát huy sức mạnh độc lập của các lực lượng trên địa bàn, đấu tranh toàn diện.",
+      "D. Phát huy sức mạnh tổng hợp, đấu tra nh toàn diện gắn với xây dựng thực lực cách mạng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -692,13 +691,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Nguyên t ắc xử lí khi có b ạo loạn diễn ra là :",
     "options": [
-      "A. Nhanh gọn, kiên quyết, linh hoạt, đúng đối tượng, không để lan rộng, kéo dài.",
+      "A. Nhanh gọn, linh hoạt, khôn khéo đúng đối tượng, không để lan rộng, kéo dài.",
       "B. Nhanh gọn, kiên quyết, triệt để đúng đối tượng, không để lan rộng, kéo dài.",
-      "C. Nhanh gọn, linh hoạt, khôn khéo đúng đối tượng, không để lan rộng, kéo dài.",
-      "D. Kiên quyết, linh hoạt, mềm dẻo đúng đối tư ợng, không để lan rộng, kéo dài."
+      "C. Kiên quyết, linh hoạt, mềm dẻo đúng đối tư ợng, không để lan rộng, kéo dài.",
+      "D. Nhanh gọn, kiên quyết, linh hoạt, đúng đối tượng, không để lan rộng, kéo dài."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -706,13 +705,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững gi ải pháp phòng ch ống chi ến lược diễn biến hoà bình, b ạo loạn lật đổ:",
     "options": [
-      "A. Đẩy mạnh công nghiệp hoá hiện đại hoá, chống nguy cơ tụt hậu kinh tế.",
-      "B. Xây dựng cơ sở chính trị -  xã hội vững mạnh về mọi mặt .",
+      "A. Xây dựng cơ sở chính trị -  xã hội vững mạnh về mọi mặt .",
+      "B. Xây dựng lòng yêu nước cho tuổi trẻ nhất là học sinh, sinh viên.",
       "C. Đẩy lùi các hủ tục lạc hậu, mê tín dị đoan và các t ệ nạn xã hội .",
-      "D. Xây dựng lòng yêu nước cho tuổi trẻ nhất là học sinh, sinh viên."
+      "D. Đẩy mạnh công nghiệp hoá hiện đại hoá, chống nguy cơ tụt hậu kinh tế."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -720,12 +719,12 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Thủ đoạn trên lĩnh v ực quốc phòng - an ninh trong chi ến lược “Di ễn biến hoà bình” là:",
     "options": [
-      "A. Mua chuộc cán bộ cao cấp của quân đội và l ực lượng vũ trang .",
+      "A. Phủ nhận vai trò lãnh đạo của Đảng trong lĩnh vực quốc phòng - an ninh . D. Chia rẽ quân đội, công an, dân quân tự vệ và b ộ đội biên phòng .",
       "B. Phủ nhận vai trò quốc phòng an ninh trong sự nghiệp đổi mới.",
-      "C. Phủ nhận vai trò lãnh đạo của Đảng trong lĩnh vực quốc phòng - an ninh . D. Chia rẽ quân đội, công an, dân quân tự vệ và b ộ đội biên phòng ."
+      "C. Mua chuộc cán bộ cao cấp của quân đội và l ực lượng vũ trang ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -734,12 +733,12 @@
     "question": ": Mục đích ch ống phá tư tư ởng - văn hoá trong chi ến lược “Di ễn biến hoà bình’ là :",
     "options": [
       "A. Xoá bỏ nền tảng tư tưởng XHCN.",
-      "B. Xoá bỏ chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh .",
-      "C. Xoá bỏ sự quản lý điều hành của Nhà nước.",
-      "D. Xoá bỏ vai trò lãnh đạo của Đảng, quản lý của Nhà nước."
+      "B. Xoá bỏ sự quản lý điều hành của Nhà nước.",
+      "C. Xoá bỏ vai trò lãnh đạo của Đảng, quản lý của Nhà nước.",
+      "D. Xoá bỏ chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -747,13 +746,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Giáo d ục ý th ức bảo vệ Tổ quốc xã h ội chủ nghĩa cho các t ầng lớp nhân dân ph ải mang tính toàn di ện, nhưng t ập trung vào:",
     "options": [
-      "A. Giáo dục tinh thần, ý thức khởi nghiệp cho giới trẻ.",
-      "B.   Giáo dục ý thức thượng tôn pháp luật cho công dân.",
-      "C.   Giáo dục tình yêu quê hươn g đất nước; tinh thần cảnh giác trước âm mưu thủ đoạn của kẻ thù; quan điểm, đường lối của Đảng về nhiệm vụ bảo vệ Tổ quốc  XHCN.",
-      "D. Cả ba đáp án trên đều đúng."
+      "A. Cả ba đáp án trên đều đúng.",
+      "B. Giáo dục tinh thần, ý thức khởi nghiệp cho giới trẻ.",
+      "C. Giáo dục tình yêu quê hươn g đất nước; tinh thần cảnh giác trước âm mưu thủ đoạn của kẻ thù; quan điểm, đường lối của Đảng về nhiệm vụ bảo vệ Tổ quốc  XHCN.",
+      "D. Giáo dục ý thức thượng tôn pháp luật cho công dân."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -762,12 +761,12 @@
     "question": ": Quan h ệ giữa “Di ễn biến hoà bình” và b ạo loạn lật đổ:",
     "options": [
       "A. Diễn biến hoà bình là quá trình tạo nên những điều kiện, thời cơ cho bạo loạn lật đổ .",
-      "B. Diễn biến hoà bình là nguyên nhân của bạo loạn lật đổ.",
-      "C. Diễn biến hoà bình tạo thời cơ cho bạo loạn lật đổ.",
-      "D. Diễn biến hoà bình là quá trình tạo những điều kiện, thời cơ để kẻ thù tiến hành xâm lược. BÀI 3:  PHÒNG, CHỐNG VI PHẠM PHÁP LUẬT VỀ BẢO VỆ MÔI TRƯỜNG"
+      "B. Diễn biến hoà bình là quá trình tạo những điều kiện, thời cơ để kẻ thù tiến hành xâm lược. BÀI 3:  PHÒNG, CHỐNG VI PHẠM PHÁP LUẬT VỀ BẢO VỆ MÔI TRƯỜNG",
+      "C. Diễn biến hoà bình là nguyên nhân của bạo loạn lật đổ.",
+      "D. Diễn biến hoà bình tạo thời cơ cho bạo loạn lật đổ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -789,13 +788,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Điền vào chỗ trống cụm từ còn thiếu trong câu sau: “Bảo vệ môi trường là ……….. không thể tách rời trong đ ường lối, chủ trư ơng và kế hoạch phát triển kinh tế - xã hội của Đảng, Nhà nước, các cấp, các ngành,”",
     "options": [
-      "A. “các biện pháp”.",
-      "B. “nội dung cơ bản”.",
-      "C. “vấn đề lâu dài”.",
-      "D. “công tác phòng ngừa”."
+      "A. “nội dung cơ bản”.",
+      "B. “vấn đề lâu dài”.",
+      "C. “công tác phòng ngừa”.",
+      "D. “các biện pháp”."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -803,13 +802,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Điền vào chỗ trống trong đoạn văn sau: “ Bảo vệ môi trường  là hoạt động …..các tác động xấu đến môi trường; ứng phó sự cố môi trường; khắc phục ô nhiễm, suy thoái, cải thiện, phục hồi môi trường; khai thác, sử dụng hợp lý tài nguyên thiên nhiên nhằm giữ môi trường trong lành.”",
     "options": [
-      "A. “phòng ngừa và đấu tranh”.",
-      "B. “giữ gìn, phòng ngừa, hạn chế ”.",
-      "C. “hạn chế và khắc phục”.",
-      "D. “loại bỏ hoàn toàn”."
+      "A. “hạn chế và khắc phục”.",
+      "B. “loại bỏ hoàn toàn”.",
+      "C. “giữ gìn, phòng ngừa, hạn chế ”.",
+      "D. “phòng ngừa và đấu tranh”."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -817,13 +816,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Vai trò c ủa pháp lu ật trong công tác b ảo vệ môi trư ờng là:",
     "options": [
-      "A. Pháp luật quy định chức năng, nhiệm vụ, quyền hạn của các cơ quan, tổ chức, cá nhân tham gia bảo vệ môi trường.",
-      "B. Xử lý hình sự  và vi phạm hành chính.",
+      "A. Giải quyết những tranh chấp giữa các chủ thể trong bảo vệ môi trường.",
+      "B. Pháp luật quy định chức năng, nhiệm vụ, quyền hạn của các cơ quan, tổ chức, cá nhân tham gia bảo vệ môi trường.",
       "C. Xử lý trách nhiệm dân sự trong bảo vệ môi trường.",
-      "D. Giải quyết những tranh chấp giữa các chủ thể trong bảo vệ môi trường."
+      "D. Xử lý hình sự  và vi phạm hành chính."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -831,13 +830,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Hình thức xử phạt nào dưới đây thuộc xử lý vi phạm trong lĩnh vực bảo vệ môi trường?",
     "options": [
-      "A. Xử lý hình sự.",
-      "B. Xử lý trách nhiệm dân sự trong bảo vệ môi trường.",
-      "C. Xử lý vi phạm hành chính.",
-      "D. Tất cả đáp án đều đúng."
+      "A. Xử lý trách nhiệm dân sự trong bảo vệ môi trường.",
+      "B. Xử lý vi phạm hành chính.",
+      "C. Tất cả đáp án đều đúng.",
+      "D. Xử lý hình sự."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -845,13 +844,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Vai trò của pháp lu ật trong công tác b ảo vệ môi trư ờng",
     "options": [
-      "A. Khắc phục ô nhiễm, suy thoái, cải thiện, phục hồi môi trường.",
-      "B. Pháp luật xây dựng hệ thống các quy chuẩn môi trường, tiêu chuẩn môi trường để bảo vệ môi trường.",
-      "C. Xác định rõ các mặt khách quan của tội phạm.",
-      "D. Xác định rõ các mặt chủ quan của tội phạm."
+      "A. Xác định rõ các mặt chủ quan của tội phạm.",
+      "B. Xác định rõ các mặt khách quan của tội phạm.",
+      "C. Khắc phục ô nhiễm, suy thoái, cải thiện, phục hồi môi trường.",
+      "D. Pháp luật xây dựng hệ thống các quy chuẩn môi trường, tiêu chuẩn môi trường để bảo vệ môi trường."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -859,13 +858,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "T ội phạm về môi trư ờng đư ợc quy đ ịnh tại văn b ản pháp quy nào dư ới đây?",
     "options": [
-      "A. Điều 3 của Luật bảo vệ môi trường năm 2014.",
-      "B. Chương 19 của Hiến Pháp sửa đổi, bổ sung năm 2013 .",
-      "C. Chương 19 của Luật thuế bảo vệ môi trường.",
-      "D. Chương 19 của Bộ luật hình sự năm 2015 (sửa đổi, bổ sung năm 2017)."
+      "A. Chương 19 của Hiến Pháp sửa đổi, bổ sung năm 2013 .",
+      "B. Chương 19 của Bộ luật hình sự năm 2015 (sửa đổi, bổ sung năm 2017).",
+      "C. Điều 3 của Luật bảo vệ môi trường năm 2014.",
+      "D. Chương 19 của Luật thuế bảo vệ môi trường."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -873,9 +872,9 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Có bao nhiêu dấu hiệu vi phạm pháp luật về môi trường?  A. 2 dấu hiệu.",
     "options": [
-      "B. 3 dấu hiệu.",
-      "C. 4 dấu hiệu.",
-      "D. 5 dấu hiệu."
+      "A. 3 dấu hiệu.",
+      "B. 5 dấu hiệu.",
+      "C. 4 dấu hiệu."
     ],
     "correctAnswer": "A",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
@@ -886,13 +885,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Các d ấu hiệu pháp lý đ ặc trưng c ủa tội phạm về môi trư ờng đư ợc thể hiện một trong những yếu tố cấu thành t ội phạm nào sau đây?",
     "options": [
-      "A. Nguyên nhân và điều kiện của tội phạm.",
-      "B. Ý thức của tội phạm.",
+      "A. Nhận thức chủ quan của tội phạm.",
+      "B. Nguyên nhân và điều kiện của tội phạm.",
       "C. Khách thể của tội phạm.",
-      "D. Nhận thức chủ quan của tội phạm."
+      "D. Ý thức của tội phạm."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -900,13 +899,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": "Y ếu tố cấu thành t ội phạm nào  dưới đây th ể hiện các d ấu hiệu pháp lý đ ặc trưng c ủa tội phạm về môi trư ờng?",
     "options": [
-      "A. Nguyên nhân và điều kiện của tội phạm.",
+      "A. Nhận thức của tội phạm.",
       "B. Mặt khách quan của tội phạm.",
-      "C. Nhận thức của tội phạm.",
+      "C. Nguyên nhân và điều kiện của tội phạm.",
       "D. Ý thức của tội phạm."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -914,13 +913,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Mặt khách quan c ủa các t ội phạm về môi trư ờng đư ợc thể hiện như th ế nào?",
     "options": [
-      "A. Là sự xâm phạm vào các quy định của Nhà nước trong việc bảo vệ môi trường.",
-      "B. Là bất kỳ người nào có đủ năng lực trách nhiệm hình sự và đạt độ tuổi theo qu y định.",
-      "C. Dưới hình thức lỗi cố ý hoặc vô ý.",
+      "A. Là bất kỳ người nào có đủ năng lực trách nhiệm hình sự và đạt độ tuổi theo qu y định.",
+      "B. Dưới hình thức lỗi cố ý hoặc vô ý.",
+      "C. Là sự xâm phạm vào các quy định của Nhà nước trong việc bảo vệ môi trường.",
       "D. Được thể hiện bởi những hành vi nguy hiểm cho xã hội, được thực hiện dưới dạng hành động hoặc không hành động."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -928,13 +927,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Mặt chủ quan c ủa các t ội phạm về môi trư ờng đư ợc thể hiện như th ế nào?",
     "options": [
-      "A. Là sự xâm phạm vào các quy định của Nhà nước trong việc bảo vệ môi trường.",
+      "A. Được thể hiện bởi những hành vi nguy hiểm cho xã hội, được thực hiện dưới dạng hành động hoặc không hành động.",
       "B. Là bất kỳ người nào có đủ năng lự c trách nhiệm hình sự và đạt độ tuổi theo qu y định.",
       "C. Dưới hình thức lỗi cố ý hoặc vô ý.",
-      "D. Được thể hiện bởi những hành vi nguy hiểm cho xã hội, được thực hiện dưới dạng hành động hoặc không hành động."
+      "D. Là sự xâm phạm vào các quy định của Nhà nước trong việc bảo vệ môi trường."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -942,17 +941,16 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Đối tượng tác đ ộng của các t ội phạm về môi trư ờng chủ yếu là:",
     "options": [
-      "A. Môi trường đất, nước và không khí.",
-      "B. Hệ sinh thái và khu bảo tồn thiên nhiên.",
+      "A. Hệ sinh thái và khu bảo tồn thiên nhiên.",
+      "B. Môi trường đất, nước và không khí.",
       "C. Các loài động vật, thực vật sống trong tự nhiên.",
-      "D. Đất, nước, không khí, hệ sinh thái, đa dạng sinh học, khu bảo tồn thiên nhiên, các loại động vật, thực vật sống trong tự nhiên.  Câu 15 : Đối tượng tác đ ộng của các t ội phạm về môi trư ờng ch ủ yếu là:",
-      "A. Môi trường đất, nước và không khí.",
-      "B. Hệ sinh thái và khu bảo tồn thiên nhiên.",
-      "C. Các loài động vật, thực vật sống trong tự nhiên.",
-      "D. Đất, nước, không khí, hệ sinh thái, đa dạng sinh học, khu bảo tồn thiên nhiên, các loại động vật, thực vật sống trong tự nhiên."
+      "D. Môi trường đất, nước và không khí.",
+      "E. Đất, nước, không khí, hệ sinh thái, đa dạng sinh học, khu bảo tồn thiên nhiên, các loại động vật, thực vật sống trong tự nhiên.",
+      "F. Các loài động vật, thực vật sống trong tự nhiên.",
+      "G. Đất, nước, không khí, hệ sinh thái, đa dạng sinh học, khu bảo tồn thiên nhiên, các loại động vật, thực vật sống trong tự nhiên.  Câu 15 : Đối tượng tác đ ộng của các t ội phạm về môi trư ờng ch ủ yếu là:"
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "G",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -960,13 +958,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Mặt khách quan của tội phạm về môi trường được thể hiện dưới bao nhiêu nhóm hành vi cụ thể?",
     "options": [
-      "A. 02 nhóm hành vi cụ thể.",
-      "B. 03 nhóm hành vi cụ thể.",
-      "C. 04 nhóm hành vi cụ thể.",
-      "D. 05 nhóm hành vi cụ thể."
+      "A. 05 nhóm hành vi cụ thể.",
+      "B. 04 nhóm hành vi cụ thể.",
+      "C. 03 nhóm hành vi cụ thể.",
+      "D. 02 nhóm hành vi cụ thể."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -974,13 +972,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong những nhóm hành vi cụ thể thể hiện mặt khách quan của tội phạm về môi trường là:",
     "options": [
-      "A. Nhóm tội phạm hủy hoại nguồn nước.",
-      "B. Nhóm tội phạm hủy hoại hệ sinh thái.",
-      "C. Nhóm các hành vi gây ô nhiễm môi trường.",
-      "D. Nhóm tội phạm hủy hoại tài nguyên đất."
+      "A. Nhóm tội phạm hủy hoại hệ sinh thái.",
+      "B. Nhóm các hành vi gây ô nhiễm môi trường.",
+      "C. Nhóm tội phạm hủy hoại tài nguyên đất.",
+      "D. Nhóm tội phạm hủy hoại nguồn nước."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -989,12 +987,12 @@
     "question": ": “Đưa chất thải vào lãnh thổ Việt Nam” thuộc nhóm hành vi vi phạm pháp luật về bảo vệ môi trường nào sau đây?",
     "options": [
       "A. Nhóm các hành vi `hủy hoại tài nguyên.",
-      "B. Nhóm tội phạm hủy hoại hệ sinh thái.",
+      "B. Nhóm tội phạm hủy hoại tài nguyên đất.",
       "C. Nhóm các hành vi gây ô nhiễm môi trường.",
-      "D. Nhóm tội phạm hủy hoại tài nguyên đất."
+      "D. Nhóm tội phạm hủy hoại hệ sinh thái."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1002,12 +1000,12 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Chương 19 B ộ luật hình s ự năm 2015 (s ửa đổi, bổ sung năm 2017) quy đ ịnh bao nhiêu tội danh c ủa tội phạm về môi trư ờng?",
     "options": [
-      "A. 9 tội danh.",
-      "B. 12 tội danh.",
-      "C. 13 tội danh.",
-      "D. 14 tội danh."
+      "A. 13 tội danh.",
+      "B. 9 tội danh.",
+      "C. 14 tội danh.",
+      "D. 12 tội danh."
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "B",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
     "type": "Lý thuyết"
   },
@@ -1017,8 +1015,8 @@
     "question": ": Tội danh nào dư ới đây đư ợc quy đ ịnh trong B ộ luật hình s ự năm 2015 (s ửa đổi, bổ sung năm 2017) KHÔNG thu ộc nhóm các hành vi h ủy hoại tài nguyên, môi trư ờng?",
     "options": [
       "A. Tội hủy hoại nguồn lợi thủy sản.",
-      "B. Tội hủy hoại rừng.",
-      "C. Tội vi phạm quy định về bảo vệ động vật nguy cấp, quý, hiếm.  D. Tội đưa chất thải vào lãnh thổ Việt Nam."
+      "B. Tội vi phạm quy định về bảo vệ động vật nguy cấp, quý, hiếm.  D. Tội đưa chất thải vào lãnh thổ Việt Nam.",
+      "C. Tội hủy hoại rừng."
     ],
     "correctAnswer": "A",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
@@ -1029,12 +1027,12 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Mặt chủ quan c ủa tội phạm về môi trư ờng, đ ộng cơ và m ục đích ph ạm tội có tính chất gì?",
     "options": [
-      "A. Đơn giản nhưng là dấu hiệu bắt buộc trong cấu thành tội phạm.",
-      "B. Phức tạp và là dấu hiệu bắt buộc trong cấu thành tội phạm.",
-      "C. Đa dạng và là dấu hiệu bắt buộc trong cấu thành tội phạm.",
-      "D. Đa dạng nhưng không phải là dấu hiệu bắt buộc trong cấu thành tội phạm."
+      "A. Đa dạng và là dấu hiệu bắt buộc trong cấu thành tội phạm.",
+      "B. Đa dạng nhưng không phải là dấu hiệu bắt buộc trong cấu thành tội phạm.",
+      "C. Đơn giản nhưng là dấu hiệu bắt buộc trong cấu thành tội phạm.",
+      "D. Phức tạp và là dấu hiệu bắt buộc trong cấu thành tội phạm."
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "C",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
     "type": "Lý thuyết"
   },
@@ -1043,13 +1041,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Hành vi nào dư ới đây thu ộc hành vi vi ph ạm hành chính trong lĩnh v ực bảo vệ môi trường?",
     "options": [
-      "A. Hành vi vi phạm về đa dạng sinh học.",
-      "B. Hành vi xả thải trái pháp luật ra môi trường.",
-      "C. Hành vi dùng thuốc diệt chuột để khai thác thủy sản.",
-      "D. Hành vi buôn bán trái phép động vật hoang dã quý hiếm."
+      "A. Hành vi xả thải trái pháp luật ra môi trường.",
+      "B. Hành vi dùng thuốc diệt chuột để khai thác thủy sản.",
+      "C. Hành vi buôn bán trái phép động vật hoang dã quý hiếm.",
+      "D. Hành vi vi phạm về đa dạng sinh học."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1057,13 +1055,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững nguyên nhân, đi ều kiện khách quan c ủa vi ph ạm pháp lu ật về môi trường là:",
     "options": [
-      "A. Nhận thức của một bộ phận người dân chưa cao.",
-      "B. Các cơ quan chức năng chưa phát huy hết vai trò, trách nhiệm.",
-      "C. Nhận thức của một số b ộ phận các cơ quan quản lý nhà nước hạn chế.",
-      "D. Các cơ quan Nhà nước có thẩm quyền không quan tâm đến bảo vệ môi trường."
+      "A. Các cơ quan chức năng chưa phát huy hết vai trò, trách nhiệm.",
+      "B. Nhận thức của một số b ộ phận các cơ quan quản lý nhà nước hạn chế.",
+      "C. Các cơ quan Nhà nước có thẩm quyền không quan tâm đến bảo vệ môi trường.",
+      "D. Nhận thức của một bộ phận người dân chưa cao."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1072,12 +1070,12 @@
     "question": ": Một trong nh ững nguyên nhân, đi ều kiện ch ủ quan c ủa vi ph ạm pháp lu ật về môi trường là:",
     "options": [
       "A. Công tác phối hợp giữa các lực lượng trong  phòng, chống tội phạm về môi trường chưa chặt chẽ.",
-      "B. Áp lực tăng trưởng kinh tế ở các địa phương.",
-      "C. Phân định chức năng quản lý nhà nước và phân công trách nhiệm giữa các Bộ, ban ngành còn chồng chéo.",
+      "B. Phân định chức năng quản lý nhà nước và phân công trách nhiệm giữa các Bộ, ban ngành còn chồng chéo.",
+      "C. Áp lực tăng trưởng kinh tế ở các địa phương.",
       "D. Hệ thống văn bản pháp luật về bảo vệ môi trường còn thiếu đồng  bộ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1085,12 +1083,12 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững nội dung phòng, ch ống vi ph ạm về bảo vệ môi trư ờng là:",
     "options": [
-      "A. Tiến hành các hoạt động điều tra, xử lý vi phạm pháp luật về bảo vệ môi trường.  B. Chủ thể tham gia phòng, chống vi phạm pháp luật về bảo vệ môi trường rất đa dạng.",
-      "C. Chủ thể tham gia phòng, chống vi phạm pháp luật về bảo vệ môi trường rất phức tạp.",
-      "D. Tuyên truyền cho quần chúng nhân dân nắm đuợc những kiến thức cơ bản về bảo vệ môi trường và phòng, chống tội phạm về môi trường."
+      "A. Tuyên truyền cho quần chúng nhân dân nắm đuợc những kiến thức cơ bản về bảo vệ môi trường và phòng, chống tội phạm về môi trường.",
+      "B. Chủ thể tham gia phòng, chống vi phạm pháp luật về bảo vệ môi trường rất phức tạp.",
+      "C. Tiến hành các hoạt động điều tra, xử lý vi phạm pháp luật về bảo vệ môi trường.  B. Chủ thể tham gia phòng, chống vi phạm pháp luật về bảo vệ môi trường rất đa dạng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1098,13 +1096,13 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": Một trong nh ững biện pháp phòng, c hống vi ph ạm pháp lu ật về bảo vệ môi trư ờng cụ thể là:",
     "options": [
-      "A. Xác định và làm rõ các nguyên nhân, điều kiện của vi phạm pháp luật về bảo vệ môi trường .",
+      "A. Biện pháp tuyên truyền, giáo dục .",
       "B. Biện pháp khoa học - công nghệ .",
-      "C. Biện pháp tuyên truyền, giáo dục .",
-      "D. Sử dụng các hoạt động nghiệp vụ chuyên môn để  phòng, chống vi phạm pháp luật về bảo vệ môi trường."
+      "C. Sử dụng các hoạt động nghiệp vụ chuyên môn để  phòng, chống vi phạm pháp luật về bảo vệ môi trường.",
+      "D. Xác định và làm rõ các nguyên nhân, điều kiện của vi phạm pháp luật về bảo vệ môi trường ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1112,12 +1110,12 @@
     "topicId": "hp2_other_topics_part1",
     "question": ": “Tuyên truyền cho quần chúng nhân dân nắm đuợc những kiến thức cơ bản về bảo vệ môi trường và phòng, chống tội phạm về môi trường” thuộc về biện pháp phòng, chống nào?",
     "options": [
-      "A. Biện pháp tuyên truyền, giáo dục trong các biện pháp phòng, chống chung.",
-      "B. Phối hợp với các cơ quan có liên quan tiến hành các hoạt động tuyên truyền, giáo dục nhân dân.",
-      "C. Sử dụng các hoạt động nghiệp vụ chuyên môn để phòng, chống vi phạm pháp luật về bảo vệ môi trường.",
-      "D. Biện pháp tổ chức – hành chính."
+      "A. Biện pháp tổ chức – hành chính.",
+      "B. Sử dụng các hoạt động nghiệp vụ chuyên môn để phòng, chống vi phạm pháp luật về bảo vệ môi trường.",
+      "C. Phối hợp với các cơ quan có liên quan tiến hành các hoạt động tuyên truyền, giáo dục nhân dân.",
+      "D. Biện pháp tuyên truyền, giáo dục trong các biện pháp phòng, chống chung."
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "D",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
     "type": "Lý thuyết"
   },
@@ -1127,12 +1125,12 @@
     "question": ": Tội phạm về môi trường được quy định tại văn bản pháp quy nào?",
     "options": [
       "A. Hiếp pháp sửa đổi năm 2013 .",
-      "B. Luật bảo vệ môi trường năm 2014 .",
-      "C. Bộ luật hình sự năm 2015 (sửa đổi, bổ sung năm 2017) .",
+      "B. Bộ luật hình sự năm 2015 (sửa đổi, bổ sung năm 2017) .",
+      "C. Luật bảo vệ môi trường năm 2014 .",
       "D. Pháp lệnh quy định về môi trường ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1140,13 +1138,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Một trong  những dấu hiệu pháp lý đặc trưng của tội phạm về môi trường được thể hiện dưới yếu tố nào?",
     "options": [
-      "A. Mặt chủ quan của tội phạm.",
-      "B. Yếu tố môi trường.",
-      "C. Mặt ý thức của cá nhân, pháp nhân thương mại ,...",
+      "A. Yếu tố môi trường.",
+      "B. Mặt ý thức của cá nhân, pháp nhân thương mại ,...",
+      "C. Mặt chủ quan của tội phạm.",
       "D. Mặt khách quan của chủ thể."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1154,12 +1152,12 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Tội phạm về môi trường được thực hiện bởi chủ thể đặc biệt là ai?",
     "options": [
-      "A. Pháp nhân thương mại.",
-      "B. Người nào có đủ năng lực trách nhiệm hình sự và đạt độ tuổi theo qu y định của Bộ luật hình sự. C. Người có chức vụ quyền hạn.",
-      "D. Các cá nhân, tổ chức thực hiện một cách cố ý hoặc vô ý."
+      "A. Các cá nhân, tổ chức thực hiện một cách cố ý hoặc vô ý.",
+      "B. Pháp nhân thương mại.",
+      "C. Người nào có đủ năng lực trách nhiệm hình sự và đạt độ tuổi theo qu y định của Bộ luật hình sự. C. Người có chức vụ quyền hạn."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1167,13 +1165,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Phần lớn các tội phạm về môi trường thực hiện hành vi phạm tội dưới hình thức nào?",
     "options": [
-      "A. Hình thức lỗi cố ý.",
-      "B. Hình thức lỗi vô ý.",
+      "A. Hình thức lỗi vô ý.",
+      "B. Ý thức kém về môi trường.",
       "C. Nhận thức kém về môi trường.",
-      "D. Ý thức kém về môi trường."
+      "D. Hình thức lỗi cố ý."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1181,13 +1179,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Yếu tố nào không phải là nguyên nhân, điều kiện khách quan của vi phạm pháp luật về BVMT?",
     "options": [
-      "A. Công tác quản lý nhà nước về môi trường còn hạn chế.",
-      "B. Hệ thống văn bản pháp luật thiếu và chưa đồng bộ.",
-      "C. Áp lực tăng trưởng kinh tế ở các địa phương.",
-      "D. Nhận thức chưa cao về BVMT của một số bộ phận cơ quan quản lý nhà nước."
+      "A. Hệ thống văn bản pháp luật thiếu và chưa đồng bộ.",
+      "B. Nhận thức chưa cao về BVMT của một số bộ phận cơ quan quản lý nhà nước.",
+      "C. Công tác quản lý nhà nước về môi trường còn hạn chế.",
+      "D. Áp lực tăng trưởng kinh tế ở các địa phương."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1195,13 +1193,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Yếu tố nào không phải  là nguyên nhân, điều kiện chủ quan của vi phạm pháp luật về BVMT là:",
     "options": [
-      "A. Công tác phối hợp giữa các lực lượng phòng, chống tội phạm về môi trường chưa chặt chẽ, chưa đồng bộ.",
-      "B. Ý thức BVMT của các cơ quan, doanh nghiệp và công dân còn kém.",
+      "A. Ý thức BVMT của các cơ quan, doanh nghiệp và công dân còn kém.",
+      "B. Công tác phối hợp giữa các lực lượng phòng, chống tội phạm về môi trường chưa chặt chẽ, chưa đồng bộ.",
       "C. Lực lượng trực tiếp p hòng, chống chưa quản lý tốt địa bàn, lĩnh vực trọng điểm.",
       "D. Nhiều chính sách ưu đãi được ban hành tập trung cho lợi ích kinh tế, không quan tâm đến BVMT."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1209,13 +1207,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Hình thức xử lý hành vi vi phạm hành chính về BVMT gồm những hình thức nào?",
     "options": [
-      "A. Phạt tiền, cảnh cáo , tịch thu tang vật, phương tiện vi phạm.",
-      "B. Khiển trách, cảnh cáo, gửi thông báo vi phạm về cơ quan hoặc địa phương.",
+      "A. Khiển trách, cảnh cáo, gửi thông báo vi phạm về cơ quan hoặc địa phương.",
+      "B. Cảnh cáo và tịch th u tang vật, phương tiện vi phạm.",
       "C. Phạt tiền và thu giữ tang vật vi phạm.",
-      "D. Cảnh cáo và tịch th u tang vật, phương tiện vi phạm."
+      "D. Phạt tiền, cảnh cáo , tịch thu tang vật, phương tiện vi phạm."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1223,13 +1221,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Nguyên nhân thuộc về phía đối tương vi phạm pháp luật về BVMT là gì?",
     "options": [
-      "A. Giải quyết “mâu thuẫn” giữa phát triển kinh tế và đảm bảo việc làm, an sinh xã hội.",
-      "B. Cơ quan, doanh nghiệp và cá nhân chưa tự giác trong BVMT.",
-      "C. Hệ thống văn bản về BVMT chưa đầy đủ và đồng bộ.",
-      "D. Ý thức coi thường pháp luật, sống t hiếu kỷ cương."
+      "A. Ý thức coi thường pháp luật, sống t hiếu kỷ cương.",
+      "B. Hệ thống văn bản về BVMT chưa đầy đủ và đồng bộ.",
+      "C. Giải quyết “mâu thuẫn” giữa phát triển kinh tế và đảm bảo việc làm, an sinh xã hội.",
+      "D. Cơ quan, doanh nghiệp và cá nhân chưa tự giác trong BVMT."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1237,12 +1235,12 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Một trong những nội dung phòng, chống vi phạm pháp luật về BVMT là gì?",
     "options": [
-      "A. Xác định rõ các nguyên nhân, điều kiện của vi phạm pháp luật về BVMT.",
-      "B. Tham mưu cho cấp ủy Đảng, chính quyền về BVMT.",
+      "A. Tham mưu cho cấp ủy Đảng, chính quyền về BVMT.",
+      "B. Xác định rõ các nguyên nhân, điều kiện của vi phạm pháp luật về BVMT.",
       "C. Phối hợp với các cơ quan có liên quan thực hi ện các hoạt động tuyên truyền.  D. Giáo dục các đối tương vi phạm pháp luật về môi trường."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1250,13 +1248,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Một trong những biện pháp phòng, chống vi phạm pháp luật về BVMT là gì?",
     "options": [
-      "A. Nghiên cứu làm rõ những vấn đề có tính quy luật trong hoạt động vi phạm pháp luật của các đối tượng.",
-      "B. Biện pháp tổ chức – hành chính.",
-      "C. Xây dựng các kế hoạch chủ động hạn chế các nguyên nhân, khắc phục các điều kiện.",
+      "A. Biện pháp tổ chức – hành chính.",
+      "B. Xây dựng các kế hoạch chủ động hạn chế các nguyên nhân, khắc phục các điều kiện.",
+      "C. Nghiên cứu làm rõ những vấn đề có tính quy luật trong hoạt động vi phạm pháp luật của các đối tượng.",
       "D. Tổ chức lực lượng thực hiện các hoạt động khắc phục nguyên nhân của tội phạm về môi trường."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1264,13 +1262,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Biện pháp nào dưới đây không ph ải là biện pháp phòng, chống chung vi phạm pháp luật về BVMT?",
     "options": [
-      "A. Biện pháp kinh tế.",
-      "B. Biện pháp khoa học – công nghệ.",
+      "A. Biện pháp khoa học – công nghệ.",
+      "B. Biện pháp pháp luật.",
       "C. Biện pháp điều tra, xử lý.",
-      "D. Biện pháp pháp luật."
+      "D. Biện pháp kinh tế."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1284,7 +1282,7 @@
       "D. Bộ Tài nguyên và môi trường."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1292,13 +1290,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Một trong những đặc điểm của phòng, chống vi phạm pháp luật về BVMT là:",
     "options": [
-      "A. Các cơ quan chức năng chưa phát huy hết vai tr ò, trách nhiệm.",
+      "A. Đội ngũ cán bộ, chiến sỹ chưa đủ biên chế ở các cấp Công an.",
       "B. Chủ thể tham gia rất đa dạng.",
-      "C. Trang bị, cơ sở vật chất kỹ thuật cho lực lượng trực tiếp tham gia đấu tranh chưa được đảm bảo.",
-      "D. Đội ngũ cán bộ, chiến sỹ chưa đủ biên chế ở các cấp Công an."
+      "C. Các cơ quan chức năng chưa phát huy hết vai tr ò, trách nhiệm.",
+      "D. Trang bị, cơ sở vật chất kỹ thuật cho lực lượng trực tiếp tham gia đấu tranh chưa được đảm bảo."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1307,12 +1305,12 @@
     "question": ": Hành vi nào dưới đây không phải là hành vi vi  phạm hành chính về môi trường?",
     "options": [
       "A. Hành vi hủy hoại rừng.",
-      "B. Hành vi vi phạm về bảo tồn và phát triển bền vững hệ sinh thái tự nhiên.",
-      "C. Hành vi cản trở hoạt động quản lý nhà nước.",
-      "D. Hành vi vi phạm các quy định về khắc phục sự cố môi trường."
+      "B. Hành vi cản trở hoạt động quản lý nhà nước.",
+      "C. Hành vi vi phạm các quy định về khắc phục sự cố môi trường.",
+      "D. Hành vi vi phạm về bảo tồn và phát triển bền vững hệ sinh thái tự nhiên."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1320,12 +1318,12 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Công tác quản lý nhà nước về BVMT đang tồn tại một số bất cập trong công tác quản lý nào?",
     "options": [
-      "A. Quản lý nhà nước đối với hệ thống văn bản pháp luật về BVMT.",
+      "A. Quản lý nhà nước đối với nước thải.  D. Quản lý nhà nước đối với l ực lượng trực tiếp tham gia phòng, chống.",
       "B. Quản lý nhà nước đối với hệ thống hạ tầng về môi trường.",
-      "C. Quản lý nhà nước đối với nước thải.  D. Quản lý nhà nước đối với l ực lượng trực tiếp tham gia phòng, chống."
+      "C. Quản lý nhà nước đối với hệ thống văn bản pháp luật về BVMT."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1333,13 +1331,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Trách nhiệm phòng, chống vi phạm pháp luật về môi trường của sinh viên là:",
     "options": [
-      "A. Xây dựng ý thức trách nhiệm trong các hoạt động BVMT.",
-      "B. Nghiên cứu, điều tra và xử lý tội phạm về môi trường.",
-      "C. Sử dụng các cơ quan chu yên trách tiến hành hoạt động phòng, chống .",
+      "A. Sử dụng các cơ quan chu yên trách tiến hành hoạt động phòng, chống .",
+      "B. Xây dựng ý thức trách nhiệm trong các hoạt động BVMT.",
+      "C. Nghiên cứu, điều tra và xử lý tội phạm về môi trường.",
       "D. Hướng dẫn, thanh tra công tác BVMT. BÀI 4: PHÒNG, CHỐNG VI PHẠM PHÁP LUẬT VỀ ĐẢM BẢO TRẬT TỰ AN TOÀN GIAO THÔNG"
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1347,13 +1345,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Bị xử phạt vi phạm vì vượt đèn đỏ khi tham gia giao thông thuộc loại vi phạm nào dưới đây:",
     "options": [
-      "A. Vi ph ạm dân s ự.",
-      "B. Vi ph ạm hình s ự.",
-      "C. Vi ph ạm hành chính .",
-      "D. Cả A và C ."
+      "A. Vi ph ạm hành chính .",
+      "B. Cả A và C .",
+      "C. Vi ph ạm hình s ự.",
+      "D. Vi ph ạm dân s ự."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1361,13 +1359,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Nghị định 100 c ủa Chính ph ủ quy đ ịnh về xử phạt vi ph ạm hành chính trong lĩnh v ực giao thông nào ?",
     "options": [
-      "A. Giao  thông đường thủy.",
-      "B. Giao thông đường bộ và đường sắt.",
+      "A. Giao thông đường bộ và đường sắt.",
+      "B. Đường hàng không.",
       "C. Giao thông đường bộ .",
-      "D. Đường hàng không."
+      "D. Giao  thông đường thủy."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1375,13 +1373,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Nghị định 100 c ủa Chính ph ủ quy đ ịnh về xử phạt vi ph ạm hành chính trong lĩnh v ực giao thông đư ợc ký ban hành ngày, tháng, năm nào ?",
     "options": [
-      "A. 30/12/2017.",
+      "A. 30/12/2020.",
       "B. 30/12/2018.",
-      "C. 30/12/2019 .",
-      "D. 30/12/2020."
+      "C. 30/12/2017.",
+      "D. 30/12/2019 ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1389,12 +1387,12 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Vai trò c ủa pháp lu ật về bảo đảm trật tự, an toàn  giao thông  là:",
     "options": [
-      "A. Pháp luật về bảo đảm TTATGT là ý chí của Nhà nước để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT.",
-      "B. Pháp luật về bảo đảm TTATGT là ý chí của Đảng để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT.",
-      "C. Pháp luật về bảo đảm TTATGT là ý chí của Công an  Nhân dân để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT.  D. Pháp luật về bảo đảm TTATGT là ý chí của mặt trận Tổ quốc  để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT."
+      "A. Pháp luật về bảo đảm TTATGT là ý chí của Đảng để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT.",
+      "B. Pháp luật về bảo đảm TTATGT là ý chí của Công an  Nhân dân để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT.  D. Pháp luật về bảo đảm TTATGT là ý chí của mặt trận Tổ quốc  để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT.",
+      "C. Pháp luật về bảo đảm TTATGT là ý chí của Nhà nước để chỉ đạo và tổ chức thực hiện bảo đảm TTATGT."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1402,13 +1400,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Điều khi ển xe trên đư ờng mà trong máu ho ặc khí th ở có nồng đ ộ cồn vư ợt quá quy định cho phép s ẽ bị xử phạt vi ph ạm nào sau đây ?",
     "options": [
-      "A. Vi phạm hành chính .",
-      "B. Vi phạm hình sự.",
-      "C. Vi phạm dân sự.",
-      "D. Cả 3 đáp án trên ."
+      "A. Cả 3 đáp án trên .",
+      "B. Vi phạm hành chính .",
+      "C. Vi phạm hình sự.",
+      "D. Vi phạm dân sự."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1422,7 +1420,7 @@
       "D. Cục Cảnh sát giao thông."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1430,13 +1428,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Trong ph ạm vi ch ức năng, nhi ệm vụ được giao có th ẩm quy ền xử phạt đối với các hành vi vi ph ạm thì lực lượng nào sau đây được phép xử phạt vi phạm ?",
     "options": [
-      "A. Cảnh sát giao thông.",
+      "A. Cả 3 đáp án trên.",
       "B. Cảnh sát trật tự.",
       "C. Cảnh sát cơ động .",
-      "D. Cả 3 đáp án trên."
+      "D. Cảnh sát giao thông."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1444,13 +1442,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Nghị định 100 c ủa Chính ph ủ quy đ ịnh về xử phạt vi ph ạm hành chính trong lĩnh v ực giao thông do ai ký ban hành ?",
     "options": [
-      "A. Tổng Bí Thư .",
+      "A. Thủ Tướng.",
       "B. Chủ Tịch Quốc Hội.",
-      "C. Thủ Tướng.",
-      "D. Chủ Tịch Nước."
+      "C. Chủ Tịch Nước.",
+      "D. Tổng Bí Thư ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1458,13 +1456,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Luật giao thông đường bộ hiện hành đang áp dụng được ký ban hành năm nào ?",
     "options": [
-      "A. 2008.",
-      "B. 2013.",
-      "C. 2018.",
-      "D. 2019."
+      "A. 2013.",
+      "B. 2018.",
+      "C. 2019.",
+      "D. 2008."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1473,11 +1471,11 @@
     "question": "Dấu hiệu vi ph ạm pháp lu ật về bảo đảm trật tự, an toàn giao thông :",
     "options": [
       "A. Tính trái pháp luật về bảo đảm  trật tự, an toàn giao thông . B. Tính nguy hiểm cho xã hội.",
-      "C. Tính không có lỗi .",
-      "D. Cả a và b."
+      "B. Cả a và b.",
+      "C. Tính không có lỗi ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1486,12 +1484,12 @@
     "question": "Luật giao thông đường bộ hiện hành do ai ký ban hành ?",
     "options": [
       "A. Tổng Bí Thư .",
-      "B. Chủ Tịch Quốc Hội.",
+      "B. Chủ Tịch Nước.",
       "C. Thủ Tướng.",
-      "D. Chủ Tịch Nước."
+      "D. Chủ Tịch Quốc Hội."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1500,12 +1498,12 @@
     "question": "Bị xử phạt vi phạm do lỗi gây chết người khi tham gia giao thông vi phạm luật nào dưới đây?",
     "options": [
       "A. Luật dân sự.",
-      "B. Luật hình sự.",
+      "B. Cà A và B.",
       "C. Luật hành chính .",
-      "D. Cà A và B."
+      "D. Luật hình sự."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1513,13 +1511,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Điền từ còn thi ếu vào câu sau: “… là cơ quan thư ờng tr ực của Ủy ban An toàn giao thông Quốc gia, có trách nhi ệm bảo đảm các đi ều kiện hoạt động của Ủy ban, s ử dụng các cơ quan, đơn vị chức năng tr ực thu ộc Bộ để thực hiện các nhi ệm vụ của Ủy ban An toàn giao thông Qu ốc gia ”.",
     "options": [
-      "A. Văn phòng Ủy ban An toàn giao thông Quốc gia.",
-      "B. Bộ Công an .",
-      "C. Bộ Xây dựng.",
+      "A. Bộ Xây dựng.",
+      "B. Văn phòng Ủy ban An toàn giao thông Quốc gia.",
+      "C. Bộ Công an .",
       "D. Bộ Giao thông vận tải."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1527,13 +1525,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Điền từ còn t hiếu vào câu sau: “Thực hiện pháp lu ật trong lĩnh v ực đảm bảo trật tự an toàn giao thông có … quyết định trong công tác đ ảm bảo trật tự an toàn giao thông ”.",
     "options": [
-      "A. Vị trí .",
+      "A. Đóng góp quan trong.",
       "B. Vai trò.",
       "C. Ý nghĩa.",
-      "D. Đóng góp quan trong."
+      "D. Vị trí ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1541,13 +1539,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Trưởng ban ATGT c ấp tỉnh do ai đ ảm nhi ệm?",
     "options": [
-      "A. Giám đốc công an tỉnh.",
-      "B. Phó chủ tịch UBND tỉnh.",
-      "C. Chủ tịch UBND tỉnh.",
-      "D. Bí thư tỉnh ủy."
+      "A. Phó chủ tịch UBND tỉnh.",
+      "B. Bí thư tỉnh ủy.",
+      "C. Giám đốc công an tỉnh.",
+      "D. Chủ tịch UBND tỉnh."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1555,12 +1553,12 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Trưởng ban ATGT c ấp huy ện, thành ph ố, thị xã do ai đ ảm nhi ệm?",
     "options": [
-      "A. Trưởng Công an cấp huyện .",
-      "B. Phó chủ tịch UBND cấp huyện . C. Chủ tịch HĐND  cấp huyện .",
-      "D. Chủ tịch UBND  cấp huyện ."
+      "A. Chủ tịch UBND  cấp huyện .",
+      "B. Trưởng Công an cấp huyện .",
+      "C. Phó chủ tịch UBND cấp huyện . C. Chủ tịch HĐND  cấp huyện ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1568,13 +1566,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Phòng, chống vi phạm pháp luật về bảo đảm trật tự, an toàn giao thông trong nhà trường là trách nhiệm của :",
     "options": [
-      "A. Nhà trường.",
+      "A. Cả 3 đáp án trên.",
       "B. Thầy, cô giáo.",
-      "C. Học sinh, sinh viên.",
-      "D. Cả 3 đáp án trên."
+      "C. Nhà trường.",
+      "D. Học sinh, sinh viên."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1582,13 +1580,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Tốc độ của các lo ại xe cơ gi ới, xe máy chuyên dùng trên đư ờng cao  tốc hiện nay không vượt quá:",
     "options": [
-      "A. 120km/giờ.",
-      "B. 130km/giờ.",
+      "A. 130km/giờ.",
+      "B. 120km/giờ.",
       "C. 140km/giờ.",
       "D. 150km/giờ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1596,13 +1594,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Tổ chức nào là chủ thể và mối quan hệ phối hợp trong thực hiện phòng, chống vi phạm pháp luật về bảo đảm trật tự, an toàn giao thông ?",
     "options": [
-      "A. Chính phủ và Ủy ban nhân dân các cấp.",
-      "B. Các tổ chức xã hội và tổ chức quần chúng tự quản.",
-      "C. Các cơ quan quản lý kinh tế, giao thông, văn hóa, giáo dục, dịch vụ, du lịch.",
-      "D. Cả 3 đáp án trên."
+      "A. Các tổ chức xã hội và tổ chức quần chúng tự quản.",
+      "B. Các cơ quan quản lý kinh tế, giao thông, văn hóa, giáo dục, dịch vụ, du lịch.",
+      "C. Cả 3 đáp án trên.",
+      "D. Chính phủ và Ủy ban nhân dân các cấp."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1610,13 +1608,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Điền từ còn thiếu vào câu sau: Pháp lu ật về bảo đảm TTATGT là cơ s ở, công c ụ pháp lý quan tr ọng để thực hiện ... qu ản lý nhà nư ớc về bảo đảm TTATGT, TTATXH.",
     "options": [
-      "A. Nhiệm vụ.",
-      "B. Chức năng.",
-      "C. Vai trò.",
-      "D. Trách nhiệm."
+      "A. Vai trò.",
+      "B. Trách nhiệm.",
+      "C. Chức năng.",
+      "D. Nhiệm vụ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1624,13 +1622,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Điền từ còn thiếu: Bảo đảm trật tự An toàn giao thông là các hành vi … khi tham gia giao thông bao g ồm việc chấp hành lu ật giao thông .",
     "options": [
-      "A. Văn hóa.",
-      "B. Đảm bảo.",
-      "C. Văn minh .",
+      "A. Đảm bảo.",
+      "B. Văn minh .",
+      "C. Văn hóa.",
       "D. Ý thức ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1639,11 +1637,11 @@
     "question": ": Các t ội phạm xâm ph ạm an toàn giao thông là nh ững hành vi nguy hi ểm cho xã h ội được quy đ ịnh trong B ộ Luật nào?",
     "options": [
       "A. Dân sự.  B. Hành chính.",
-      "C. Hình sự .",
-      "D. Giao thông đường bộ."
+      "B. Giao thông đường bộ.",
+      "C. Hình sự ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1651,13 +1649,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Vi ph ạm pháp lu ật về bảo đảm trật tự, an toàn giao thông có m ấy dạng vi ph ạm?",
     "options": [
-      "A. Một.",
-      "B. Hai.",
-      "C. Ba.",
-      "D. Bốn."
+      "A. Ba.",
+      "B. Bốn.",
+      "C. Hai.",
+      "D. Một."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1665,13 +1663,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Dấu hiệu pháp lý c ủa tội phạm an toàn giao thông:",
     "options": [
-      "A. Khách thể của các tội phạm xâm phạm an toàn giao thông .",
-      "B. Chủ thể của các tội phạm xâm phạm an toàn giao thông .",
+      "A. Cả 3 đáp án trên.",
+      "B. Khách thể của các tội phạm xâm phạm an toàn giao thông .",
       "C. Mặt chủ quan của các tội phạm xâm phạm an toàn giao thông .",
-      "D. Cả 3 đáp án trên."
+      "D. Chủ thể của các tội phạm xâm phạm an toàn giao thông ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1681,8 +1679,8 @@
     "options": [
       "A. Là cơ sở, công cụ pháp lý .",
       "B. Là cơ sở, đảm bảo.",
-      "C. Quyết định.",
-      "D. Cả A và C."
+      "C. Cả A và C.",
+      "D. Quyết định."
     ],
     "correctAnswer": "A",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
@@ -1693,13 +1691,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Thực hiện pháp luật trong lĩnh v ực đảm bảo trật tự an toàn giao thông nh ằm đảm bảo:",
     "options": [
-      "A. Trật tự an toàn xã hội .",
-      "B. An ninh  quốc phòng.",
-      "C. Phát triển kinh tế.",
-      "D. Cả 3 đáp án trên."
+      "A. Cả 3 đáp án trên.",
+      "B. Phát triển kinh tế.",
+      "C. Trật tự an toàn xã hội .",
+      "D. An ninh  quốc phòng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1707,13 +1705,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Thông đi ệp đư ợc đề cập trong bài báo cáo v ề đảm bảo trật tự an toàn xã h ội là:",
     "options": [
-      "A. “An toàn giao thông là trách nhiệm của mọi người, mọi nhà”.",
-      "B. “An toàn giao thông là hạnh phúc cho mọi nhà”.",
-      "C. “An toàn giao thông là không tai nạn”.",
-      "D. “Có văn hóa giao thông là sống vì cộng đồng”."
+      "A. “An toàn giao thông là không tai nạn”.",
+      "B. “An toàn giao thông là trách nhiệm của mọi người, mọi nhà”.",
+      "C. “Có văn hóa giao thông là sống vì cộng đồng”.",
+      "D. “An toàn giao thông là hạnh phúc cho mọi nhà”."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1721,17 +1719,16 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Đảm bảo trật tự an toàn xã h ội là:",
     "options": [
-      "A. Ưu tiên các loại xe đang thực hiện  nhiệm vụ .",
-      "B. Chấp hành theo đúng luật an toàn giao thông .",
-      "C. Thực hiện các hành vi có văn hóa khi tham gia giao thông .",
-      "D. Thực hiện đúng quy định của pháp luật, luật an toàn giao thông.  Câu 29: Điền vào t ừ còn thi ếu: “Đấu tranh ch ống vi ph ạm pháp lu ật về bảo đảm trật tự, an toàn giao thông là … của các cơ quan qu ản lý nhà nư ớc có th ẩm quy ền căn c ứ vào các quy đ ịnh của pháp lu ật, tiến hành ... các bi ện pháp theo quy đ ịnh để chủ động nắm tình hình, phát hi ện những hành vi  vi ph ạm pháp lu ật.”",
-      "A. Hành động/phân tích .",
-      "B. Hoạt động/tổng hợp .",
-      "C. Hành động/tổng hợp .",
-      "D. Hoạt động/ phân tích ."
+      "A. Hành động/tổng hợp .",
+      "B. Ưu tiên các loại xe đang thực hiện  nhiệm vụ .",
+      "C. Hành động/phân tích .",
+      "D. Chấp hành theo đúng luật an toàn giao thông .",
+      "E. Thực hiện đúng quy định của pháp luật, luật an toàn giao thông.  Câu 29: Điền vào t ừ còn thi ếu: “Đấu tranh ch ống vi ph ạm pháp lu ật về bảo đảm trật tự, an toàn giao thông là … của các cơ quan qu ản lý nhà nư ớc có th ẩm quy ền căn c ứ vào các quy đ ịnh của pháp lu ật, tiến hành ... các bi ện pháp theo quy đ ịnh để chủ động nắm tình hình, phát hi ện những hành vi  vi ph ạm pháp lu ật.”",
+      "F. Hoạt động/ phân tích .",
+      "G. Hoạt động/tổng hợp ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "E",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1739,13 +1736,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Các d ấu hiệu pháp lý c ủa tội phạm an toàn giao thông",
     "options": [
-      "A. Khách thể, mặt khách quan, chủ thể, mặt chủ quan.",
-      "B. Tính có lỗi , mặt khách quan, mặt chủ quan.",
-      "C. Tính nguy hiểm cho xã hội , khách thể, chủ thể .",
-      "D. Khách thể, mặt khách quan, tính có lỗi. BÀI 5: PHÒNG, CH ỐNG M ỘT SỐ LOẠI TỘI PH ẠM XÂM H ẠI DANH D Ự, NHÂN PH ẨM C ỦA NGƯ ỜI KHÁC"
+      "A. Tính nguy hiểm cho xã hội , khách thể, chủ thể .",
+      "B. Khách thể, mặt khách quan, tính có lỗi. BÀI 5: PHÒNG, CH ỐNG M ỘT SỐ LOẠI TỘI PH ẠM XÂM H ẠI DANH D Ự, NHÂN PH ẨM C ỦA NGƯ ỜI KHÁC",
+      "C. Tính có lỗi , mặt khách quan, mặt chủ quan.",
+      "D. Khách thể, mặt khách quan, chủ thể, mặt chủ quan."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1753,13 +1750,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Hoàn thành câu sau: “Bảo vệ con người trước hết là … và tự do của họ ”.",
     "options": [
-      "A. Bảo vệ tính mạng, sức khỏe, danh dự nhân phẩm.",
-      "B. Bảo vệ danh dự nhân phẩm, tính mạng, sức khỏe.",
-      "C. Bảo vệ sức khỏe, danh dự nhân phẩm.",
+      "A. Bảo vệ danh dự nhân phẩm, tính mạng, sức khỏe.",
+      "B. Bảo vệ sức khỏe, danh dự nhân phẩm.",
+      "C. Bảo vệ tính mạng, sức khỏe, danh dự nhân phẩm.",
       "D. Bảo vệ danh dự nhân phẩm."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1768,12 +1765,12 @@
     "question": ": Công cụ hữu hiệu nhất để bảo vệ quyền con người là:",
     "options": [
       "A. Hệ thống pháp luật.",
-      "B. Hệ thống chính tr ị.",
-      "C. Chuẩn mực đạo đức.",
+      "B. Chuẩn mực đạo đức.",
+      "C. Hệ thống chính tr ị.",
       "D. Phát triển kinh tế."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1781,13 +1778,13 @@
     "topicId": "hp2_other_topics_part2",
     "question": "Danh dự, nhân phẩm của một con người có từ khi nào?",
     "options": [
-      "A. Từ khi ra đời.",
-      "B. Từ khi trưởng thành.",
-      "C. Khi đã qua đời.",
-      "D. Từ khi đi học."
+      "A. Từ khi đi học.",
+      "B. Khi đã qua đời.",
+      "C. Từ khi ra đời.",
+      "D. Từ khi trưởng thành."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1795,12 +1792,12 @@
     "topicId": "hp2_other_topics_part2",
     "question": ": Điền từ còn thiếu vào câu sau: “Hành vi được coi là phạm tội xâm phạm danh dự nhân phẩm của người khác được thể hiện ở những hành vi …”.",
     "options": [
-      "A. Có lỗi gây nguy hiểm cho xã hội.  B. Gây nguy hiểm cho xã hội.",
-      "C. Có lỗi của con người.",
-      "D. Sai trái."
+      "A. Có lỗi của con người.",
+      "B. Có lỗi gây nguy hiểm cho xã hội.  B. Gây nguy hiểm cho xã hội.",
+      "C. Sai trái."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1809,12 +1806,12 @@
     "question": "Hoàn thành câu sau:  “Các tội xâm phạm danh dự nhân phẩm của con người là những hành vi có lỗi xâ m phạm ....... và bảo vệ về Danh dự nhân phẩm của người khác ”.",
     "options": [
       "A. Quyền được tôn trọng.",
-      "B. Lợi ích được công nhận.",
-      "C. Nghĩa vụ được tôn trọng.",
+      "B. Nghĩa vụ được tôn trọng.",
+      "C. Lợi ích được công nhận.",
       "D. Quyền được công nhận."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1822,13 +1819,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Nội dung:  “Mọi người có quyền bất khả xâm phạm về thân thể, được pháp luật bảo hộ về sức khỏe, danh dự và nhân phẩm ” được quy định trong văn bản pháp lý nào?",
     "options": [
-      "A. Điều 20 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013.",
-      "B. Điều 19 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013.",
-      "C. Điều 20 Hiến pháp nước Cộng hòa xã hội chủ nghĩa  Việt Nam năm 1999.",
-      "D. Điều 19 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 1999."
+      "A. Điều 19 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 1999.",
+      "B. Điều 20 Hiến pháp nước Cộng hòa xã hội chủ nghĩa  Việt Nam năm 1999.",
+      "C. Điều 19 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013.",
+      "D. Điều 20 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam năm 2013."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1842,7 +1839,7 @@
       "D. Pháp lệnh hình sự."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1850,13 +1847,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Xâm phạm tới quyền được tôn trọng và bảo vệ về nhân phẩm và danh dự là lỗi được thực hiện:",
     "options": [
-      "A. Cố ý hoặc vô ý.",
+      "A. Vô ý nhưng hậu quả nghiêm trọng.",
       "B. Cố ý.",
-      "C. Vô ý nhưng hậu quả nghiêm trọng.",
-      "D. Cả B và C."
+      "C. Cả B và C.",
+      "D. Cố ý hoặc vô ý."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1865,12 +1862,12 @@
     "question": "Nhân phẩm của một con người cụ thể được hiểu là:",
     "options": [
       "A. Phẩm chất, giá trị của con người.",
-      "B. Phẩm chất, trình độ của con người.",
+      "B. Giá trị, năng lực của con người.",
       "C. Phẩm chất, nhân cách của con người.",
-      "D. Giá trị, năng lực của con người."
+      "D. Phẩm chất, trình độ của con người."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1878,12 +1875,12 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Danh dự là sự coi trọng của dư luận xã hội, dựa trên yế u tố gì?",
     "options": [
-      "A. Giá trị tinh thần, đạo đức tốt đẹp của con người.",
-      "B. Giá trị vật chất, đạo đức tốt đẹp của con người.  C. Giá trị vật chất, tinh thần tốt đẹp của con người.",
-      "D. Giá trị riêng của một con người."
+      "A. Giá trị vật chất, đạo đức tốt đẹp của con người.  C. Giá trị vật chất, tinh thần tốt đẹp của con người.",
+      "B. Giá trị riêng của một con người.",
+      "C. Giá trị tinh thần, đạo đức tốt đẹp của con người."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1891,16 +1888,16 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Hành vi xâm ph ạm nhân ph ẩm, danh d ự của con ngư ời là:",
     "options": [
-      "A. Làm cho người đó bị xúc phạm, coi thường, khinh rẻ trong gia đình và ngoài xã hội.",
-      "B. Làm cho người đó được coi trọng, tín nhiệm trong gia đình và ngoài xã hội.",
-      "C. Làm cho người đó ít được coi trọng, tín  nhiệm trong gia đình và ngoài xã hội.",
-      "D. Làm cho người đó thường chỉ bị xúc phạm, coi thường, khinh rẻ trong cơ quan ngoài xã hội. C â u 1 2 : Để phòng ng ừa có hi ệu quả tội phạm xâm ph ạm nhân ph ẩm, danh d ự của con ngư ời đòi h ỏi các cơ quan ch ức năng ph ải xác đ ịnh chính xác:   A. Nguyên nhân, điều kiện của tình trạng tội phạm.",
-      "B. Tính chất và mức độ của tình trạng tội phạm.",
-      "C. Bối cảnh lịch sử cụ thể của từng loại tội phạm.",
-      "D. Yếu tố chủ quan nhằm phát sinh tình trạng tội phạm."
+      "A. Bối cảnh lịch sử cụ thể của từng loại tội phạm.",
+      "B. Làm cho người đó bị xúc phạm, coi thường, khinh rẻ trong gia đình và ngoài xã hội.",
+      "C. Làm cho người đó được coi trọng, tín nhiệm trong gia đình và ngoài xã hội.",
+      "D. Yếu tố chủ quan nhằm phát sinh tình trạng tội phạm.",
+      "E. Làm cho người đó ít được coi trọng, tín  nhiệm trong gia đình và ngoài xã hội.",
+      "F. Làm cho người đó thường chỉ bị xúc phạm, coi thường, khinh rẻ trong cơ quan ngoài xã hội. C â u 1 2 : Để phòng ng ừa có hi ệu quả tội phạm xâm ph ạm nhân ph ẩm, danh d ự của con ngư ời đòi h ỏi các cơ quan ch ức năng ph ải xác đ ịnh chính xác:   A. Nguyên nhân, điều kiện của tình trạng tội phạm.",
+      "G. Tính chất và mức độ của tình trạng tội phạm."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1908,13 +1905,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Phòng ng ừa tội phạm xâm ph ạm nhân phẩm, danh d ự của con ngư ời là vi ệc của:",
     "options": [
-      "A. Cơ quan Nhà nước, các tổ chức xã hội và công dân.",
-      "B. Cơ quan công quyền, các tổ chức tôn giáo và nhân dân.",
+      "A. Cơ quan công quyền, các tổ chức tôn giáo và nhân dân.",
+      "B. Cơ quan Nhà nước, các tổ chức xã hội và công dân.",
       "C. Cơ quan Nhà nước, các tổ chức tự quản và toàn xã hội.",
       "D. Cơ quan Nhà nước, các tổ chức tôn giáo, tín ngưỡng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1922,13 +1919,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Phòng, ch ống tội phạm xâm ph ạm nhân ph ẩm, danh d ự của con ngư ời được tiến hành theo mấy hướng?",
     "options": [
-      "A. Hai hướng cơ bản.",
+      "A. Năm hướng cơ bản.",
       "B. Ba hướng cơ bản.",
-      "C. Bốn hướng cơ bản.",
-      "D. Năm hướng cơ bản."
+      "C. Hai hướng cơ bản.",
+      "D. Bốn hướng cơ bản."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1936,13 +1933,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Cơ quan nào ch ịu trách nhi ệm ch ủ động, k ịp thời ban hành các đ ạo luật, ngh ị quyết về phòng, ch ống xâm ph ạm nhân ph ẩm, danh d ự của con ngư ời?",
     "options": [
-      "A. Quốc hội, hội đồng nhân dân các cấp.",
-      "B. Chính phủ và uỷ ban nhân dân các cấp.",
+      "A. Chính phủ và uỷ ban nhân dân các cấp.",
+      "B. Chủ tịch nước cộng hòa xã hội chủ nghĩa Việt Nam.",
       "C. Công an, viện kiểm sát, tòa án nhân d ân.",
-      "D. Chủ tịch nước cộng hòa xã hội chủ nghĩa Việt Nam."
+      "D. Quốc hội, hội đồng nhân dân các cấp."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1951,8 +1948,8 @@
     "question": "Cơ quan nào ch ịu trách nhi ệm cụ thể hoá các ch ỉ thị, ngh ị quyết của Đảng thành nh ững văn b ản pháp quy hư ớng dẫn, tổ chức các l ực lượng về phòng, ch ống xâm ph ạm nhân ph ẩm, danh dự của con ngư ời?",
     "options": [
       "A. Chính phủ và uỷ ban nhân dân các cấp.",
-      "B. Quốc hội, hội đồng nhân dân các cấp.  C. Công an, viện kiểm sát, tòa án nhân dân.",
-      "D. Chủ tịch nước cộng hòa xã hội chủ nghĩa Việt Nam."
+      "B. Chủ tịch nước cộng hòa xã hội chủ nghĩa Việt Nam.",
+      "C. Quốc hội, hội đồng nhân dân các cấp.  C. Công an, viện kiểm sát, tòa án nhân dân."
     ],
     "correctAnswer": "A",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
@@ -1963,13 +1960,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Lực lượng tr ực tiếp tổ chức, tri ển khai các ho ạt động về phòng, ch ống xâm ph ạm nhân phẩm, danh d ự của con ngư ời?",
     "options": [
-      "A. Công an nhân dân.",
+      "A. Lực lượng Hải quân.",
       "B. Quân đội nhân dân.",
       "C. Bộ đội biên phòng.",
-      "D. Lực lượng Hải quân."
+      "D. Công an nhân dân."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -1977,12 +1974,12 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Cơ quan nào ch ịu trách nhi ệm giám sát vi ệc tuân theo pháp lu ật đối với các ho ạt động đi ều tra, xét x ử, thi hành án, giam gi ữ, giáo d ục, cải tạo phạm nhân v ề phòng, ch ống xâm ph ạm nhân phẩm, danh d ự của con ngư ời?",
     "options": [
-      "A. Viện kiểm sát nhân dân.",
-      "B. Công an nhân dân.",
-      "C. Quân đội nhân dân.",
-      "D. Bộ đội biên phòng."
+      "A. Công an nhân dân.",
+      "B. Viện kiểm sát nhân dân.",
+      "C. Bộ đội biên phòng.",
+      "D. Quân đội nhân dân."
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "B",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
     "type": "Lý thuyết"
   },
@@ -1993,8 +1990,8 @@
     "options": [
       "A. Tòa án nhân dân.",
       "B. Công an nhân dân.",
-      "C. Quân đội nhân dân.",
-      "D. Viện kiểm sát nhân dân."
+      "C. Viện kiểm sát nhân dân.",
+      "D. Quân đội nhân dân."
     ],
     "correctAnswer": "A",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
@@ -2006,12 +2003,12 @@
     "question": "Tích c ực, ch ủ động phát hi ện mọi hoạt động vi ph ạm pháp lu ật về bảo đảm trật tự, an toàn giao thông đ ể thông báo cho cơ quan ch ức năng là:",
     "options": [
       "A. Công dân.",
-      "B. Cơ quan Công an.",
-      "C. Viện kiểm sát.",
+      "B. Viện kiểm sát.",
+      "C. Cơ quan Công an.",
       "D. Tòa án nhân dân. BÀI 6: AN TOÀN THÔNG TIN VÀ PHÒNG, CH ỐNG VI PH ẠM PHÁP LU ẬT TRÊN KHÔNG GIAN M ẠNG"
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2021,7 +2018,7 @@
     "options": [
       "A. An toàn thông tin mạng .",
       "B. An ninh mạng . C. An toàn thông tin .",
-      "D. An ninh quốc gia ."
+      "C. An ninh quốc gia ."
     ],
     "correctAnswer": "A",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
@@ -2032,13 +2029,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Lu ật An ninh m ạng hi ện hành đư ợc Qu ốc hội thông qua vào th ời gian nào?",
     "options": [
-      "A. Ngày 12/ 06/2018 .",
-      "B. Ngày 16/02/2018 .",
-      "C. Ngày 12/ 06/2019 .",
-      "D. Ngày 16/02/2019 ."
+      "A. Ngày 12/ 06/2019 .",
+      "B. Ngày 16/02/2019 .",
+      "C. Ngày 12/ 06/2018 .",
+      "D. Ngày 16/02/2018 ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2046,13 +2043,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "T ội phạm công ngh ệ cao là gì?",
     "options": [
-      "A. Tội phạm quốc tế hoạt động trong phạm vi lãnh thổ Việt Nam, sử dụng công nghệ cao để phạm tội .",
-      "B. Tội phạm đặc biệt nguy hiểm hoạt động  trong và ngoài phạm vi lãnh thổ Việt Nam, sử dụng công nghệ cao để phạm tội .",
+      "A. Tội phạm đặc biệt nguy hiểm hoạt động  trong và ngoài phạm vi lãnh thổ Việt Nam, sử dụng công nghệ cao để phạm tội .",
+      "B. Tội phạm quốc tế hoạt động trong phạm vi lãnh thổ Việt Nam, sử dụng công nghệ cao để phạm tội .",
       "C. Tội phạm được thực hiện bằng việc cố ý sử dụng tri thức, kỹ năng, công cụ, phương tiện công nghệ thông tin ở trình độ cao .",
       "D. Tất cả đều đúng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2060,13 +2057,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Nh ận định nào sau đây đúng v ề tình hình an toàn thông tin ở Việt Nam trong năm 2019?",
     "options": [
-      "A. Số cuộc tấn công mạng vào các hệ thống thông tin Việt Nam có chiều hướng tang.",
-      "B. Số cuộc tấn công mạng vào các hệ thống thông tin Việt Nam có chiều hướng tăng vào đầu năm, giảm vào cuối năm .",
-      "C. Số cuộc tấn c ông mạng vào các hệ thống thông tin Việt Nam có chiều hướng giảm vào đầu năm, tăng vào cuối năm .",
-      "D. Số cuộc tấn công mạng vào các hệ thống thông tin Việt Nam có chiều hướng giảm ."
+      "A. Số cuộc tấn công mạng vào các hệ thống thông tin Việt Nam có chiều hướng giảm .",
+      "B. Số cuộc tấn công mạng vào các hệ thống thông tin Việt Nam có chiều hướng tang.",
+      "C. Số cuộc tấn công mạng vào các hệ thống thông tin Việt Nam có chiều hướng tăng vào đầu năm, giảm vào cuối năm .",
+      "D. Số cuộc tấn c ông mạng vào các hệ thống thông tin Việt Nam có chiều hướng giảm vào đầu năm, tăng vào cuối năm ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2074,13 +2071,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Đâu không ph ải là hành vi vi ph ạm pháp lu ật trên không gian m ạng?",
     "options": [
-      "A. Gửi nhiều tin nhắn cùng lúc, cho nhiều người khác nhau .",
-      "B. Đăng thông tin sai sự thật, phát tán dưới vỏ bọc tin tức .",
-      "C. Sử dụng lén tài khoản mạng xã hội của người khác .",
-      "D. Đăng tin sai lệch về tình hình dịch bệnh covid -19."
+      "A. Đăng tin sai lệch về tình hình dịch bệnh covid -19.",
+      "B. Gửi nhiều tin nhắn cùng lúc, cho nhiều người khác nhau .",
+      "C. Đăng thông tin sai sự thật, phát tán dưới vỏ bọc tin tức .",
+      "D. Sử dụng lén tài khoản mạng xã hội của người khác ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2093,8 +2090,8 @@
       "C. Những thông điệp vô nghĩa và gây phiền toái cho người nhận, được gửi đến nhiều người dùng với cùng một nội dung .",
       "D. Gửi tin nhắ n tự động trên nhiều kênh khác nhau ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2102,9 +2099,9 @@
     "topicId": "hp2_other_topics_part3",
     "question": ": Các đ ối tượng chi ếm đo ạt tài kho ản mạng xã h ội thông thư ờng nh ằm mục đích gì?  A. Thực hiện âm mưu chính trị .",
     "options": [
-      "B. Thể hiện trình độ công nghệ thông tin .",
-      "C. Làm rối loạn an ninh quốc gia .",
-      "D. Lừa đảo, chiếm đoạt tài sản, giải qu yết thù hằn cá nhân ."
+      "A. Thể hiện trình độ công nghệ thông tin .",
+      "B. Lừa đảo, chiếm đoạt tài sản, giải qu yết thù hằn cá nhân .",
+      "C. Làm rối loạn an ninh quốc gia ."
     ],
     "correctAnswer": "A",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
@@ -2115,13 +2112,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Web g ồm nh ững trang không đư ợc đánh d ấu, ch ỉ mục và không th ể tìm ki ếm đư ợc khi dùng các công c ụ tìm ki ếm thông thư ờng, đư ợc gọi là:",
     "options": [
-      "A. Dark web .",
-      "B. Deep web .",
+      "A. Deep web .",
+      "B. Dark web .",
       "C. World Wide Web .",
       "D. Dark web và Deep web ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2129,12 +2126,12 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Hành vi l ợi dụng m ạng xã h ội để cung c ấp, chia s ẻ thông tin gi ả mạo, thông tin sai s ự thật, xuyên t ạc, vu kh ống, xúc ph ạm uy tín c ủa cơ quan, t ổ chức, danh d ự, nhân ph ẩm của cá nhân s ẽ bị xử phạt như th ế nào?",
     "options": [
-      "A. Cảnh cáo .",
-      "B. Phạt tiền từ 10 - 20 triệu đồng .",
+      "A. Phạt tiền từ 10 - 20 triệu đồng .",
+      "B. Cảnh cáo .",
       "C. Giáo dục, cải tạo không giam giữ và phạt tiền .",
       "D. Phạt 01 - 03 năm tù và phạt tiền ."
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "B",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
     "type": "Lý thuyết"
   },
@@ -2143,13 +2140,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "“Phishing ” là gì?",
     "options": [
-      "A. Hình thức chiếm đoạt tài khoản mạng xã hội .",
-      "B. Hình thức tín dụng đen .",
-      "C. Hình thức chiếm quyền giám sát camera .",
-      "D. Hình thức kinh doanh hàng cấm ."
+      "A. Hình thức kinh doanh hàng cấm .",
+      "B. Hình thức chiếm quyền giám sát camera .",
+      "C. Hình thức tín dụng đen .",
+      "D. Hình thức chiếm đoạt tài khoản mạng xã hội ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2157,13 +2154,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Lãnh th ổ không gian m ạng là :",
     "options": [
-      "A. Lãnh th ổ chưa thể xác định .",
+      "A. Lãnh thổ đang tranh chấp .",
       "B. Một bộ phận hợp thành lãnh thổ quốc gia .",
-      "C. Lãnh thổ đang tranh chấp .",
-      "D. Một bộ phận tách rời với chủ quyền quốc gia ."
+      "C. Một bộ phận tách rời với chủ quyền quốc gia .",
+      "D. Lãnh th ổ chưa thể xác định ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2171,17 +2168,16 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Bi ện pháp phòng, ch ống vi ph ạm pháp lu ật trên không giang m ạng: “… về bảo vệ chủ quyền qu ốc gia, các l ợi ích và s ự nguy h ại đến từ không gian m ạng”. Chọn cụm từ thích hợp điền vào ch ỗ trống trong câu trên.",
     "options": [
-      "A. Bồi dưỡng cán bộ chủ chốt .",
-      "B. Công khai chiến lược .",
-      "C. Hợp tác quốc tế .",
-      "D. Giáo dục nâng cao nhận thức . Câu 13: Trang nào thư ờng xuyên đ ăng tải các thông tin x ấu, độc, chia rẽ đoàn k ết giữa Đảng và nhân dân?",
       "A. Thông tấn xã Việt Nam .",
-      "B. Đại Đoàn Kết .",
-      "C. Dân Luận .",
-      "D. Nhịp cầu tri thức ."
+      "B. Hợp tác quốc tế .",
+      "C. Nhịp cầu tri thức .",
+      "D. Bồi dưỡng cán bộ chủ chốt .",
+      "E. Đại Đoàn Kết .",
+      "F. Công khai chiến lược .",
+      "G. Dân Luận ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2189,13 +2185,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Đâu là bi ện pháp phòng, ch ống vi ph ạm pháp lu ật trên không gian m ạng?",
     "options": [
-      "A. Tuyên truyền, phổ biến, giáo dục các quy định của pháp luật về quản lý không gian mạng .",
-      "B. Tăng cường hướng dẫn sử dụng các trang mạng xã hội .",
+      "A. Tăng cường hướng dẫn sử dụng các trang mạng xã hội .",
+      "B. Tuyên truyền, phổ biến, giáo dục các quy định của pháp luật về quản lý không gian mạng .",
       "C. Hạn chế sử dụng các trang mạng xã hội, xây dựng trang mạng xã hội riêng ở Việt Nam .",
       "D. Tăng nặng các hình phạt khi có hành vi vi phạm pháp luật trên không gian mạng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2203,13 +2199,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Cơ quan nào c ủa Quân đ ội Nhân dân Vi ệt Nam chuyên trách v ấn đề an ninh m ạng?",
     "options": [
-      "A. Tổng cục Công nghiệp Quốc phòng .",
-      "B. Bộ Tư lệnh Tác chiến không gian mạng .",
-      "C. Bộ Tổng tham mưu .",
+      "A. Bộ Tổng tham mưu .",
+      "B. Tổng cục Công nghiệp Quốc phòng .",
+      "C. Bộ Tư lệnh Tác chiến không gian mạng .",
       "D. Cục An ninh mạng và phòng, chống tội phạm sử dụng công nghệ cao ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2218,12 +2214,12 @@
     "question": "Nguyên t ắc của Việt Nam trong v ấn đề hợp tác qu ốc tế về an toàn thông tin m ạng:",
     "options": [
       "A. Không hợp tác vì có khả năng gây mất an toàn thông tin mạng .",
-      "B. Hợp tác rất hạn chế, tùy từng thời điểm nhất định .",
-      "C. Hợp tác trên cơ sở tôn trọng độc lập, chủ quyền và toàn vẹn lãnh thổ quốc gia, không can thiệp vào cô ng việc nội bộ của nhau, bình đẳng và các bên cùng có lợi .",
+      "B. Hợp tác trên cơ sở tôn trọng độc lập, chủ quyền và toàn vẹn lãnh thổ quốc gia, không can thiệp vào cô ng việc nội bộ của nhau, bình đẳng và các bên cùng có lợi .",
+      "C. Hợp tác rất hạn chế, tùy từng thời điểm nhất định .",
       "D. Cả hai đáp án B và C."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2231,13 +2227,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Cơ s ở pháp lý quy đ ịnh cụ thể nhất về đảm bảo an toàn thông tin m ạng là :",
     "options": [
-      "A. Hiến pháp 2013 .",
-      "B. Luật An ninh quốc gia 2004 .",
-      "C. Luật An toàn thông tin mạng 2015 .",
-      "D. Luật An toàn thông tin mạng 2018 ."
+      "A. Luật An toàn thông tin mạng 2018 .",
+      "B. Luật An toàn thông tin mạng 2015 .",
+      "C. Hiến pháp 2013 .",
+      "D. Luật An ninh quốc gia 2004 ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2245,13 +2241,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Hành vi nào trên không gian m ạng là hành vi vi ph ạm pháp lu ật?",
     "options": [
-      "A. Chiếm đoạt tài khoản mạng xã hội .",
-      "B. Sử dụng cùng lúc nhiều tài khoản mạng xã hội .",
-      "C. Sử dụng tài khoản chưa xác thực .",
-      "D. Cả ba đáp án trên đều đúng ."
+      "A. Sử dụng tài khoản chưa xác thực .",
+      "B. Cả ba đáp án trên đều đúng .",
+      "C. Sử dụng cùng lúc nhiều tài khoản mạng xã hội .",
+      "D. Chiếm đoạt tài khoản mạng xã hội ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2259,12 +2255,12 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Trách nhi ệm của sinh viên trên không gian m ạng:",
     "options": [
-      "A. Tăng thời gian tương tác trên không gian mạng để nắm bắt thông tin kịp thời . B. Nhận thức đúng an toàn thông tin, không thực hiện các hành vi vi phạm pháp luật trên không gian mạng .",
-      "C. Tích cực học tập môn Giáo dục Quốc phòng và An ninh .",
-      "D. Không sử dụng mạng xã hội ."
+      "A. Không sử dụng mạng xã hội .",
+      "B. Tích cực học tập môn Giáo dục Quốc phòng và An ninh .",
+      "C. Tăng thời gian tương tác trên không gian mạng để nắm bắt thông tin kịp thời . B. Nhận thức đúng an toàn thông tin, không thực hiện các hành vi vi phạm pháp luật trên không gian mạng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2272,13 +2268,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Ho ạt động nào sau đây thư ờng th ấy ở Dark web?",
     "options": [
-      "A. Kêu gọi biểu tình, mua bán người .",
-      "B. Quảng cáo, buôn bán hàng giả, bất động sản .",
+      "A. Quảng cáo, buôn bán hàng giả, bất động sản .",
+      "B. Chợ đen, khủng bố, khiêu dâm, lừa đảo .",
       "C. Phát trực tiếp, trò chơi bạo lực .",
-      "D. Chợ đen, khủng bố, khiêu dâm, lừa đảo ."
+      "D. Kêu gọi biểu tình, mua bán người ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2286,13 +2282,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Ba góc của tam giác b ảo mật CIA đ ối với một thông tin c ần bảo vệ gồm:",
     "options": [
-      "A. Tính bí mật, tính toàn vẹn và tính sẵn sàng .",
-      "B. Tính bí mật, tính tuyệt đối, tính sẵn sàng .",
-      "C. Tính tương đối, tính toàn vệ, tính sẵn sàng .",
-      "D. Tính hệ thống, tính công nghệ, tính an toàn ."
+      "A. Tính tương đối, tính toàn vệ, tính sẵn sàng .",
+      "B. Tính hệ thống, tính công nghệ, tính an toàn .",
+      "C. Tính bí mật, tính tuyệt đối, tính sẵn sàng .",
+      "D. Tính bí mật, tính toàn vẹn và tính sẵn sàng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2306,7 +2302,7 @@
       "D. Người dùng internet chủ yếu tập trung ở các  đô thị lớn ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2320,7 +2316,7 @@
       "D. Tất cả đáp án trên."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2328,13 +2324,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "B ảo vệ an ninh mạng là gì?",
     "options": [
-      "A. Là phòng ngừa, phát hiện, ngăn chặn, xử lý hành vi xâm phạm an ninh quốc gia .",
+      "A. Là ngăn chặn tuyệt đối, xử lý hành vi xâm phạm an ninh mạng .",
       "B. Là phòng ngừa, phát hiện, ngăn chặn, xử lý hành vi xâm phạm an ninh mạng .",
-      "C. Là ngăn chặn tuyệt đối, xử lý hành vi xâm phạm an ninh mạng .",
+      "C. Là phòng ngừa, phát hiện, ngăn chặn, xử lý hành vi xâm phạm an ninh quốc gia .",
       "D. Là phòng ngừa, ngăn chặn, xử lý  hình sự các hành vi xâm phạm an ninh mạng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2342,17 +2338,16 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Hành vi s ử dụng không gian m ạng, công ngh ệ thông tin ho ặc phương ti ện điện tử để thực hiện tội phạm đư ợc quy đ ịnh tại Bộ luật Hình s ự hiện hành g ọi là gì?",
     "options": [
-      "A. Khủng bố mạng .",
-      "B. Tội phạm mạng .",
-      "C. Hành vi đe dọa an ninh mạng .",
+      "A. Tuyệt đối bảo vệ an ninh mạng trong quốc phòng, an ninh, phát triển kinh tế - xã hội, khoa học, công nghệ và đối ngoại .",
+      "B. Khủng bố mạng .",
+      "C. Là phòng ngừa, phát hiện, ngăn chặn, xử lý hành vi xâm phạm an ninh mạng .",
       "D. Người dùng mạng nguy hiểm . Câu 26: Đâu là chính sách c ủa nhà nư ớc về an ninh m ạng?",
-      "A. Là phòng ngừa, phát hiện, ngăn chặn, xử lý hành vi xâm phạm an ninh mạng .",
-      "B. Tuyệt đối bảo vệ an ninh mạng trong quốc phòng, an ninh, phát triển kinh tế - xã hội, khoa học, công nghệ và đối ngoại .",
-      "C. Xây dựng không gian mạng lành mạnh, không gây phương hại đến an ninh quốc gia, trật tự, an toàn xã hội, quyền và lợi ích hợp pháp của cơ quan, tổ chức, cá nhân .",
-      "D. Bình đẳng bảo vệ an ninh mạng trong quốc phòng, an ninh, phát  triển kinh tế - xã hội, khoa học, công nghệ và đối ngoại ."
+      "E. Xây dựng không gian mạng lành mạnh, không gây phương hại đến an ninh quốc gia, trật tự, an toàn xã hội, quyền và lợi ích hợp pháp của cơ quan, tổ chức, cá nhân .",
+      "F. Tội phạm mạng .",
+      "G. Hành vi đe dọa an ninh mạng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "F",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2360,13 +2355,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Ch ọn đáp án đúng đi ền vào ch ỗ trống sau: “… áp d ụng các bi ện pháp đ ể bảo vệ không gian m ạng qu ốc gia; phòng ng ừa, xử lý hành vi xâm ph ạm an ninh qu ốc gia, tr ật tự, an toàn xã h ội, quy ền và lợi ích h ợp pháp c ủa cơ quan, t ổ chức, cá nhân trên không gian mạng”.",
     "options": [
-      "A. Công an .",
-      "B. Chính phủ .",
-      "C. Nhà nước .",
-      "D. Đảng Cộng sản Việt Nam ."
+      "A. Đảng Cộng sản Việt Nam .",
+      "B. Công an .",
+      "C. Chính phủ .",
+      "D. Nhà nước ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2374,13 +2369,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Đâu là thông tin trên không gian m ạng có n ội dung tuyên truy ền chống Nhà nư ớc Cộng hòa xã h ội chủ nghĩa Vi ệt Nam?",
     "options": [
-      "A. Xúc phạm c ơ quan, cá nhân, tổ chức trên mạng xã hội .",
+      "A. Chiến tranh tâm lý, kích động chiến tranh xâm lược, chia rẽ, gây thù hận giữ a các dân tộc, tôn giáo và nhân dân các nước .",
       "B. Đăng tải các thông tin sai lệch lên các trang mạng .",
-      "C. Lừa đảo chiếm đoạt tài sản, chiếm đoạt quyền giám sát camera, tài khoản mạng xã hội .",
-      "D. Chiến tranh tâm lý, kích động chiến tranh xâm lược, chia rẽ, gây thù hận giữ a các dân tộc, tôn giáo và nhân dân các nước ."
+      "C. Xúc phạm c ơ quan, cá nhân, tổ chức trên mạng xã hội .",
+      "D. Lừa đảo chiếm đoạt tài sản, chiếm đoạt quyền giám sát camera, tài khoản mạng xã hội ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2388,13 +2383,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "H ệ thống thông tin quan tr ọng về an ninh qu ốc gia g ồm:",
     "options": [
-      "A. Hệ thống thông tin chung, bảo quản hiện vật, tài liệu có giá trị .",
-      "B. Hệ thống thông tin quan trọng phục vụ hoạt động của cơ quan, tổ chức ở các cấp .",
-      "C. Hệ thống thông tin lưu trữ, xử lý thông tin thuộc bí mật cơ quan .",
-      "D. Hệ thống thông tin quân sự, an ninh, ngoại giao, cơ yếu ."
+      "A. Hệ thống thông tin quân sự, an ninh, ngoại giao, cơ yếu .",
+      "B. Hệ thống thông tin chung, bảo quản hiện vật, tài liệu có giá trị .",
+      "C. Hệ thống thông tin quan trọng phục vụ hoạt động của cơ quan, tổ chức ở các cấp .",
+      "D. Hệ thống thông tin lưu trữ, xử lý thông tin thuộc bí mật cơ quan ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2402,13 +2397,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Đâu là tình hu ống nguy hi ểm về an ninh m ạng?",
     "options": [
-      "A. Xuất hiện thông tin  kích động  trên không gian mạng .",
-      "B. Tấn công  vào hệ thống thông  tin quan trọng .",
-      "C. Tấn công thông tin quốc gia trên mạng .",
-      "D. Tấn công mạng nhằm phá hủy công trình quan trọng về an ninh quốc gia, mục tiêu quan trọng về an ninh quốc gia ."
+      "A. Tấn công mạng nhằm phá hủy công trình quan trọng về an ninh quốc gia, mục tiêu quan trọng về an ninh quốc gia .",
+      "B. Tấn công thông tin quốc gia trên mạng .",
+      "C. Xuất hiện thông tin  kích động  trên không gian mạng .",
+      "D. Tấn công  vào hệ thống thông  tin quan trọng ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2416,12 +2411,12 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Lu ật an toàn thông tin m ạng hi ện hành là :  A. Luật an toàn thông tin mạng năm 2015 .",
     "options": [
+      "A. Luật an toàn thông tin mạng năm 2020 .",
       "B. Luật an toàn thông tin mạng năm 2017 .",
-      "C. Luật an toàn thông tin mạng năm 2019 .",
-      "D. Luật an toàn thông tin mạng năm 2020 ."
+      "C. Luật an toàn thông tin mạng năm 2019 ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2429,13 +2424,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Thông tin cá nhân là gì?",
     "options": [
-      "A. Thông tin cá nhân  là thông tin gắn với việc xác định danh tính của một người cụ thể .",
-      "B. Thông tin cá nhân là thô ng tin của từng người .",
-      "C. Thông tin cá nhân là thông tin của cá nhân do cơ quan nhà nước quản lý .",
-      "D. Tất cả đáp án đều đúng ."
+      "A. Thông tin cá nhân là thông tin của cá nhân do cơ quan nhà nước quản lý .",
+      "B. Tất cả đáp án đều đúng .",
+      "C. Thông tin cá nhân  là thông tin gắn với việc xác định danh tính của một người cụ thể .",
+      "D. Thông tin cá nhân là thô ng tin của từng người ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2444,12 +2439,12 @@
     "question": "Theo Lu ật an toàn thông tin m ạng hi ện hành, vi ệc gửi thông tin trên m ạng ph ải bảo đảm yêu c ầu nào sau đây?",
     "options": [
       "A. Không giả mạo nguồn gốc gửi thông tin .",
-      "B. Tuân thủ quy định của Bộ Công An và quy định khác có liên quan .",
-      "C. Không gửi thông tin cho nhiều người cùng lúc .",
+      "B. Không gửi thông tin cho nhiều người cùng lúc .",
+      "C. Tuân thủ quy định của Bộ Công An và quy định khác có liên quan .",
       "D. Không gửi thông tin về bí mật nhà nước ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2457,13 +2452,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Theo B ộ luật Hình s ự hiện hành, t ội phạm trong lĩnh v ực công ngh ệ thông tin, m ạng viễn thông có hình ph ạt tù cao nh ất là:",
     "options": [
-      "A. 05 năm .",
-      "B. 10 năm .",
-      "C. 15 năm .",
+      "A. 10 năm .",
+      "B. 15 năm .",
+      "C. 05 năm .",
       "D. 20 năm ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2471,13 +2466,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Theo B ộ luật Hình s ự hiện hành, t ội phạm trong lĩnh v ực công ngh ệ thông tin, m ạng viễn thông quy đ ịnh tại Điều nào?",
     "options": [
-      "A. Điều 200 đến Điều 215 .",
-      "B. Điều 285 đến Điều 295 .",
-      "C. Điều 285 đế n Điều 294 .",
+      "A. Điều 285 đế n Điều 294 .",
+      "B. Điều 200 đến Điều 215 .",
+      "C. Điều 285 đến Điều 295 .",
       "D. Điều 200 đến Điều 214 ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2485,13 +2480,13 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Cơ quan nào th ống nh ất quản lý nhà nư ớc về an toàn thông tin m ạng?",
     "options": [
-      "A. Bộ Công an .",
-      "B. Chính phủ .",
-      "C. Bộ Thông tin và Truyền thông .",
+      "A. Bộ Thông tin và Truyền thông .",
+      "B. Bộ Công an .",
+      "C. Chính phủ .",
       "D. Ủy ban nhân dân các cấp ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2500,11 +2495,11 @@
     "question": "Trách nhi ệm tổ chức đào t ạo, ph ổ biến kiến thức về an toàn thông tin m ạng trong cơ sở giáo d ục đại học thu ộc về cơ quan nào?",
     "options": [
       "A. Bộ Công an . B. Bộ Giáo dục và Đào tạo .",
-      "C. Bộ Lao động - Thương binh và Xã hội .",
-      "D. Ban Tuyên giáo Trung ương Đảng ."
+      "B. Ban Tuyên giáo Trung ương Đảng .",
+      "C. Bộ Lao động - Thương binh và Xã hội ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2512,12 +2507,12 @@
     "topicId": "hp2_other_topics_part3",
     "question": "Ph ần mềm có kh ả năng gây ra ho ạt động không bình thư ờng cho m ột phần hay toàn bộ hệ thống thông tin ho ặc thực hiện sao chép, s ửa đổi, xóa b ỏ trái phép thông tin lưu tr ữ trong h ệ thống thông tin là :",
     "options": [
-      "A. Phần mềm phá thông tin .",
-      "B. Phần mềm chứa mã độc .",
-      "C. Hệ thống lọc phần mềm độc hại .",
+      "A. Hệ thống lọc phần mềm độc hại .",
+      "B. Phần mềm phá thông tin .",
+      "C. Phần mềm chứa mã độc .",
       "D. Phần mềm độc hại ."
     ],
-    "correctAnswer": "A",
+    "correctAnswer": "B",
     "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
     "type": "Lý thuyết"
   },
@@ -2526,13 +2521,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Hành vi nào sau đây b ị nghiêm c ấm?",
     "options": [
-      "A. Gửi thư điện tử cho các địa chỉ chưa rõ nguồn gốc .",
+      "A. Dừng hoạt động bình thường của hệ thống thông tin hoặc tới khả năng truy nhập hệ thống thông tin của người sử dụng .",
       "B. Phát tán thư điện tử, phần mềm, thiết lập hệ thống thông tin mới .",
-      "C. Dừng hoạt động bình thường của hệ thống thông tin hoặc tới khả năng truy nhập hệ thống thông tin của người sử dụng .",
+      "C. Gửi thư điện tử cho các địa chỉ chưa rõ nguồn gốc .",
       "D. Ngăn chặn việc truyề n tải thông tin trên mạng, can thiệp, truy nhập, gây nguy hại, xóa, thay đổi, sao chép và làm sai lệch thông tin trên mạng trái pháp luật ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2540,13 +2535,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Nguyên t ắc bảo vệ thông tin cá nhân trên m ạng là :",
     "options": [
-      "A. Cá nhân tự bảo vệ thông tin cá nhân của mình và tuân thủ qu y định của pháp luật về cung cấp thông tin cá nhân khi sử dụng dịch vụ trên mạng .",
-      "B. Cơ quan, tổ chức, cá nhân xử lý thông tin cá nhân có trách nhiệm bảo đảm an toàn thông tin mạng đối với thông tin do mình xử lý .",
-      "C. Tổ chức, cá nhân xử lý thông tin cá nhân phải  xây dựng và công bố công khai biện pháp xử lý, bảo vệ thông tin cá nhân của tổ chức, cá nhân mình .",
+      "A. Tổ chức, cá nhân xử lý thông tin cá nhân phải  xây dựng và công bố công khai biện pháp xử lý, bảo vệ thông tin cá nhân của tổ chức, cá nhân mình .",
+      "B. Cá nhân tự bảo vệ thông tin cá nhân của mình và tuân thủ qu y định của pháp luật về cung cấp thông tin cá nhân khi sử dụng dịch vụ trên mạng .",
+      "C. Cơ quan, tổ chức, cá nhân xử lý thông tin cá nhân có trách nhiệm bảo đảm an toàn thông tin mạng đối với thông tin do mình xử lý .",
       "D. Tất cả đáp án đều đúng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2555,12 +2550,12 @@
     "question": "H ệ thống thông tin đư ợc phân lo ại theo c ấp độ an toàn như th ế nào?",
     "options": [
       "A. Phân thành 05 cấp độ .",
-      "B. Phân thành 04 cấp độ .",
-      "C. Phân thành 03  cấp độ .",
+      "B. Phân thành 03  cấp độ .",
+      "C. Phân thành 04 cấp độ .",
       "D. Phân thành 02 cấp độ . BÀI 7: AN NINH PHI TRUY ỀN TH ỐNG VÀ Đ ẤU TRANH PHÒNG CH ỐNG CÁC ĐE DỌA AN NINH PHI TRUY ỀN TH ỐNG Ở VIỆT NAM"
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2568,12 +2563,12 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Tìm câu trả lời sai: Định dạng các mối đe dọa an ninh phi truyền thống bao gồm ? A. An ninh con người.",
     "options": [
+      "A. An ninh tài chính.",
       "B. An ninh Tổ quốc .",
-      "C. An ninh tài chính.",
-      "D. An ninh năng lượng."
+      "C. An ninh năng lượng."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2581,13 +2576,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Tìm câu trả lời sai: Định dạng các mối đe dọa an ninh phi truyền thống bao gồm ?",
     "options": [
-      "A. An ninh lương thực .",
-      "B. An ninh quốc gia .",
-      "C. Biến đổi khí hậu .",
+      "A. An ninh quốc gia .",
+      "B. Biến đổi khí hậu .",
+      "C. An ninh lương thực .",
       "D. Thiên tai ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2595,13 +2590,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Hãy chọn cụm từ đúng tương ứng vị trí (1) và (2) để làm rõ khái niệm sau: “Nội dung của an ninh truyền thống hay an ninh quốc gia chính là … (1) ... (2), an ninh xã hội.",
     "options": [
-      "A. An ninh quốc gia  (1); sức mạnh  vũ trang (2) .",
-      "B. Tiềm lực vũ trang (1); an ninh quố c phòng  (2).",
+      "A. Tiềm lực vũ trang (1); an ninh quố c phòng  (2).",
+      "B. An ninh quốc gia  (1); sức mạnh  vũ trang (2) .",
       "C. An ninh chính trị  (1); an ninh quân sự  (2).",
       "D. An ninh  quốc phòng (1); thế trận quốc phòng (2) ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2609,13 +2604,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Một trong giải pháp phòng ngừa, ứng phó với các mối đe dọa an ninh phi truyền thống ở Việt Nam hiện nay là :",
     "options": [
-      "A. Phối hợp chặt chẽ chống lực lượng gián điệp  từ bên ngoài vào và lực lượng phản động  bên trong.",
+      "A. Tổ chức lực lượng quần chúng  rộng rãi xây dựng nền quốc phòng toàn dân, an ninh nhân dân.",
       "B. Tổ chức lực lượng phòng ngừa, ứng phó với các mối đe dọa an ninh phi truyền thống.",
       "C. Chủ động, tích cực phòng ngừa, ứng phó với các mối đe dọa an ninh phi truyền thống .",
-      "D. Tổ chức lực lượng quần chúng  rộng rãi xây dựng nền quốc phòng toàn dân, an ninh nhân dân."
+      "D. Phối hợp chặt chẽ chống lực lượng gián điệp  từ bên ngoài vào và lực lượng phản động  bên trong."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2623,13 +2618,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": ": Tìm câu trả lời đúng : Những thách thức và đe dọa an ninh phi truyền thống là?",
     "options": [
-      "A. Cản trở quá trình phát triển nền văn hóa tiên tiến đậm đà bản sắc dân tộc.",
-      "B. Làm suy giảm sức mạnh của sự nghiệp đổi mới, sự nghiệp công nghiệp hóa, hiện đại hóa đất nước.",
-      "C. Làm suy giảm sức mạnh quốc phòng của đất nước .",
-      "D. Làm suy giảm sức mạnh sẵn sàng chiến đấu của lực lượng vũ trang."
+      "A. Làm suy giảm sức mạnh quốc phòng của đất nước .",
+      "B. Cản trở quá trình phát triển nền văn hóa tiên tiến đậm đà bản sắc dân tộc.",
+      "C. Làm suy giảm sức mạnh sẵn sàng chiến đấu của lực lượng vũ trang.",
+      "D. Làm suy giảm sức mạnh của sự nghiệp đổi mới, sự nghiệp công nghiệp hóa, hiện đại hóa đất nước."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2637,12 +2632,12 @@
     "topicId": "hp2_other_topics_part4",
     "question": ": Tìm câu trả  lời đúng: Những thách thức và đe dọa an ninh phi truyền thống là?  A. Cản trở quá trình phát triển nền văn hóa tiên tiến đậm đà bản sắc dân tộc.",
     "options": [
-      "B. Gây mất ổn định của quốc gia.",
-      "C. Làm suy giảm sức mạnh an ninh của đất nước.",
-      "D. Làm suy giảm sức mạnh sẵn sàng chiến đấu  của lực lượng vũ trang."
+      "A. Làm suy giảm sức mạnh sẵn sàng chiến đấu  của lực lượng vũ trang.",
+      "B. Làm suy giảm sức mạnh an ninh của đất nước.",
+      "C. Gây mất ổn định của quốc gia."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2650,13 +2645,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": ": Điền cụm từ phù hợp vào chỗ trống: “Nâng cao nhận thức về các mối đe dọa an ninh phi truyền thống đối với an ninh con người, an ninh cộng đồng, ....” để phòng ngừa, ứng phó đối với các mối đe dọa an ninh phi truyền thống.",
     "options": [
-      "A. Hai nhiệm vụ chiến lược xây dựng và bảo vệ Tổ quốc .",
-      "B. Sức mạnh  của lực lượng vũ trang.",
-      "C. Sự nghiệp công nghiệp hoá, hiện đại hoá đất nước.",
+      "A. Sự nghiệp công nghiệp hoá, hiện đại hoá đất nước.",
+      "B. Hai nhiệm vụ chiến lược xây dựng và bảo vệ Tổ quốc .",
+      "C. Sức mạnh  của lực lượng vũ trang.",
       "D. An ninh quốc gia và an ninh nhân loại ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2665,12 +2660,12 @@
     "question": ": Điền cụm từ phù hợp vào chỗ trống: “Nâng cao nhận thức về các mối đe dọa an ninh phi truyền thống đối với an ninh con người, …” để phòng ngừa, ứng phó đối với các mối đe dọa an ninh phi truyền thống.",
     "options": [
       "A. An ninh quốc gia và an ninh toàn cầu .",
-      "B. Sức mạnh của lực lượng vũ trang.",
-      "C. An ninh cộng đồng.",
+      "B. An ninh cộng đồng.",
+      "C. Sức mạnh của lực lượng vũ trang.",
       "D. Sự nghiệp công nghiệp hoá, hiện đại hoá đất nước."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2679,12 +2674,12 @@
     "question": ": Điền cụm từ phù hợp vào chỗ trống: “Nâng cao … về các mối đe dọa an ninh phi truyền thống đối với an ninh con người, an ninh cộng đồng ” để phòng ngừa, ứng phó đối với các mối đe dọa an ninh phi truyền thống.",
     "options": [
       "A. Nhận thức.",
-      "B. Ý thức.",
-      "C. Hành động.",
+      "B. Hành động.",
+      "C. Ý thức.",
       "D. Khả năng ứng phó."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2692,13 +2687,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "1: Giải pháp phòng ngừa, ứng phó đối với các mối đe dọa an ninh phi truyền thống  là: “...... và tăng cường hợp tác quốc tế về phòng ngừa, kiểm soát và ứng  phó với các mối đe dọa an ninh phi truyền thống ”. Hãy chọn cụm từ còn thiếu:",
     "options": [
-      "A. Thống nhất.",
+      "A. Đẩy mạnh .",
       "B. Phát triển .",
-      "C. Mở rộng .",
-      "D. Đẩy mạnh ."
+      "C. Thống nhất.",
+      "D. Mở rộng ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2706,12 +2701,12 @@
     "topicId": "hp2_other_topics_part4",
     "question": "2: Một trong những giải pháp phòng ngừa, ứng phó đối với các mối đe dọa an ninh phi truyền thống  là: “Mở rộng và ...... hợp tác quốc tế về phòng ngừa, kiểm soát và ứng phó với các mối đe dọa an ninh phi truyền thống ”. Hãy chọn cụm từ còn thiếu:  A. Tích cực .",
     "options": [
-      "B. Phát triển .",
-      "C. Đẩy mạnh .",
-      "D. Tăng cường ."
+      "A. Đẩy mạnh .",
+      "B. Tăng cường .",
+      "C. Phát triển ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2719,13 +2714,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "3: Một trong những giải pháp phòng ngừa, ứng phó đối với các mối đe dọa an ninh phi truyền  thống  là: “Mở rộng và tăng cường hợp tác quốc tế về phòng ngừa, kiểm soát và ... với các mối đe dọa an ninh phi truyền thống ”. Hãy chọn cụm từ còn thiếu:",
     "options": [
-      "A. Phản ứng .",
-      "B. Xử lý .",
-      "C. Ứng phó .",
-      "D. Đối phó ."
+      "A. Xử lý .",
+      "B. Đối phó .",
+      "C. Phản ứng .",
+      "D. Ứng phó ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2733,13 +2728,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": ": Một trong những giải pháp phòng ngừa, ứng phó đối với các mối đe dọa an ninh phi truyền thống là: “Huy động nguồn lực ... bằng nhiều kênh khác nhau để đầu tư cho hoạt động phòng ngừa, kiểm soát, ứng phó các mối đe dọa an ninh phi truyền thống ”. Hãy chọn c ụm từ còn thiếu:",
     "options": [
-      "A. Ngân sách.",
-      "B. Tài chính.",
-      "C. Tại chỗ .",
-      "D. Bên trong."
+      "A. Tài chính.",
+      "B. Tại chỗ .",
+      "C. Bên trong.",
+      "D. Ngân sách."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2747,13 +2742,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": ": Nghị quyết Đại hội Đại biểu toàn quốc lần thứ XIII của Đảng khẳng định: “Tập trung … Covid -19, tiêm ch ủng đại trà v ắc-xin Covid -19 cho c ộng đồng”.",
     "options": [
-      "A. Xóa bỏ đại dịch.",
-      "B. Khoanh vùng, dập dịch.",
-      "C. Dập tắt dịch bệnh.",
-      "D. Kiểm soát đại dịch ."
+      "A. Kiểm soát đại dịch .",
+      "B. Dập tắt dịch bệnh.",
+      "C. Xóa bỏ đại dịch.",
+      "D. Khoanh vùng, dập dịch."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2761,13 +2756,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": ": Nghị quyết Đại hội lần thứ XIII của Đảng nhấn mạnh: “Quản lý ch ặt chẽ, sử dụng hợp lý, hi ệu qu ả đất đai, tài nguyên; b ảo vệ, cải thiện môi trư ờng; ch ủ động, tích c ực triển khai các … với biến đổi khí h ậu, thiê n tai kh ắc nghi ệt”.",
     "options": [
-      "A. Giải pháp đối phó.",
-      "B. Giải pháp khắc phục, giảm nhẹ.",
-      "C. Giải pháp thích ứng.",
-      "D. Giải pháp ứng phó."
+      "A. Giải pháp thích ứng.",
+      "B. Giải pháp ứng phó.",
+      "C. Giải pháp đối phó.",
+      "D. Giải pháp khắc phục, giảm nhẹ."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2775,12 +2770,12 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Điền từ còn thiếu vào câu sau: “Phát huy sức mạnh tổng hợp của … và toàn xã hội trong quản trị và kiểm soát các mối đe dọa an ninh phi truyền thống”.",
     "options": [
-      "A. Các bộ, ban, ngành.  B. Các bộ, ban, ngành, đoàn thể.",
-      "C. Toàn dân tộc.",
-      "D. Hệ thống chính trị."
+      "A. Toàn dân tộc.",
+      "B. Các bộ, ban, ngành.  B. Các bộ, ban, ngành, đoàn thể.",
+      "C. Hệ thống chính trị."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2789,12 +2784,12 @@
     "question": "Đại hội lần thứ XIII của Đảng đặt ra mục tiêu đến năm 2025, tỷ lệ sử dụng nước sạch, nước hợp vệ sinh của dân cư thành thị là:",
     "options": [
       "A. Từ 95% đến 100%.",
-      "B. Từ 90% đến 100%.",
-      "C. Từ 92% đến 95%.",
-      "D. Từ 90% đến 95%."
+      "B. Từ 92% đến 95%.",
+      "C. Từ 90% đến 95%.",
+      "D. Từ 90% đến 100%."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2802,13 +2797,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Nội dung nào không phải là một vấn đề an ninh phi truyền thống?",
     "options": [
-      "A. Tội phạm công nghệ cao.",
-      "B. Ô nhiễm môi trường và biến đổi khí hậu.",
-      "C. An ninh năng lượng.",
-      "D. Đe dọa sử dụng vũ lực trong quan hệ quốc tế."
+      "A. Ô nhiễm môi trường và biến đổi khí hậu.",
+      "B. Đe dọa sử dụng vũ lực trong quan hệ quốc tế.",
+      "C. Tội phạm công nghệ cao.",
+      "D. An ninh năng lượng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2816,13 +2811,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Đại dịch Covid 19 là một vấn đề an ninh phi truyền thống ở quy mô nào?",
     "options": [
-      "A. Quy mô khu vực.",
-      "B. Quy mô châu lục.",
-      "C. Quy mô toàn cầu.",
-      "D. Cả ba đáp án trên đều sai."
+      "A. Quy mô toàn cầu.",
+      "B. Quy mô khu vực.",
+      "C. Cả ba đáp án trên đều sai.",
+      "D. Quy mô châu lục."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2830,13 +2825,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "An ninh phi truyền thống xuất hiện vào thời kỳ nào?",
     "options": [
-      "A. Xuất hiện sau chiến tranh thế giới thứ nhất.",
-      "B. Xuất hiện sau chiến tranh thế giới thứ hai.",
-      "C. Xuất hiện sau chiến tranh giải phóng ở Việt Nam 1975.",
-      "D. Xuất hiện trong vài thập niên gần đây."
+      "A. Xuất hiện trong vài thập niên gần đây.",
+      "B. Xuất hiện sau chiến tranh giải phóng ở Việt Nam 1975.",
+      "C. Xuất hiện sau chiến tranh thế giới thứ hai.",
+      "D. Xuất hiện sau chiến tranh thế giới thứ nhất."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2844,13 +2839,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Th ế nào là an ninh phi truy ền thống?",
     "options": [
-      "A. Là an ninh có ảnh hưởng đến mọi mặt của một quốc gia dân tộc.",
-      "B. Là an ninh gây nên sự khủng hoảng toàn diện của đời sống xã hội.",
+      "A. Là an ninh gây nên sự khủng hoảng toàn diện của đời sống xã hội.",
+      "B. Là an ninh có ảnh hưởng đến mọi mặt của một quốc gia dân tộc.",
       "C. Là an ninh do các thế lực thù địch trong và ngoài nước tạo ra.",
       "D. Là an ninh do những yếu tố phi chính trị, phi quân sự gây ra."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2858,13 +2853,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "M ột trong nh ững nội dung c ủa an ninh phi truy ền thống là:",
     "options": [
-      "A. Phân hóa giàu nghèo ngày càng gia tăng.",
-      "B. Cạn kiệt tài nguyên , ô nhiễm môi trường .",
+      "A. Cạn kiệt tài nguyên , ô nhiễm môi trường .",
+      "B. Gây ra những cuộc khủng hoảng kinh tế - xã hội.",
       "C. Xuất hiện các loại tệ nạn và tội phạm xã hội.",
-      "D. Gây ra những cuộc khủng hoảng kinh tế - xã hội."
+      "D. Phân hóa giàu nghèo ngày càng gia tăng."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2872,13 +2867,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Quá trình toàn c ầu hóa qu ốc tế ảnh hư ởng đ ến an ninh phi truy ền thống như  thế nào?",
     "options": [
-      "A. An ninh phi truyền thống ngày càng thu hẹp hơn .",
+      "A. An ninh phi truyền thống ngày càng đậm nét hơn .",
       "B. An ninh phi truyền thống ngày càng kiểm soát tốt hơn .",
       "C. An ninh phi truyền thống ngày càng phức tạp hơn .",
-      "D. An ninh phi truyền thống ngày càng đậm nét hơn ."
+      "D. An ninh phi truyền thống ngày càng thu hẹp hơn ."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2886,13 +2881,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Giải quy ết các n ội dung của an ninh phi  truyền thống là nhi ệm vụ của:",
     "options": [
-      "A. Các nước công nghiệp phát triển.",
-      "B. Là nhi ệm vụ mang tính toàn c ầu.",
+      "A. Là nhi ệm vụ mang tính toàn c ầu.",
+      "B. Các nước lạc hậu kinh tế kém phát triển.",
       "C. Của lực lượng gìn giữ hòa bình thế giới.",
-      "D. Các nước lạc hậu kinh tế kém phát triển."
+      "D. Các nước công nghiệp phát triển."
     ],
     "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2902,11 +2897,11 @@
     "options": [
       "A. Làm cho biến đổi khí hậu.",
       "B. Làm cho khoảng cách giàu, nghèo gia tăng.",
-      "C. Làm ảnh hưởng đến sự phát triển kinh tế - xã hội.",
-      "D. Là nguyên nhân gây m ất ổn định chính tr ị, xã h ội."
+      "C. Là nguyên nhân gây m ất ổn định chính tr ị, xã h ội.",
+      "D. Làm ảnh hưởng đến sự phát triển kinh tế - xã hội."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2914,13 +2909,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Thách th ức của an ninh phi truy ền thống đối với lĩnh v ực quốc phòng an ninh là:",
     "options": [
-      "A. Đe dọa đến an ninh chính trị đất nước.",
+      "A. Cản trở đến quá trình xây dựng Quân đội trong tình hình mới.",
       "B. Đe dọa trực tiếp đến quốc phòng an ninh.",
-      "C. Cản trở đến xây dựng nền quốc phòng toàn dân.",
-      "D. Cản trở đến quá trình xây dựng Quân đội trong tình hình mới."
+      "C. Đe dọa đến an ninh chính trị đất nước.",
+      "D. Cản trở đến xây dựng nền quốc phòng toàn dân."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "B",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2928,17 +2923,16 @@
     "topicId": "hp2_other_topics_part4",
     "question": "M ột trong các gi ải pháp với các m ối đe d ọa an ninh phi truy ền thống là:",
     "options": [
-      "A. Nâng cao cảnh giác giữ vững chủ quyền an ninh quốc gia.",
-      "B. Nâng cao nhận thức về các mối đe dọa an ninh phi truyền thống .",
-      "C. Nâng cao cảnh giác tích cực tham gia các hoạt động phòng chống.",
-      "D. Nâng cao tinh thần cảnh giác cách mạng, phát hiện, đấu tranh, ngăn ngừa.  Câu 31: M ột trong các gi ải pháp với các m ối đe d ọa an ninh phi truy ền thống là:",
       "A. Chủ động, tích cực phòng ngừa, ứng phó .",
-      "B. Chủ động trong xây dựng kế hoạch phòng chống.",
-      "C. Chủ động ứng phó có hiệu quả với các mối  đe dọa.",
-      "D. Chủ động và tích cực đầu tư cho công tác phòng chống."
+      "B. Nâng cao cảnh giác tích cực tham gia các hoạt động phòng chống.",
+      "C. Nâng cao nhận thức về các mối đe dọa an ninh phi truyền thống .",
+      "D. Chủ động và tích cực đầu tư cho công tác phòng chống.",
+      "E. Chủ động trong xây dựng kế hoạch phòng chống.",
+      "F. Nâng cao tinh thần cảnh giác cách mạng, phát hiện, đấu tranh, ngăn ngừa.  Câu 31: M ột trong các gi ải pháp với các m ối đe d ọa an ninh phi truy ền thống là:",
+      "G. Chủ động ứng phó có hiệu quả với các mối  đe dọa."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "C",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2946,13 +2940,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Trong ch ủ động phòng ng ừa, ứng phó c ần:",
     "options": [
-      "A. Phân loại từng lĩnh vực .",
-      "B. Chủ động và tích cực đầu tư .",
+      "A. Chủ động và tích cực đầu tư .",
+      "B. Phân loại từng lĩnh vực .",
       "C. Chủ động xây dựng lực lượng .",
       "D. Tất cả đều đúng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2960,13 +2954,13 @@
     "topicId": "hp2_other_topics_part4",
     "question": "Tron g giải pháp tăng cư ờng hợp tác qu ốc tế về phòng ng ừa những thách th ức an ninh phi truy ền thống cần:",
     "options": [
-      "A. Chủ động, tích cực hợp tác .",
+      "A. Tăng cường chia sẻ thông tin .",
       "B. Xây dựng cơ chế lòng tin .",
-      "C. Tăng cường chia sẻ thông tin .",
+      "C. Chủ động, tích cực hợp tác .",
       "D. Tất cả đều đúng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   },
   {
@@ -2975,12 +2969,12 @@
     "question": "Đ ể ứng phó v ới mối đe d ọa an ninh phi truy ền thống cần huy đ ộng ngu ồn lực tài chính từ:",
     "options": [
       "A. Nguồn tài chính ngân sách .",
-      "B. Nguồn tài chính doanh nghiệp .",
-      "C. Nguồn tài chính xã hội hóa .",
+      "B. Nguồn tài chính xã hội hóa .",
+      "C. Nguồn tài chính doanh nghiệp .",
       "D. Tất cả đều đúng."
     ],
-    "correctAnswer": "A",
-    "explanation": "Câu hỏi được tự động trích xuất từ ngân hàng đề (chưa có đáp án chính thức).",
+    "correctAnswer": "D",
+    "explanation": "Đáp án chính xác dựa trên tài liệu đáp án Giáo dục Quốc phòng chính thức.",
     "type": "Lý thuyết"
   }
 ]
