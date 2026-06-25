@@ -2295,4 +2295,38 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--danger-dark) !important;
 }
 
+/* Custom Question Code Formatting */
+code {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: hsl(35, 100%, 65%);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+pre code {
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    border-radius: 0;
+    font-size: 13.5px;
+}
+
+.code-box-wrapper pre {
+    margin: 0;
+    padding: 14px 18px;
+    overflow-x: auto;
+}
+
+.review-q-text {
+    line-height: 1.6;
+}
+
+.review-exp {
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
 

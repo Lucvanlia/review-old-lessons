@@ -669,6 +669,36 @@ function escapeHTML(str) {
     return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 
+function formatMarkdown(str) {
+    if (!str) return '';
+    let html = escapeHTML(str);
+    
+    // Convert code blocks: ```python ... ```
+    html = html.replace(/```(?:python|javascript|java|)\n([\s\S]*?)```/g, function(match, p1) {
+        return `<div class="code-box-wrapper"><pre><code>${p1}</code></pre></div>`;
+    });
+    
+    // Convert inline code: `code`
+    html = html.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+    
+    // Temporarily extract code-box-wrapper blocks to prevent replacing \n with <br> inside them
+    const blocks = [];
+    html = html.replace(/<div class="code-box-wrapper">[\s\S]*?<\/div>/g, function(match) {
+        blocks.push(match);
+        return `__CODE_BLOCK_${blocks.length - 1}__`;
+    });
+    
+    // Replace newlines with <br> in normal text
+    html = html.replace(/\n/g, '<br>');
+    
+    // Restore blocks
+    html = html.replace(/__CODE_BLOCK_(\d+)__/g, function(match, p1) {
+        return blocks[parseInt(p1)];
+    });
+    
+    return html;
+}
+
 function isFirstTopic() {
     const idx = state.knowledgeData.findIndex(t => t.topicId === state.selectedTopicId);
     return idx === 0;
@@ -838,7 +868,7 @@ function renderQuizQuestion() {
     document.getElementById('quiz-progress-bar-fill').style.width = `${progressPercent}%`;
     
     // Render question text
-    document.getElementById('quiz-question-text').textContent = q.question;
+    document.getElementById('quiz-question-text').innerHTML = formatMarkdown(q.question);
     
     // Render options cards
     const optionsContainer = document.getElementById('quiz-options-container');
@@ -920,7 +950,7 @@ function handleNextQuizQuestion() {
         const explanationText = document.getElementById('quiz-explanation-text');
         
         if (explanationText && currentQuestion.explanation) {
-            explanationText.textContent = currentQuestion.explanation;
+            explanationText.innerHTML = formatMarkdown(currentQuestion.explanation);
             explanationBox.classList.remove('hidden');
         }
         
@@ -1167,7 +1197,7 @@ function renderMockQuestion() {
     const q = state.mock.questions[state.mock.currentIndex];
     
     document.getElementById('mock-current-idx').textContent = state.mock.currentIndex + 1;
-    document.getElementById('mock-question-text').textContent = q.question;
+    document.getElementById('mock-question-text').innerHTML = formatMarkdown(q.question);
     
     const optionsContainer = document.getElementById('mock-options-container');
     optionsContainer.innerHTML = '';
@@ -1344,7 +1374,7 @@ function renderResultsPanel(correct, total, accuracy, timeTaken, questions, user
             const correctAnsText = q.options[optionBadges.indexOf(correctAns)] || '';
             
             item.innerHTML = `
-                <div class="review-q-text">Câu ${idx + 1}: ${q.question}</div>
+                <div class="review-q-text">Câu ${idx + 1}: ${formatMarkdown(q.question)}</div>
                 <div class="review-answers">
                     <div class="review-user-ans">
                         <span class="material-icons-round" style="font-size:16px">cancel</span>
@@ -1355,7 +1385,7 @@ function renderResultsPanel(correct, total, accuracy, timeTaken, questions, user
                         Đáp án đúng: ${correctAns} - ${correctAnsText}
                     </div>
                 </div>
-                ${q.explanation ? `<div class="review-exp"><strong>Giải thích:</strong> ${q.explanation}</div>` : ''}
+                ${q.explanation ? `<div class="review-exp"><strong>Giải thích:</strong> ${formatMarkdown(q.explanation)}</div>` : ''}
             `;
             
             wrongListContainer.appendChild(item);
