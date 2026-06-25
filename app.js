@@ -669,13 +669,59 @@ function escapeHTML(str) {
     return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 }
 
+function highlightPython(code) {
+    const placeholders = [];
+    let text = code;
+    
+    // Mask strings: &quot;...&quot;, &#039;...&#039;, "...", '...'
+    text = text.replace(/(&quot;[\s\S]*?&quot;|&#039;[\s\S]*?&#039;|"[\s\S]*?"|'[\s\S]*?')/g, function(match) {
+        placeholders.push(`<span class="code-string">${match}</span>`);
+        return `__TOKEN_PLACEHOLDER_${placeholders.length - 1}__`;
+    });
+    
+    // Mask comments: # ...
+    text = text.replace(/(#[^\n]*)/g, function(match) {
+        placeholders.push(`<span class="code-comment">${match}</span>`);
+        return `__TOKEN_PLACEHOLDER_${placeholders.length - 1}__`;
+    });
+    
+    // Highlight keywords
+    const keywords = ['def', 'class', 'import', 'return', 'if', 'else', 'elif', 'for', 'in', 'while', 'try', 'except', 'as', 'lambda', 'and', 'or', 'not', 'break', 'continue', 'pass', 'global', 'from', 'with'];
+    keywords.forEach(kw => {
+        const regex = new RegExp(`\\b(${kw})\\b`, 'g');
+        text = text.replace(regex, '<span class="code-keyword">$1</span>');
+    });
+    
+    // Highlight builtins
+    const builtins = ['print', 'len', 'type', 'int', 'float', 'str', 'list', 'dict', 'set', 'tuple', 'range', 'super', 'sum', 'sorted'];
+    builtins.forEach(bi => {
+        const regex = new RegExp(`\\b(${bi})\\b`, 'g');
+        text = text.replace(regex, '<span class="code-builtin">$1</span>');
+    });
+    
+    // Highlight constants
+    const constants = ['True', 'False', 'None'];
+    constants.forEach(c => {
+        const regex = new RegExp(`\\b(${c})\\b`, 'g');
+        text = text.replace(regex, '<span class="code-constant">$1</span>');
+    });
+    
+    // Restore strings and comments
+    text = text.replace(/__TOKEN_PLACEHOLDER_(\d+)__/g, function(match, p1) {
+        return placeholders[parseInt(p1)];
+    });
+    
+    return text;
+}
+
 function formatMarkdown(str) {
     if (!str) return '';
     let html = escapeHTML(str);
     
     // Convert code blocks: ```python ... ``` (supports CRLF)
     html = html.replace(/```(?:python|javascript|java|)\r?\n([\s\S]*?)```/g, function(match, p1) {
-        return `<div class="code-box-wrapper"><pre><code>${p1}</code></pre></div>`;
+        const highlighted = highlightPython(p1);
+        return `<div class="code-box-wrapper"><pre><code>${highlighted}</code></pre></div>`;
     });
     
     // Convert inline code: `code`

@@ -1011,9 +1011,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .code-box-wrapper code {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 13.5px;
+    font-size: 16px;
     color: hsl(210, 20%, 95%);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 /* Note taking system */
@@ -2311,12 +2311,12 @@ pre code {
     color: inherit;
     padding: 0;
     border-radius: 0;
-    font-size: 13.5px;
+    font-size: 16px;
 }
 
 .code-box-wrapper pre {
     margin: 0;
-    padding: 14px 18px;
+    padding: 16px 20px;
     overflow-x: auto;
 }
 
@@ -2327,6 +2327,31 @@ pre code {
 .review-exp {
     line-height: 1.6;
     margin-top: 12px;
+}
+
+/* Syntax Highlighting Colors */
+.code-keyword {
+    color: hsl(325, 100%, 72%) !important; /* Sweet pink/purple for def, class, return, if, etc. */
+    font-weight: 700;
+}
+
+.code-builtin {
+    color: hsl(190, 100%, 70%) !important; /* Cyan for print, len, type, range, etc. */
+    font-weight: 600;
+}
+
+.code-string {
+    color: hsl(100, 85%, 68%) !important; /* Soft green for strings */
+}
+
+.code-comment {
+    color: hsl(220, 15%, 55%) !important; /* Muted gray-blue for comments */
+    font-style: italic;
+}
+
+.code-constant {
+    color: hsl(35, 100%, 72%) !important; /* Orange for True, False, None */
+    font-weight: 600;
 }
 
 
