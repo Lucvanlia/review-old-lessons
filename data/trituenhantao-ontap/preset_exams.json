@@ -1,0 +1,1253 @@
+[
+  {
+    "id": "ai_exam_1",
+    "name": "Đề thi thử số 1 (Giới thiệu AI & Hệ thống thông minh)",
+    "description": "Bài thi thử tổng hợp phần kiến thức căn bản về AI, lập trình Python/NumPy, các nguyên tắc Đạo đức/Pháp luật trong AI và Mô hình tác nhân thông minh (Agent) (25 câu hỏi).",
+    "questions": [
+      {
+        "id": 1,
+        "topicId": "intro_to_ai",
+        "question": "Mục tiêu chính của Trí tuệnhân tạo (AI) là gì?",
+        "options": [
+          "A. Phát triển các máy tính có tốc độxửlý nhanh nhất thếgiới.",
+          "B. Phát triển các máy móc có hành vi thông minh tương đương hoặc giống con người.",
+          "C. Thay thếhoàn toàn con người trong mọi công việc chân tay.",
+          "D. Xây dựng các hệthống lưu trữdữliệu khổng lồ."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 2,
+        "topicId": "intro_to_ai",
+        "question": "Ba yếu tốcốt lõi nào sau đây thúc đẩy sựphát triển mạnh mẽcủa AI?",
+        "options": [
+          "A. Con người, máy móc và ngân sách đầu tư.",
+          "B. Thuật toán (Algorithms), Dữliệu (Data) và Năng lực tính toán (Computing Power).",
+          "C. Internet, mạng xã hội và điện thoại thông minh.",
+          "D. Lập trình truyền thống, phần cứng và người dùng cuối."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 3,
+        "topicId": "intro_to_ai",
+        "question": "Thuật ngữArtificial Narrow Intelligence (ANI) dùng đểchỉloại AI nào?",
+        "options": [
+          "A. AI có khảnăng tựnhận thức và có cảm xúc như con người.",
+          "B. AI được thiết kếđểthực hiện một nhiệm vụcụthểhoặc một tập hợp nhiệm vụhạn hẹp.",
+          "C. AI có trí thông minh vượt xa mọi khảnăng của con người.",
+          "D. AI có thểtựhọc mọi lĩnh vực mà không cần dữliệu đầu vào."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 4,
+        "topicId": "intro_to_ai",
+        "question": "Hệthống AI nào sau đây là một ví dụđiển hình của Trí tuệnhân tạo hẹp (ANI)?",
+        "options": [
+          "A. Một hệthống có thểgiải quyết mọi vấn đềtri thức của nhân loại.",
+          "B. Bộlọc thư rác (Email spam filter).",
+          "C. Một robot có thểtựsuy nghĩ và thực hiện mọi công việc của con người.",
+          "D. Một thực thểsiêu trí tuệkiểm soát toàn bộhạtầng kỹthuật số. 1"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 5,
+        "topicId": "intro_to_ai",
+        "question": "Đặc điểm Veracity (Tính xác thực) trong Big Data mô tảkhía cạnh nào của dữ liệu?",
+        "options": [
+          "A. Khối lượng dữliệu cực kỳkhổng lồ.",
+          "B. Tốc độtạo ra và xửlý dữliệu nhanh chóng.",
+          "C. Sựkhông chính xác hoặc tính không đáng tin cậy của một sốnguồn dữliệu.",
+          "D. Sựđa dạng vềđịnh dạng như văn bản, hình ảnh và âm thanh."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đáp án C đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 6,
+        "topicId": "intro_to_ai",
+        "question": "Lĩnh vực nghiên cứu cách làm cho máy tính thực hiện những nhiệm vụmà tại thời điểm đó con người đang làm tốt hơn máy tính được gọi là gì?",
+        "options": [
+          "A. Trí tuệnhân tạo (theo định nghĩa của Elaine Rich).",
+          "B. Lập trình vạn vật (IoT).",
+          "C. Khoa học dữliệu (Data Science).",
+          "D. Điện toán đám mây (Cloud Computing)."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 7,
+        "topicId": "intro_to_ai",
+        "question": "Mục đích chính của phép thửTuring là gì?",
+        "options": [
+          "A. Đo lường dung lượng bộnhớtối đa của một máy tính.",
+          "B. Kiểm tra xem máy tính có thểbắt chước hành vi thông minh khiến con người không thểphân biệt được hay không.",
+          "C. Đánh giá khảnăng tiết kiệm năng lượng của các hệthống AI.",
+          "D. Xác định khảnăng xửlý đồhọa của siêu máy tính."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 8,
+        "topicId": "intro_to_ai",
+        "question": "Phương pháp học nào trong Machine Learning dựa trên cơ chếthửvà sai (Trial & Error) đểtối ưu hóa kết quảthông qua phần thưởng?",
+        "options": [
+          "A. Supervised Learning (Học có giám sát).",
+          "B. Unsupervised Learning (Học không giám sát).",
+          "C. Reinforcement Learning (Học tăng cường).",
+          "D. Traditional Programming (Lập trình truyền thống)."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 9,
+        "topicId": "intro_to_ai",
+        "question": "Điểm khác biệt căn bản giữa AI và Lập trình truyền thống (Traditional Pro- gramming) là gì? 2",
+        "options": [],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Phân tích"
+      },
+      {
+        "id": 10,
+        "topicId": "intro_to_ai",
+        "question": "Đơn vịdữliệu nào sau đây có giá trịlớn nhất?",
+        "options": [
+          "A. Terabyte (TB).",
+          "B. Petabyte (PB).",
+          "C. Exabyte (EB).",
+          "D. Zettabyte (ZB)."
+        ],
+        "correctAnswer": "D",
+        "explanation": "Đáp án D đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 11,
+        "topicId": "intro_to_ai",
+        "question": "Thuật ngữBlack Box (Hộp đen) thường dùng đểchỉvấn đềgì của các hệthống AI hiện đại?",
+        "options": [
+          "A. Hệthống tiêu tốn quá nhiều điện năng.",
+          "B. Khó khăn trong việc hiểu hoặc giải thích cách thức AI đưa ra một kết quả cụthể.",
+          "C. AI chỉcó thểhoạt động trong môi trường thiếu ánh sáng.",
+          "D. Dữliệu nạp vào AI luôn bịmất đi sau khi xửlý."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 12,
+        "topicId": "intro_to_ai",
+        "question": "Việc sửdụng AI trong sàng lọc ung thư vú mang lại lợi ích gì (ví dụtừnghiên cứu năm 2023)?",
+        "options": [
+          "A. Tựđộng chữa khỏi bệnh mà không cần can thiệp y tế.",
+          "B. Giảm 50% khối lượng công việc và tăng khảnăng phát hiện ung thư sớm.",
+          "C. Chỉchẩn đoán chính xác cho các trường hợp bệnh nhân trẻtuổi.",
+          "D. Thay thếhoàn toàn nhu cầu vềmáy chụp nhũ ảnh."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 13,
+        "topicId": "intro_to_ai",
+        "question": "Những chuyên gia nào được mệnh danh là cha đẻcủa AI (Godfathers of AI) vì những đóng góp cho Deep Learning?",
+        "options": [
+          "A. Alan Turing, John McCarthy và Marvin Minsky. 3"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 14,
+        "topicId": "intro_to_ai",
+        "question": "Giải pháp Explainable AI (XAI) được phát triển nhằm mục đích gì?",
+        "options": [
+          "A. Tăng tốc độxửlý của thuật toán Deep Learning.",
+          "B. Giúp con người hiểu và tin tưởng vào cách AI đưa ra quyết định.",
+          "C. Giảm lượng dữliệu cần thiết đểhuấn luyện AI.",
+          "D. Tựđộng hóa việc viết mã nguồn cho các hệthống AI."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 15,
+        "topicId": "intro_to_ai",
+        "question": "Loại phần cứng nào thực hiện xửlý song song (Parallel Processing) hiệu quảcho các ứng dụng AI?",
+        "options": [
+          "A. CPU truyền thống.",
+          "B. GPU (Graphics Processing Unit).",
+          "C. BộnhớRAM.",
+          "D. Ổcứng HDD."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 16,
+        "topicId": "intro_to_ai",
+        "question": "Khái niệm Artificial General Intelligence (AGI) mô tảmột hệthống AI như thế nào?",
+        "options": [
+          "A. Chỉcó khảnăng chơi cờvua ởmức độchuyên gia.",
+          "B. Có khảnăng thực hiện đa dạng các nhiệm vụvà áp dụng trí tuệvào nhiều lĩnh vực như con người.",
+          "C. Một hệthống AI đơn giản được tích hợp trong máy tính bỏtúi.",
+          "D. AI chỉhoạt động dựa trên các quy tắc Nếu - Thì cốđịnh."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 17,
+        "topicId": "intro_to_ai",
+        "question": "Sựkiện lịch sửnào vào năm 1997 đã đánh dấu việc siêu máy tính đánh bại nhà vô địch cờvua thếgiới?",
+        "options": [
+          "A. Hội nghịDartmouth đưa ra thuật ngữAI.",
+          "B. IBM Watson thắng giải Jeopardy. 4"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 18,
+        "topicId": "intro_to_ai",
+        "question": "Khái niệm Singularity (Điểm kỳdị) thường được gắn liền với sựphát triển của loại AI nào?",
+        "options": [
+          "A. Trí tuệnhân tạo hẹp (ANI).",
+          "B. Hệchuyên gia (Expert Systems).",
+          "C. Siêu trí tuệnhân tạo (Artificial Super Intelligence - ASI).",
+          "D. AI dựbáo (Predictive AI)."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 19,
+        "topicId": "intro_to_ai",
+        "question": "Thành phần nào được coi là bộnão (brains) chỉdẫn máy tính cách thức thực hiện nhiệm vụtrong AI?",
+        "options": [
+          "A. Dữliệu (Data).",
+          "B. Thuật toán (Algorithms).",
+          "C. Thiết bịlưu trữ.",
+          "D. Cảm biến ngoại vi."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 20,
+        "topicId": "intro_to_ai",
+        "question": "Hệchuyên gia (AI Expert System) thường bao gồm các thành phần chính nào đểđưa ra lời khuyên?",
+        "options": [
+          "A. Giao diện người dùng, Công cụsuy diễn và Cơ sởtri thức.",
+          "B. Bàn phím, chuột và màn hình.",
+          "C. Hệđiều hành và các ứng dụng văn phòng.",
+          "D. Cáp mạng và bộđịnh tuyến. 5"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 21,
+        "topicId": "python_numpy",
+        "question": "Trong Python, kết quảcủa biểu thức 3 + 2 ∗2 là bao nhiêu?",
+        "options": [
+          "A. 7.",
+          "B. 10.",
+          "C. 9.",
+          "D. 8."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 22,
+        "topicId": "python_numpy",
+        "question": "Kiểu dữliệu nào sau đây là immutable (không thểthay đổi sau khi tạo) trong Python?",
+        "options": [
+          "A. List.",
+          "B. Dictionary.",
+          "C. Tuple.",
+          "D. Set."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đáp án C đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 23,
+        "topicId": "python_numpy",
+        "question": "Cú pháp nào sau đây là cách đúng đểkhai báo một hàm trong Python?",
+        "options": [
+          "A. function myFunc():",
+          "B. def myFunc():",
+          "C. void myFunc()",
+          "D. define myFunc:"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Đọc code"
+      },
+      {
+        "id": 24,
+        "topicId": "python_numpy",
+        "question": "Kết quảcủa đoạn mã sau là gì? x = [1, 2, 3] y = x y.append(4) print(x)",
+        "options": [
+          "A. [1, 2, 3]",
+          "B. [1, 2, 3, 4]",
+          "C. Error 6"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Đọc code"
+      },
+      {
+        "id": 25,
+        "topicId": "python_numpy",
+        "question": "Biểu thức List Comprehension nào sau đây tạo ra danh sách các sốchẵn từ0 đến 8?",
+        "options": [
+          "A. [i for i in range(10) if i % 2 == 0]",
+          "B. [i if i % 2 == 0 for i in range(10)]",
+          "C. [i for i in range(0, 8)]",
+          "D. list(range(0, 9, 1))"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      }
+    ]
+  },
+  {
+    "id": "ai_exam_2",
+    "name": "Đề thi thử số 2 (Thuật toán Tìm kiếm & Bài toán CSP)",
+    "description": "Bài thi thử tập trung vào phần thuật toán tìm kiếm có/không thông tin, tìm kiếm cục bộ, tìm kiếm trong môi trường phức hợp (AND-OR) và bài toán thỏa mãn ràng buộc CSP (25 câu hỏi).",
+    "questions": [
+      {
+        "id": 71,
+        "topicId": "search_problems",
+        "question": "Trong AI, một bài toán tìm kiếm thường được xác định bởi các thành phần nào sau đây?",
+        "options": [
+          "A. Trạng thái bắt đầu, các hành động, mô hình chuyển trạng thái, kiểm tra mục tiêu và chi phí đường đi.",
+          "B. Chỉcần trạng thái bắt đầu và trạng thái mục tiêu.",
+          "C. Các thuật toán lập trình Python và bộnhớRAM.",
+          "D. Dữliệu khách hàng và các cảm biến của Robot."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 72,
+        "topicId": "search_problems",
+        "question": "Tập hợp tất cảcác trạng thái có thểđạt tới từtrạng thái bắt đầu thông qua bất kỳchuỗi hành động nào được gọi là gì?",
+        "options": [
+          "A. Search Tree.",
+          "B. State Space.",
+          "C. Action Set.",
+          "D. Goal Test."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 73,
+        "topicId": "search_problems",
+        "question": "Thành phần State Space Graph là một thực thểtoán học dùng đểbiểu diễn điều gì?",
+        "options": [
+          "A. Các nút trong cây tìm kiếm.",
+          "B. Bản tóm tắt các cấu trúc dữliệu của bài toán.",
+          "C. Một đồthịtrong đó các nút là các trạng thái và các cung là các hành động.",
+          "D. Lịch sửcác bước di chuyển của Agent."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đáp án C đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 74,
+        "topicId": "search_problems",
+        "question": "Trong tìm kiếm theo chiều rộng (Breadth-First Search - BFS), cấu trúc dữliệu nào thường được sửdụng đểquản lý danh sách các nút đang chờkhám phá (Frontier)?",
+        "options": [
+          "A. Stack (LIFO).",
+          "B. Queue (FIFO). 19"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 75,
+        "topicId": "search_problems",
+        "question": "Thuật toán tìm kiếm nào luôn mởrộng nút nông nhất (nút có độsâu thấp nhất) trong Frontier?",
+        "options": [
+          "A. Depth-First Search (DFS).",
+          "B. Breadth-First Search (BFS).",
+          "C. Uniform-Cost Search.",
+          "D. Depth-Limited Search."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 76,
+        "topicId": "search_problems",
+        "question": "Ưu điểm chính của thuật toán Breadth-First Search (BFS) là gì?",
+        "options": [
+          "A. Tiết kiệm bộnhớnhất.",
+          "B. Luôn tìm thấy giải pháp tối ưu nếu chi phí các bước là bằng nhau.",
+          "C. Hoạt động tốt nhất trong không gian trạng thái vô hạn.",
+          "D. Dễcài đặt hơn tất cảcác thuật toán khác."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Phân tích"
+      },
+      {
+        "id": 77,
+        "topicId": "search_problems",
+        "question": "Nhược điểm lớn nhất của thuật toán Breadth-First Search (BFS) khi đối mặt với các bài toán thực tếphức tạp là gì?",
+        "options": [
+          "A. Không bao giờtìm thấy mục tiêu.",
+          "B. Độphức tạp vềthời gian và không gian (bộnhớ) tăng theo hàm mũ.",
+          "C. Chỉhoạt động trên đồthịcó hướng.",
+          "D. Luôn chọn đường đi có chi phí cao nhất."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Phân tích"
+      },
+      {
+        "id": 78,
+        "topicId": "search_problems",
+        "question": "Thuật toán Depth-First Search (DFS) quản lý Frontier bằng cấu trúc dữliệu nào?",
+        "options": [
+          "A. Queue (FIFO).",
+          "B. Stack (LIFO).",
+          "C. Priority Queue.",
+          "D. Array. 20"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Depth-First Search (Tìm kiếm theo chiều sâu) đi sâu vào một nhánh cho đến khi gặp nút lá rồi quay lui. Ưu điểm lớn nhất là tiết kiệm bộ nhớ với độ phức tạp không gian O(bm) thay vì hàm mũ như BFS.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 79,
+        "topicId": "search_problems",
+        "question": "Thuật toán tìm kiếm nào mởrộng nút sâu nhất trong Frontier hiện tại?",
+        "options": [
+          "A. Breadth-First Search.",
+          "B. Depth-First Search.",
+          "C. Uniform-Cost Search.",
+          "D. Iterative Deepening Search."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 80,
+        "topicId": "search_problems",
+        "question": "Trong trường hợp không gian trạng thái là một cây hữu hạn, thuật toán Depth- First Search (DFS) có tính chất nào sau đây?",
+        "options": [
+          "A. Optimal.",
+          "B. Complete.",
+          "C. Tốn nhiều bộnhớhơn BFS.",
+          "D. Luôn tìm thấy đường đi ngắn nhất."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Depth-First Search (Tìm kiếm theo chiều sâu) đi sâu vào một nhánh cho đến khi gặp nút lá rồi quay lui. Ưu điểm lớn nhất là tiết kiệm bộ nhớ với độ phức tạp không gian O(bm) thay vì hàm mũ như BFS.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 81,
+        "topicId": "search_problems",
+        "question": "Thuật toán Uniform-Cost Search (UCS) mởrộng nút nào trong Frontier?",
+        "options": [
+          "A. Nút có độsâu nhỏnhất.",
+          "B. Nút có tổng chi phí đường đi g(n) từnút bắt đầu là nhỏnhất.",
+          "C. Nút được đưa vào danh sách sau cùng.",
+          "D. Nút ngẫu nhiên."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 82,
+        "topicId": "search_problems",
+        "question": "Đểđảm bảo tính tối ưu, thuật toán Uniform-Cost Search yêu cầu chi phí của mỗi bước đi phải thỏa mãn điều kiện gì?",
+        "options": [
+          "A. Phải là hằng sốbằng 1.",
+          "B. Phải lớn hơn hoặc bằng một sốdương epsilon nhỏ.",
+          "C. Có thểlà sốâm.",
+          "D. Không cần bất kỳđiều kiện nào."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 83,
+        "topicId": "search_problems",
+        "question": "Thuật toán nào kết hợp được ưu điểm vềbộnhớcủa DFS và tính tối ưu (với chi phí bước bằng nhau) của BFS?",
+        "options": [
+          "A. Depth-Limited Search. 21"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Tính toán"
+      },
+      {
+        "id": 84,
+        "topicId": "search_problems",
+        "question": "Trong thuật toán Iterative Deepening Search, điều gì xảy ra ởmỗi lần lặp?",
+        "options": [
+          "A. Giảm độsâu tìm kiếm đi 1.",
+          "B. Tăng giới hạn độsâu (limit) và thực hiện lại tìm kiếm DFS từđầu.",
+          "C. Chuyển sang tìm kiếm BFS.",
+          "D. Agent tựđộng thay đổi trạng thái mục tiêu."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 85,
+        "topicId": "search_problems",
+        "question": "Thành phần nào trong bài toán tìm kiếm dùng đểxác định xem một trạng thái hiện tại có phải là kết quảmong muốn hay không?",
+        "options": [
+          "A. Path Cost.",
+          "B. Goal Test.",
+          "C. Successor Function.",
+          "D. Initial State."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 86,
+        "topicId": "search_problems",
+        "question": "Khái niệm Branching Factor (b) trong cây tìm kiếm có nghĩa là gì?",
+        "options": [
+          "A. Độsâu của cây.",
+          "B. Sốlượng nút con tối đa của một nút.",
+          "C. Tổng sốnút trong cây tìm kiếm.",
+          "D. Sốlượng mục tiêu trong bài toán."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 87,
+        "topicId": "search_problems",
+        "question": "Tại sao việc kiểm tra các trạng thái đã lặp lại (Redundant paths) lại quan trọng trong thuật toán tìm kiếm trên đồthị?",
+        "options": [
+          "A. Đểlàm cho thuật toán chạy chậm hơn.",
+          "B. Đểtránh việc lặp vô hạn và giảm bớt các tính toán không cần thiết.",
+          "C. Vì máy tính không thểlưu trữquá 10 trạng thái.",
+          "D. Đểđảm bảo chi phí đường đi luôn bằng 0. 22"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Phân tích"
+      },
+      {
+        "id": 88,
+        "topicId": "search_problems",
+        "question": "Một thuật toán tìm kiếm được gọi là Optimal khi nó thỏa mãn điều kiện nào?",
+        "options": [
+          "A. Luôn tìm thấy giải pháp trong thời gian nhanh nhất.",
+          "B. Luôn tìm thấy giải pháp có chi phí thấp nhất.",
+          "C. Không bao giờsửdụng quá nhiều bộnhớ.",
+          "D. Có thểáp dụng cho mọi loại bài toán."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 89,
+        "topicId": "search_problems",
+        "question": "Nếu bài toán có không gian trạng thái là vô hạn và mục tiêu nằm ởmột độsâu hữu hạn, thuật toán nào chắc chắn KHÔNG tìm thấy mục tiêu?",
+        "options": [
+          "A. Breadth-First Search.",
+          "B. Depth-First Search với nhánh vô hạn.",
+          "C. Uniform-Cost Search.",
+          "D. Iterative Deepening Search."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 90,
+        "topicId": "search_problems",
+        "question": "Trong tìm kiếm hai chiều (Bidirectional Search), quá trình tìm kiếm dừng lại khi nào?",
+        "options": [
+          "A. Khi một trong hai hướng tìm thấy mục tiêu.",
+          "B. Khi Frontier của hai hướng tìm kiếm gặp nhau (giao nhau).",
+          "C. Khi bộnhớmáy tính bịđầy.",
+          "D. Khi Agent đi hết bản đồ."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 91,
+        "topicId": "search_problems",
+        "question": "Giảsửbạn đang giải bài toán 8-puzzle, một trạng thái của bài toán này là gì?",
+        "options": [
+          "A. Cách sắp xếp cụthểcủa 8 con sốtrên khung 3 × 3.",
+          "B. Hành động di chuyển một ô số.",
+          "C. Sốlượng các bước đã thực hiện.",
+          "D. Thời gian cần thiết đểgiải bài toán."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 92,
+        "topicId": "search_problems",
+        "question": "Trong bài toán tìm đường trên bản đồ, Path Cost thường được tính dựa trên yếu tốnào?",
+        "options": [
+          "A. Sốlượng thành phốhiện có trên bản đồ. 23"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 93,
+        "topicId": "search_problems",
+        "question": "Nếu một mê cung có các vòng lặp (cycles), thuật toán DFS không kiểm tra trạng thái đã thăm (visited) sẽgặp hiện tượng gì?",
+        "options": [
+          "A. Tìm thấy lối thoát nhanh hơn.",
+          "B. Rơi vào vòng lặp vô hạn và không bao giờdừng lại.",
+          "C. Tựđộng chuyển sang tìm kiếm BFS.",
+          "D. Tiết kiệm được bộnhớ."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Depth-First Search (Tìm kiếm theo chiều sâu) đi sâu vào một nhánh cho đến khi gặp nút lá rồi quay lui. Ưu điểm lớn nhất là tiết kiệm bộ nhớ với độ phức tạp không gian O(bm) thay vì hàm mũ như BFS.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 94,
+        "topicId": "search_problems",
+        "question": "Thuật toán BFS sẽtiêu tốn bộnhớnhiều nhất ởđâu?",
+        "options": [
+          "A. Ởtrạng thái bắt đầu.",
+          "B. Ởdanh sách Frontier lưu trữcác nút ởmức sâu nhất hiện tại.",
+          "C. Ởviệc tính toán chi phí bước đi.",
+          "D. Ởcác ghi chú chú thích trong mã nguồn."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 95,
+        "topicId": "search_problems",
+        "question": "Tại sao trong bài toán tìm đường từA đến B, ta lại ưu tiên UCS hơn BFS nếu các đoạn đường có độdài khác nhau?",
+        "options": [
+          "A. Vì UCS luôn chạy nhanh hơn BFS.",
+          "B. Vì BFS chỉtìm đường đi có ít chặng nhất.",
+          "C. Vì BFS không thểxửlý được đồthịcó trọng số.",
+          "D. Vì UCS không cần dùng đến hàng đợi ưu tiên."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Phân tích"
+      }
+    ]
+  },
+  {
+    "id": "ai_exam_3",
+    "name": "Đề thi thử số 3 (Đề ôn tập tổng hợp toàn diện môn AI)",
+    "description": "Đề thi thử tổng hợp toàn bộ 8 chương học phần Nhập môn trí tuệ nhân tạo, thiết kế bám sát theo định hướng cấu trúc đề cương ôn thi của giảng viên (40 câu hỏi).",
+    "questions": [
+      {
+        "id": 1,
+        "topicId": "intro_to_ai",
+        "question": "Mục tiêu chính của Trí tuệnhân tạo (AI) là gì?",
+        "options": [
+          "A. Phát triển các máy tính có tốc độxửlý nhanh nhất thếgiới.",
+          "B. Phát triển các máy móc có hành vi thông minh tương đương hoặc giống con người.",
+          "C. Thay thếhoàn toàn con người trong mọi công việc chân tay.",
+          "D. Xây dựng các hệthống lưu trữdữliệu khổng lồ."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 2,
+        "topicId": "intro_to_ai",
+        "question": "Ba yếu tốcốt lõi nào sau đây thúc đẩy sựphát triển mạnh mẽcủa AI?",
+        "options": [
+          "A. Con người, máy móc và ngân sách đầu tư.",
+          "B. Thuật toán (Algorithms), Dữliệu (Data) và Năng lực tính toán (Computing Power).",
+          "C. Internet, mạng xã hội và điện thoại thông minh.",
+          "D. Lập trình truyền thống, phần cứng và người dùng cuối."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 3,
+        "topicId": "intro_to_ai",
+        "question": "Thuật ngữArtificial Narrow Intelligence (ANI) dùng đểchỉloại AI nào?",
+        "options": [
+          "A. AI có khảnăng tựnhận thức và có cảm xúc như con người.",
+          "B. AI được thiết kếđểthực hiện một nhiệm vụcụthểhoặc một tập hợp nhiệm vụhạn hẹp.",
+          "C. AI có trí thông minh vượt xa mọi khảnăng của con người.",
+          "D. AI có thểtựhọc mọi lĩnh vực mà không cần dữliệu đầu vào."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 51,
+        "topicId": "intelligent_systems",
+        "question": "Trong lý thuyết vềhệthống thông minh, một Agent (Tác tử) được định nghĩa là gì?",
+        "options": [
+          "A. Một thực thểcó khảnăng nhận thức môi trường thông qua các cảm biến và tác động lên môi trường đó thông qua các bộphận thực thi.",
+          "B. Một chương trình máy tính chỉchạy trong môi trường ngoại tuyến.",
+          "C. Một bộphận phần cứng không có khảnăng tương tác với dữliệu bên ngoài.",
+          "D. Một cơ sởdữliệu dùng đểlưu trữcác thông tin vềAI."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 52,
+        "topicId": "intelligent_systems",
+        "question": "Thành phần nào của Agent dùng đểnhận biết môi trường xung quanh?",
+        "options": [
+          "A. Actuators.",
+          "B. Sensors.",
+          "C. Inference Engine.",
+          "D. Knowledge Base."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 53,
+        "topicId": "intelligent_systems",
+        "question": "Khái niệm Percept trong hệthống thông minh dùng đểchỉđiều gì?",
+        "options": [
+          "A. Tập các hành động của Agent có thểthực hiện được tại một thời điểm.",
+          "B. Trạng thái của môi trường mà Agent nhận được tại một thời điểm nhất định.",
+          "C. Một thuật toán xửlý dữliệu sốmà Agent thực hiện.",
+          "D. Tốc độphản hồi của hệthống Agent."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 54,
+        "topicId": "intelligent_systems",
+        "question": "Một Agent được coi là Rational (Hợp lý) nếu nó thực hiện hành động nhằm mục đích gì?",
+        "options": [
+          "A. Thực hiện hành động nhanh nhất có thể.",
+          "B. Luôn bắt chước hành động của con người một cách tuyệt đối.",
+          "C. Tối đa hóa giá trịkỳvọng của chỉsốhiệu suất.",
+          "D. Tiết kiệm năng lượng nhất cho hệthống máy chủ."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đáp án C đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 71,
+        "topicId": "search_problems",
+        "question": "Trong AI, một bài toán tìm kiếm thường được xác định bởi các thành phần nào sau đây?",
+        "options": [
+          "A. Trạng thái bắt đầu, các hành động, mô hình chuyển trạng thái, kiểm tra mục tiêu và chi phí đường đi.",
+          "B. Chỉcần trạng thái bắt đầu và trạng thái mục tiêu.",
+          "C. Các thuật toán lập trình Python và bộnhớRAM.",
+          "D. Dữliệu khách hàng và các cảm biến của Robot."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 72,
+        "topicId": "search_problems",
+        "question": "Tập hợp tất cảcác trạng thái có thểđạt tới từtrạng thái bắt đầu thông qua bất kỳchuỗi hành động nào được gọi là gì?",
+        "options": [
+          "A. Search Tree.",
+          "B. State Space.",
+          "C. Action Set.",
+          "D. Goal Test."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 73,
+        "topicId": "search_problems",
+        "question": "Thành phần State Space Graph là một thực thểtoán học dùng đểbiểu diễn điều gì?",
+        "options": [
+          "A. Các nút trong cây tìm kiếm.",
+          "B. Bản tóm tắt các cấu trúc dữliệu của bài toán.",
+          "C. Một đồthịtrong đó các nút là các trạng thái và các cung là các hành động.",
+          "D. Lịch sửcác bước di chuyển của Agent."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đáp án C đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 74,
+        "topicId": "search_problems",
+        "question": "Trong tìm kiếm theo chiều rộng (Breadth-First Search - BFS), cấu trúc dữliệu nào thường được sửdụng đểquản lý danh sách các nút đang chờkhám phá (Frontier)?",
+        "options": [
+          "A. Stack (LIFO).",
+          "B. Queue (FIFO). 19"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 75,
+        "topicId": "search_problems",
+        "question": "Thuật toán tìm kiếm nào luôn mởrộng nút nông nhất (nút có độsâu thấp nhất) trong Frontier?",
+        "options": [
+          "A. Depth-First Search (DFS).",
+          "B. Breadth-First Search (BFS).",
+          "C. Uniform-Cost Search.",
+          "D. Depth-Limited Search."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 76,
+        "topicId": "search_problems",
+        "question": "Ưu điểm chính của thuật toán Breadth-First Search (BFS) là gì?",
+        "options": [
+          "A. Tiết kiệm bộnhớnhất.",
+          "B. Luôn tìm thấy giải pháp tối ưu nếu chi phí các bước là bằng nhau.",
+          "C. Hoạt động tốt nhất trong không gian trạng thái vô hạn.",
+          "D. Dễcài đặt hơn tất cảcác thuật toán khác."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Phân tích"
+      },
+      {
+        "id": 77,
+        "topicId": "search_problems",
+        "question": "Nhược điểm lớn nhất của thuật toán Breadth-First Search (BFS) khi đối mặt với các bài toán thực tếphức tạp là gì?",
+        "options": [
+          "A. Không bao giờtìm thấy mục tiêu.",
+          "B. Độphức tạp vềthời gian và không gian (bộnhớ) tăng theo hàm mũ.",
+          "C. Chỉhoạt động trên đồthịcó hướng.",
+          "D. Luôn chọn đường đi có chi phí cao nhất."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Breadth-First Search (Tìm kiếm theo chiều rộng) duyệt các nút theo tầng. Nó có tính Complete (nếu hệ số nhánh b hữu hạn), Optimal (nếu chi phí các bước bằng nhau), độ phức tạp thời gian và không gian đều là O(b^d).",
+        "type": "Phân tích"
+      },
+      {
+        "id": 78,
+        "topicId": "search_problems",
+        "question": "Thuật toán Depth-First Search (DFS) quản lý Frontier bằng cấu trúc dữliệu nào?",
+        "options": [
+          "A. Queue (FIFO).",
+          "B. Stack (LIFO).",
+          "C. Priority Queue.",
+          "D. Array. 20"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Depth-First Search (Tìm kiếm theo chiều sâu) đi sâu vào một nhánh cho đến khi gặp nút lá rồi quay lui. Ưu điểm lớn nhất là tiết kiệm bộ nhớ với độ phức tạp không gian O(bm) thay vì hàm mũ như BFS.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 79,
+        "topicId": "search_problems",
+        "question": "Thuật toán tìm kiếm nào mởrộng nút sâu nhất trong Frontier hiện tại?",
+        "options": [
+          "A. Breadth-First Search.",
+          "B. Depth-First Search.",
+          "C. Uniform-Cost Search.",
+          "D. Iterative Deepening Search."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 80,
+        "topicId": "search_problems",
+        "question": "Trong trường hợp không gian trạng thái là một cây hữu hạn, thuật toán Depth- First Search (DFS) có tính chất nào sau đây?",
+        "options": [
+          "A. Optimal.",
+          "B. Complete.",
+          "C. Tốn nhiều bộnhớhơn BFS.",
+          "D. Luôn tìm thấy đường đi ngắn nhất."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Depth-First Search (Tìm kiếm theo chiều sâu) đi sâu vào một nhánh cho đến khi gặp nút lá rồi quay lui. Ưu điểm lớn nhất là tiết kiệm bộ nhớ với độ phức tạp không gian O(bm) thay vì hàm mũ như BFS.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 111,
+        "topicId": "local_search",
+        "question": "Đặc điểm chính của các thuật toán tìm kiếm cục bộ(Local Search) so với tìm kiếm có hệthống là gì?",
+        "options": [
+          "A. Quan tâm sâu sắc đến đường đi từtrạng thái bắt đầu đến mục tiêu.",
+          "B. Chỉtập trung vào trạng thái hiện tại và thường không lưu trữcác đường đi.",
+          "C. Tập trung vào cảtrạng thái hiện tại và lưu trữcác đường đi.",
+          "D. Luôn đảm bảo tìm thấy giải pháp tối ưu toàn cục."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 112,
+        "topicId": "local_search",
+        "question": "Thuật toán tìm kiếm cục bộthường được sửdụng cho loại bài toán nào?",
+        "options": [
+          "A. Các bài toán mà đường đi đến mục tiêu là quan trọng nhất.",
+          "B. Các bài toán mà chỉcần tìm thấy trạng thái mục tiêu.",
+          "C. Các bài toán có không gian trạng thái rất nhỏvà đơn giản.",
+          "D. Các bài toán tìm kiếm mù trên đồthịít nút."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 113,
+        "topicId": "local_search",
+        "question": "Trong không gian trạng thái của tìm kiếm cục bộ, thuật ngữLocal Maximum dùng đểchỉđiều gì?",
+        "options": [
+          "A. Trạng thái có giá trịhàm mục tiêu cao nhất trong toàn bộkhông gian.",
+          "B. Trạng thái tốt hơn tất cảcác trạng thái láng giềng nhưng vẫn thấp hơn tối ưu toàn cục.",
+          "C. Trạng thái tốt hơn tất cảcác trạng thái láng giềng và tốt hơn trạng thái tối ưu toàn cục.",
+          "D. Một vùng phẳng mà tất cảcác trạng thái láng giềng có giá trịbằng nhau."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 114,
+        "topicId": "local_search",
+        "question": "Thuật toán Hill Climbing (Leo núi) hoạt động theo nguyên tắc cơ bản nào?",
+        "options": [
+          "A. Di chuyển liên tục vềhướng có giá trịhàm mục tiêu tăng dần.",
+          "B. Di chuyển ngẫu nhiên đến bất kỳtrạng thái nào trong không gian.",
+          "C. Luôn chọn trạng thái có giá trịthấp hơn trạng thái hiện tại.",
+          "D. Dừng lại ngay khi gặp trạng thái đầu tiên. 29"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 115,
+        "topicId": "local_search",
+        "question": "Vấn đềnào xảy ra khi thuật toán leo núi rơi vào một vùng Plateau?",
+        "options": [
+          "A. Thuật toán sẽdừng lại vì không tìm thấy được đỉnh cao hơn nó.",
+          "B. Thuật toán bịlạc hướng vì giá trịtại các trạng thái láng giềng bằng nhau.",
+          "C. Thuật toán chắc chắn sẽtìm thấy đỉnh cao nhất toàn cục.",
+          "D. Thuật toán sẽtựđộng khởi động lại từđầu."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 131,
+        "topicId": "complex_environments",
+        "question": "Trong môi trường ngẫu nhiên (Stochastic environments), đặc điểm nào sau đây là đúng?",
+        "options": [
+          "A. Trạng thái tiếp theo hoàn toàn có thểdựđoán được dựa trên hành động của Agent.",
+          "B. Một hành động đơn lẻcó thểdẫn đến nhiều kết quảkhác nhau do yếu tố ngẫu nhiên.",
+          "C. Agent không cần cảm biến đểnhận biết môi trường.",
+          "D. Chi phí đường đi luôn luôn là một hằng sốcốđịnh."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 132,
+        "topicId": "complex_environments",
+        "question": "Cấu trúc nào thường được dùng đểbiểu diễn bài toán tìm kiếm trong môi trường ngẫu nhiên?",
+        "options": [
+          "A. Cây tìm kiếm thông thường.",
+          "B. ĐồthịAND-OR (AND-OR graph).",
+          "C. Danh sách liên kết đơn.",
+          "D. Bảng băm (Hash table)."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 133,
+        "topicId": "complex_environments",
+        "question": "Trong đồthịAND-OR, các nút OR đại diện cho điều gì?",
+        "options": [
+          "A. Các kết quảngẫu nhiên của môi trường.",
+          "B. Các lựa chọn hành động khác nhau của Agent.",
+          "C. Các mục tiêu cần đạt được đồng thời.",
+          "D. Các trạng thái thất bại của hệthống."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Trong đồ thị AND-OR, các nút OR đại diện cho các lựa chọn hành động của Agent, còn các nút AND đại diện cho các kết quả ngẫu nhiên hoặc các phản hồi từ môi trường không xác định.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 134,
+        "topicId": "complex_environments",
+        "question": "Trong đồthịAND-OR, các nút AND đại diện cho điều gì?",
+        "options": [
+          "A. Các lựa chọn hành động của Agent.",
+          "B. Các kết quảkhác nhau có thểxảy ra của một hành động do môi trường ngẫu nhiên.",
+          "C. Trạng thái bắt đầu của bài toán. 34"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Trong đồ thị AND-OR, các nút OR đại diện cho các lựa chọn hành động của Agent, còn các nút AND đại diện cho các kết quả ngẫu nhiên hoặc các phản hồi từ môi trường không xác định.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 135,
+        "topicId": "complex_environments",
+        "question": "Giải pháp cho một bài toán tìm kiếm AND-OR không phải là một chuỗi hành động đơn lẻmà là một:",
+        "options": [
+          "A. Kếhoạch có điều kiện.",
+          "B. Trạng thái mục tiêu duy nhất.",
+          "C. Thuật toán leo núi.",
+          "D. Quần thểcác cá thểdi truyền."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Trong đồ thị AND-OR, các nút OR đại diện cho các lựa chọn hành động của Agent, còn các nút AND đại diện cho các kết quả ngẫu nhiên hoặc các phản hồi từ môi trường không xác định.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 150,
+        "topicId": "csp",
+        "question": "Một bài toán thỏa mãn ràng buộc (CSP) được định nghĩa bởi ba thành phần chính nào?",
+        "options": [
+          "A. Các biến, các miền giá trịvà các ràng buộc.",
+          "B. Trạng thái bắt đầu, hành động và chi phí đường đi.",
+          "C. Cảm biến, bộphận thực thi và môi trường.",
+          "D. Quần thể, lai ghép và đột biến."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 151,
+        "topicId": "csp",
+        "question": "Trong CSP, thành phần nào xác định các giá trịcó thểcó cho một biến?",
+        "options": [
+          "A. Constraints (Ràng buộc).",
+          "B. Domains (Miền giá trị).",
+          "C. Variables (Biến).",
+          "D. Assignments (Phép gán)."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 152,
+        "topicId": "csp",
+        "question": "Một phép gán được gọi là hoàn chỉnh (Complete assignment) khi nào?",
+        "options": [
+          "A. Khi chỉmột vài biến quan trọng được gán giá trị.",
+          "B. Khi mọi biến đều đã được gán một giá trị.",
+          "C. Khi các giá trịđược gán không vi phạm bất kỳràng buộc nào.",
+          "D. Khi miền giá trịcủa các biến đều là sốnguyên."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 153,
+        "topicId": "csp",
+        "question": "Một phép gán được gọi là nhất quán (Consistent assignment) nếu nó thỏa mãn điều kiện gì?",
+        "options": [
+          "A. Không vi phạm bất kỳràng buộc nào.",
+          "B. Tất cảcác biến đều có cùng một giá trị.",
+          "C. Chỉáp dụng cho các bài toán tìm đường.",
+          "D. Được thực hiện bởi thuật toán DFS."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một hàm Heuristic h(n) được gọi là consistent (nhất quán) nếu với mọi nút n và nút con n' sinh ra bởi hành động a, ta có h(n) <= c(n, a, n') + h(n').",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 154,
+        "topicId": "csp",
+        "question": "Giải pháp của một bài toán CSP là một phép gán thỏa mãn hai đặc điểm nào?",
+        "options": [
+          "A. Ngẫu nhiên và nhanh chóng. 39"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 155,
+        "topicId": "csp",
+        "question": "Ràng buộc giữa hai biến (ví dụ: X ̸= Y ) được phân loại là loại ràng buộc nào?",
+        "options": [
+          "A. Unary constraint (Ràng buộc đơn nhất).",
+          "B. Binary constraint (Ràng buộc nhịphân).",
+          "C. Global constraint (Ràng buộc toàn cục).",
+          "D. Preference constraint (Ràng buộc mềm)."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 156,
+        "topicId": "csp",
+        "question": "Đồthịràng buộc (Constraint Graph) là công cụdùng đểbiểu diễn điều gì?",
+        "options": [
+          "A. Các bước di chuyển của Agent.",
+          "B. Các biến dưới dạng nút và các ràng buộc nhịphân dưới dạng cạnh.",
+          "C. Thứtựcác trạng thái trong cây tìm kiếm.",
+          "D. Phân phối xác suất của các giá trị."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 157,
+        "topicId": "csp",
+        "question": "Thuật toán tìm kiếm cơ bản thường được áp dụng cho CSP là gì?",
+        "options": [
+          "A. Breadth-First Search.",
+          "B. Backtracking Search.",
+          "C. Uniform-Cost Search.",
+          "D. Bidirectional Search."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 158,
+        "topicId": "csp",
+        "question": "Backtracking Search thực chất là một dạng của thuật toán tìm kiếm nào?",
+        "options": [
+          "A. Depth-First Search với việc gán giá trịcho từng biến một.",
+          "B. Breadth-First Search với việc kiểm tra mục tiêu.",
+          "C. Local Search với việc khởi động lại ngẫu nhiên.",
+          "D. A* với hàm Heuristic tối ưu."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 159,
+        "topicId": "csp",
+        "question": "Chiến lược Minimum Remaining Values (MRV) giúp chọn biến tiếp theo dựa trên tiêu chí nào? 40",
+        "options": [],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 160,
+        "topicId": "csp",
+        "question": "Chiến lược Degree Heuristic được sửdụng đểgiải quyết vấn đềgì?",
+        "options": [
+          "A. Chọn giá trịtốt nhất cho một biến.",
+          "B. Phá vỡsựbếtắc khi có nhiều biến cùng thỏa mãn tiêu chí MRV bằng cách chọn biến tham gia vào nhiều ràng buộc nhất.",
+          "C. Loại bỏcác biến không quan trọng khỏi đồthị.",
+          "D. Tăng kích thước miền giá trịcủa các biến."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      },
+      {
+        "id": 161,
+        "topicId": "csp",
+        "question": "Sau khi chọn một biến, chiến lược Least Constraining Value (LCV) ưu tiên chọn giá trịnào?",
+        "options": [
+          "A. Giá trịloại bỏít lựa chọn nhất cho các biến láng giềng.",
+          "B. Giá trịlớn nhất trong miền giá trị.",
+          "C. Giá trịgây ra nhiều xung đột nhất đểthửthách thuật toán.",
+          "D. Giá trịngẫu nhiên."
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đáp án A đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Tính toán"
+      },
+      {
+        "id": 162,
+        "topicId": "csp",
+        "question": "Kỹthuật Forward Checking giúp cải thiện hiệu suất tìm kiếm như thếnào?",
+        "options": [
+          "A. Lưu lại toàn bộlịch sửcác phép gán sai.",
+          "B. Theo dõi và thu hẹp miền giá trịcủa các biến chưa gán có liên quan trực tiếp đến biến vừa gán.",
+          "C. Tựđộng gán giá trịcho tất cảcác biến cùng một lúc.",
+          "D. Chuyển bài toán CSP thành bài toán tìm kiếm mù."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",
+        "type": "Lý thuyết"
+      }
+    ]
+  }
+]

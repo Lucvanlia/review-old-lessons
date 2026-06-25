@@ -54,5 +54,22 @@
     "pdfs": [
       "antoanthongtin-ontap/cauhoiontap.pdf"
     ]
+  },
+  {
+    "id": "trituenhantao-ontap",
+    "name": "Trí Tuệ Nhân Tạo (AI)",
+    "description": "Ôn tập Nhập môn Trí tuệ Nhân tạo: Agent, PEAS, BFS/DFS/UCS/A*, Tìm kiếm cục bộ, AND-OR Tree và bài toán CSP.",
+    "icon": "🤖",
+    "pdfs": [
+      "trituenhantao-ontap/Chapter 1 - Introduction to AI.pdf",
+      "trituenhantao-ontap/Chapter 2 - Python.pdf",
+      "trituenhantao-ontap/Chapter 3 - Ethics and Law.pdf",
+      "trituenhantao-ontap/Chapter 4 - Intelligent Systems.pdf",
+      "trituenhantao-ontap/Chapter 5 - Search Problems_L1.pdf",
+      "trituenhantao-ontap/Chapter 6 - Local search.pdf",
+      "trituenhantao-ontap/Chapter 7 - Searching in Complex Environments.pdf",
+      "trituenhantao-ontap/Chapter 8 - Constraint Satisfaction Problems.pdf",
+      "trituenhantao-ontap/tracnghiem.pdf"
+    ]
   }
 ]

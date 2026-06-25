@@ -282,6 +282,7 @@ function updatePageTitle(panelId) {
         'home': 'Bảng điều khiển',
         'knowledge': 'Tổng hợp kiến thức',
         'practice': 'Luyện tập theo chủ đề',
+        'interactive-practice': 'Tự luận vẽ đồ thị AND-OR',
         'mock-test': 'Thi thử tổng hợp',
         'analytics': 'Phân tích học tập'
     };
@@ -320,6 +321,8 @@ function onPanelActivated(panelId) {
         renderKnowledgeScreen();
     } else if (panelId === 'practice') {
         renderPracticeSetupScreen();
+    } else if (panelId === 'interactive-practice') {
+        renderInteractivePracticeScreen();
     } else if (panelId === 'analytics') {
         renderAnalyticsScreen();
     }
@@ -1725,4 +1728,993 @@ function syncCustomSelect(selectId) {
         optionsPanel.appendChild(optDiv);
     });
 }
+
+// ==========================================================================
+// INTERACTIVE AND-OR TREE PRACTICE GAME
+// ==========================================================================
+const interactiveExercises = {
+    ex1: {
+        title: "Bài 1: AND-OR Graph (Slide Ch. 7, p. 9)",
+        initialState: "S",
+        goal: ["B", "D", "E", "G"],
+        rules: [
+            { id: "R1", source: "S", targets: ["A", "B"], type: "AND" },
+            { id: "R2", source: "S", targets: ["C"], type: "OR" },
+            { id: "R3", source: "A", targets: ["D", "E"], type: "AND" },
+            { id: "R4", source: "F", targets: ["G", "E"], type: "AND" },
+            { id: "R5", source: "F", targets: ["H"], type: "OR" },
+            { id: "R6", source: "C", targets: ["F"], type: "OR" }
+        ],
+        correctLinks: {
+            "S": ["A", "B"],
+            "A": ["D", "E"],
+            "F": ["G", "E"]
+        },
+        correctRelations: {
+            "S": "AND",
+            "A": "AND",
+            "F": "AND"
+        },
+        nodes: [
+            { id: "S", x: 60, y: 220 },
+            { id: "A", x: 200, y: 100 },
+            { id: "B", x: 200, y: 220 },
+            { id: "C", x: 200, y: 340 },
+            { id: "D", x: 340, y: 50 },
+            { id: "E", x: 340, y: 150 },
+            { id: "F", x: 340, y: 340 },
+            { id: "G", x: 480, y: 260 },
+            { id: "H", x: 480, y: 380 }
+        ]
+    },
+    ex2: {
+        title: "Bài 2: Non-deterministic Search (Slide Ch. 7, p. 31)",
+        initialState: "S",
+        goal: ["D", "G", "H"],
+        rules: [
+            { id: "R1", source: "S", targets: ["A", "B", "C"], type: "AND" },
+            { id: "R2", source: "A", targets: ["D"], type: "OR" },
+            { id: "R3", source: "B", targets: ["E", "F"], type: "AND" },
+            { id: "R4", source: "C", targets: ["D", "G"], type: "AND" },
+            { id: "R5", source: "F", targets: ["H"], type: "OR" }
+        ],
+        correctLinks: {
+            "S": ["A", "B", "C"],
+            "B": ["E", "F"],
+            "C": ["D", "G"]
+        },
+        correctRelations: {
+            "S": "AND",
+            "B": "AND",
+            "C": "AND"
+        },
+        nodes: [
+            { id: "S", x: 60, y: 220 },
+            { id: "A", x: 200, y: 100 },
+            { id: "B", x: 200, y: 220 },
+            { id: "C", x: 200, y: 340 },
+            { id: "D", x: 340, y: 60 },
+            { id: "E", x: 340, y: 170 },
+            { id: "F", x: 340, y: 270 },
+            { id: "G", x: 340, y: 380 },
+            { id: "H", x: 480, y: 270 }
+        ]
+    },
+    ex3: {
+        title: "Bài 3: Conditional Plan Search (Slide Ch. 8, p. 2)",
+        initialState: "S",
+        goal: ["H", "F"],
+        rules: [
+            { id: "R1", source: "S", targets: ["A"], type: "OR" },
+            { id: "R2", source: "S", targets: ["B"], type: "OR" },
+            { id: "R3", source: "A", targets: ["C", "D"], type: "AND" },
+            { id: "R4", source: "B", targets: ["D", "E", "F"], type: "AND" },
+            { id: "R5", source: "C", targets: ["G"], type: "OR" },
+            { id: "R6", source: "D", targets: ["H"], type: "OR" },
+            { id: "R7", source: "E", targets: ["H"], type: "OR" },
+            { id: "R8", source: "E", targets: ["K"], type: "OR" }
+        ],
+        correctLinks: {
+            "S": ["A", "B"],
+            "A": ["C", "D"],
+            "B": ["D", "E", "F"]
+        },
+        correctRelations: {
+            "S": "OR",
+            "A": "AND",
+            "B": "AND"
+        },
+        nodes: [
+            { id: "S", x: 60, y: 220 },
+            { id: "A", x: 190, y: 110 },
+            { id: "B", x: 190, y: 330 },
+            { id: "C", x: 320, y: 50 },
+            { id: "D", x: 320, y: 220 },
+            { id: "E", x: 320, y: 350 },
+            { id: "F", x: 320, y: 450 },
+            { id: "G", x: 460, y: 50 },
+            { id: "H", x: 460, y: 250 },
+            { id: "K", x: 460, y: 400 }
+        ]
+    },
+    ex4: {
+        title: "Bài 4: Simple AND-OR Graph (Slide Ch. 7, p. 11)",
+        initialState: "a",
+        goal: ["b", "c"],
+        rules: [
+            { id: "R1", source: "a", targets: ["b", "c"], type: "AND" },
+            { id: "R2", source: "a", targets: ["d"], type: "OR" }
+        ],
+        correctLinks: {
+            "a": ["b", "c", "d"]
+        },
+        correctRelations: {
+            "a": "OR"
+        },
+        nodes: [
+            { id: "a", x: 100, y: 220 },
+            { id: "b", x: 260, y: 120 },
+            { id: "d", x: 260, y: 220 },
+            { id: "c", x: 260, y: 320 }
+        ]
+    },
+    ex5: {
+        title: "Bài 5: Multi-layer AND-OR Graph",
+        initialState: "S",
+        goal: ["G"],
+        rules: [
+            { id: "R1", source: "S", targets: ["A", "B"], type: "AND" },
+            { id: "R2", source: "A", targets: ["C"], type: "OR" },
+            { id: "R3", source: "B", targets: ["D"], type: "OR" },
+            { id: "R4", source: "C", targets: ["G"], type: "OR" },
+            { id: "R5", source: "D", targets: ["G"], type: "OR" }
+        ],
+        correctLinks: {
+            "S": ["A", "B"],
+            "A": ["C"],
+            "B": ["D"],
+            "C": ["G"],
+            "D": ["G"]
+        },
+        correctRelations: {
+            "S": "AND",
+            "A": "OR",
+            "B": "OR",
+            "C": "OR",
+            "D": "OR"
+        },
+        nodes: [
+            { id: "S", x: 80, y: 220 },
+            { id: "A", x: 200, y: 120 },
+            { id: "B", x: 200, y: 320 },
+            { id: "C", x: 320, y: 120 },
+            { id: "D", x: 320, y: 320 },
+            { id: "G", x: 460, y: 220 }
+        ]
+    }
+};
+
+const interactiveState = {
+    currentExId: 'ex1',
+    userConnections: {}, // parentNodeId -> array of childNodeIds
+    userRelations: {}, // parentNodeId -> 'AND' or 'OR'
+    selectedSourceNode: null,
+    simulationActive: false,
+    initialized: false
+};
+
+function renderInteractivePracticeScreen() {
+    const nonAiAlert = document.getElementById('interactive-non-ai-alert');
+    const aiWorkspace = document.getElementById('interactive-ai-workspace');
+    
+    if (!nonAiAlert || !aiWorkspace) return;
+    
+    if (state.currentSubjectId !== 'trituenhantao-ontap') {
+        nonAiAlert.classList.remove('hidden');
+        aiWorkspace.classList.add('hidden');
+        
+        const btnSwitch = document.getElementById('btn-switch-to-ai');
+        if (btnSwitch) {
+            btnSwitch.onclick = async () => {
+                const aiSubject = state.subjects.find(s => s.id === 'trituenhantao-ontap');
+                if (aiSubject) {
+                    await selectSubject('trituenhantao-ontap');
+                    renderInteractivePracticeScreen();
+                } else {
+                    showToast('Không tìm thấy dữ liệu môn Trí Tuệ Nhân Tạo.', 'danger');
+                }
+            };
+        }
+        return;
+    }
+    
+    nonAiAlert.classList.add('hidden');
+    aiWorkspace.classList.remove('hidden');
+    
+    if (!interactiveState.initialized) {
+        setupInteractiveEventListeners();
+        interactiveState.initialized = true;
+    }
+    
+    initInteractiveExercise(interactiveState.currentExId);
+}
+
+function setupInteractiveEventListeners() {
+    const exSelect = document.getElementById('interactive-ex-select');
+    if (exSelect) {
+        exSelect.addEventListener('change', (e) => {
+            interactiveState.currentExId = e.target.value;
+            initInteractiveExercise(interactiveState.currentExId);
+        });
+    }
+    
+    const btnReset = document.getElementById('btn-reset-graph');
+    if (btnReset) {
+        btnReset.addEventListener('click', () => {
+            initInteractiveExercise(interactiveState.currentExId);
+            showToast('Đã đặt lại đồ thị bài tập.', 'info');
+        });
+    }
+
+    const btnConnect = document.getElementById('btn-connect-nodes');
+    if (btnConnect) {
+        btnConnect.addEventListener('click', () => {
+            if (interactiveState.simulationActive) return;
+            const parentVal = document.getElementById('parent-node-select').value;
+            const childVal = document.getElementById('child-node-select').value;
+            const groupVal = document.getElementById('rule-group-select').value || 'R1';
+            
+            if (!parentVal || !childVal) {
+                showToast('Vui lòng chọn cả node cha và node con!', 'warning');
+                return;
+            }
+            if (parentVal === childVal) {
+                showToast('Không thể nối một nút với chính nó!', 'warning');
+                return;
+            }
+            
+            if (!interactiveState.userConnections[parentVal]) {
+                interactiveState.userConnections[parentVal] = {};
+            }
+            if (!interactiveState.userConnections[parentVal][groupVal]) {
+                interactiveState.userConnections[parentVal][groupVal] = [];
+            }
+            
+            if (!interactiveState.userConnections[parentVal][groupVal].includes(childVal)) {
+                interactiveState.userConnections[parentVal][groupVal].push(childVal);
+                showToast(`Đã nối ${parentVal} ➔ ${childVal} (Luật ${groupVal})`, 'success');
+            } else {
+                showToast(`Liên kết ${parentVal} ➔ ${childVal} đã tồn tại trong nhóm này!`, 'warning');
+            }
+            drawInteractiveGraph();
+            renderAndOrRadios();
+        });
+    }
+
+    const btnDisconnect = document.getElementById('btn-disconnect-nodes');
+    if (btnDisconnect) {
+        btnDisconnect.addEventListener('click', () => {
+            if (interactiveState.simulationActive) return;
+            const parentVal = document.getElementById('parent-node-select').value;
+            const childVal = document.getElementById('child-node-select').value;
+            const groupVal = document.getElementById('rule-group-select').value || 'R1';
+            
+            if (!parentVal || !childVal) {
+                showToast('Vui lòng chọn cả node cha và con để ngắt kết nối!', 'warning');
+                return;
+            }
+            if (interactiveState.userConnections[parentVal] && interactiveState.userConnections[parentVal][groupVal]) {
+                const initialLen = interactiveState.userConnections[parentVal][groupVal].length;
+                interactiveState.userConnections[parentVal][groupVal] = interactiveState.userConnections[parentVal][groupVal].filter(c => c !== childVal);
+                
+                if (interactiveState.userConnections[parentVal][groupVal].length < initialLen) {
+                    showToast(`Đã xóa liên kết ${parentVal} ➔ ${childVal} (Luật ${groupVal})`, 'info');
+                }
+                
+                if (interactiveState.userConnections[parentVal][groupVal].length === 0) {
+                    delete interactiveState.userConnections[parentVal][groupVal];
+                    if (interactiveState.userRelations[parentVal]) {
+                        delete interactiveState.userRelations[parentVal][groupVal];
+                    }
+                }
+                if (Object.keys(interactiveState.userConnections[parentVal]).length === 0) {
+                    delete interactiveState.userConnections[parentVal];
+                    delete interactiveState.userRelations[parentVal];
+                }
+            }
+            drawInteractiveGraph();
+            renderAndOrRadios();
+        });
+    }
+
+    const btnSubmit = document.getElementById('btn-submit-workspace-solve');
+    if (btnSubmit) {
+        btnSubmit.addEventListener('click', () => {
+            submitWorkspaceSolve();
+        });
+    }
+
+    // Mode toggles
+    const modeRadios = document.querySelectorAll('input[name="workspace-mode"]');
+    modeRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            initInteractiveExercise(interactiveState.currentExId);
+        });
+    });
+}
+
+function initInteractiveExercise(exId) {
+    const ex = interactiveExercises[exId];
+    if (!ex) return;
+    
+    interactiveState.userConnections = {};
+    interactiveState.userRelations = {};
+    interactiveState.selectedSourceNode = null;
+    interactiveState.simulationActive = false;
+    
+    // Hide simulation log section
+    document.getElementById('simulation-validation-card').classList.add('hidden');
+    document.getElementById('simulation-summary-box').classList.add('hidden');
+    document.getElementById('simulation-log-list').innerHTML = '';
+    
+    // Clear prediction radio buttons
+    const predictionRadios = document.querySelectorAll('input[name="solvability-prediction"]');
+    predictionRadios.forEach(r => r.checked = false);
+    
+    // Hide split screen
+    const correctCanvas = document.getElementById('correct-canvas-area');
+    const userLabel = document.getElementById('user-canvas-label');
+    if (correctCanvas) correctCanvas.classList.add('hidden');
+    if (userLabel) userLabel.classList.add('hidden');
+
+    // Get current mode
+    const mode = document.querySelector('input[name="workspace-mode"]:checked')?.value || 'practice';
+
+    // Populate dropdown options
+    const parentSelect = document.getElementById('parent-node-select');
+    const childSelect = document.getElementById('child-node-select');
+    if (parentSelect && childSelect) {
+        parentSelect.innerHTML = '';
+        childSelect.innerHTML = '';
+        ex.nodes.forEach(n => {
+            const opt1 = document.createElement('option');
+            opt1.value = n.id;
+            opt1.textContent = n.id;
+            parentSelect.appendChild(opt1);
+
+            const opt2 = document.createElement('option');
+            opt2.value = n.id;
+            opt2.textContent = n.id;
+            childSelect.appendChild(opt2);
+        });
+    }
+
+    // Step 1: Render description outline
+    const exDesc = document.getElementById('ex-description');
+    if (exDesc) {
+        if (mode === 'practice') {
+            let rulesHtml = ex.rules.map(r => `<div><strong>${r.id}:</strong> ${r.source} &rarr; ${r.targets.join(', ')}</div>`).join('');
+            exDesc.innerHTML = `
+                <h4 style="margin-bottom: 8px; color: var(--primary);">${ex.title}</h4>
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 10px;">Dưới đây là danh sách các luật chuyển trạng thái ban đầu (không hiển thị quan hệ AND/OR). Hãy xây dựng đồ thị lời giải bằng bảng điều khiển bên phải.</p>
+                <div style="background: var(--bg-app); padding: 12px; border-radius: var(--radius-sm); font-family: monospace; font-size: 13px; line-height: 1.5; color: var(--text-main); border: 1.5px dashed var(--border-color); display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                    ${rulesHtml}
+                </div>
+            `;
+        } else {
+            exDesc.innerHTML = `
+                <h4 style="margin-bottom: 8px; color: var(--primary);">${ex.title} (CHẾ ĐỘ KIỂM TRA)</h4>
+                <p style="font-size: 13.5px; color: var(--text-muted);">Mọi gợi ý và lời giải mẫu bị ẩn. Hãy tự kết nối đồ thị, xác định quan hệ AND/OR, chọn tính khả thi và nộp bài để xem chấm.</p>
+            `;
+        }
+    }
+
+    // Step 4: Show Goal state info
+    const goalDisplay = document.getElementById('goal-info-display');
+    if (goalDisplay) {
+        goalDisplay.textContent = `Goal = { ${ex.goal.join(', ')} }`;
+    }
+
+    renderCanvasNodes(ex.nodes);
+    renderAndOrRadios();
+    drawInteractiveGraph();
+}
+
+function renderCanvasNodes(nodes, containerId = 'interactive-nodes-container', isUserGraph = true) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.innerHTML = '';
+    
+    nodes.forEach(node => {
+        const div = document.createElement('div');
+        div.className = 'interactive-node';
+        div.id = isUserGraph ? `node-${node.id}` : `correct-node-${node.id}`;
+        div.textContent = node.id;
+        div.style.left = `${node.x}px`;
+        div.style.top = `${node.y}px`;
+        div.style.position = 'absolute';
+        div.style.width = '55px';
+        div.style.height = '55px';
+        div.style.borderRadius = '50%';
+        div.style.background = 'var(--bg-card)';
+        div.style.border = '2.5px solid var(--border-color)';
+        div.style.color = 'var(--text-main)';
+        div.style.display = 'flex';
+        div.style.justifyContent = 'center';
+        div.style.alignItems = 'center';
+        div.style.fontWeight = '700';
+        div.style.cursor = isUserGraph ? 'pointer' : 'default';
+        div.style.boxShadow = 'var(--shadow-sm)';
+        div.style.transition = 'all 0.2s ease';
+        div.style.zIndex = '5';
+        
+        if (isUserGraph) {
+            div.addEventListener('click', () => {
+                if (interactiveState.simulationActive) return;
+                // Set as parent in dropdown when clicked
+                const parentSelect = document.getElementById('parent-node-select');
+                if (parentSelect) {
+                    parentSelect.value = node.id;
+                }
+            });
+        }
+        
+        container.appendChild(div);
+    });
+}
+
+function renderAndOrRadios() {
+    const container = document.getElementById('and-or-radio-container');
+    if (!container) return;
+    container.innerHTML = '';
+
+    const parentNodes = Object.keys(interactiveState.userConnections);
+    if (parentNodes.length === 0) {
+        container.innerHTML = `<p style="font-size: 12px; color: var(--text-muted); font-style: italic;">Chưa có nút cha nào có liên kết.</p>`;
+        return;
+    }
+
+    parentNodes.sort().forEach(p => {
+        const groups = interactiveState.userConnections[p];
+        Object.keys(groups).sort().forEach(g => {
+            const children = groups[g];
+            if (!children || children.length === 0) return;
+            
+            if (!interactiveState.userRelations[p]) interactiveState.userRelations[p] = {};
+            const currentRel = interactiveState.userRelations[p][g] || 'OR';
+            
+            const row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.alignItems = 'center';
+            row.style.justifyContent = 'space-between';
+            row.style.background = 'var(--bg-app)';
+            row.style.padding = '6px 12px';
+            row.style.borderRadius = 'var(--radius-sm)';
+            row.style.fontSize = '13px';
+            row.style.border = '1px solid var(--border-color)';
+            row.style.marginBottom = '6px';
+            
+            row.innerHTML = `
+                <span style="font-weight: 600;">Node ${p} (${g}) &rarr; (${children.join(', ')})</span>
+                <div style="display: flex; gap: 10px;">
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 3px;">
+                        <input type="radio" name="rel-${p}-${g}" value="OR" ${currentRel === 'OR' ? 'checked' : ''}> OR
+                    </label>
+                    <label style="cursor: pointer; display: flex; align-items: center; gap: 3px;">
+                        <input type="radio" name="rel-${p}-${g}" value="AND" ${currentRel === 'AND' ? 'checked' : ''}> AND
+                    </label>
+                </div>
+            `;
+            
+            row.querySelectorAll(`input[name="rel-${p}-${g}"]`).forEach(radio => {
+                radio.addEventListener('change', (e) => {
+                    interactiveState.userRelations[p][g] = e.target.value;
+                    drawInteractiveGraph();
+                });
+            });
+            
+            if (!interactiveState.userRelations[p][g]) {
+                interactiveState.userRelations[p][g] = 'OR';
+            }
+            
+            container.appendChild(row);
+        });
+    });
+}
+
+function drawInteractiveGraph() {
+    const ex = interactiveExercises[interactiveState.currentExId];
+    if (!ex) return;
+    drawGraphOnSvg('interactive-svg-overlay', interactiveState.userConnections, interactiveState.userRelations, ex);
+}
+
+function drawCorrectGraph() {
+    const ex = interactiveExercises[interactiveState.currentExId];
+    if (!ex) return;
+    
+    // Build correct grouped connections from rules
+    const correctConn = {};
+    const correctRel = {};
+    
+    ex.rules.forEach(r => {
+        const p = r.source;
+        const g = r.id; // rule ID as group
+        if (!correctConn[p]) correctConn[p] = {};
+        if (!correctRel[p]) correctRel[p] = {};
+        
+        correctConn[p][g] = [...r.targets];
+        // If targets > 1, it's AND, else OR
+        correctRel[p][g] = r.targets.length > 1 ? 'AND' : 'OR';
+    });
+    
+    renderCanvasNodes(ex.nodes, 'correct-nodes-container', false);
+    drawGraphOnSvg('correct-svg-overlay', correctConn, correctRel, ex);
+}
+
+function drawGraphOnSvg(svgId, connections, relations, ex) {
+    const svg = document.getElementById(svgId);
+    if (!svg) return;
+    svg.innerHTML = '';
+    
+    const nodeCoords = {};
+    ex.nodes.forEach(n => {
+        nodeCoords[n.id] = { x: n.x + 27.5, y: n.y + 27.5 };
+    });
+    
+    // Draw connections
+    Object.keys(connections).forEach(p => {
+        const groups = connections[p];
+        Object.keys(groups).forEach(g => {
+            const children = groups[g];
+            if (children.length === 0) return;
+            
+            const isAnd = relations[p] && relations[p][g] === 'AND';
+            const ruleLabel = g;
+            
+            if (isAnd) {
+                const start = nodeCoords[p];
+                // Calculate intermediate point
+                let avgX = 0, avgY = 0;
+                children.forEach(c => {
+                    avgX += nodeCoords[c].x;
+                    avgY += nodeCoords[c].y;
+                });
+                avgX /= children.length;
+                avgY /= children.length;
+                
+                const angle = Math.atan2(avgY - start.y, avgX - start.x);
+                const dist = 50; // Distance to intermediate node
+                const midX = start.x + Math.cos(angle) * dist;
+                const midY = start.y + Math.sin(angle) * dist;
+                
+                // Draw arrow from parent to mid
+                const startEdgeX = start.x + Math.cos(angle) * 27.5;
+                const startEdgeY = start.y + Math.sin(angle) * 27.5;
+                const midEdgeX = midX - Math.cos(angle) * 10; // leave space for dot
+                const midEdgeY = midY - Math.sin(angle) * 10;
+                
+                const lineToMid = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                lineToMid.setAttribute('x1', startEdgeX);
+                lineToMid.setAttribute('y1', startEdgeY);
+                lineToMid.setAttribute('x2', midEdgeX);
+                lineToMid.setAttribute('y2', midEdgeY);
+                lineToMid.setAttribute('stroke', 'var(--primary)');
+                lineToMid.setAttribute('stroke-width', '2.5');
+                lineToMid.setAttribute('marker-end', 'url(#arrow)');
+                svg.appendChild(lineToMid);
+                
+                // Note: Removed the text label on the line to avoid overlap. We only show it on the dot.
+                
+                // Draw intermediate dot
+                const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                dot.setAttribute('cx', midX);
+                dot.setAttribute('cy', midY);
+                dot.setAttribute('r', '6'); // make dot a bit larger
+                dot.setAttribute('fill', 'var(--bg-card)');
+                dot.setAttribute('stroke', 'var(--primary)');
+                dot.setAttribute('stroke-width', '2.5');
+                svg.appendChild(dot);
+                
+                // Draw intermediate node name (e.g. R1')
+                const dotText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                dotText.setAttribute('x', midX + 12);
+                dotText.setAttribute('y', midY + 6);
+                dotText.setAttribute('fill', 'var(--text-main)');
+                dotText.setAttribute('font-size', '14px'); // larger font
+                dotText.setAttribute('font-weight', 'bold');
+                dotText.textContent = ruleLabel + '\'';
+                svg.appendChild(dotText);
+                
+                // Draw lines from mid to children
+                children.forEach(c => {
+                    const end = nodeCoords[c];
+                    const childAngle = Math.atan2(end.y - midY, end.x - midX);
+                    const endEdgeX = end.x - Math.cos(childAngle) * 31.5;
+                    const endEdgeY = end.y - Math.sin(childAngle) * 31.5;
+                    
+                    const lineFromMid = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    lineFromMid.setAttribute('x1', midX + Math.cos(childAngle) * 8);
+                    lineFromMid.setAttribute('y1', midY + Math.sin(childAngle) * 8);
+                    lineFromMid.setAttribute('x2', endEdgeX);
+                    lineFromMid.setAttribute('y2', endEdgeY);
+                    lineFromMid.setAttribute('stroke', 'var(--primary)');
+                    lineFromMid.setAttribute('stroke-width', '2.5');
+                    lineFromMid.setAttribute('marker-end', 'url(#arrow)');
+                    svg.appendChild(lineFromMid);
+                });
+                
+                // Draw AND arc around mid node
+                if (children.length >= 2) {
+                    const targets = children.map(c => nodeCoords[c]).filter(t => !!t);
+                    const angles = targets.map(t => Math.atan2(t.y - midY, t.x - midX));
+                    angles.sort((a, b) => a - b);
+                    
+                    const arcDist = 30;
+                    const arcPoints = angles.map(a => ({
+                        x: midX + Math.cos(a) * arcDist,
+                        y: midY + Math.sin(a) * arcDist
+                    }));
+                    
+                    let pathD = `M ${arcPoints[0].x} ${arcPoints[0].y}`;
+                    for (let i = 1; i < arcPoints.length; i++) {
+                        pathD += ` A ${arcDist} ${arcDist} 0 0 1 ${arcPoints[i].x} ${arcPoints[i].y}`;
+                    }
+                    
+                    const arc = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                    arc.setAttribute('d', pathD);
+                    arc.setAttribute('fill', 'none');
+                    arc.setAttribute('stroke', 'var(--primary)');
+                    arc.setAttribute('stroke-width', '2');
+                    svg.appendChild(arc);
+                }
+                
+            } else {
+                // OR relation: direct lines to each child
+                children.forEach(c => {
+                    const start = nodeCoords[p];
+                    const end = nodeCoords[c];
+                    if (!start || !end) return;
+                    
+                    const angle = Math.atan2(end.y - start.y, end.x - start.x);
+                    const startEdgeX = start.x + Math.cos(angle) * 27.5;
+                    const startEdgeY = start.y + Math.sin(angle) * 27.5;
+                    const endEdgeX = end.x - Math.cos(angle) * 31.5;
+                    const endEdgeY = end.y - Math.sin(angle) * 31.5;
+                    
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', startEdgeX);
+                    line.setAttribute('y1', startEdgeY);
+                    line.setAttribute('x2', endEdgeX);
+                    line.setAttribute('y2', endEdgeY);
+                    
+                    line.setAttribute('stroke', 'rgba(99, 102, 241, 0.6)');
+                    line.setAttribute('stroke-width', '2');
+                    line.setAttribute('marker-end', 'url(#arrow-or)');
+                    svg.appendChild(line);
+                    
+                    if (ruleLabel) {
+                        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                        text.setAttribute('x', (startEdgeX + endEdgeX) / 2);
+                        text.setAttribute('y', (startEdgeY + endEdgeY) / 2 - 12);
+                        text.setAttribute('fill', 'var(--text-main)');
+                        text.setAttribute('font-size', '14px'); // larger font
+                        text.setAttribute('font-weight', 'bold');
+                        text.setAttribute('text-anchor', 'middle');
+                        text.textContent = ruleLabel;
+                        svg.appendChild(text);
+                    }
+                });
+            }
+        });
+    });
+    
+    // Build arrowheads
+    let defs = svg.querySelector('defs');
+    if (!defs) {
+        defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+        
+        // Primary arrow
+        const markerAnd = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+        markerAnd.setAttribute('id', 'arrow');
+        markerAnd.setAttribute('viewBox', '0 0 10 10');
+        markerAnd.setAttribute('refX', '6');
+        markerAnd.setAttribute('refY', '5');
+        markerAnd.setAttribute('markerWidth', '6');
+        markerAnd.setAttribute('markerHeight', '6');
+        markerAnd.setAttribute('orient', 'auto-start-reverse');
+        const pathAnd = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathAnd.setAttribute('d', 'M 0 0 L 10 5 L 0 10 z');
+        pathAnd.setAttribute('fill', 'var(--primary)');
+        markerAnd.appendChild(pathAnd);
+        defs.appendChild(markerAnd);
+        
+        // OR arrow
+        const markerOr = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+        markerOr.setAttribute('id', 'arrow-or');
+        markerOr.setAttribute('viewBox', '0 0 10 10');
+        markerOr.setAttribute('refX', '6');
+        markerOr.setAttribute('refY', '5');
+        markerOr.setAttribute('markerWidth', '6');
+        markerOr.setAttribute('markerHeight', '6');
+        markerOr.setAttribute('orient', 'auto-start-reverse');
+        const pathOr = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathOr.setAttribute('d', 'M 0 0 L 10 5 L 0 10 z');
+        pathOr.setAttribute('fill', 'rgba(99, 102, 241, 0.6)');
+        markerOr.appendChild(pathOr);
+        defs.appendChild(markerOr);
+        
+        svg.appendChild(defs);
+    }
+}
+
+async function submitWorkspaceSolve() {
+    if (interactiveState.simulationActive) return;
+
+    const ex = interactiveExercises[interactiveState.currentExId];
+    if (!ex) return;
+
+    const selectedPredict = document.querySelector('input[name="solvability-prediction"]:checked')?.value;
+    if (!selectedPredict) {
+        showToast('Vui lòng dự đoán tính khả thi của Goal trước!', 'warning');
+        return;
+    }
+
+    interactiveState.simulationActive = true;
+
+    // Reset visual styles of nodes
+    ex.nodes.forEach(n => {
+        const el = document.getElementById(`node-${n.id}`);
+        if (el) {
+            el.className = 'interactive-node';
+        }
+    });
+
+    const consoleLog = document.getElementById('simulation-log-list');
+    const validationCard = document.getElementById('simulation-validation-card');
+    const summaryBox = document.getElementById('simulation-summary-box');
+
+    validationCard.classList.remove('hidden');
+    consoleLog.innerHTML = '';
+    summaryBox.classList.add('hidden');
+
+    function logToConsole(message, type = 'info') {
+        const p = document.createElement('p');
+        p.style.margin = '4px 0';
+        if (type === 'success') p.style.color = '#10b981';
+        else if (type === 'danger') p.style.color = '#ef4444';
+        else if (type === 'warning') p.style.color = '#f59e0b';
+        p.innerHTML = message;
+        consoleLog.appendChild(p);
+        consoleLog.scrollTop = consoleLog.scrollHeight;
+    }
+
+    const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    // Evaluate step-by-step using DFS/BFS with user connections and configurations
+    const visited = new Set();
+    const evaluationResults = {}; // nodeId -> boolean (success/failed)
+
+    async function evaluateNode(nodeId) {
+        const el = document.getElementById(`node-${nodeId}`);
+        if (el) {
+            el.classList.add('node-active');
+        }
+
+        logToConsole(`&raquo; Đang kiểm tra node: <strong>${nodeId}</strong>`, 'warning');
+        await sleep(1000);
+
+        if (ex.goal.includes(nodeId)) {
+            logToConsole(`✓ Node <strong>${nodeId}</strong> là Goal state. Thành công!`, 'success');
+            if (el) {
+                el.classList.remove('node-active');
+                el.classList.add('node-success');
+            }
+            evaluationResults[nodeId] = true;
+            return true;
+        }
+
+        const groups = interactiveState.userConnections[nodeId] || {};
+        const groupIds = Object.keys(groups);
+        if (groupIds.length === 0) {
+            logToConsole(`✗ Node <strong>${nodeId}</strong> không có nhánh con và không phải Goal. Thất bại!`, 'danger');
+            if (el) {
+                el.classList.remove('node-active');
+                el.classList.add('node-failed');
+            }
+            evaluationResults[nodeId] = false;
+            return false;
+        }
+
+        let hasGroupSuccess = false;
+
+        for (let g of groupIds) {
+            const children = groups[g];
+            const relation = (interactiveState.userRelations[nodeId] && interactiveState.userRelations[nodeId][g]) ? interactiveState.userRelations[nodeId][g] : 'OR';
+            logToConsole(`Đang xét quan hệ <strong>${relation}</strong> của node <strong>${nodeId}</strong> (Luật ${g})...`);
+
+            let groupSuccess = false;
+            const results = [];
+
+            if (relation === 'AND') {
+                // AND: all children must succeed. Evaluate ALL children for full visual display (no pruning).
+                for (let i = 0; i < children.length; i++) {
+                    const child = children[i];
+                    logToConsole(`Kiểm tra nhánh con <strong>${child}</strong> của AND node <strong>${nodeId}</strong> (Luật ${g})...`);
+                    const success = await evaluateNode(child);
+                    results.push(success);
+                }
+                groupSuccess = results.length === children.length && results.every(r => r === true);
+                if (!groupSuccess) {
+                    logToConsole(`⚡ AND (Luật ${g}): Có nhánh con thất bại → nhóm thất bại.`, 'danger');
+                }
+            } else {
+                // OR: any child success → group succeeds. Evaluate ALL children for full visual display.
+                for (let i = 0; i < children.length; i++) {
+                    const child = children[i];
+                    logToConsole(`Kiểm tra nhánh con <strong>${child}</strong> của OR node <strong>${nodeId}</strong> (Luật ${g})...`);
+                    const success = await evaluateNode(child);
+                    results.push(success);
+                }
+                groupSuccess = results.some(r => r === true);
+                if (groupSuccess) {
+                    logToConsole(`⚡ OR (Luật ${g}): Có nhánh con thành công → nhóm thành công.`, 'success');
+                }
+            }
+
+            if (groupSuccess) {
+                logToConsole(`✓ Nhóm luật <strong>${g}</strong> của node <strong>${nodeId}</strong> THÀNH CÔNG.`, 'success');
+                hasGroupSuccess = true;
+                // No break — evaluate ALL groups so all branches light up visually
+            } else {
+                logToConsole(`✗ Nhóm luật <strong>${g}</strong> của node <strong>${nodeId}</strong> THẤT BẠI.`, 'warning');
+            }
+        }
+
+        const finalSuccess = hasGroupSuccess;
+        if (el) {
+            el.classList.remove('node-active');
+            el.classList.add(finalSuccess ? 'node-success' : 'node-failed');
+        }
+        logToConsole(finalSuccess ? `✓ Node <strong>${nodeId}</strong> thành công vì có một nhóm luật thành công.` : `✗ Node <strong>${nodeId}</strong> thất bại vì toàn bộ nhóm luật đều thất bại.`, finalSuccess ? 'success' : 'danger');
+        evaluationResults[nodeId] = finalSuccess;
+        return finalSuccess;
+    }
+
+    const startNode = ex.initialState;
+    const goalFeasible = await evaluateNode(startNode);
+
+    // Verify structural configuration correctness
+    let structureCorrect = true;
+    
+    const expectedFeasible = evaluateCorrectFeasibility(ex.initialState, ex.correctLinks, ex.correctRelations, ex.goal);
+
+    // Check 1: User's drawn graph must produce the same feasibility result as the expected answer
+    if (goalFeasible !== expectedFeasible) {
+        structureCorrect = false;
+    }
+
+    // Check 2: For each parent node the user connected, check if the AND/OR relation matches
+    // expected – but ONLY for nodes that appear in correctRelations.
+    // This prevents penalizing users who drew fewer branches than expected.
+    for (const p of Object.keys(interactiveState.userConnections)) {
+        const expectedRel = ex.correctRelations[p];
+        if (!expectedRel) continue; // node not in answer key, skip
+        
+        const userGroups = interactiveState.userRelations[p] || {};
+        const userRels = Object.values(userGroups);
+        
+        if (expectedRel === 'AND') {
+            // At least one group the user created for this parent must be AND
+            if (!userRels.includes('AND')) {
+                structureCorrect = false;
+            }
+        } else {
+            // Expected OR: none of the groups should be AND (if user only has groups for this parent)
+            if (userRels.length > 0 && userRels.every(r => r === 'AND')) {
+                structureCorrect = false;
+            }
+        }
+    }
+
+    // Check 3: Ensure the user connected the correct children for at least the key nodes
+    // Key nodes = nodes in correctLinks that are on the winning path
+    const keyParents = Object.keys(ex.correctLinks);
+    for (const p of keyParents) {
+        const correctChildren = ex.correctLinks[p];
+        const groups = interactiveState.userConnections[p] || {};
+        const userChildrenSet = new Set();
+        Object.keys(groups).forEach(g => groups[g].forEach(c => userChildrenSet.add(c)));
+        const userChildren = Array.from(userChildrenSet);
+        
+        // Must contain all correct children (may have extras only if the goal is still correct)
+        const missingChildren = correctChildren.filter(c => !userChildren.includes(c));
+        if (missingChildren.length > 0) {
+            // Missing a critical child → wrong structure
+            structureCorrect = false;
+        }
+    }
+
+    // Check prediction correctness (expectedFeasible already computed above in Check 1)
+    const predictionIsCorrect = (selectedPredict === 'yes' && expectedFeasible) || (selectedPredict === 'no' && !expectedFeasible);
+
+    // Render Summary box
+    summaryBox.classList.remove('hidden');
+    let summaryHtml = '';
+    
+    if (structureCorrect && predictionIsCorrect) {
+        summaryBox.style.borderLeftColor = 'var(--success)';
+        summaryHtml += `<h4 style="color: var(--success); margin-bottom: 8px; display: flex; align-items: center; gap: 5px;"><span class="material-icons-round">check_circle</span> Kết quả: Hoàn thành chính xác!</h4>`;
+    } else {
+        summaryBox.style.borderLeftColor = 'var(--danger)';
+        summaryHtml += `<h4 style="color: var(--danger); margin-bottom: 8px; display: flex; align-items: center; gap: 5px;"><span class="material-icons-round">cancel</span> Kết quả: Có lỗi sai trong bài làm!</h4>`;
+    }
+
+    // Show details
+    summaryHtml += `<p style="margin: 4px 0; font-size: 13.5px;">&bull; <strong>Cấu trúc & Quan hệ đồ thị:</strong> ${structureCorrect ? '<span style="color: var(--success); font-weight:700;">Chính xác</span>' : '<span style="color: var(--danger); font-weight:700;">Chưa chính xác (Kiểm tra lại liên kết hoặc AND/OR)</span>'}</p>`;
+    summaryHtml += `<p style="margin: 4px 0; font-size: 13.5px;">&bull; <strong>Dự đoán khả thi:</strong> ${predictionIsCorrect ? '<span style="color: var(--success); font-weight:700;">Chính xác</span>' : '<span style="color: var(--danger); font-weight:700;">Sai</span>'}</p>`;
+
+    summaryHtml += `<div class="divider" style="margin: 10px 0;"></div>`;
+    summaryHtml += `<p style="font-weight: 700; font-size: 14px; margin-bottom: 5px;">Tóm tắt thuật toán & Lời giải:</p>`;
+
+    if (expectedFeasible) {
+        summaryHtml += `<p style="font-size: 13px; color: var(--success-dark); font-weight: 600;">✓ Goal KHẢ THI</p>`;
+    } else {
+        summaryHtml += `<p style="font-size: 13px; color: var(--danger-dark); font-weight: 600;">✗ Goal KHÔNG KHẢ THI</p>`;
+    }
+
+    // Dynamic explanation
+    if (interactiveState.currentExId === 'ex1') {
+        summaryHtml += `<p style="font-size: 13px; margin-top: 5px; color: var(--text-muted);">Giải thích: S là AND node yêu cầu cả A và B thành công. A (AND node) yêu cầu cả D và E thành công (đều là Goal). B thành công vì là Goal. Do đó S khả thi.</p>`;
+    } else if (interactiveState.currentExId === 'ex2') {
+        summaryHtml += `<p style="font-size: 13px; margin-top: 5px; color: var(--text-muted);">Giải thích: Nhánh B (AND node) đi đến E và F, nhưng E không phải Goal và là ngõ cụt (dead end). Khiến B thất bại. Vì S là AND node, một nhánh con (B) thất bại làm toàn bộ S thất bại.</p>`;
+    } else if (interactiveState.currentExId === 'ex3') {
+        summaryHtml += `<p style="font-size: 13px; margin-top: 5px; color: var(--text-muted);">Giải thích: S là OR node chỉ cần A hoặc B thành công. Nhánh B đi đến D, E, F. E dẫn đến H. D dẫn đến H. F là Goal. Toàn bộ con của B đều đạt mục tiêu, do đó B thành công, kéo theo S thành công.</p>`;
+    } else {
+        summaryHtml += `<p style="font-size: 13px; margin-top: 5px; color: var(--text-muted);">Giải thích: Dựa trên các quy tắc AND (yêu cầu tất cả nhánh con thành công) và OR (chỉ cần một nhánh thành công).</p>`;
+    }
+
+    summaryBox.innerHTML = summaryHtml;
+    
+    // Save completion stat if correct
+    if (structureCorrect && predictionIsCorrect) {
+        const stats = storage.loadStats('trituenhantao-ontap') || {};
+        stats.interactiveCompleted = stats.interactiveCompleted || [];
+        if (!stats.interactiveCompleted.includes(interactiveState.currentExId)) {
+            stats.interactiveCompleted.push(interactiveState.currentExId);
+            storage.saveStats('trituenhantao-ontap', stats);
+            updateGlobalProgressBar();
+        }
+    } else {
+        // Show correct graph side-by-side if structure is wrong
+        if (!structureCorrect) {
+            const correctCanvas = document.getElementById('correct-canvas-area');
+            const userLabel = document.getElementById('user-canvas-label');
+            if (correctCanvas && userLabel) {
+                correctCanvas.classList.remove('hidden');
+                userLabel.classList.remove('hidden');
+                drawCorrectGraph();
+            }
+            summaryHtml += `<div style="margin-top: 15px;"><button class="btn btn-outline btn-sm" onclick="document.getElementById('btn-reset-graph').click()"><span class="material-icons-round">refresh</span> Làm lại bài này</button></div>`;
+            summaryBox.innerHTML = summaryHtml; // Update again
+        }
+    }
+
+
+    interactiveState.simulationActive = false;
+}
+
+function evaluateCorrectFeasibility(nodeId, correctLinks, correctRelations, goal) {
+    if (goal.includes(nodeId)) return true;
+    const children = correctLinks[nodeId] || [];
+    if (children.length === 0) return false;
+
+    const rel = correctRelations[nodeId] || 'OR';
+    if (rel === 'AND') {
+        return children.every(c => evaluateCorrectFeasibility(c, correctLinks, correctRelations, goal));
+    } else {
+        return children.some(c => evaluateCorrectFeasibility(c, correctLinks, correctRelations, goal));
+    }
+}
+
+
 

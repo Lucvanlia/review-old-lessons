@@ -55,6 +55,10 @@
                     <span class="material-icons-round nav-icon">psychology</span>
                     <span class="nav-label">Ôn tập chủ đề</span>
                 </a>
+                <a href="#interactive-practice" class="nav-item" id="nav-interactive-practice">
+                    <span class="material-icons-round nav-icon">hub</span>
+                    <span class="nav-label">Tự luận tương tác</span>
+                </a>
                 <a href="#mock-test" class="nav-item" id="nav-mock">
                     <span class="material-icons-round nav-icon">quiz</span>
                     <span class="nav-label">Thi thử tổng hợp</span>
@@ -219,6 +223,169 @@
                         <div class="quiz-footer">
                             <button class="btn btn-outline" id="btn-quit-quiz">Thoát</button>
                             <button class="btn btn-primary" id="btn-next-question" disabled>Tiếp tục <span class="material-icons-round">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- INTERACTIVE PRACTICE PANEL (AND-OR Tree Game) -->
+                <section class="panel" id="panel-interactive-practice">
+                    <!-- Non-AI Subject Alert -->
+                    <div class="panel-card" id="interactive-non-ai-alert">
+                        <div class="card-header border-none text-center" style="display: flex; flex-direction: column; align-items: center; padding: 40px 20px;">
+                            <span class="material-icons-round" style="font-size: 64px; color: var(--text-muted); margin-bottom: 20px;">lock</span>
+                            <h3>Yêu cầu môn học Trí Tuệ Nhân Tạo (AI)</h3>
+                            <p style="max-width: 500px; margin-top: 10px; color: var(--text-muted);">Tính năng thực hành tự luận vẽ đồ thị AND-OR Tree tương tác chỉ khả dụng cho môn học Trí Tuệ Nhân Tạo. Vui lòng chuyển sang môn học này để trải nghiệm.</p>
+                            <button class="btn btn-primary" id="btn-switch-to-ai" style="margin-top: 20px;">Chuyển sang môn Trí Tuệ Nhân Tạo</button>
+                        </div>
+                    </div>
+
+                    <!-- AI Workspace (Visible when subject is AI) -->
+                    <div class="interactive-workspace-container hidden" id="interactive-ai-workspace">
+                        <div class="panel-card">
+                            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <span class="material-icons-round card-icon">hub</span>
+                                    <div>
+                                        <h3>Thực hành tự luận AND-OR Tree</h3>
+                                        <p class="subtitle">Tự kết nối các nút, định nghĩa quan hệ AND/OR, dự đoán tính khả thi và theo dõi luồng giải thuật chạy từng bước.</p>
+                                    </div>
+                                </div>
+                                <!-- Mode Selector -->
+                                <div class="mode-selector-wrapper" style="display: flex; align-items: center; gap: 15px; background: var(--bg-app); padding: 6px 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                                    <span style="font-weight: 600; font-size: 13.5px;">Chế độ:</span>
+                                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 13.5px; font-weight: 500;">
+                                        <input type="radio" name="workspace-mode" value="practice" checked> Ôn tập
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 13.5px; font-weight: 500;">
+                                        <input type="radio" name="workspace-mode" value="exam"> Kiểm tra
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="card-body">
+                                <!-- Step info & Selection -->
+                                <div class="workspace-header-actions" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 15px;">
+                                    <div class="exercise-selector-wrapper" style="display: flex; align-items: center; gap: 10px;">
+                                        <label for="interactive-ex-select" style="font-weight: 600;">Chọn bài tập mẫu:</label>
+                                        <div class="custom-select" style="min-width: 280px;">
+                                            <select id="interactive-ex-select" style="padding: 8px 30px 8px 12px;">
+                                                <option value="ex1">Bài 1: AND-OR Graph (Slide Ch. 7, p. 9)</option>
+                                                <option value="ex2">Bài 2: Non-deterministic Search (Slide Ch. 7, p. 31)</option>
+                                                <option value="ex3">Bài 3: Conditional Plan Search (Slide Ch. 8, p. 2)</option>
+                                                <option value="ex4">Bài 4: Simple AND-OR Graph (Slide Ch. 7, p. 11)</option>
+                                                <option value="ex5">Bài 5: Multi-layer AND-OR Graph</option>
+                                            </select>
+                                            <span class="material-icons-round select-arrow" style="right: 8px;">expand_more</span>
+                                        </div>
+                                    </div>
+                                    <div class="exercise-actions" style="display: flex; gap: 10px;">
+                                        <button class="btn btn-outline btn-sm btn-icon" id="btn-reset-graph"><span class="material-icons-round">refresh</span> Làm lại từ đầu</button>
+                                    </div>
+                                </div>
+
+                                <!-- Exercise description box -->
+                                <div class="exercise-description-box" id="ex-description" style="background: var(--bg-card-hover); padding: 16px; border-radius: var(--radius-md); border-left: 4px solid var(--primary); margin-bottom: 20px;">
+                                    <!-- Dynamic outline content showing node hierarchies without revealing AND/OR -->
+                                </div>
+
+                                <!-- Main interactive area (Split screen: Left canvas, Right control panel) -->
+                                <div class="workspace-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; min-height: 480px; align-items: start;">
+                                    <!-- Canvas container -->
+                                    <div class="canvas-wrapper" style="border: 1.5px solid var(--border-color); border-radius: var(--radius-lg); background: var(--bg-app); position: relative; overflow: hidden; height: 480px; user-select: none; display: flex; width: 100%;">
+                                        <!-- User Canvas -->
+                                        <div id="user-canvas-area" style="position: relative; flex: 1; height: 100%; transition: all 0.3s ease;">
+                                            <div id="user-canvas-label" class="hidden" style="position: absolute; top: 10px; left: 10px; font-size: 13px; font-weight: 700; color: var(--text-muted); z-index: 10;">Bài làm của bạn</div>
+                                            <svg id="interactive-svg-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></svg>
+                                            <div id="interactive-nodes-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></div>
+                                        </div>
+                                        <!-- Correct Canvas (Hidden by default) -->
+                                        <div id="correct-canvas-area" class="hidden" style="position: relative; flex: 1; height: 100%; background: var(--bg-card-hover); border-left: 2px dashed var(--border-color);">
+                                            <div style="position: absolute; top: 10px; left: 10px; font-size: 13px; font-weight: 700; color: var(--success); z-index: 10;">Đáp án đúng</div>
+                                            <svg id="correct-svg-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></svg>
+                                            <div id="correct-nodes-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Control Panel: Multi-step configurations -->
+                                    <div class="graph-controls-panel" style="display: flex; flex-direction: column; gap: 15px;">
+                                        <!-- Step 2: Connection Builder -->
+                                        <div class="panel-subcard" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; background: var(--bg-card);">
+                                            <h4 style="margin-bottom: 10px; display: flex; align-items: center; gap: 5px;"><span class="material-icons-round">add_link</span> Bước 2: Tạo liên kết</h4>
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px;">
+                                                <div>
+                                                    <label style="font-size: 11.5px; font-weight: 600; display: block; margin-bottom: 4px;">Node cha:</label>
+                                                    <select id="parent-node-select" class="form-select" style="width: 100%; padding: 6px; border-radius: var(--radius-sm); border: 1.5px solid var(--border-color); background: var(--bg-app); color: var(--text-main); font-weight: 600;"></select>
+                                                </div>
+                                                <div>
+                                                    <label style="font-size: 11.5px; font-weight: 600; display: block; margin-bottom: 4px;">Node con:</label>
+                                                    <select id="child-node-select" class="form-select" style="width: 100%; padding: 6px; border-radius: var(--radius-sm); border: 1.5px solid var(--border-color); background: var(--bg-app); color: var(--text-main); font-weight: 600;"></select>
+                                                </div>
+                                                <div>
+                                                    <label style="font-size: 11.5px; font-weight: 600; display: block; margin-bottom: 4px;">Nhóm (Luật):</label>
+                                                    <select id="rule-group-select" class="form-select" style="width: 100%; padding: 6px; border-radius: var(--radius-sm); border: 1.5px solid var(--border-color); background: var(--bg-app); color: var(--text-main); font-weight: 600;">
+                                                        <option value="R1">Luật R1</option>
+                                                        <option value="R2">Luật R2</option>
+                                                        <option value="R3">Luật R3</option>
+                                                        <option value="R4">Luật R4</option>
+                                                        <option value="R5">Luật R5</option>
+                                                        <option value="R6">Luật R6</option>
+                                                        <option value="R7">Luật R7</option>
+                                                        <option value="R8">Luật R8</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div style="display: flex; gap: 8px;">
+                                                <button class="btn btn-primary btn-sm btn-block btn-icon" id="btn-connect-nodes" style="flex: 1;"><span class="material-icons-round">link</span> Connect</button>
+                                                <button class="btn btn-outline btn-sm btn-icon" id="btn-disconnect-nodes" title="Xóa liên kết"><span class="material-icons-round">link_off</span></button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 3: AND/OR Configuration -->
+                                        <div class="panel-subcard" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; background: var(--bg-card);">
+                                            <h4 style="margin-bottom: 8px; display: flex; align-items: center; gap: 5px;"><span class="material-icons-round">settings</span> Bước 3: Xác định quan hệ</h4>
+                                            <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">Định nghĩa quan hệ cho các nút vừa tạo liên kết:</p>
+                                            <div id="and-or-radio-container" style="display: flex; flex-direction: column; gap: 8px; max-height: 150px; overflow-y: auto;">
+                                                <!-- Dynamic radio items populate here -->
+                                            </div>
+                                        </div>
+
+                                        <!-- Step 4 & 5: Goal and Solvability Prediction -->
+                                        <div class="panel-subcard" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 14px; background: var(--bg-card);">
+                                            <h4 style="margin-bottom: 5px; display: flex; align-items: center; gap: 5px;"><span class="material-icons-round">help_center</span> Bước 4 & 5: Dự đoán</h4>
+                                            <div id="goal-info-display" style="font-size: 13.5px; font-weight: 700; color: var(--primary); margin: 8px 0;">Goal = { ... }</div>
+                                            
+                                            <label style="font-size: 12.5px; font-weight: 600; display: block; margin-bottom: 6px;">Goal này có khả thi (solvable) không?</label>
+                                            <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                                                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 13.5px;">
+                                                    <input type="radio" name="solvability-prediction" value="yes"> Có khả thi
+                                                </label>
+                                                <label style="display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 13.5px;">
+                                                    <input type="radio" name="solvability-prediction" value="no"> Không khả thi
+                                                </label>
+                                            </div>
+
+                                            <button class="btn btn-primary btn-block btn-lg btn-icon" id="btn-submit-workspace-solve">
+                                                <span class="material-icons-round">play_arrow</span> Nộp bài & Chạy chấm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Phase 6: Step-by-Step Simulation Result logs -->
+                                <div class="simulation-log-section hidden" id="simulation-validation-card" style="margin-top: 30px; padding: 20px; border-radius: var(--radius-lg); border: 2px solid var(--border-color); background: var(--bg-card); transition: all 0.3s ease;">
+                                    <h3 style="margin-bottom: 15px; display: flex; align-items: center; gap: 8px;"><span class="material-icons-round">analytics</span> Nhật ký chạy thuật toán từng bước</h3>
+                                    
+                                    <div class="simulation-console" style="background: hsl(220, 25%, 10%); color: hsl(220, 20%, 95%); font-family: monospace; padding: 16px; border-radius: var(--radius-md); font-size: 13.5px; line-height: 1.6; max-height: 300px; overflow-y: auto; margin-bottom: 20px;" id="simulation-log-list">
+                                        <!-- Simulated steps logged dynamically here -->
+                                    </div>
+
+                                    <!-- Summary Mode card -->
+                                    <div class="simulation-summary-card hidden" id="simulation-summary-box" style="padding: 16px; border-radius: var(--radius-md); border-left: 5px solid transparent; background: var(--bg-card-hover);">
+                                        <!-- Dynamic final summary explaining OR/AND conditions -->
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </section>
