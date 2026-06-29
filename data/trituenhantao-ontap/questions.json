@@ -592,7 +592,7 @@
     "question": "Quyền nào sau đây cho phép cá nhân yêu cầu các tổchức xóa bỏdữliệu cá nhân của họkhỏi hệthống lưu trữvà huấn luyện AI?",
     "options": [
       "A. Right to be forgotten (Quyền được lãng quên).",
-      "B. Right to access.",
+      "B. Right toaccess.",
       "C. Right to data portability.",
       "D. Right to rectification. 11"
     ],
@@ -752,7 +752,7 @@
       "A. Agent có thểcảm nhận toàn diện của môi trường tại thời điểm ban đầu.",
       "B. Agent có thểcảm nhận toàn diện của môi trường tại mỗi thời điểm.",
       "C. Môi trường luôn thay đổi khi Agent đang suy nghĩ.",
-      "D. Chỉcó một phần nhỏdữliệu được cung cấp cho Agent."
+      "D. Chỉcó một phần nhỏdữliệu được cung cấp choAgent."
     ],
     "correctAnswer": "B",
     "explanation": "Đáp án B đúng dựa trên các lý thuyết và nội dung đã trình bày trong slide bài giảng tương ứng.",

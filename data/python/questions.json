@@ -107,7 +107,7 @@
   {
     "id": 9,
     "topicId": "data_types_conditionals",
-    "question": "Đọc đoạn code sau và cho biết kết quả in ra:\na = True\nb = False\nc = True\nif not a or b:\n    print (\"a\")\nelif not a or not b and c:\n    print (\"b\")\nelif not a or b or not b and a:\n    print (\"c\")\nelse:\n    print (\"d\")",
+    "question": "Đọc đoạn code sau và cho biết kết quả in ra:\na = True\nb = False\nc = True\nif not a or b:\n print (\"a\")\nelif not a or not b and c:\n print (\"b\")\nelif not a or b or not b and a:\n print (\"c\")\nelse:\n print (\"d\")",
     "options": [
       "A. a",
       "B. b",
@@ -146,7 +146,7 @@
   {
     "id": 12,
     "topicId": "loops",
-    "question": "Đọc đoạn code sau và cho biết kết quả:\noutput = \"\"\nx = -5\nwhile x < 0:\n    x = x + 1\n    output = output + str(x) + \" \"\nprint(output)",
+    "question": "Đọc đoạn code sau và cho biết kết quả:\noutput = \"\"\nx = -5\nwhile x < 0:\n x = x + 1\n output = output + str(x) + \" \"\nprint(output)",
     "options": [
       "A. 5 4 3 2 1",
       "B. -4 -3 -2 -1 0",
@@ -159,7 +159,7 @@
   {
     "id": 13,
     "topicId": "loops",
-    "question": "Output của đoạn chương trình sau:\nsum = 0\nvalues = [1,3,5,7]\nfor number in values:\n    sum = sum + number\nprint(sum)",
+    "question": "Output của đoạn chương trình sau:\nsum = 0\nvalues = [1,3,5,7]\nfor number in values:\n sum = sum + number\nprint(sum)",
     "options": [
       "A. 4",
       "B. 0",
@@ -575,7 +575,7 @@
   {
     "id": 45,
     "topicId": "loops",
-    "question": "Đoạn code sau chạy bao nhiêu vòng lặp?\ni = 0\nwhile i < 5:\n    print(i)\n    i += 2",
+    "question": "Đoạn code sau chạy bao nhiêu vòng lặp?\ni = 0\nwhile i < 5:\n print(i)\n i += 2",
     "options": [
       "A. 5",
       "B. 3",
@@ -588,7 +588,7 @@
   {
     "id": 46,
     "topicId": "loops",
-    "question": "Đoạn code sau in ra kết quả gì?\nfor i in range(3):\n    if i == 1:\n        break\n    print(i, end=' ')",
+    "question": "Đoạn code sau in ra kết quả gì?\nfor i in range(3):\n if i == 1:\n break\n print(i, end=' ')",
     "options": [
       "A. 0 1 2",
       "B. 0 2",
@@ -679,7 +679,7 @@
   {
     "id": 53,
     "topicId": "functions",
-    "question": "Đoạn code sau in ra giá trị nào?\ndef add_item(val, li=[]):\n    li.append(val)\n    return li\n\nprint(add_item(1))\nprint(add_item(2))",
+    "question": "Đoạn code sau in ra giá trị nào?\ndef add_item(val, li=[]):\n li.append(val)\n return li\n\nprint(add_item(1))\nprint(add_item(2))",
     "options": [
       "A. [1] sau đó [2]",
       "B. [1] sau đó [1, 2]",
@@ -705,7 +705,7 @@
   {
     "id": 55,
     "topicId": "functions",
-    "question": "Đoạn code sau xuất ra màn hình kết quả gì?\nx = 5\ndef test():\n    x = 10\ntest()\nprint(x)",
+    "question": "Đoạn code sau xuất ra màn hình kết quả gì?\nx = 5\ndef test():\n x = 10\ntest()\nprint(x)",
     "options": [
       "A. 5",
       "B. 10",
@@ -960,7 +960,7 @@
       "D. Đọc ngược tệp tin từ dưới lên"
     ],
     "correctAnswer": "B",
-    "explanation": "Ký tự 'b' là binary, 'rb' là đọc tệp tin dưới dạng nhị phân (thường dùng cho ảnh, file nén)."
+    "explanation": "Ký tự 'b' là binary, 'rb' là đọc tệp tin dưới dạng nhị phân (thường dùng choảnh, file nén)."
   },
   {
     "id": 75,
@@ -1407,7 +1407,7 @@
   {
     "id": 109,
     "topicId": "data_types_conditionals",
-    "question": "Cho biết giá trị của x sau khi thực hiện đoạn lệnh sau:\nx, a, b = 0, 5, 5\nif a > 0:\n    if b < 0:\n        x = x + 5\n    elif a > 5:\n        x = x + 4\n    else:\n        x = x + 3\nelse:\n    x = x + 2",
+    "question": "Cho biết giá trị của x sau khi thực hiện đoạn lệnh sau:\nx, a, b = 0, 5, 5\nif a > 0:\n if b < 0:\n x = x + 5\n elif a > 5:\n x = x + 4\n else:\n x = x + 3\nelse:\n x = x + 2",
     "options": [
       "A. 3",
       "B. 5",
@@ -1498,7 +1498,7 @@
   {
     "id": 116,
     "topicId": "data_types_conditionals",
-    "question": "Cho biết kết quả của đoạn chương trình sau:\ntry:\n    print(\"throw\")\nexcept:\n    print(\"except\")\nfinally:\n    print(\"finally\")",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\ntry:\n print(\"throw\")\nexcept:\n print(\"except\")\nfinally:\n print(\"finally\")",
     "options": [
       "A. finally – throw",
       "B. finally – except",
@@ -1511,7 +1511,7 @@
   {
     "id": 117,
     "topicId": "data_types_conditionals",
-    "question": "Cho biết kết quả của đoạn chương trình sau:\nnumber = 5.0\ntry:\n    r = 10/number\n    print(r)\nexcept:\n    print(\"Oops! Error occurred.\")",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\nnumber = 5.0\ntry:\n r = 10/number\n print(r)\nexcept:\n print(\"Oops! Error occurred.\")",
     "options": [
       "A. Oops! Error occurred.",
       "B. 2.0",
@@ -1524,7 +1524,7 @@
   {
     "id": 118,
     "topicId": "loops",
-    "question": "Đoạn chương trình sau dùng để giải quyết bài toán gì?\nt = 0\nfor i in range(1, 101):\n    if(i % 3 == 0 and i % 5 == 0):\n        t = t + i\nprint(t)",
+    "question": "Đoạn chương trình sau dùng để giải quyết bài toán gì?\nt = 0\nfor i in range(1, 101):\n if(i % 3 == 0 and i % 5 == 0):\n t = t + i\nprint(t)",
     "options": [
       "A. Tính tổng các số chia hết cho 3 hoặc 5 trong khoảng từ 1 đến 100",
       "B. Tính tổng các số chia hết cho 3 hoặc 5 trong khoảng từ 1 đến 101",
@@ -1550,7 +1550,7 @@
   {
     "id": 120,
     "topicId": "loops",
-    "question": "Cho biết ý nghĩa của biến k sau khi chạy đoạn chương trình sau:\nn = int(input('Nhập n <= 1000: '))\nk = 0; n = abs(n)\nwhile n != 0:\n    n //= 10\n    k += 1",
+    "question": "Cho biết ý nghĩa của biến k sau khi chạy đoạn chương trình sau:\nn = int(input('Nhập n <= 1000: '))\nk = 0; n = abs(n)\nwhile n != 0:\n n //= 10\n k += 1",
     "options": [
       "A. k là số chữ số của n",
       "B. k là chữ số hàng đơn vị của n",
@@ -1558,12 +1558,12 @@
       "D. k là số chữ số khác 0 của n"
     ],
     "correctAnswer": "A",
-    "explanation": "Vòng lặp thực hiện chia lấy nguyên n cho 10 ở mỗi bước lặp cho đến khi n bằng 0. Mỗi lượt chia tương ứng với việc bớt đi 1 chữ số của n, do đó k ghi nhận số chữ số của n."
+    "explanation": "Vòng lặp thực hiện chia lấy nguyên n cho 10 ở mỗi bước lặp cho đến khi n bằng 0. Mỗi lượt chia tương ứng với việc bớt đi 1 chữ số của n, do đó kghi nhận số chữ số của n."
   },
   {
     "id": 121,
     "topicId": "loops",
-    "question": "Cho biết kết quả của biến x sau khi thực hiện đoạn chương trình sau:\ni = 0; x = 0\nwhile i < 10:\n    if i % 2 == 0:\n        x += 1\n    i += 1",
+    "question": "Cho biết kết quả của biến x sau khi thực hiện đoạn chương trình sau:\ni = 0; x = 0\nwhile i < 10:\n if i % 2 == 0:\n x += 1\n i += 1",
     "options": [
       "A. 2",
       "B. 3",
@@ -1576,7 +1576,7 @@
   {
     "id": 122,
     "topicId": "loops",
-    "question": "Câu lệnh dưới đây dùng để giải bài toán nào?\nwhile m != n:\n    if m > n:\n        m = m - n\n    else:\n        n = n - m",
+    "question": "Câu lệnh dưới đây dùng để giải bài toán nào?\nwhile m != n:\n if m > n:\n m = m - n\n else:\n n = n - m",
     "options": [
       "A. Tìm ước chung lớn nhất UCLN của m và n",
       "B. Tìm bội chung nhỏ nhất BCNN của m và n",
@@ -1589,7 +1589,7 @@
   {
     "id": 123,
     "topicId": "loops",
-    "question": "Cho biết kết quả của đoạn chương trình sau:\nfor i in range(20): \n    if i == 10: \n        break\n    else: \n        print(i, end = \"\") \nelse: \n    print(\"*\")",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\nfor i in range(20): \n if i == 10: \n break\n else: \n print(i, end = \"\") \nelse: \n print(\"*\")",
     "options": [
       "A. 0123456789*",
       "B. 123456789",
@@ -1602,7 +1602,7 @@
   {
     "id": 124,
     "topicId": "loops",
-    "question": "Cho biết kết quả của đoạn chương trình sau:\nfor i in range(5, 7):\n    print(str(i) * 3)",
+    "question": "Cho biết kết quả của đoạn chương trình sau:\nfor i in range(5, 7):\n print(str(i) * 3)",
     "options": [
       "A. 555 và 666 (in trên hai dòng riêng biệt)",
       "B. 15 và 18 (in trên hai dòng riêng biệt)",
@@ -1615,7 +1615,7 @@
   {
     "id": 125,
     "topicId": "loops",
-    "question": "Điền vào dấu … để được kết quả in ra là 66 và 44 trên các dòng:\nfor i in range(6, 0, … ):\n    print(str(i) * 2)",
+    "question": "Điền vào dấu … để được kết quả in ra là 66 và 44 trên các dòng:\nfor i in range(6, 0, … ):\n print(str(i) * 2)",
     "options": [
       "A. 0",
       "B. None",
@@ -1628,7 +1628,7 @@
   {
     "id": 126,
     "topicId": "functions",
-    "question": "Chương trình sau ra kết quả bao nhiêu?\ndef get_sum(num):\n    tmp = 0\n    for i in num:\n        tmp += i\n    return tmp\nresult = get_sum((1, 2, 3, 4, 5))\nprint(result)",
+    "question": "Chương trình sau ra kết quả bao nhiêu?\ndef get_sum(num):\n tmp = 0\n for i in num:\n tmp += i\n return tmp\nresult = get_sum((1, 2, 3, 4, 5))\nprint(result)",
     "options": [
       "A. 12",
       "B. 13",
@@ -1641,7 +1641,7 @@
   {
     "id": 127,
     "topicId": "functions",
-    "question": "Chương trình sau bị lỗi ở dòng lệnh thứ bao nhiêu?\n(1) a = \"Hello World!\"\n(2) def say(i):\n(3)     return a + i\n(4) say(13)\n(5) print(a)",
+    "question": "Chương trình sau bị lỗi ở dòng lệnh thứ bao nhiêu?\n(1) a = \"Hello World!\"\n(2) def say(i):\n(3) return a + i\n(4) say(13)\n(5) print(a)",
     "options": [
       "A. Dòng (2)",
       "B. Dòng (3)",
@@ -1654,7 +1654,7 @@
   {
     "id": 128,
     "topicId": "functions",
-    "question": "Chương trình sau bị lỗi ở dòng lệnh thứ bao nhiêu?\n(1) def add(a, b):\n(2)     x = a + b\n(3)     return(x)\n(4) add(1, 2)\n(5) add(5, 6)",
+    "question": "Chương trình sau bị lỗi ở dòng lệnh thứ bao nhiêu?\n(1) def add(a, b):\n(2) x = a + b\n(3) return(x)\n(4) add(1, 2)\n(5) add(5, 6)",
     "options": [
       "A. Dòng (2)",
       "B. Dòng (3)",
@@ -1667,7 +1667,7 @@
   {
     "id": 129,
     "topicId": "functions",
-    "question": "Chương trình sau bị lỗi cú pháp ở dòng lệnh thứ bao nhiêu?\n(1) def add(a, b)\n(2)     sum = a + b\n(3)     return sum",
+    "question": "Chương trình sau bị lỗi cú pháp ở dòng lệnh thứ bao nhiêu?\n(1) def add(a, b)\n(2) sum = a + b\n(3) return sum",
     "options": [
       "A. Dòng (1)",
       "B. Dòng (2)",
@@ -1680,7 +1680,7 @@
   {
     "id": 130,
     "topicId": "functions",
-    "question": "Chương trình sau hiển thị kết quả như thế nào?\ndef ham():\n    print(\"Hello\")\nham(\"Sweden\")\nham(\"India\")",
+    "question": "Chương trình sau hiển thị kết quả như thế nào?\ndef ham():\n print(\"Hello\")\nham(\"Sweden\")\nham(\"India\")",
     "options": [
       "A. Sweden, India",
       "B. Sweden",
@@ -1719,7 +1719,7 @@
   {
     "id": 133,
     "topicId": "functions",
-    "question": "Hoàn thành chương trình kiểm tra số nguyên tố (True - là SNT, False - Không là SNT):\ndef prime(n):\n    c = 0; k = 1\n    while(k<n):\n        if n%k == 0:\n            c = c + 1\n        k = k+ 1\n    if c == 1:\n        return (…)\n    else:\n        return (…)",
+    "question": "Hoàn thành chương trình kiểm tra số nguyên tố (True - là SNT, False - Không là SNT):\ndef prime(n):\n c = 0; k = 1\n while(k<n):\n if n%k == 0:\n c = c + 1\n k = k+ 1\n if c == 1:\n return (…)\n else:\n return (…)",
     "options": [
       "A. True, False",
       "B. True, True",
@@ -1758,7 +1758,7 @@
   {
     "id": 136,
     "topicId": "strings",
-    "question": "Sau khi thực hiện lệnh sau, biến s2 sẽ có kết quả là gì?\ns1 =\"3986443\"\ns2 = \"\"\nfor ch in s1:\n    if int(ch) % 2 == 0:\n        s2 = s2 + ch\nprint(s2)",
+    "question": "Sau khi thực hiện lệnh sau, biến s2 sẽ có kết quả là gì?\ns1 =\"3986443\"\ns2 = \"\"\nfor ch in s1:\n if int(ch) % 2 == 0:\n s2 = s2 + ch\nprint(s2)",
     "options": [
       "A. 3986443",
       "B. 8644",

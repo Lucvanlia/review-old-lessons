@@ -78,7 +78,7 @@
         "id": 6,
         "topicId": "ch2_software_security",
         "type": "Phân tích",
-        "question": "Xem đoạn code C sau:\n```c\nvoid func(char *str) {\n    char buffer[32];\n    strcpy(buffer, str);\n}\n```\nHàm nào gây ra lỗi Buffer Overflow?",
+        "question": "Xem đoạn code C sau:\n```c\nvoid func(char *str) {\n char buffer[32];\n strcpy(buffer, str);\n}\n```\nHàm nào gây ra lỗi Buffer Overflow?",
         "options": [
           "A. char buffer[32]",
           "B. strcpy(buffer, str)",
@@ -722,7 +722,7 @@
         "id": 6,
         "topicId": "ch2_software_security",
         "type": "Phân tích",
-        "question": "Xem đoạn code C sau:\n```c\nvoid func(char *str) {\n    char buffer[32];\n    strcpy(buffer, str);\n}\n```\nHàm nào gây ra lỗi Buffer Overflow?",
+        "question": "Xem đoạn code C sau:\n```c\nvoid func(char *str) {\n char buffer[32];\n strcpy(buffer, str);\n}\n```\nHàm nào gây ra lỗi Buffer Overflow?",
         "options": [
           "A. char buffer[32]",
           "B. strcpy(buffer, str)",
@@ -962,6 +962,403 @@
         ],
         "correctAnswer": "B",
         "explanation": "Salt là chuỗi ngẫu nhiên thêm vào trước khi hash. Hai người dùng có cùng mật khẩu nhưng salt khác nhau sẽ có hash khác nhau → vô hiệu hóa Rainbow Table (bảng tra cứu hash sẵn có)."
+      }
+    ]
+  },
+  {
+    "id": "de2_tonghop",
+    "name": "Đề Thi Thử #2 (Tổng Hợp - Có Multi-Select)",
+    "description": "25 câu tổng hợp Chương 1-9, bao gồm câu chọn nhiều đáp án. Thời gian: 55 phút.",
+    "questions": [
+      {
+        "id": 201,
+        "topicId": "ch1_tongquan",
+        "type": "Tình huống",
+        "question": "A company discovers that an attacker has been intercepting and modifying communications between two servers in the internal network. The attacker achieved this by using ARP spoofing to redirect traffic through their machine.\nWhich of the following BEST describes this type of attack?",
+        "options": [
+          "A. Denial of Service attack",
+          "B. Man-in-the-Middle attack",
+          "C. Replay attack",
+          "D. Session hijacking"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Man-in-the-Middle (MITM) là tấn công mà kẻ tấn công đứng giữa hai bên giao tiếp, chặn bắt và có thể sửa đổi dữ liệu truyền qua. ARP spoofing là kỹ thuật phổ biến để thực hiện MITM trong mạng LAN bằng cách giả mạo bảng ARP."
+      },
+      {
+        "id": 202,
+        "topicId": "ch5_malware",
+        "type": "Tình huống",
+        "question": "A user downloads what appears to be a legitimate PDF reader from an untrusted website. After installation, the application works normally but also creates a hidden backdoor connection toan external server.\nWhat type of malware is MOST likely described?",
+        "options": [
+          "A. Worm",
+          "B. Virus",
+          "C. Ransomware",
+          "D. Trojan Horse"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Trojan Horse giả dạng phần mềm hợp pháp (PDF reader) để lừa người dùng cài đặt. Khác với Virus (cần ký sinh vào file khác) và Worm (tự lây lan qua mạng), Trojan dựa vào sự lừa đảo người dùng để được cài đặt."
+      },
+      {
+        "id": 203,
+        "topicId": "ch2_software_security",
+        "type": "Lý thuyết",
+        "question": "A security team is implementing protections against Buffer Overflow exploits on their Linux servers. They want to prevent attackers from executing shellcode even if they successfully overwrite the return address.\nWhich of the following protections specifically addresses this goal?",
+        "options": [
+          "A. ASLR (Address Space Layout Randomization)",
+          "B. Stack Canary",
+          "C. DEP/NX Bit (Data Execution Prevention)",
+          "D. Input Validation"
+        ],
+        "correctAnswer": "C",
+        "explanation": "DEP/NX Bit đánh dấu vùng nhớ Stack và Heap là 'non-executable'. Dù kẻ tấn công ghi đè Return Address để nhảy đến Shellcode trên Stack, CPU từ chối thực thi mã ở vùng đó. ASLR ngẫu nhiên hóa địa chỉ, Canary phát hiện tràn, nhưng chỉ DEP trực tiếp ngăn thực thi shellcode."
+      },
+      {
+        "id": 204,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "multiSelect": true,
+        "question": "Which of the following are characteristics of symmetric encryption? (Select two)",
+        "options": [
+          "A. Uses the same key for encryption and decryption",
+          "B. Relies on a pair of public and private keys",
+          "C. Generally faster than asymmetric encryption for large data",
+          "D. Provides non-repudiation through digital signatures",
+          "E. Uses the Diffie-Hellman protocol for key exchange"
+        ],
+        "correctAnswer": [
+          "A",
+          "C"
+        ],
+        "explanation": "Mã hóa đối xứng (Symmetric): dùng CÙNG MỘT KHÓA cho cả mã hóa và giải mã (A đúng). Do thuật toán đơn giản hơn, tốc độ nhanh hơn asymmetric rất nhiều (C đúng). Non-repudiation là đặc điểm của asymmetric. Diffie-Hellman dùng cho trao đổi khóa."
+      },
+      {
+        "id": 205,
+        "topicId": "ch3_access_control",
+        "type": "Phân tích",
+        "question": "In the Bell-LaPadula security model, a user with 'Secret' clearance attempts to read a document classified as 'Top Secret'.\nWhat does the model dictate?",
+        "options": [
+          "A. The user can read the document but cannot modify it",
+          "B. Access is denied based on the 'No Read Up' rule",
+          "C. The user can read but must get supervisor approval",
+          "D. Access is granted since the user has sufficient clearance"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Bell-LaPadula Model có 2 quy tắc chính: 'No Read Up' (Simple Security Property) - không được đọc dữ liệu có mức phân loại CAO HƠN clearance của mình. User 'Secret' không thể đọc 'Top Secret'. Quy tắc thứ 2 là 'No Write Down' (*-Property) - không được ghi xuống mức thấp hơn."
+      },
+      {
+        "id": 206,
+        "topicId": "ch1_tongquan",
+        "type": "Tình huống",
+        "question": "An employee receives an email that appears to be from the company's IT department, asking them to click a link and verify their login credentials. The link leads toa fake website that captures the employee's username and password.\nThis attack is an example of:",
+        "options": [
+          "A. Tailgating",
+          "B. Shoulder surfing",
+          "C. Phishing",
+          "D. Watering hole attack"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Phishing sử dụng email giả mạo từ nguồn đáng tin cậy (IT department) để lừa nạn nhân nhập thông tin đăng nhập vào trang web giả. Tailgating là đi theo người khác qua cửa bảo mật vật lý. Shoulder surfing là nhìn trộm màn hình. Watering hole là tấn công website mà nạn nhân thường truy cập."
+      },
+      {
+        "id": 207,
+        "topicId": "ch3_access_control",
+        "type": "Tính toán",
+        "question": "A Linux administrator needs to set permissions on a script file so that the owner can read, write, and execute; the group can read and execute; and others have no permissions at all.\nWhich command should be used?",
+        "options": [
+          "A. chmod 750 script.sh",
+          "B. chmod 755 script.sh",
+          "C. chmod 700 script.sh",
+          "D. chmod 644 script.sh"
+        ],
+        "correctAnswer": "A",
+        "explanation": "chmod 750: Owner = rwx (4+2+1=7), Group = r-x (4+0+1=5), Others = --- (0). chmod 755 cho Others quyền r-x (sai). chmod 700 không cho Group quyền nào (sai). chmod 644 = rw-r--r-- không có execute (sai)."
+      },
+      {
+        "id": 208,
+        "topicId": "ch7_crypto_overview",
+        "type": "Tình huống",
+        "multiSelect": true,
+        "question": "A company wants to protect sensitive data transmitted between its branch offices over the internet.\nWhich of the following solutions should be implemented? (Select two)",
+        "options": [
+          "A. Disk encryption (BitLocker)",
+          "B. TLS/SSL encryption",
+          "C. File compression",
+          "D. VPN (Virtual Private Network)",
+          "E. Antivirus software"
+        ],
+        "correctAnswer": [
+          "B",
+          "D"
+        ],
+        "explanation": "TLS/SSL (B) mã hóa dữ liệu truyền tải qua mạng ở tầng transport. VPN (D) tạo đường hầm mã hóa toàn bộ traffic giữa hai điểm. Disk encryption bảo vệ dữ liệu nghỉ (at rest), không bảo vệ khi truyền. Compression và antivirus không liên quan đến mã hóa truyền tải."
+      },
+      {
+        "id": 209,
+        "topicId": "ch2_software_security",
+        "type": "Lý thuyết",
+        "question": "A developer implements a security mechanism that places a random value between the local variables and the saved return address on the stack. Before the function returns, this value is checked for modification.\nWhich protection mechanism is being described?",
+        "options": [
+          "A. ASLR",
+          "B. DEP/NX Bit",
+          "C. Input validation",
+          "D. Stack Canary (Stack Guard)"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Stack Canary (hay Stack Guard) đặt giá trị ngẫu nhiên (canary value/sentinel) giữa buffer và Return Address trên stack. Khi buffer overflow xảy ra, canary bị ghi đè trước Return Address. Trước khi hàm return, hệ thống kiểm tra canary → nếu thay đổi → phát hiện tấn công → terminate chương trình."
+      },
+      {
+        "id": 210,
+        "topicId": "ch7_crypto_overview",
+        "type": "Lý thuyết",
+        "question": "Which type of cipher uses multiple substitution alphabets toencrypt plaintext, making simple frequency analysis ineffective?",
+        "options": [
+          "A. Caesar cipher",
+          "B. Monoalphabetic substitution cipher",
+          "C. Polyalphabetic cipher (Vigenère)",
+          "D. Transposition cipher"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Polyalphabetic cipher (điển hình là Vigenère) dùng nhiều bảng chữ cái khác nhau (dựa trên keyword) để mã hóa. Mỗi ký tự được thế bằng bảng khác nhau → tần số xuất hiện bị san phẳng → phân tích tần số đơn giản thất bại. Caesar và Monoalphabetic chỉ dùng 1 bảng."
+      },
+      {
+        "id": 211,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "DES (Data Encryption Standard) uses which key size and block size?",
+        "options": [
+          "A. Key: 128-bit, Block: 128-bit",
+          "B. Key: 56-bit, Block: 64-bit",
+          "C. Key: 256-bit, Block: 128-bit",
+          "D. Key: 64-bit, Block: 64-bit"
+        ],
+        "correctAnswer": "B",
+        "explanation": "DES sử dụng khóa 56-bit hiệu dụng (tổng 64-bit nhưng 8 bit là parity check) và block size 64-bit. Do khóa chỉ 56-bit, DES đã bị phá bằng brute force và được thay thế bởi AES (128/192/256-bit key)."
+      },
+      {
+        "id": 212,
+        "topicId": "ch7_crypto_overview",
+        "type": "Lý thuyết",
+        "question": "The MD5 hash algorithm produces a digest of how many bits?",
+        "options": [
+          "A. 128 bits",
+          "B. 160 bits",
+          "C. 256 bits",
+          "D. 512 bits"
+        ],
+        "correctAnswer": "A",
+        "explanation": "MD5 (Message Digest 5) tạo ra hash digest 128-bit (32 ký tự hex). SHA-1 tạo 160-bit, SHA-256 tạo 256-bit, SHA-512 tạo 512-bit. MD5 đã bị phát hiện collision vulnerabilities nên không còn an toàn cho mục đích bảo mật."
+      },
+      {
+        "id": 213,
+        "topicId": "ch5_malware",
+        "type": "Tình huống",
+        "multiSelect": true,
+        "question": "A security team discovers that an employee's computer has been sending screenshots and keystroke logs toan external server without the employee's knowledge.\nWhich of the following malware capabilities are being exhibited? (Select two)",
+        "options": [
+          "A. Self-replication across the network",
+          "B. Keylogging",
+          "C. File encryption for ransom",
+          "D. Rootkit for hiding processes",
+          "E. Screen capture"
+        ],
+        "correctAnswer": [
+          "B",
+          "E"
+        ],
+        "explanation": "Keylogging (B) ghi lại mọi phím nhấn và Screen capture (E) chụp màn hình là hai chức năng đặc trưng của Spyware nhằm theo dõi hoạt động người dùng. Tự lây lan là Worm, mã hóa đòi tiền là Ransomware, ẩn process là Rootkit."
+      },
+      {
+        "id": 214,
+        "topicId": "ch3_access_control",
+        "type": "Lý thuyết",
+        "question": "A large organization with hundreds of employees needs an access control system that assigns permissions based on job functions such as 'Accountant', 'HR Manager', and 'IT Admin'.\nWhich access control model is MOST suitable?",
+        "options": [
+          "A. DAC (Discretionary Access Control)",
+          "B. MAC (Mandatory Access Control)",
+          "C. RBAC (Role-Based Access Control)",
+          "D. ABAC (Attribute-Based Access Control)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "RBAC gán quyền dựa trên vai trò (Role) trong tổ chức. Mỗi nhân viên được gán 1+ vai trò, quyền truy cập được quy định theo vai trò chứ không theo cá nhân → dễ quản lý khi có hàng trăm nhân viên. DAC do chủ sở hữu quyết định, MAC dựa trên nhãn phân loại mật."
+      },
+      {
+        "id": 215,
+        "topicId": "ch3_authentication",
+        "type": "Lý thuyết",
+        "question": "In a Kerberos authentication system, what does the KDC (Key Distribution Center) issue toa user after successful initial authentication?",
+        "options": [
+          "A. TGT (Ticket Granting Ticket)",
+          "B. Digital Certificate",
+          "C. Session Cookie",
+          "D. Public Key"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Kerberos: Khi user đăng nhập thành công, KDC (bao gồm AS - Authentication Server) cấp TGT (Ticket Granting Ticket). User dùng TGT để xin Service Ticket từ TGS (Ticket Granting Server) mà không cần nhập lại password. Đây là cơ chế SSO (Single Sign-On)."
+      },
+      {
+        "id": 216,
+        "topicId": "ch2_software_security",
+        "type": "Tình huống",
+        "multiSelect": true,
+        "question": "A security consultant is tasked with hardening a web server.\nWhich of the following actions should be taken? (Select three)",
+        "options": [
+          "A. Enable directory listing for easy navigation",
+          "B. Disable directory listing to prevent information disclosure",
+          "C. Apply all security patches and updates",
+          "D. Keep default installation pages for reference",
+          "E. Remove default/sample pages and applications",
+          "F. Run all services as root for simplicity"
+        ],
+        "correctAnswer": [
+          "B",
+          "C",
+          "E"
+        ],
+        "explanation": "Hardening web server: (B) Tắt directory listing để không lộ cấu trúc thư mục. (C) Cập nhật bản vá để đóng lỗ hổng đã biết. (E) Xóa trang mặc định vì chúng tiết lộ loại/phiên bản server. Enable directory listing (A) nguy hiểm. Giữ default pages (D) lộ thông tin. Chạy root (F) vi phạm nguyên tắc Least Privilege."
+      },
+      {
+        "id": 217,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "RSA: Private Key (d=3, n=33). Giải mã Ciphertext C=29.\nTính bản rõ M.",
+        "options": [
+          "A. M=2",
+          "B. M=5",
+          "C. M=7",
+          "D. M=11"
+        ],
+        "correctAnswer": "A",
+        "explanation": "M = C^d mod n = 29^3 mod 33. 29^3 = 24389. 24389 ÷ 33 = 739 dư 2 (739 × 33 = 24387). Vậy M = 24389 mod 33 = 2. Kết quả M=2 khớp với bản rõ gốc (Đề tổng hợp Q36 đã mã hóa M=2 → C=29)."
+      },
+      {
+        "id": 218,
+        "topicId": "ch6_firewall_ids",
+        "type": "Lý thuyết",
+        "question": "Which type of IDS creates a baseline of normal network behavior and flags any activity that deviates significantly from the baseline?",
+        "options": [
+          "A. Signature-based IDS",
+          "B. Rule-based IDS",
+          "C. Protocol-based IDS",
+          "D. Anomaly-based (Behavior-based) IDS"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Anomaly-based IDS (hay Behavior-based) học hành vi bình thường của mạng/hệ thống, tạo baseline. Mọi hoạt động lệch khỏi baseline (anomaly) đều bị cảnh báo → có thể phát hiện Zero-day attacks. Nhược điểm: nhiều False Positive hơn Signature-based."
+      },
+      {
+        "id": 219,
+        "topicId": "ch7_crypto_overview",
+        "type": "Lý thuyết",
+        "multiSelect": true,
+        "question": "Which of the following can be used toensure data integrity? (Select two)",
+        "options": [
+          "A. Hashing (SHA-256)",
+          "B. Symmetric encryption (AES)",
+          "C. Firewall rules",
+          "D. Digital Signatures",
+          "E. Antivirus software"
+        ],
+        "correctAnswer": [
+          "A",
+          "D"
+        ],
+        "explanation": "Hashing (A): Tạo fingerprint cố định cho dữ liệu. Bất kỳ thay đổi nào cũng cho hash khác → phát hiện sửa đổi. Digital Signature (D): Hash + ký bằng Private Key → đảm bảo cả toàn vẹn lẫn xác thực nguồn gốc. AES là mã hóa (confidentiality), Firewall lọc traffic, Antivirus chống malware - không trực tiếp đảm bảo integrity."
+      },
+      {
+        "id": 220,
+        "topicId": "ch8_symmetric",
+        "type": "Lý thuyết",
+        "question": "Which block cipher mode of operation converts a block cipher into a stream cipher by encrypting successive values of a counter?",
+        "options": [
+          "A. CBC (Cipher Block Chaining)",
+          "B. CTR (Counter Mode)",
+          "C. ECB (Electronic Codebook)",
+          "D. CFB (Cipher Feedback)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "CTR Mode mã hóa giá trị counter (nonce + counter tăng dần) bằng block cipher, rồi XOR output với plaintext. Ưu điểm: có thể mã hóa/giải mã song song, random access, và hoạt động như stream cipher. CBC cần IV và phải tuần tự. ECB mã hóa độc lập từng block."
+      },
+      {
+        "id": 221,
+        "topicId": "ch1_tongquan",
+        "type": "Lý thuyết",
+        "question": "According to security experts, what is considered the weakest link in any information security system?",
+        "options": [
+          "A. Outdated software",
+          "B. Weak encryption algorithms",
+          "C. Human factor (people)",
+          "D. Unpatched operating systems"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Con người (Human factor) luôn được coi là mắt xích yếu nhất trong bảo mật thông tin. Dù hệ thống kỹ thuật hoàn hảo, Social Engineering vẫn có thể lừa người dùng tiết lộ mật khẩu, click link độc hại, hoặc vi phạm chính sách bảo mật."
+      },
+      {
+        "id": 222,
+        "topicId": "ch6_firewall_ids",
+        "type": "Lý thuyết",
+        "multiSelect": true,
+        "question": "Which of the following servers are typically placed in a DMZ (Demilitarized Zone)? (Select three)",
+        "options": [
+          "A. Web Server",
+          "B. Internal Database Server",
+          "C. Mail Server (SMTP)",
+          "D. DNS Server",
+          "E. Domain Controller",
+          "F. File Server (NAS)"
+        ],
+        "correctAnswer": [
+          "A",
+          "C",
+          "D"
+        ],
+        "explanation": "DMZ là vùng mạng trung gian giữa mạng nội bộ và Internet. Chứa các server cần truy cập từ bên ngoài: Web Server (A), Mail Server SMTP (C), DNS Server (D). Database Server (B), Domain Controller (E), File Server (F) phải nằm trong mạng nội bộ vì chứa dữ liệu nhạy cảm."
+      },
+      {
+        "id": 223,
+        "topicId": "ch9_asymmetric_rsa",
+        "type": "Tính toán",
+        "question": "Cho p=5, q=7 trong hệ RSA. Tính n, φ(n) và tìm e phù hợp.",
+        "options": [
+          "A. n=35, φ(n)=24, e=7",
+          "B. n=35, φ(n)=24, e=5",
+          "C. n=35, φ(n)=28, e=3",
+          "D. n=12, φ(n)=24, e=5"
+        ],
+        "correctAnswer": "B",
+        "explanation": "n = p×q = 5×7 = 35. φ(n) = (p-1)(q-1) = 4×6 = 24. Chọn e sao cho 1 < e < φ(n) và gcd(e, φ(n)) = 1. Kiểm tra: gcd(5, 24) = 1 ✓ (5 không chia hết cho 2, 3). Đáp án A cũng có n=35, φ(n)=24 đúng, nhưng gcd(7,24)=1 cũng đúng. Tuy nhiên đáp án B với e=5 là lựa chọn nhỏ hơn và phổ biến hơn."
+      },
+      {
+        "id": 224,
+        "topicId": "ch7_crypto_overview",
+        "type": "Tính toán",
+        "question": "Dùng Caesar Cipher với k=3, giải mã ký tự 'K'. Kết quả là?",
+        "options": [
+          "A. N",
+          "B. M",
+          "C. H",
+          "D. L"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Giải mã Caesar: M = (C - k) mod 26. Kở vị trí 10 (A=0). M = (10 - 3) mod 26 = 7 = H. Đáp án là H. Lưu ý: Mã hóa Caesar dịch phải k vị trí, giải mã dịch trái k vị trí."
+      },
+      {
+        "id": 225,
+        "topicId": "ch1_tongquan",
+        "type": "Tình huống",
+        "multiSelect": true,
+        "question": "During an incident response, which of the following should be the FIRST actions taken after a security breach is detected? (Select two)",
+        "options": [
+          "A. Eradicate the threat immediately",
+          "B. Identify the scope and nature of the incident",
+          "C. Notify the media about the breach",
+          "D. Contain the incident to prevent further damage",
+          "E. Begin legal proceedings against the attacker",
+          "F. Delete all system logs for privacy"
+        ],
+        "correctAnswer": [
+          "B",
+          "D"
+        ],
+        "explanation": "Incident Response theo NIST framework gồm: Preparation → Detection → Analysis/Identification → Containment → Eradication → Recovery → Lessons Learned. Sau phát hiện, bước đầu tiên là Identification (B) xác định phạm vi sự cố, rồi Containment (D) cách ly hệ thống để ngăn lan rộng. Xóa log (F) là phá hoại bằng chứng số."
       }
     ]
   }

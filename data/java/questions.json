@@ -87,7 +87,7 @@
     "id": 7,
     "topicId": "servlet_lifecycle",
     "type": "code",
-    "question": "Cho đoạn mã Servlet sau:\n\npublic class TestServlet extends HttpServlet {\n    int count = 0;\n    protected void doGet(HttpServletRequest req, HttpServletResponse res) {\n        count++;\n    }\n}\n\nNếu có 3 request đồng thời gửi tới Servlet này, giá trị của biến count cuối cùng có thể là gì?",
+    "question": "Cho đoạn mã Servlet sau:\n\npublic class TestServlet extends HttpServlet {\n int count = 0;\n protected void doGet(HttpServletRequest req, HttpServletResponse res) {\n count++;\n }\n}\n\nNếu có 3 request đồng thời gửi tới Servlet này, giá trị của biến count cuối cùng có thể là gì?",
     "options": [
       "A. Chắc chắn bằng 3",
       "B. Chắc chắn bằng 1",
@@ -283,7 +283,7 @@
     "id": 21,
     "topicId": "genericservlet_httpservlet",
     "type": "code",
-    "question": "Xem đoạn code sau:\n\npublic class CustomServlet extends HttpServlet {\n    public void service(HttpServletRequest req, HttpServletResponse res) {\n        // Không có code\n    }\n}\n\nNếu gửi request GET đến Servlet này, kết quả nhận được trên trình duyệt là gì?",
+    "question": "Xem đoạn code sau:\n\npublic class CustomServlet extends HttpServlet {\n public void service(HttpServletRequest req, HttpServletResponse res) {\n // Không có code\n }\n}\n\nNếu gửi request GET đến Servlet này, kết quả nhận được trên trình duyệt là gì?",
     "options": [
       "A. Trang trắng (Không có nội dung phản hồi)",
       "B. Mã lỗi 405 Method Not Allowed",
@@ -479,7 +479,7 @@
     "id": 35,
     "topicId": "filter_api",
     "type": "code",
-    "question": "Quan sát đoạn cấu hình web.xml sau:\n\n<filter-mapping>\n    <filter-name>LogFilter</filter-name>\n    <url-pattern>/admin/*</url-pattern>\n</filter-mapping>\n\nFilter này sẽ chạy khi người dùng truy cập URL nào?",
+    "question": "Quan sát đoạn cấu hình web.xml sau:\n\n<filter-mapping>\n <filter-name>LogFilter</filter-name>\n <url-pattern>/admin/*</url-pattern>\n</filter-mapping>\n\nFilter này sẽ chạy khi người dùng truy cập URL nào?",
     "options": [
       "A. /index.jsp",
       "B. /admin/dashboard",
@@ -577,7 +577,7 @@
     "id": 42,
     "topicId": "jdbc_api",
     "type": "code",
-    "question": "Đoạn mã sau có lỗ hổng bảo mật gì?\n\nString sql = \"SELECT * FROM users WHERE user = '\" + username + \"'\";\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(sql);\n",
+    "question": "Đoạn mã sau có lỗ hổng bảo mật gì?\n\nString sql = \"SELECT * FROM users WHERE user = '\" + username + \"'\";\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(sql);",
     "options": [
       "A. Rò rỉ tài nguyên Connection.",
       "B. SQL Injection do cộng chuỗi trực tiếp giá trị đầu vào của người dùng vào câu lệnh SQL.",
@@ -675,7 +675,7 @@
     "id": 49,
     "topicId": "springboot_autoconfig",
     "type": "code",
-    "question": "Xem đoạn mã sau:\n\n@SpringBootApplication\npublic class DemoApplication {\n    public static void main(String[] args) {\n        SpringApplication.run(DemoApplication.class, args);\n    }\n}\n\nAnnotation @SpringBootApplication là sự kết hợp của 3 annotation nào sau đây?",
+    "question": "Xem đoạn mã sau:\n\n@SpringBootApplication\npublic class DemoApplication {\n public static void main(String[] args) {\n SpringApplication.run(DemoApplication.class, args);\n }\n}\n\nAnnotation @SpringBootApplication là sự kết hợp của 3 annotation nào sau đây?",
     "options": [
       "A. @Configuration, @EnableAutoConfiguration, @ComponentScan",
       "B. @SpringBootConfiguration, @EnableAutoConfiguration, @ComponentScan",
@@ -773,7 +773,7 @@
     "id": 56,
     "topicId": "spring_mvc_flow",
     "type": "code",
-    "question": "Cho đoạn mã Spring MVC Controller sau:\n\n@Controller\npublic class MainController {\n    @GetMapping(\"/home\")\n    public String homepage() {\n        return \"home\";\n    }\n}\n\nKhi người dùng truy cập /home, hệ thống sẽ thực hiện hành động nào?",
+    "question": "Cho đoạn mã Spring MVC Controller sau:\n\n@Controller\npublic class MainController {\n @GetMapping(\"/home\")\n public String homepage() {\n return \"home\";\n }\n}\n\nKhi người dùng truy cập /home, hệ thống sẽ thực hiện hành động nào?",
     "options": [
       "A. Trả về dòng chữ \"home\" thô cho trình duyệt.",
       "B. Nhờ ViewResolver tìm file giao diện có tên tương ứng là \"home\" để kết xuất giao diện.",
@@ -969,7 +969,7 @@
     "id": 70,
     "topicId": "spring_filters",
     "type": "code",
-    "question": "Xem đoạn mã định nghĩa Custom Filter sau:\n\npublic class LogFilter extends OncePerRequestFilter {\n    protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) {\n        // Ghi log\n        chain.doFilter(req, res);\n    }\n}\n\nPhương thức cần override để viết logic lọc chính trong OncePerRequestFilter là gì?",
+    "question": "Xem đoạn mã định nghĩa Custom Filter sau:\n\npublic class LogFilter extends OncePerRequestFilter {\n protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) {\n // Ghi log\n chain.doFilter(req, res);\n }\n}\n\nPhương thức cần override để viết logic lọc chính trong OncePerRequestFilter là gì?",
     "options": [
       "A. doFilter(ServletRequest, ServletResponse, FilterChain)",
       "B. doFilterInternal(HttpServletRequest, HttpServletResponse, FilterChain)",
@@ -1067,7 +1067,7 @@
     "id": 77,
     "topicId": "spring_di_ioc",
     "type": "code",
-    "question": "Xem đoạn mã sau:\n\n@Configuration\npublic class AppConfig {\n    @Bean\n    public OrderService orderService() {\n        return new OrderServiceImpl();\n    }\n}\n\nBean tạo ra từ phương thức trên sẽ có tên mặc định là gì trong IoC Container?",
+    "question": "Xem đoạn mã sau:\n\n@Configuration\npublic class AppConfig {\n @Bean\n public OrderService orderService() {\n return new OrderServiceImpl();\n }\n}\n\nBean tạo ra từ phương thức trên sẽ có tên mặc định là gì trong IoC Container?",
     "options": [
       "A. orderServiceImpl",
       "B. orderService",
@@ -1263,7 +1263,7 @@
     "id": 91,
     "topicId": "jpa_fetch_type",
     "type": "code",
-    "question": "Cho định nghĩa thuộc tính sau:\n\n@ManyToOne(fetch = FetchType.LAZY)\n@JoinColumn(name = \"dept_id\")\nprivate Department department;\n\nKhi chạy lệnh `Employee emp = em.find(Employee.class, 1L)`, Hibernate sẽ tạo ra đối tượng department kiểu gì để gán cho Employee?",
+    "question": "Cho định nghĩa thuộc tính sau:\n\n@ManyToOne(fetch = FetchType.LAZY)\n@JoinColumn(name = \"dept_id\")\nprivate Department department;\n\nKhi chạy lệnh `Employee emp = em.find(Employee.class, 1L)`, Hibernate sẽ tạo ra đối tượng department kiểu gì để gán choEmployee?",
     "options": [
       "A. Một đối tượng Department thật đầy đủ dữ liệu.",
       "B. Đối tượng Proxy (Department$HibernateProxy) rỗng chỉ chứa khóa chính id.",

@@ -123,6 +123,9 @@
                         </div>
                     </div>
 
+                    <!-- Dynamic Subject Dashboard Placeholder -->
+                    <div id="subject-dashboard-container"></div>
+
                     <!-- Subject Card Grid Section -->
                     <div class="section-container">
                         <h3 class="section-title">Danh sách môn học ôn tập</h3>
@@ -548,16 +551,27 @@
                                 </div>
                             </div>
 
-                            <div class="results-actions">
+                            <!-- Suggestions review section -->
+                            <div class="suggestions-section hidden" id="result-suggestions-container" style="margin-top: 24px; padding: 20px; border-radius: var(--radius-lg); border: 2px solid var(--border-color); background: var(--bg-card-hover);">
+                                <h3 style="font-size: 16px; font-weight: 700; color: var(--warning); display: flex; align-items: center; gap: 8px; margin-bottom: 12px; margin-top: 0;">
+                                    <span class="material-icons-round" style="color: #f59e0b;">lightbulb</span> Đề xuất ôn tập riêng cho bạn:
+                                </h3>
+                                <p style="font-size: 14.5px; color: var(--text-muted); margin-bottom: 16px;">Dựa trên phân tích các câu trả lời sai, bạn cần cải thiện kiến thức ở các chủ đề sau:</p>
+                                <div id="result-suggestions-list" style="display: flex; flex-direction: column; gap: 12px;">
+                                    <!-- Injected suggestions -->
+                                </div>
+                            </div>
+
+                            <div class="results-actions" style="margin-top: 24px;">
                                 <button class="btn btn-primary" id="btn-result-to-analytics">Xem phân tích chi tiết</button>
                                 <button class="btn btn-outline" id="btn-result-to-home">Về trang chủ</button>
                             </div>
 
                             <!-- Review wrong questions list -->
                             <div class="wrong-questions-section hidden" id="wrong-questions-section">
-                                <h3 class="review-title">Xem lại các câu trả lời sai / cần lưu ý:</h3>
+                                <h3 class="review-title" id="results-review-title">Xem lại chi tiết toàn bộ bài thi:</h3>
                                 <div class="review-questions-list" id="wrong-questions-list-container">
-                                    <!-- Incorrect questions items injected here -->
+                                    <!-- Graded questions items injected here -->
                                 </div>
                             </div>
                         </div>
@@ -653,6 +667,6 @@
     <div class="toast-container" id="toast-notifications"></div>
 
     <!-- Script loading: Main script -->
-    <script src="app.js?v=1.0.1"></script>
+    <script src="app.js?v=1.0.2"></script>
 </body>
 </html>

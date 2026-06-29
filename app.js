@@ -4,6 +4,11 @@
  */
 
 // Global Application State
+// Test hook for automated test environments
+if (window.location.search.includes('test=true')) {
+    window.confirm = () => true;
+}
+
 const state = {
     subjects: [],             // List of all subjects from subjects.json
     currentSubjectId: '',     // Selected subject ID
@@ -86,7 +91,7 @@ async function initApp() {
     try {
         const response = await fetch(`data/subjects.json?t=${Date.now()}`);
         if (!response.ok) throw new Error('Không thể tải tệp subjects.json');
-        state.subjects = await response.json();
+        state.subjects = cleanObjectText(await response.json());
         
         // Populate subject selectors in UI
         populateSubjectDropdown();
@@ -208,10 +213,12 @@ function setupEventListeners() {
         btnMockNext.addEventListener('click', () => navigateMockQuestion(1));
     }
 
-    const btnSubmitMock = document.getElementById('btn-submit-mock');
-    if (btnSubmitMock) {
-        btnSubmitMock.addEventListener('click', () => submitMockExam(false));
-    }
+    document.addEventListener('click', (e) => {
+        const btnSubmit = e.target.closest('#btn-submit-mock');
+        if (btnSubmit) {
+            submitMockExam(false);
+        }
+    });
 
     // Results Redirections
     const btnResultToAnalytics = document.getElementById('btn-result-to-analytics');
@@ -368,20 +375,66 @@ async function selectSubject(subjectId) {
             throw new Error('Không thể tải các tệp tin dữ liệu môn học');
         }
         
-        state.knowledgeData = await knowledgeRes.json();
-        state.questionsData = await questionsRes.json();
+        state.knowledgeData = cleanObjectText(await knowledgeRes.json());
+        state.questionsData = cleanObjectText(await questionsRes.json());
         
         // Load preset exams if available
         try {
             const presetRes = await fetch(`data/${subjectId}/preset_exams.json?t=${Date.now()}`);
             if (presetRes.ok) {
-                state.presetExams = await presetRes.json();
+                state.presetExams = cleanObjectText(await presetRes.json());
             } else {
                 state.presetExams = [];
             }
         } catch (e) {
             console.warn(`Không tìm thấy preset_exams.json cho môn học ${subjectId}:`, e);
             state.presetExams = [];
+        }
+        
+        // Split National Defense topics if they have more than 40 questions
+        if (subjectId.startsWith('quocphong')) {
+            const maxQuestionsPerTopic = 20;
+            const newKnowledgeData = [];
+            const questionsByTopic = {};
+            
+            state.questionsData.forEach(q => {
+                if (!questionsByTopic[q.topicId]) {
+                    questionsByTopic[q.topicId] = [];
+                }
+                questionsByTopic[q.topicId].push(q);
+            });
+            
+            state.knowledgeData.forEach(topic => {
+                const tQuestions = questionsByTopic[topic.topicId] || [];
+                const N = tQuestions.length;
+                
+                if (N > 40) {
+                    const numParts = Math.ceil(N / maxQuestionsPerTopic);
+                    for (let i = 0; i < numParts; i++) {
+                        const partId = `${topic.topicId}_part_${i + 1}`;
+                        const startIdx = i * maxQuestionsPerTopic;
+                        const endIdx = Math.min(startIdx + maxQuestionsPerTopic, N);
+                        const partQuestions = tQuestions.slice(startIdx, endIdx);
+                        
+                        partQuestions.forEach(q => {
+                            q.topicId = partId;
+                        });
+                        
+                        newKnowledgeData.push({
+                            topicId: partId,
+                            title: `${topic.title} - Phần ${i + 1}`,
+                            keywords: topic.keywords || [],
+                            summary: topic.summary || '',
+                            content: topic.content || '',
+                            example: topic.example || ''
+                        });
+                    }
+                } else {
+                    newKnowledgeData.push(topic);
+                }
+            });
+            
+            state.knowledgeData = newKnowledgeData;
         }
         
         // Update mock exam dropdown in UI
@@ -401,6 +454,234 @@ async function selectSubject(subjectId) {
         console.error(`Lỗi tải dữ liệu môn học ${subjectId}:`, error);
         showToast('Lỗi tải dữ liệu môn học. Vui lòng kiểm tra lại cấu trúc file!', 'danger');
     }
+}
+
+function startPracticeForTopic(topicId) {
+    state.quiz.selectedTopics = [topicId];
+    state.quiz.active = true;
+    
+    let questions = state.questionsData.filter(q => state.quiz.selectedTopics.includes(q.topicId));
+    
+    if (questions.length === 0) {
+        showToast('Không tìm thấy câu hỏi nào thuộc chủ đề đã chọn!', 'warning');
+        state.quiz.active = false;
+        return;
+    }
+    
+    state.quiz.questions = shuffleArray([...questions]);
+    state.quiz.currentIndex = 0;
+    state.quiz.score = 0;
+    state.quiz.userAnswers = [];
+    state.quiz.checked = false;
+    
+    window.location.hash = '#practice';
+    
+    document.getElementById('practice-setup-card').classList.add('hidden');
+    document.getElementById('quiz-active-container').classList.remove('hidden');
+    
+    renderQuizQuestion();
+}
+
+function startMockExamOfSize(size) {
+    if (state.questionsData.length === 0) {
+        showToast('Môn học này chưa có bộ câu hỏi thi thử!', 'danger');
+        return;
+    }
+    
+    const qty = Math.min(size, state.questionsData.length);
+    let selectedQuestions = [];
+    
+    const topicsMap = {};
+    state.questionsData.forEach(q => {
+        if (!topicsMap[q.topicId]) topicsMap[q.topicId] = [];
+        topicsMap[q.topicId].push(q);
+    });
+    
+    const topicIds = Object.keys(topicsMap);
+    topicIds.forEach(tId => {
+        topicsMap[tId] = shuffleArray([...topicsMap[tId]]);
+    });
+    
+    let added = true;
+    const topicPointers = {};
+    topicIds.forEach(tId => topicPointers[tId] = 0);
+    
+    while (selectedQuestions.length < qty && added) {
+        added = false;
+        const shuffledTopicIds = shuffleArray([...topicIds]);
+        for (const tId of shuffledTopicIds) {
+            const index = topicPointers[tId];
+            if (index < topicsMap[tId].length) {
+                selectedQuestions.push(topicsMap[tId][index]);
+                topicPointers[tId]++;
+                added = true;
+                if (selectedQuestions.length === qty) break;
+            }
+        }
+    }
+    
+    selectedQuestions = shuffleArray(selectedQuestions);
+    
+    const timers = { 20: 25*60, 30: 40*60, 50: 60*60, 100: 120*60 };
+    const durationSeconds = timers[size] || 30*60;
+    
+    state.mock.questions = selectedQuestions;
+    state.mock.active = true;
+    state.mock.currentIndex = 0;
+    state.mock.userAnswers = {};
+    state.mock.startTime = new Date();
+    state.mock.timer = durationSeconds;
+    state.mock.totalTime = durationSeconds;
+    
+    window.location.hash = '#mock-test';
+    document.getElementById('mock-setup-card').classList.add('hidden');
+    document.getElementById('mock-exam-workspace-container').classList.remove('hidden');
+    
+    renderMockQuestionsList();
+    startMockTimer();
+    renderMockQuestionMap();
+}
+
+// Expose dashboard functions globally
+window.startPracticeForTopic = startPracticeForTopic;
+window.startMockExamOfSize = startMockExamOfSize;
+
+async function renderSubjectDashboard() {
+    const container = document.getElementById('subject-dashboard-container');
+    if (!container) return;
+    
+    if (!state.currentSubject) {
+        container.innerHTML = '';
+        container.classList.add('hidden');
+        return;
+    }
+    
+    container.classList.remove('hidden');
+    
+    const subject = state.currentSubject;
+    const subjectId = subject.id;
+    const pdfs = subject.pdfs || [];
+    
+    // Load scanned Markdown exams containing "de"
+    const mdExams = await scanSubjectExams(subjectId);
+    
+    let examsListHTML = '';
+    if (mdExams.length > 0) {
+        examsListHTML = `
+            <div class="dashboard-section" style="margin-top: 16px;">
+                <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Đề thi ôn tập (Markdown)</h4>
+                <div class="subject-dashboard-chapters-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-bottom: 24px;">
+                    ${mdExams.map(filename => {
+                        const displayName = filename.replace('.md', '').replace('cauhoi-', '').replace('-attt', '').toUpperCase();
+                        return `
+                            <button class="btn btn-outline dashboard-chapter-btn" onclick="startMarkdownExam('${filename}')" style="text-align: left; justify-content: flex-start; padding: 14px 18px; font-size: 15px; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                <span class="material-icons-round" style="margin-right: 8px; color: var(--primary); flex-shrink: 0;">quiz</span>
+                                <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Đề thi: ${displayName}</span>
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    let presetExamsHTML = '';
+    if (state.presetExams && state.presetExams.length > 0) {
+        presetExamsHTML = `
+            <div class="dashboard-section" style="margin-top: 16px;">
+                <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Đề thi mẫu cố định</h4>
+                <div class="subject-dashboard-chapters-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-bottom: 24px;">
+                    ${state.presetExams.map(exam => {
+                        return `
+                            <button class="btn btn-outline dashboard-chapter-btn" onclick="startPresetExam('${exam.id}')" style="text-align: left; justify-content: flex-start; padding: 14px 18px; font-size: 15px; font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                <span class="material-icons-round" style="margin-right: 8px; color: var(--secondary); flex-shrink: 0;">assignment</span>
+                                <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${exam.name}</span>
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    let randomExamHTML = '';
+    if (mdExams.length === 0) {
+        randomExamHTML = `
+            <div class="dashboard-section" style="margin-top: 24px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Thi thử tổng hợp</h4>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+                    <button class="btn btn-primary" onclick="startMockExamOfSize(50)" style="flex: 1; min-width: 200px; padding: 16px 20px; font-size: 16px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span class="material-icons-round">shuffle</span> Tạo đề ngẫu nhiên (50 câu)
+                    </button>
+                </div>
+            </div>
+        `;
+    } else {
+        randomExamHTML = `
+            <div class="dashboard-section" style="margin-top: 24px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Thi thử ngẫu nhiên</h4>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+                    <button class="btn btn-outline" onclick="startMockExamOfSize(50)" style="padding: 12px 20px; font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                        <span class="material-icons-round">shuffle</span> Tạo đề ngẫu nhiên 50 câu
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+    
+    const docsHTML = pdfs.length > 0 ? `
+        <div class="dashboard-section" style="margin-top: 24px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+            <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Tài liệu gốc</h4>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                ${pdfs.map(pdf => {
+                    const filename = pdf.split('/').pop();
+                    return `
+                        <button class="btn btn-outline btn-icon" onclick="window.open('pdf/${pdf}', '_blank')" style="font-size: 14px; font-weight: 600; padding: 10px 16px;">
+                            <span class="material-icons-round" style="font-size: 18px;">description</span>
+                            Xem tài liệu gốc: ${filename}
+                        </button>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    ` : '';
+    
+    const isAI = subject.id === 'trituenhantao-ontap';
+    const practicalHTML = isAI ? `
+        <div class="dashboard-section" style="margin-top: 24px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+            <h4 style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Thực hành</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;">
+                <button class="btn btn-outline" onclick="window.location.hash = '#interactive-practice'" style="padding: 14px; font-weight: 600; font-size: 14.5px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span class="material-icons-round">hub</span> AND-OR Search
+                </button>
+            </div>
+        </div>
+    ` : '';
+    
+    container.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 16px;">
+                <div style="font-size: 40px; background: rgba(59, 130, 246, 0.1); width: 64px; height: 64px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;">
+                    ${subject.icon || '📚'}
+                </div>
+                <div>
+                    <h3 style="margin: 0; font-size: 22px; font-weight: 700; color: var(--text-main);">${subject.name}</h3>
+                    <p style="margin: 4px 0 0 0; font-size: 14px; color: var(--text-muted);">${subject.description}</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DANH SÁCH ĐỀ THI -->
+        ${examsListHTML}
+        ${presetExamsHTML}
+        ${randomExamHTML}
+        
+        <!-- THỰC HÀNH -->
+        ${practicalHTML}
+        
+        <!-- TÀI LIỆU GỐC -->
+        ${docsHTML}
+    `;
 }
 
 function populateMockExamDropdown() {
@@ -454,7 +735,10 @@ function updateGlobalProgressBar() {
 // ==========================================================================
 // 1. HOME PANEL RENDER
 // ==========================================================================
+
 function renderHomeScreen() {
+    renderSubjectDashboard();
+    
     const container = document.getElementById('subject-cards-container');
     if (!container) return;
     
@@ -464,12 +748,9 @@ function renderHomeScreen() {
         const card = document.createElement('div');
         card.className = `subject-card ${subject.id === state.currentSubjectId ? 'active' : ''}`;
         
-        // Determine counts for statistics (we mock if not current, or fetch dynamically if possible)
-        // For simplicity, if it's current subject we display exact lengths. 
-        // For other subjects, we read placeholders or show standard count.
         const isCurrent = subject.id === state.currentSubjectId;
-        const topicCount = isCurrent ? state.knowledgeData.length : 19; // Placeholder estimation for network
-        const questCount = isCurrent ? state.questionsData.length : 26; // Placeholder estimation for network
+        const topicCount = isCurrent ? state.knowledgeData.length : 19; 
+        const questCount = isCurrent ? state.questionsData.length : 26; 
         
         card.innerHTML = `
             <div class="subject-card-header">
@@ -492,7 +773,7 @@ function renderHomeScreen() {
             </div>
             <div class="subject-card-footer">
                 <button class="btn ${isCurrent ? 'btn-primary' : 'btn-outline'} btn-sm">
-                    ${isCurrent ? 'Bắt đầu học ngay' : 'Chọn môn học'}
+                    ${isCurrent ? 'Đang kích hoạt' : 'Chọn môn học'}
                 </button>
             </div>
         `;
@@ -501,7 +782,7 @@ function renderHomeScreen() {
             if (!isCurrent) {
                 await selectSubject(subject.id);
             }
-            window.location.hash = '#knowledge';
+            renderHomeScreen();
         });
         
         container.appendChild(card);
@@ -511,12 +792,130 @@ function renderHomeScreen() {
 // ==========================================================================
 // 2. KNOWLEDGE PANEL RENDER (Notes + Markdown style presentation)
 // ==========================================================================
-function renderKnowledgeScreen() {
+function renderKnowledgeSidebarItems(query = '') {
+    const topicListEl = document.getElementById('knowledge-topic-list');
+    if (!topicListEl) return;
+    
+    topicListEl.innerHTML = '';
+    const readList = storage.loadReadTopics(state.currentSubjectId);
+    
+    const cleanQuery = query.toLowerCase().trim();
+    const filteredTopics = state.knowledgeData.filter(topic => {
+        return topic.title.toLowerCase().includes(cleanQuery) || 
+               (topic.summary && topic.summary.toLowerCase().includes(cleanQuery)) ||
+               (topic.keywords && topic.keywords.some(k => k.toLowerCase().includes(cleanQuery)));
+    });
+    
+    if (filteredTopics.length === 0) {
+        topicListEl.innerHTML = '<div class="empty-list-info" style="padding: 20px; text-align: center; color: var(--text-muted);">Không tìm thấy chủ đề nào.</div>';
+        return;
+    }
+    
+    if (state.knowledgeData.length > 8) {
+        const groups = {
+            'theory': { name: '📖 Lý thuyết & Khái niệm', items: [] },
+            'practical': { name: '🛠️ Thực hành & Mô phỏng', items: [] },
+            'exam': { name: '📝 Ngân hàng đề & Ôn tập', items: [] }
+        };
+        
+        filteredTopics.forEach(topic => {
+            const title = topic.title.toLowerCase();
+            const id = topic.topicId.toLowerCase();
+            if (title.includes('ngân hàng') || title.includes('tổng hợp') || title.includes('đề thi') || title.includes('trắc nghiệm') || title.includes('part') || title.includes('phần') || id.includes('other_topics') || id.includes('part')) {
+                groups['exam'].items.push(topic);
+            } else if (title.includes('thực hành') || title.includes('interactive') || title.includes('vẽ đồ thị') || title.includes('lab') || title.includes('tự luận') || id.includes('interactive')) {
+                groups['practical'].items.push(topic);
+            } else {
+                groups['theory'].items.push(topic);
+            }
+        });
+        
+        Object.keys(groups).forEach(gKey => {
+            const g = groups[gKey];
+            if (g.items.length === 0) return;
+            
+            const header = document.createElement('div');
+            const isCollapsed = cleanQuery ? false : state.knowledgeGroupsCollapsed[gKey]; 
+            header.className = `ksb-group-header ${isCollapsed ? 'collapsed' : ''}`;
+            header.style.display = 'flex';
+            header.style.alignItems = 'center';
+            header.style.justifyContent = 'space-between';
+            header.style.padding = '10px 16px';
+            header.style.background = 'var(--border-color-light)';
+            header.style.cursor = 'pointer';
+            header.style.fontWeight = '700';
+            header.style.fontSize = '13px';
+            header.style.color = 'var(--text-muted)';
+            header.style.borderBottom = '1px solid var(--border-color)';
+            
+            header.innerHTML = `
+                <span>${g.name} (${g.items.length})</span>
+                <span class="material-icons-round" style="font-size: 18px; transition: transform 0.2s; transform: rotate(${isCollapsed ? '-90deg' : '0deg'});">
+                    expand_more
+                </span>
+            `;
+            
+            header.addEventListener('click', () => {
+                state.knowledgeGroupsCollapsed[gKey] = !state.knowledgeGroupsCollapsed[gKey];
+                renderKnowledgeSidebarItems(query);
+            });
+            
+            topicListEl.appendChild(header);
+            
+            if (!isCollapsed) {
+                g.items.forEach(topic => {
+                    const item = document.createElement('div');
+                    const isRead = readList.includes(topic.topicId);
+                    const isActive = topic.topicId === state.selectedTopicId;
+                    
+                    item.className = `ksb-item ${isActive ? 'active' : ''} ${isRead ? 'read' : ''}`;
+                    item.innerHTML = `
+                        <span class="material-icons-round ksb-status-icon">
+                            ${isRead ? 'check_circle' : 'radio_button_unchecked'}
+                        </span>
+                        <span class="ksb-title" title="${topic.title}">${topic.title}</span>
+                    `;
+                    
+                    item.addEventListener('click', () => {
+                        state.selectedTopicId = topic.topicId;
+                        const searchInput = document.getElementById('ksb-search-input');
+                        const currentQuery = searchInput ? searchInput.value : '';
+                        renderKnowledgeScreen(currentQuery);
+                    });
+                    
+                    topicListEl.appendChild(item);
+                });
+            }
+        });
+    } else {
+        filteredTopics.forEach(topic => {
+            const item = document.createElement('div');
+            const isRead = readList.includes(topic.topicId);
+            const isActive = topic.topicId === state.selectedTopicId;
+            
+            item.className = `ksb-item ${isActive ? 'active' : ''} ${isRead ? 'read' : ''}`;
+            item.innerHTML = `
+                <span class="material-icons-round ksb-status-icon">
+                    ${isRead ? 'check_circle' : 'radio_button_unchecked'}
+                </span>
+                <span class="ksb-title" title="${topic.title}">${topic.title}</span>
+            `;
+            
+            item.addEventListener('click', () => {
+                state.selectedTopicId = topic.topicId;
+                renderKnowledgeScreen();
+            });
+            
+            topicListEl.appendChild(item);
+        });
+    }
+}
+
+function renderKnowledgeScreen(initialQuery = '') {
     const topicListEl = document.getElementById('knowledge-topic-list');
     const detailViewEl = document.getElementById('knowledge-detail-view');
     if (!topicListEl || !detailViewEl) return;
     
-    // Clear list
     topicListEl.innerHTML = '';
     
     if (state.knowledgeData.length === 0) {
@@ -525,29 +924,47 @@ function renderKnowledgeScreen() {
         return;
     }
     
-    const readList = storage.loadReadTopics(state.currentSubjectId);
+    if (!state.knowledgeGroupsCollapsed) {
+        state.knowledgeGroupsCollapsed = {
+            'theory': false,
+            'practical': false,
+            'exam': false
+        };
+    }
     
-    // Render sidebar topic items
-    state.knowledgeData.forEach(topic => {
-        const item = document.createElement('div');
-        const isRead = readList.includes(topic.topicId);
-        const isActive = topic.topicId === state.selectedTopicId;
-        
-        item.className = `ksb-item ${isActive ? 'active' : ''} ${isRead ? 'read' : ''}`;
-        item.innerHTML = `
-            <span class="material-icons-round ksb-status-icon">
-                ${isRead ? 'check_circle' : 'radio_button_unchecked'}
-            </span>
-            <span class="ksb-title" title="${topic.title}">${topic.title}</span>
-        `;
-        
-        item.addEventListener('click', () => {
-            state.selectedTopicId = topic.topicId;
-            renderKnowledgeScreen(); // Redraw layout to update active state
-        });
-        
-        topicListEl.appendChild(item);
-    });
+    let searchBox = document.getElementById('ksb-search-container');
+    if (state.knowledgeData.length > 8) {
+        if (!searchBox) {
+            searchBox = document.createElement('div');
+            searchBox.id = 'ksb-search-container';
+            searchBox.className = 'ksb-search-box';
+            searchBox.style.padding = '12px 16px';
+            searchBox.style.borderBottom = '1px solid var(--border-color)';
+            searchBox.innerHTML = `
+                <div style="position: relative;">
+                    <input type="text" id="ksb-search-input" value="${initialQuery}" placeholder="Tìm kiếm chương/bài..." style="width: 100%; padding: 8px 12px 8px 36px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); background: var(--bg-app); color: var(--text-main); font-size: 13.5px;">
+                    <span class="material-icons-round" style="position: absolute; left: 10px; top: 9px; font-size: 18px; color: var(--text-muted);">search</span>
+                </div>
+            `;
+            topicListEl.parentNode.insertBefore(searchBox, topicListEl);
+            
+            const searchInput = document.getElementById('ksb-search-input');
+            searchInput.addEventListener('input', () => {
+                renderKnowledgeSidebarItems(searchInput.value);
+            });
+        } else {
+            const searchInput = document.getElementById('ksb-search-input');
+            if (searchInput && initialQuery) {
+                searchInput.value = initialQuery;
+            }
+        }
+    } else {
+        if (searchBox) searchBox.remove();
+    }
+    
+    const searchInput = document.getElementById('ksb-search-input');
+    const currentQuery = searchInput ? searchInput.value : initialQuery;
+    renderKnowledgeSidebarItems(currentQuery);
     
     // Render active topic details
     const activeTopic = state.knowledgeData.find(t => t.topicId === state.selectedTopicId);
@@ -565,11 +982,27 @@ function renderKnowledgeScreen() {
     const isTopicRead = readList.includes(activeTopic.topicId);
     const personalNote = localStorage.getItem(storage.getNoteKey(state.currentSubjectId, activeTopic.topicId)) || '';
     
+    const pdfs = state.currentSubject.pdfs || [];
+    const docButtonsHTML = pdfs.length > 0 ? `
+        <div class="detail-doc-links" style="display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
+            ${pdfs.map(pdf => {
+                const filename = pdf.split('/').pop();
+                return `
+                    <button class="btn btn-outline btn-xs" onclick="window.open('pdf/${pdf}', '_blank')" style="padding: 6px 12px; font-size: 12.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                        <span class="material-icons-round" style="font-size: 15px;">description</span>
+                        Xem đầy đủ: ${filename}
+                    </button>
+                `;
+            }).join('')}
+        </div>
+    ` : '';
+    
     detailViewEl.innerHTML = `
         <div class="detail-header">
             <div class="topic-label-wrap">
                 <span class="badge">Chủ đề học tập</span>
                 <h2 class="detail-title">${activeTopic.title}</h2>
+                ${docButtonsHTML}
             </div>
             <button class="btn btn-mark-read ${isTopicRead ? 'read' : ''}" id="btn-toggle-read">
                 <span class="material-icons-round">${isTopicRead ? 'check' : 'bookmark_border'}</span>
@@ -712,6 +1145,78 @@ function highlightPython(code) {
     });
     
     return text;
+}
+
+function cleanVietnameseText(str) {
+    if (str === undefined || str === null) {
+        return 'Chưa có dữ liệu';
+    }
+    if (typeof str !== 'string') {
+        return str;
+    }
+    
+    const trimmed = str.trim();
+    if (trimmed === 'undefined' || trimmed === 'null' || trimmed === 'NaN' || trimmed === '[object Object]') {
+        return 'Chưa có dữ liệu';
+    }
+    
+    let text = trimmed.normalize('NFC');
+    
+    // Fix split consonant clusters: c h -> ch, p h -> ph, etc.
+    text = text.replace(/\b(c|p|t|g|k|n|q) +(h|r|i|g|u)(?=[a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ\s]+)/gi, '$1$2');
+    
+    // Fix split words starting with a consonant, followed by space, then a tone-marked vowel
+    const consonants = 'b|c|ch|d|đ|g|gh|gi|h|k|kh|l|m|n|nh|ng|ngh|p|ph|qu|r|s|t|th|tr|v|x';
+    const toneMarkedVowels = 'áàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ';
+    const allVowelsAndChars = 'a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ';
+    
+    const initialConsonantRegex = new RegExp(`\\b(${consonants}) +([${toneMarkedVowels}][${allVowelsAndChars}]*)\\b`, 'gi');
+    text = text.replace(initialConsonantRegex, '$1$2');
+    
+    // Fix split diphthongs / triphthongs
+    // 1. i + space + [êếềểễệ] -> iê...
+    text = text.replace(/\b([bBcCdDđĐgGhHkKlLmMnNpPqQrRsStTvVxX]*i) +([êếềểễệ][a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]*)\b/gi, '$1$2');
+    // 2. u + space + [ôốồổỗộ] -> uô...
+    text = text.replace(/\b([bBcCdDđĐgGhHkKlLmMnNpPqQrRsStTvVxX]*u) +([ôốồổỗộ][a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]*)\b/gi, '$1$2');
+    // 3. ư + space + [ơớờởỡợ] -> ươ...
+    text = text.replace(/\b([bBcCdDđĐgGhHkKlLmMnNpPqQrRsStTvVxX]*ư) +([ơớờởỡợ][a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]*)\b/gi, '$1$2');
+    // 4. o + space + [aáàảãạeéèẻẽẹ] -> oa / oe
+    text = text.replace(/\b([bBcCdDđĐgGhHkKlLmMnNpPqQrRsStTvVxX]*o) +([aáàảãạeéèẻẽẹ][a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]*)\b/gi, '$1$2');
+    // 5. u + space + [âấầẩẫậêếềểễệaáàảãạ] -> uâ / uê / ua
+    text = text.replace(/\b([bBcCdDđĐgGhHkKlLmMnNpPqQrRsStTvVxX]*u) +([âấầẩẫậêếềểễệaáàảãạ][a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]*)\b/gi, '$1$2');
+    // 6. u + space + [yýỳỷỹỵ] -> uy
+    text = text.replace(/\b([bBcCdDđĐgGhHkKlLmMnNpPqQrRsStTvVxX]*u) +([yýỳỷỹỵ][a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]*)\b/gi, '$1$2');
+    // 7. y + space + [êếềểễệ] -> yê
+    text = text.replace(/\b([bBcCdDđĐgGhHkKlLmMnNpPqQrRsStTvVxX]*y) +([êếềểễệ][a-zA-ZĂăÂâĐđÊêÔôƠơƯưáàảãạắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòỏõọốồổỗộớờởỡợúùủũụứừửữựýỳỷỹỵ]*)\b/gi, '$1$2');
+    
+    // Specific split words cleanups
+    text = text.replace(/\bth +am\b/gi, 'tham');
+    text = text.replace(/\bph +ương\b/gi, 'phương');
+    
+    // Clean up duplicate spaces inside words, but keep single spaces
+    text = text.replace(/ +/g, ' ');
+    
+    return text;
+}
+
+function cleanObjectText(obj) {
+    if (obj === null || obj === undefined) return obj;
+    if (typeof obj === 'string') {
+        return cleanVietnameseText(obj);
+    }
+    if (Array.isArray(obj)) {
+        return obj.map(item => cleanObjectText(item));
+    }
+    if (typeof obj === 'object') {
+        const cleaned = {};
+        for (const key in obj) {
+            if (Object.prototype.hasOwnProperty.call(obj, key)) {
+                cleaned[key] = cleanObjectText(obj[key]);
+            }
+        }
+        return cleaned;
+    }
+    return obj;
 }
 
 function formatMarkdown(str) {
@@ -920,15 +1425,15 @@ function renderQuizQuestion() {
     const optionsContainer = document.getElementById('quiz-options-container');
     optionsContainer.innerHTML = '';
     
-    const optionBadges = ['A', 'B', 'C', 'D'];
     q.options.forEach((opt, idx) => {
+        const letter = String.fromCharCode(65 + idx);
         const card = document.createElement('div');
         card.className = 'option-card';
         card.dataset.index = idx;
-        card.dataset.letter = optionBadges[idx];
+        card.dataset.letter = letter;
         
         card.innerHTML = `
-            <div class="option-badge">${optionBadges[idx]}</div>
+            <div class="option-badge">${letter}</div>
             <div class="option-text">${opt}</div>
         `;
         
@@ -1162,20 +1667,24 @@ function startMockExam() {
 function startMockTimer() {
     clearMockTimer();
     
-    const display = document.getElementById('mock-timer-text');
     const updateDisplay = () => {
+        const display = document.getElementById('mock-timer-text');
+        if (!display) return;
+        
         const mins = Math.floor(state.mock.timer / 60);
         const secs = state.mock.timer % 60;
         display.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         
         // Add danger blink on low time (under 1 minute)
         const timerContainer = document.getElementById('mock-timer');
-        if (state.mock.timer <= 60) {
-            timerContainer.style.background = '#fee2e2';
-            timerContainer.style.color = '#ef4444';
-        } else {
-            timerContainer.style.background = '';
-            timerContainer.style.color = '';
+        if (timerContainer) {
+            if (state.mock.timer <= 60) {
+                timerContainer.style.background = '#fee2e2';
+                timerContainer.style.color = '#ef4444';
+            } else {
+                timerContainer.style.background = '';
+                timerContainer.style.color = '';
+            }
         }
     };
     
@@ -1239,79 +1748,160 @@ function updateMockQuestionMapStatus() {
     });
 }
 
-function renderMockQuestion() {
-    const q = state.mock.questions[state.mock.currentIndex];
+function renderMockQuestionsList() {
+    const pane = document.querySelector('.mock-question-pane');
+    if (!pane) return;
     
-    document.getElementById('mock-current-idx').textContent = state.mock.currentIndex + 1;
-    document.getElementById('mock-question-text').innerHTML = formatMarkdown(q.question);
+    pane.innerHTML = `
+        <div class="mock-header-sticky" style="position: sticky; top: 0; background: var(--bg-card); padding: 16px 24px; border-bottom: 2px solid var(--border-color); z-index: 100; display: flex; justify-content: space-between; align-items: center; border-radius: var(--radius-md) var(--radius-md) 0 0; margin-bottom: 20px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+            <h4 style="margin: 0; font-weight: 700; font-size: 18px;">Bài thi thử: ${state.currentSubject.name}</h4>
+            <div class="timer-display" id="mock-timer" style="display: flex; align-items: center; gap: 8px; font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; color: var(--danger); padding: 6px 14px; background: rgba(239, 68, 68, 0.1); border-radius: 20px;">
+                <span class="material-icons-round">timer</span>
+                <span id="mock-timer-text">00:00</span>
+            </div>
+        </div>
+        <div class="mock-questions-scroll-area" style="display: flex; flex-direction: column; gap: 20px;">
+            ${state.mock.questions.map((q, idx) => {
+                const isMultiSelect = q.multiSelect === true;
+                const savedAnswer = state.mock.userAnswers[idx];
+                
+                const optionBadges = Array.from({length: q.options.length}, (_, i) => String.fromCharCode(65 + i));
+                const isLong = q.question.length > 150;
+                const qTextClass = isLong ? 'question-text long-question' : 'question-text';
+                
+                return `
+                    <div class="panel-card question-card-block" id="mock-q-block-${idx}" style="padding: 24px; margin-bottom: 12px; border: 2px solid var(--border-color); transition: border-color 0.2s;">
+                        <div class="question-block-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+                            <span class="mock-question-idx" style="font-size: 16px; font-weight: 700; color: var(--primary);">Câu hỏi ${idx + 1}</span>
+                            ${isMultiSelect ? `<span class="multi-select-badge" style="font-size: 12px; font-weight: 600; padding: 4px 10px; background: rgba(59, 130, 246, 0.1); color: var(--primary); border-radius: 12px;">[Chọn nhiều]</span>` : ''}
+                        </div>
+                        <div class="${qTextClass}" style="font-size: 20px; font-weight: 500; line-height: 1.8; margin-bottom: 20px; white-space: normal; word-break: normal; overflow-wrap: break-word;">
+                            ${formatMarkdown(q.question)}
+                        </div>
+                        <div class="options-container" style="display: flex; flex-direction: column; gap: 12px;">
+                            ${q.options.map((opt, optIdx) => {
+                                const letter = optionBadges[optIdx];
+                                let isSelected = false;
+                                if (isMultiSelect && Array.isArray(savedAnswer)) {
+                                    isSelected = savedAnswer.includes(letter);
+                                } else {
+                                    isSelected = savedAnswer === letter;
+                                }
+                                
+                                const checkIcon = isMultiSelect 
+                                    ? `<span class="material-icons-round multi-check-icon" style="font-size:18px;margin-right:4px;">${isSelected ? 'check_box' : 'check_box_outline_blank'}</span>`
+                                    : '';
+                                
+                                return `
+                                    <div class="option-card ${isSelected ? 'selected' : ''}" 
+                                         onclick="selectMockOptionScroll(${idx}, '${letter}', this)" 
+                                         style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: var(--radius-md); border: 2px solid ${isSelected ? 'var(--primary)' : 'var(--border-color)'}; background: ${isSelected ? 'var(--bg-card-selected)' : 'var(--bg-card)'}; cursor: pointer; font-size: 16px; transition: all 0.15s; word-break: normal; overflow-wrap: break-word; white-space: normal; margin-bottom: 8px;">
+                                        ${checkIcon}<div class="option-badge" style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; background: ${isSelected ? 'var(--primary)' : 'var(--border-color)'}; color: ${isSelected ? 'white' : 'var(--text-main)'}; flex-shrink: 0;">${letter}</div>
+                                        <div class="option-text" style="line-height: 1.6;">${opt}</div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `;
+}
+
+function selectMockOptionScroll(qIdx, letter, optionEl) {
+    const q = state.mock.questions[qIdx];
+    const isMultiSelect = q.multiSelect === true;
     
-    const optionsContainer = document.getElementById('mock-options-container');
-    optionsContainer.innerHTML = '';
-    
-    const optionBadges = ['A', 'B', 'C', 'D'];
-    const savedAnswer = state.mock.userAnswers[state.mock.currentIndex];
-    
-    q.options.forEach((opt, idx) => {
-        const card = document.createElement('div');
-        const letter = optionBadges[idx];
-        const isSelected = savedAnswer === letter;
+    if (isMultiSelect) {
+        let current = state.mock.userAnswers[qIdx];
+        if (!Array.isArray(current)) current = [];
         
-        card.className = `option-card ${isSelected ? 'selected' : ''}`;
-        
-        card.innerHTML = `
-            <div class="option-badge">${letter}</div>
-            <div class="option-text">${opt}</div>
-        `;
-        
-        card.addEventListener('click', () => selectMockOption(letter));
-        optionsContainer.appendChild(card);
-    });
-    
-    // Toggle Prev/Next buttons
-    document.getElementById('btn-mock-prev').disabled = state.mock.currentIndex === 0;
-    
-    const nextBtn = document.getElementById('btn-mock-next');
-    if (state.mock.currentIndex === state.mock.questions.length - 1) {
-        nextBtn.innerHTML = `Cuối cùng <span class="material-icons-round">vertical_align_bottom</span>`;
-        nextBtn.disabled = true;
+        const idx = current.indexOf(letter);
+        if (idx > -1) {
+            current.splice(idx, 1);
+        } else {
+            current.push(letter);
+            current.sort();
+        }
+        state.mock.userAnswers[qIdx] = current.length > 0 ? current : undefined;
+        if (current.length === 0) delete state.mock.userAnswers[qIdx];
     } else {
-        nextBtn.innerHTML = `Kế tiếp <span class="material-icons-round">chevron_right</span>`;
-        nextBtn.disabled = false;
+        state.mock.userAnswers[qIdx] = letter;
+    }
+    
+    const block = document.getElementById(`mock-q-block-${qIdx}`);
+    if (block) {
+        const optionCards = block.querySelectorAll('.option-card');
+        const savedAnswer = state.mock.userAnswers[qIdx];
+        
+        optionCards.forEach(card => {
+            const badge = card.querySelector('.option-badge');
+            if (!badge) return;
+            const cardLetter = badge.textContent.trim();
+            let isSelected = false;
+            if (isMultiSelect && Array.isArray(savedAnswer)) {
+                isSelected = savedAnswer.includes(cardLetter);
+            } else {
+                isSelected = savedAnswer === cardLetter;
+            }
+            
+            if (isSelected) {
+                card.classList.add('selected');
+                card.style.borderColor = 'var(--primary)';
+                card.style.background = 'var(--bg-card-selected)';
+                if (isMultiSelect) {
+                    const icon = card.querySelector('.multi-check-icon');
+                    if (icon) icon.textContent = 'check_box';
+                }
+            } else {
+                card.classList.remove('selected');
+                card.style.borderColor = 'var(--border-color)';
+                card.style.background = 'var(--bg-card)';
+                if (isMultiSelect) {
+                    const icon = card.querySelector('.multi-check-icon');
+                    if (icon) icon.textContent = 'check_box_outline_blank';
+                }
+            }
+            
+            badge.style.background = isSelected ? 'var(--primary)' : 'var(--border-color)';
+            badge.style.color = isSelected ? 'white' : 'var(--text-main)';
+        });
     }
     
     updateMockQuestionMapStatus();
+}
+
+window.selectMockOptionScroll = selectMockOptionScroll;
+window.renderMockQuestionsList = renderMockQuestionsList;
+
+function renderMockQuestion() {
+    renderMockQuestionsList();
 }
 
 function selectMockOption(letter) {
-    state.mock.userAnswers[state.mock.currentIndex] = letter;
-    
-    // Re-render only options cards to display selected state
-    const allCards = document.querySelectorAll('#mock-options-container .option-card');
-    const optionBadges = ['A', 'B', 'C', 'D'];
-    
-    allCards.forEach((card, idx) => {
-        if (optionBadges[idx] === letter) {
-            card.classList.add('selected');
-        } else {
-            card.classList.remove('selected');
-        }
-    });
-    
-    updateMockQuestionMapStatus();
+    // Legacy support
 }
 
 function navigateMockQuestion(direction) {
-    const targetIdx = state.mock.currentIndex + direction;
-    if (targetIdx >= 0 && targetIdx < state.mock.questions.length) {
-        state.mock.currentIndex = targetIdx;
-        renderMockQuestion();
-    }
+    // No-op in scrollable view
 }
 
 function jumpToMockQuestion(idx) {
     if (idx >= 0 && idx < state.mock.questions.length) {
         state.mock.currentIndex = idx;
-        renderMockQuestion();
+        const el = document.getElementById(`mock-q-block-${idx}`);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Highlight temporarily
+            el.style.borderColor = 'var(--primary)';
+            setTimeout(() => {
+                const isSelected = state.mock.userAnswers[idx] !== undefined;
+                el.style.borderColor = isSelected ? 'var(--primary)' : 'var(--border-color)';
+            }, 1000);
+        }
+        updateMockQuestionMapStatus();
     }
 }
 
@@ -1334,15 +1924,32 @@ function submitMockExam(force = false) {
     const finalAnswersArray = []; // Map to 1-to-1 array for results panel
     
     state.mock.questions.forEach((q, idx) => {
-        const userAns = state.mock.userAnswers[idx] || '';
-        finalAnswersArray.push(userAns);
+        const userAns = state.mock.userAnswers[idx];
+        const isMultiSelect = q.multiSelect === true;
         
-        const isCorrect = userAns === q.correctAnswer;
-        if (isCorrect) correctCount++;
-        
-        // Save statistics for analysis
-        if (userAns) {
-            updateAnswerStatistics(q.topicId, isCorrect);
+        if (isMultiSelect) {
+            // Multi-select: compare sorted arrays
+            const userArr = Array.isArray(userAns) ? [...userAns].sort() : [];
+            const correctArr = Array.isArray(q.correctAnswer) ? [...q.correctAnswer].sort() : [q.correctAnswer];
+            finalAnswersArray.push(userArr.length > 0 ? userArr : '');
+            
+            const isCorrect = userArr.length === correctArr.length && userArr.every((v, i) => v === correctArr[i]);
+            if (isCorrect) correctCount++;
+            
+            if (userArr.length > 0) {
+                updateAnswerStatistics(q.topicId, isCorrect);
+            }
+        } else {
+            // Single-select (original behavior)
+            const ans = userAns || '';
+            finalAnswersArray.push(ans);
+            
+            const isCorrect = ans === q.correctAnswer;
+            if (isCorrect) correctCount++;
+            
+            if (ans) {
+                updateAnswerStatistics(q.topicId, isCorrect);
+            }
         }
     });
     
@@ -1398,51 +2005,133 @@ function renderResultsPanel(correct, total, accuracy, timeTaken, questions, user
         mainTitle.textContent = 'Cần cố gắng thêm!';
     }
     
+    // Suggestions analysis by topicId
+    const incorrectTopics = {};
+    
     // Render review items (Only show wrong or unchecked questions)
     const wrongSection = document.getElementById('wrong-questions-section');
     const wrongListContainer = document.getElementById('wrong-questions-list-container');
     
     wrongListContainer.innerHTML = '';
-    let wrongCount = 0;
     
     questions.forEach((q, idx) => {
-        const userAns = userAnswers[idx] || 'Chưa trả lời';
+        const userAns = userAnswers[idx];
         const correctAns = q.correctAnswer;
+        const isMultiSelect = q.multiSelect === true;
         
-        if (userAns !== correctAns) {
-            wrongCount++;
-            const item = document.createElement('div');
-            item.className = 'review-item';
+        let isCorrect;
+        let userAnsDisplay;
+        let correctAnsDisplay;
+        
+        const getOptDisplay = (l) => {
+            if (!l || typeof l !== 'string' || l.length !== 1) return l || 'Chưa trả lời';
+            const code = l.charCodeAt(0);
+            const oIdx = (code >= 65 && code <= 90) ? code - 65 : -1;
+            return (oIdx >= 0 && q.options && q.options[oIdx]) ? `${l} - ${q.options[oIdx]}` : l;
+        };
+        
+        if (isMultiSelect) {
+            const userArr = Array.isArray(userAns) ? [...userAns].sort() : [];
+            const correctArr = Array.isArray(correctAns) ? [...correctAns].sort() : [correctAns];
+            isCorrect = userArr.length === correctArr.length && userArr.every((v, i) => v === correctArr[i]);
             
-            // Fetch option contents
-            const optionBadges = ['A', 'B', 'C', 'D'];
-            const userAnsText = q.options[optionBadges.indexOf(userAns)] || userAns;
-            const correctAnsText = q.options[optionBadges.indexOf(correctAns)] || '';
-            
+            userAnsDisplay = userArr.length > 0 
+                ? userArr.map(getOptDisplay).join(' | ')
+                : 'Chưa trả lời';
+            correctAnsDisplay = correctArr.map(getOptDisplay).join(' | ');
+        } else {
+            const ans = userAns || 'Chưa trả lời';
+            isCorrect = ans === correctAns;
+            userAnsDisplay = getOptDisplay(ans);
+            correctAnsDisplay = getOptDisplay(correctAns);
+        }
+        
+        // Track weak topics
+        if (!isCorrect) {
+            const tId = q.topicId || 'general';
+            incorrectTopics[tId] = (incorrectTopics[tId] || 0) + 1;
+        }
+        
+        const item = document.createElement('div');
+        item.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
+        
+        const multiTag = isMultiSelect ? ' <span class="multi-select-tag">[Chọn nhiều]</span>' : '';
+        
+        if (isCorrect) {
             item.innerHTML = `
-                <div class="review-q-text">Câu ${idx + 1}: ${formatMarkdown(q.question)}</div>
+                <div class="review-q-text">Câu ${idx + 1}${multiTag}: ${formatMarkdown(q.question)}</div>
                 <div class="review-answers">
-                    <div class="review-user-ans">
-                        <span class="material-icons-round" style="font-size:16px">cancel</span>
-                        Đáp án của bạn: ${userAns} - ${userAnsText}
-                    </div>
-                    <div class="review-correct-ans">
+                    <div class="review-user-ans correct" style="color: var(--success); display: flex; align-items: center; gap: 6px;">
                         <span class="material-icons-round" style="font-size:16px">check_circle</span>
-                        Đáp án đúng: ${correctAns} - ${correctAnsText}
+                        Đáp án của bạn: ${userAnsDisplay} (Chính xác)
+                    </div>
+                </div>
+                ${q.explanation ? `<div class="review-exp" style="border-left-color: var(--success);"><strong>Giải thích:</strong> ${formatMarkdown(q.explanation)}</div>` : ''}
+            `;
+        } else {
+            item.innerHTML = `
+                <div class="review-q-text">Câu ${idx + 1}${multiTag}: ${formatMarkdown(q.question)}</div>
+                <div class="review-answers">
+                    <div class="review-user-ans incorrect" style="color: var(--danger); display: flex; align-items: center; gap: 6px;">
+                        <span class="material-icons-round" style="font-size:16px">cancel</span>
+                        Đáp án của bạn: ${userAnsDisplay} (Không chính xác)
+                    </div>
+                    <div class="review-correct-ans" style="color: var(--success); display: flex; align-items: center; gap: 6px;">
+                        <span class="material-icons-round" style="font-size:16px">check_circle</span>
+                        Đáp án đúng: ${correctAnsDisplay}
                     </div>
                 </div>
                 ${q.explanation ? `<div class="review-exp"><strong>Giải thích:</strong> ${formatMarkdown(q.explanation)}</div>` : ''}
             `;
-            
-            wrongListContainer.appendChild(item);
         }
+        
+        wrongListContainer.appendChild(item);
     });
     
-    if (wrongCount > 0) {
-        wrongSection.classList.remove('hidden');
-    } else {
-        wrongSection.classList.add('hidden');
+    // Display suggestions
+    const suggestionsContainer = document.getElementById('result-suggestions-container');
+    const suggestionsList = document.getElementById('result-suggestions-list');
+    
+    if (suggestionsContainer && suggestionsList) {
+        suggestionsList.innerHTML = '';
+        const weakTopicIds = Object.keys(incorrectTopics).filter(tId => tId !== 'general' && tId !== 'undefined' && tId !== 'null');
+        
+        if (weakTopicIds.length > 0) {
+            suggestionsContainer.classList.remove('hidden');
+            
+            weakTopicIds.forEach(topicId => {
+                const topic = state.knowledgeData.find(t => t.topicId === topicId);
+                const topicTitle = topic ? topic.title : 'Chủ đề ôn tập';
+                const count = incorrectTopics[topicId];
+                
+                const item = document.createElement('div');
+                item.className = 'suggestion-item';
+                item.style.display = 'flex';
+                item.style.alignItems = 'center';
+                item.style.justifyContent = 'space-between';
+                item.style.padding = '12px 16px';
+                item.style.borderRadius = 'var(--radius-md)';
+                item.style.background = 'var(--bg-card)';
+                item.style.border = '1px solid var(--border-color)';
+                item.style.marginBottom = '8px';
+                
+                item.innerHTML = `
+                    <div style="display: flex; flex-direction: column; gap: 4px; text-align: left;">
+                        <span style="font-weight: 700; font-size: 14.5px; color: var(--text-main);">${topicTitle}</span>
+                        <span style="font-size: 12.5px; color: var(--danger); font-weight: 600;">Bạn làm sai ${count} câu ở phần này</span>
+                    </div>
+                    <button class="btn btn-primary btn-sm btn-icon" onclick="startPracticeForTopic('${topicId}')" style="font-size: 13px; padding: 8px 12px; height: auto;">
+                        <span class="material-icons-round" style="font-size: 16px;">psychology</span> Ôn tập ngay
+                    </button>
+                `;
+                suggestionsList.appendChild(item);
+            });
+        } else {
+            suggestionsContainer.classList.add('hidden');
+        }
     }
+    
+    wrongSection.classList.remove('hidden');
 }
 
 // ==========================================================================
@@ -2791,6 +3480,336 @@ function evaluateCorrectFeasibility(nodeId, correctLinks, correctRelations, goal
         return children.some(c => evaluateCorrectFeasibility(c, correctLinks, correctRelations, goal));
     }
 }
+
+// ==========================================================================
+// EXAM DISCOVERY & PARSING LOGIC
+// ==========================================================================
+
+async function scanSubjectExams(subjectId) {
+    const folderMap = {
+        'java': 'java-on-tap',
+        'python': 'python-on-tap',
+        'quocphong_hp1': 'quocphong',
+        'quocphong_hp2': 'quocphong',
+        'antoanthongtin-ontap': 'antoanthongtin-ontap',
+        'trituenhantao-ontap': 'trituenhantao-ontap'
+    };
+    const folderName = folderMap[subjectId] || subjectId;
+    const defaultExams = {
+        'antoanthongtin-ontap': ['cauhoi-de1-attt.md', 'cauhoi-de2-attt.md'],
+        'python': ['dethithu1.md']
+    };
+    
+    let scannedFiles = [];
+    try {
+        const response = await fetch(`pdf/${folderName}/`);
+        if (response.ok) {
+            const html = await response.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const links = Array.from(doc.querySelectorAll('a'));
+            links.forEach(link => {
+                const href = link.getAttribute('href') || '';
+                const filename = href.split('/').pop().split('?')[0];
+                if (filename.toLowerCase().endsWith('.md') && filename.toLowerCase().includes('de')) {
+                    if (!scannedFiles.includes(filename)) {
+                        scannedFiles.push(filename);
+                    }
+                }
+            });
+        }
+    } catch (e) {
+        console.warn("Could not scan directory listing dynamically. Falling back to default list.", e);
+    }
+    
+    if (scannedFiles.length === 0) {
+        scannedFiles = defaultExams[subjectId] || [];
+    }
+    
+    return scannedFiles;
+}
+
+function findMatchingQuestion(questionText, questionsData) {
+    if (!questionsData || questionsData.length === 0) return null;
+    const cleanText = (txt) => txt.replace(/\s+/g, '').toLowerCase();
+    const cleanQText = cleanText(questionText);
+    
+    for (const q of questionsData) {
+        const cleanDbText = cleanText(q.question);
+        if (cleanQText.includes(cleanDbText) || cleanDbText.includes(cleanQText)) {
+            return q;
+        }
+    }
+    return null;
+}
+
+function parseMarkdownFile(content, filename, dbQuestions) {
+    content = content.replace(/\r\n/g, '\n');
+    const isMoodle = content.includes('Đoạn văn câu hỏi') || content.includes('Câu hỏi 1Trả lời');
+    
+    if (isMoodle) {
+        return parseMoodleFormat(content, dbQuestions);
+    } else {
+        return parseStandardFormat(content, dbQuestions);
+    }
+}
+
+function parseMoodleFormat(content, dbQuestions) {
+    const segments = content.split(/\nCâu hỏi \d+\n/);
+    const qSegments = segments.slice(1);
+    const parsedQuestions = [];
+    
+    qSegments.forEach((segment, idx) => {
+        const parts = segment.split(/Câu hỏi \d+Trả lời\n/);
+        if (parts.length < 2) return;
+        
+        const qBody = parts[0];
+        const optionsBody = parts[1];
+        
+        const qLines = qBody.split('\n');
+        const cleanedQLines = [];
+        qLines.forEach(line => {
+            if (line.includes('ĐúngĐạt điểm') || line.includes('SaiĐạt điểm') || line.includes('Đoạn văn câu hỏi') || line.includes('Đặt cờ')) {
+                return;
+            }
+            cleanedQLines.push(line);
+        });
+        const questionText = cleanedQLines.join('\n').trim();
+        
+        const optBlocks = optionsBody.split(/\n([A-D])\.\n/);
+        const options = [];
+        for (let i = 1; i < optBlocks.length; i += 2) {
+            const letter = optBlocks[i];
+            const optVal = optBlocks[i+1] ? optBlocks[i+1].trim() : '';
+            const cleanContent = optVal.replace(/^[A-D]\.\s*/, '').trim();
+            options.push({ letter, text: cleanContent });
+        }
+        
+        let matchedQ = findMatchingQuestion(questionText, dbQuestions);
+        
+        let finalOptions = options.map(o => o.text);
+        if (finalOptions.length === 0) {
+            finalOptions = ['A', 'B', 'C', 'D'];
+        }
+        
+        const parsedQ = {
+            id: idx + 1,
+            question: questionText.trim(),
+            options: finalOptions,
+            correctAnswer: 'A',
+            explanation: 'Chưa có giải thích cho câu hỏi này.',
+            topicId: 'general',
+            multiSelect: false
+        };
+        
+        if (matchedQ) {
+            parsedQ.topicId = matchedQ.topicId;
+            parsedQ.explanation = matchedQ.explanation || '';
+            parsedQ.multiSelect = matchedQ.multiSelect || false;
+            
+            const dbCorrectAnswer = matchedQ.correctAnswer;
+            
+            if (parsedQ.multiSelect) {
+                const correctArr = (Array.isArray(dbCorrectAnswer) ? dbCorrectAnswer : [dbCorrectAnswer]).map(letter => {
+                    const idx = letter.charCodeAt(0) - 65;
+                    return matchedQ.options[idx];
+                });
+                
+                const parsedCorrectLetters = [];
+                options.forEach(o => {
+                    if (correctArr.includes(o.text)) {
+                        parsedCorrectLetters.push(o.letter);
+                    }
+                });
+                parsedQ.correctAnswer = parsedCorrectLetters.sort();
+            } else {
+                const dbCorrectIndex = dbCorrectAnswer.charCodeAt(0) - 65;
+                const dbCorrectText = matchedQ.options[dbCorrectIndex];
+                const foundOpt = options.find(o => o.text === dbCorrectText);
+                if (foundOpt) {
+                    parsedQ.correctAnswer = foundOpt.letter;
+                } else {
+                    parsedQ.correctAnswer = 'A';
+                }
+            }
+        }
+        
+        parsedQuestions.push(parsedQ);
+    });
+    
+    return parsedQuestions;
+}
+
+function parseStandardFormat(content, dbQuestions) {
+    const lines = content.split('\n');
+    const answersMap = {};
+    
+    const ansRegex = /^Q(\d+)\s*:\s*([A-E\s,và]+)\s*-\s*(.*)$/i;
+    lines.forEach(line => {
+        const match = line.trim().match(ansRegex);
+        if (match) {
+            const qNum = parseInt(match[1]);
+            const ansStr = match[2];
+            const explanation = match[3].trim();
+            
+            const answers = [];
+            const letters = ansStr.match(/[A-E]/gi);
+            if (letters) {
+                letters.forEach(l => answers.push(l.toUpperCase()));
+            }
+            answersMap[qNum] = { answers, explanation };
+        }
+    });
+    
+    const questions = [];
+    let currentQuestion = null;
+    
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+        
+        const qMatch = line.match(/^Q(\d+)\s*$/i);
+        if (qMatch) {
+            if (currentQuestion) {
+                questions.push(currentQuestion);
+            }
+            const qNum = parseInt(qMatch[1]);
+            currentQuestion = {
+                id: qNum,
+                question: '',
+                options: [],
+                correctAnswer: [],
+                explanation: '',
+                topicId: 'general',
+                multiSelect: false
+            };
+            continue;
+        }
+        
+        if (!currentQuestion) continue;
+        
+        const optMatch = line.match(/^([A-E])\.\s*(.*)$/i);
+        if (optMatch) {
+            const text = optMatch[2].trim();
+            currentQuestion.options.push(text);
+            continue;
+        }
+        
+        if (line.includes('Giải thích:')) {
+            const expText = line.substring(line.indexOf('Giải thích:') + 11).trim();
+            currentQuestion.explanation = expText.replace(/^\*\*|\*\*$/g, '').trim();
+            continue;
+        }
+        
+        if (line !== '' && !line.startsWith('---')) {
+            if (currentQuestion.question) {
+                currentQuestion.question += '\n' + line;
+            } else {
+                currentQuestion.question = line;
+            }
+        }
+    }
+    
+    if (currentQuestion) {
+        questions.push(currentQuestion);
+    }
+    
+    questions.forEach(q => {
+        const keyInfo = answersMap[q.id];
+        if (keyInfo) {
+            q.correctAnswer = keyInfo.answers;
+            if (q.correctAnswer.length > 1) {
+                q.multiSelect = true;
+            } else if (q.correctAnswer.length === 1) {
+                q.correctAnswer = q.correctAnswer[0];
+            }
+            
+            if (!q.explanation) {
+                q.explanation = keyInfo.explanation;
+            }
+        }
+        
+        const matchedQ = findMatchingQuestion(q.question, dbQuestions);
+        if (matchedQ) {
+            q.topicId = matchedQ.topicId;
+        }
+        
+        q.question = q.question.trim();
+        q.explanation = q.explanation.trim();
+    });
+    
+    return questions;
+}
+
+async function startMarkdownExam(filename) {
+    const folderMap = {
+        'java': 'java-on-tap',
+        'python': 'python-on-tap',
+        'quocphong_hp1': 'quocphong',
+        'quocphong_hp2': 'quocphong',
+        'antoanthongtin-ontap': 'antoanthongtin-ontap',
+        'trituenhantao-ontap': 'trituenhantao-ontap'
+    };
+    const folderName = folderMap[state.currentSubjectId] || state.currentSubjectId;
+    
+    try {
+        const res = await fetch(`pdf/${folderName}/${filename}?t=${Date.now()}`);
+        if (!res.ok) throw new Error("Không thể tải file đề thi.");
+        
+        const markdown = await res.text();
+        const questions = parseMarkdownFile(markdown, filename, state.questionsData);
+        
+        if (questions.length === 0) {
+            showToast("Không tìm thấy câu hỏi nào trong file đề thi!", "warning");
+            return;
+        }
+        
+        startMockExamWithQuestions(questions, `Đề thi: ${filename.replace('.md', '')}`);
+    } catch (e) {
+        console.error("Lỗi khi tải/phân tích đề thi Markdown:", e);
+        showToast("Lỗi tải đề thi Markdown!", "danger");
+    }
+}
+
+function startPresetExam(examId) {
+    const preset = state.presetExams.find(e => e.id === examId);
+    if (!preset) {
+        showToast("Không tìm thấy đề thi mẫu!", "danger");
+        return;
+    }
+    
+    startMockExamWithQuestions(preset.questions, preset.name);
+}
+
+function startMockExamWithQuestions(questions, examName) {
+    const size = questions.length;
+    const timers = { 20: 25*60, 30: 40*60, 50: 60*60, 100: 120*60 };
+    const durationSeconds = timers[size] || 55*60;
+    
+    state.mock.questions = questions;
+    state.mock.active = true;
+    state.mock.currentIndex = 0;
+    state.mock.userAnswers = {};
+    state.mock.startTime = new Date();
+    
+    state.mock.timer = durationSeconds;
+    state.mock.totalTime = durationSeconds;
+    
+    document.getElementById('mock-setup-card').classList.add('hidden');
+    document.getElementById('mock-exam-workspace-container').classList.remove('hidden');
+    
+    renderMockQuestionsList();
+    startMockTimer();
+    renderMockQuestionMap();
+    
+    window.location.hash = '#mock-test';
+    showToast(`Đã bắt đầu bài thi: ${examName}`, 'success');
+}
+
+// Expose functions globally for onclick triggers
+window.startMarkdownExam = startMarkdownExam;
+window.startPresetExam = startPresetExam;
+window.scanSubjectExams = scanSubjectExams;
+window.startMockExamWithQuestions = startMockExamWithQuestions;
 
 
 

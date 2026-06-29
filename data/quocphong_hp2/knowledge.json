@@ -9,7 +9,7 @@
       "Đa nguyên đa đảng"
     ],
     "summary": "Nhận diện âm mưu, thủ đoạn của các thế lực thù địch trong chiến lược DBHB và biện pháp phòng chống của ta.",
-    "content": "\n        <h3>Nội dung trọng tâm</h3>\n        <ul>\n            <li>Khái niệm: DBHB là chiến lược cơ bản nhằm lật đổ chế độ chính trị xã hội từ bên trong bằng biện pháp phi quân sự.</li>\n            <li>Bạo loạn lật đổ là hành động bạo lực có tổ chức để lật đổ chính quyền.</li>\n            <li>Thủ đoạn: Phá hoại kinh tế, đòi đa nguyên đa đảng, xóa bỏ CN Mác-Lênin.</li>\n        </ul>\n        <h3>Những ý dễ nhầm</h3>\n        <ul>\n            <li>Sinh viên hay nhầm lẫn giữa thủ đoạn về chính trị (đòi đa đảng) và thủ đoạn về tư tưởng văn hóa (bôi nhọ lãnh tụ).</li>\n        </ul>\n        <div style=\"padding: 10px; background-color: #e6f7ff; border-left: 4px solid #1890ff;\">\n            <strong>Ghi nhớ nhanh:</strong> DBHB = Đánh từ bên trong (Không dùng súng).\n        </div>\n        ",
+    "content": "<h3>Nội dung trọng tâm</h3>\n <ul>\n <li>Khái niệm: DBHB là chiến lược cơ bản nhằm lật đổ chế độ chính trị xã hội từ bên trong bằng biện pháp phi quân sự.</li>\n <li>Bạo loạn lật đổ là hành động bạo lực có tổ chức để lật đổ chính quyền.</li>\n <li>Thủ đoạn: Phá hoại kinh tế, đòi đa nguyên đa đảng, xóa bỏ CN Mác-Lênin.</li>\n </ul>\n <h3>Những ý dễ nhầm</h3>\n <ul>\n <li>Sinh viên hay nhầm lẫn giữa thủ đoạn về chính trị (đòi đa đảng) và thủ đoạn về tư tưởng văn hóa (bôi nhọ lãnh tụ).</li>\n </ul>\n <div style=\"padding: 10px; background-color: #e6f7ff; border-left: 4px solid #1890ff;\">\n <strong>Ghi nhớ nhanh:</strong> DBHB = Đánh từ bên trong (Không dùng súng).\n </div>",
     "example": ""
   },
   {
@@ -22,7 +22,7 @@
       "Mặt chủ quan"
     ],
     "summary": "Nắm vững các quy định pháp luật và biện pháp đấu tranh phòng chống tội phạm và vi phạm pháp luật về bảo vệ môi trường.",
-    "content": "\n        <h3>Nội dung trọng tâm</h3>\n        <ul>\n            <li>Các yếu tố cấu thành tội phạm: Khách thể, Mặt khách quan, Chủ thể, Mặt chủ quan.</li>\n            <li>Chủ thể của tội phạm môi trường theo BLHS hiện hành bao gồm cả Pháp nhân thương mại.</li>\n        </ul>\n        <h3>Những ý dễ nhầm</h3>\n        <ul>\n            <li>Nhầm lẫn giữa 'Khách thể' và 'Đối tượng tác động'. Khách thể là quan hệ xã hội được pháp luật bảo vệ.</li>\n        </ul>\n        <div style=\"padding: 10px; background-color: #e6f7ff; border-left: 4px solid #1890ff;\">\n            <strong>Ghi nhớ nhanh:</strong> Khách thể (Cái bị hại) - Mặt khách quan (Hành vi) - Chủ thể (Kẻ làm) - Mặt chủ quan (Lỗi).\n        </div>\n        ",
+    "content": "<h3>Nội dung trọng tâm</h3>\n <ul>\n <li>Các yếu tố cấu thành tội phạm: Khách thể, Mặt khách quan, Chủ thể, Mặt chủ quan.</li>\n <li>Chủ thể của tội phạm môi trường theo BLHS hiện hành bao gồm cả Pháp nhân thương mại.</li>\n </ul>\n <h3>Những ý dễ nhầm</h3>\n <ul>\n <li>Nhầm lẫn giữa 'Khách thể' và 'Đối tượng tác động'. Khách thể là quan hệ xã hội được pháp luật bảo vệ.</li>\n </ul>\n <div style=\"padding: 10px; background-color: #e6f7ff; border-left: 4px solid #1890ff;\">\n <strong>Ghi nhớ nhanh:</strong> Khách thể (Cái bị hại) - Mặt khách quan (Hành vi) - Chủ thể (Kẻ làm) - Mặt chủ quan (Lỗi).\n </div>",
     "example": ""
   },
   {
@@ -34,7 +34,7 @@
       "Vi phạm pháp luật"
     ],
     "summary": "Tổng hợp hơn hàng trăm câu hỏi trắc nghiệm từ ngân hàng đề của Học phần 2, hỗ trợ ôn luyện thi hết học phần. (Phần 1)",
-    "content": "\n        <h3>Lưu ý về bộ đề tự động</h3>\n        <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n        <ul>\n            <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n            <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n            <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n        </ul>\n        ",
+    "content": "<h3>Lưu ý về bộ đề tự động</h3>\n <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n <ul>\n <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n </ul>",
     "example": ""
   },
   {
@@ -46,7 +46,7 @@
       "Vi phạm pháp luật"
     ],
     "summary": "Tổng hợp hơn hàng trăm câu hỏi trắc nghiệm từ ngân hàng đề của Học phần 2, hỗ trợ ôn luyện thi hết học phần. (Phần 2)",
-    "content": "\n        <h3>Lưu ý về bộ đề tự động</h3>\n        <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n        <ul>\n            <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n            <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n            <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n        </ul>\n        ",
+    "content": "<h3>Lưu ý về bộ đề tự động</h3>\n <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n <ul>\n <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n </ul>",
     "example": ""
   },
   {
@@ -58,7 +58,7 @@
       "Vi phạm pháp luật"
     ],
     "summary": "Tổng hợp hơn hàng trăm câu hỏi trắc nghiệm từ ngân hàng đề của Học phần 2, hỗ trợ ôn luyện thi hết học phần. (Phần 3)",
-    "content": "\n        <h3>Lưu ý về bộ đề tự động</h3>\n        <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n        <ul>\n            <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n            <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n            <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n        </ul>\n        ",
+    "content": "<h3>Lưu ý về bộ đề tự động</h3>\n <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n <ul>\n <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n </ul>",
     "example": ""
   },
   {
@@ -70,7 +70,7 @@
       "Vi phạm pháp luật"
     ],
     "summary": "Tổng hợp hơn hàng trăm câu hỏi trắc nghiệm từ ngân hàng đề của Học phần 2, hỗ trợ ôn luyện thi hết học phần. (Phần 4)",
-    "content": "\n        <h3>Lưu ý về bộ đề tự động</h3>\n        <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n        <ul>\n            <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n            <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n            <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n        </ul>\n        ",
+    "content": "<h3>Lưu ý về bộ đề tự động</h3>\n <p>Đây là bộ câu hỏi được trích xuất tự động từ ngân hàng đề thi môn Giáo dục Quốc phòng (Học phần 2).</p>\n <ul>\n <li>Các câu hỏi chưa có đáp án chính thức sẽ được tạm gắn mặc định là đáp án A.</li>\n <li>Sinh viên nên tự đối chiếu với giáo trình để tìm ra đáp án chính xác nhất.</li>\n <li>Phần thi thử sẽ tự động trộn các câu hỏi này.</li>\n </ul>",
     "example": ""
   }
 ]
